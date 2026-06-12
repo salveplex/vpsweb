@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 
 interface PageData {
   title: string;
@@ -25,7 +26,6 @@ export default function Page() {
           const attributes = json.data[0].attributes || json.data[0];
           setData({
             title: attributes.title,
-            // Simple rich text render for now (will need markdown parser or rich text renderer later if needed)
             content: attributes.content,
           });
         } else {
@@ -59,7 +59,10 @@ export default function Page() {
   return (
     <section className="page-section">
       <h1 className="page-title">{data.title}</h1>
-      <div className="page-content" dangerouslySetInnerHTML={{ __html: data.content }} />
+      <div className="page-content">
+        <ReactMarkdown>{data.content}</ReactMarkdown>
+      </div>
     </section>
   );
 }
+
