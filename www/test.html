@@ -1,0 +1,344 @@
+<!-- Voss Taxi - v1.8.9c Stable Polish Matte FIX++++++ med stripping og låst togtid -->
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1980, initial-scale=1.0, user-scalable=no" />
+<title>Voss Taxi - v1.8.9c Stable Polish Matte FIX++++++</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #000; color: white;
+    font-family: system-ui, sans-serif;
+    height: 1980px; width: 1080px;
+    overflow: hidden; user-select: none; touch-action: manipulation;
+  }
+  .header-container {
+    display: flex; position: fixed; top: 0;
+    width: 100%; height: 70px;
+    font-size: 2.76rem; font-weight: 700;
+    background: #c0c0c0; z-index: 10;
+    border-bottom: 2px solid #666;
+  }
+  .header-left, .header-right {
+    flex: 1; display: flex; justify-content: center; align-items: center;
+    color: #000; cursor: pointer;
+  }
+  .header-divider { width: 4px; background: #000; }
+  #resetLayout {
+    position: fixed; top: 5px; left: 5px;
+    z-index: 20; font-size: 18px;
+    background: #666; color: white;
+    border: none; padding: 5px; border-radius: 5px;
+    cursor: pointer;
+  }
+  .container {
+    display: flex; flex-direction: row;
+    width: 1080px; margin-top: 70px;
+    height: calc(1980px - 70px);
+  }
+  .column.left {
+    width: 400px; display: flex; flex-direction: column;
+    background: #000; overflow-y: auto;
+    -webkit-overflow-scrolling: touch; padding-bottom: 120px;
+  }
+  .column.right {
+    width: 600px; display: flex; flex-direction: column;
+    align-items: center; overflow: hidden;
+    background: #000; position: relative; padding-top: 15px;
+  }
+  .right-columns {
+    display: flex; justify-content: space-between;
+    width: 100%; max-width: 600px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+  .right-subcolumn {
+    width: 300px; display: flex; flex-direction: column;
+    align-items: center;
+  }
+  .item { display: flex; align-items: center; gap: 10px; margin: 9px 0; }
+  .prefix {
+    width: 70px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 80px;
+    color: #ffe;
+    opacity: 0.92;
+  }
+  /* Matte Buttons */
+  .button {
+    border-radius: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: grab;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    width: 100%;
+  }
+  .green, .terminal, .lading {
+    width: 360px;
+    height: 90px;
+    font-size: 54px;
+  }
+  .green { background: linear-gradient(to bottom, #4cd964, #28a745); color: black; }
+  .terminal { background: linear-gradient(to bottom, #ffcc00, #b38f00); color: black; }
+  .lading { background: linear-gradient(to bottom, #b30000, #800000); color: white; }
+  .blue { background: linear-gradient(to bottom, #4da3ff, #0066cc); color: white; width: 222px; height: 87px; font-size: 215%; }
+  .train-section {
+    position: absolute;
+    width: 100%; max-width: 600px;
+    display: flex; flex-direction: column;
+    align-items: center;
+    transform: translateX(-50%);
+  }
+  .train-header {
+    width: 90%; background: #c0c0c0; color: #000;
+    text-align: center; padding: 6px 0;
+    font-size: 1.8rem; font-weight: bold;
+    border-radius: 6px 6px 0 0;
+  }
+  .train-container {
+    width: 90%;
+    background: #111;
+    border-radius: 0 0 6px 6px;
+  }
+  .train-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    font-size: 2.2rem;
+    width: 100%;
+    color: white;
+  }
+  .train-item { background: #222; border-radius: 4px; padding: 4px; text-align: center; }
+  .avg { color: #FFD700; }
+  .ank { color: #00FF7F; }
+  .delay { color: #FF5555; }
+</style>
+</head>
+<body>
+<div class="header-container">
+  <div class="header-left" id="headerInne">Inne</div>
+  <div class="header-divider"></div>
+  <div class="header-right" id="headerUte">Ute</div>
+</div>
+<button id="resetLayout">⟳</button>
+<div class="container">
+  <div class="column left" id="leftColumn"></div>
+  <div class="column right" id="rightColumn">
+    <div class="right-columns" id="rightColumns">
+      <div class="right-subcolumn" id="rightCol1"></div>
+      <div class="right-subcolumn" id="rightCol2"></div>
+    </div>
+    <div class="train-section" id="trainSection">
+      <div class="train-header">Togtider</div>
+      <div class="train-container">
+        <div class="train-table" id="trainTable"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyCfDzyV_zuB9gi_55L-JFkf7-SigTlR2J4",
+  authDomain: "fliser-b8a52.firebaseapp.com",
+  databaseURL: "https://fliser-b8a52-default-rtdb.firebaseio.com",
+  projectId: "fliser-b8a52",
+  storageBucket: "fliser-b8a52.appspot.com",
+  messagingSenderId: "1074066524190",
+  appId: "1:1074066524190:web:5cc3c6d8a42c1f3ec3460f",
+  measurementId: "G-NQNNCXYHQ1"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const orderRef = db.ref("taxiOrder");
+
+const group1=[34,40,164,174,169,190,280,2036,844,2613,2133];
+const group2=[161,166,167,2065,2267,2488,2979,2980,2624,2988,2614];
+const allNumbers=[...group1,...group2];
+const leftColumn=document.getElementById('leftColumn');
+const rightCol1=document.getElementById('rightCol1');
+const rightCol2=document.getElementById('rightCol2');
+const trainSection=document.getElementById('trainSection');
+
+orderRef.on("value",snap=>{
+  let saved=snap.val();
+  if(!saved){ saved={}; allNumbers.forEach(num=>saved[num]={side:"right",state:"green"}); orderRef.set(saved);}
+  rebuildFromData(saved);
+});
+
+function rebuildFromData(saved){
+  leftColumn.innerHTML=''; rightCol1.innerHTML=''; rightCol2.innerHTML='';
+  allNumbers.forEach(num=>{
+    let e=saved[num];
+    if(e&&e.side==='left') leftColumn.appendChild(createItem(num,'left',e.state));
+    else if(group1.includes(num)) rightCol1.appendChild(createItem(num,'right','group1'));
+    else rightCol2.appendChild(createItem(num,'right','group2'));
+  });
+  updateNumbering();
+  adjustTrainPosition();
+}
+
+function createItem(num,side,stateOrGrp){
+  const wrap=document.createElement('div'); wrap.className='item';
+  const prefix=document.createElement('div'); prefix.className='prefix';
+  wrap.appendChild(prefix);
+  const btn=document.createElement('div'); btn.className='button'; btn.dataset.value=num;
+  if(side==='left'){
+    btn.classList.add(stateOrGrp || 'green');
+    setEmoji(btn);
+    btn.onclick=()=>toggleGreen(btn);
+  } else {
+    btn.classList.add('blue');
+    btn.dataset.group=stateOrGrp;
+    btn.innerHTML=`${num}`;
+  }
+  wrap.appendChild(btn);
+  return wrap;
+}
+
+function setEmoji(btn){
+  const num=btn.dataset.value;
+  if(btn.classList.contains('green')) btn.innerHTML=`🚖 ${num}`;
+  if(btn.classList.contains('terminal')) btn.innerHTML=`🚋 ${num}`;
+  if(btn.classList.contains('lading')) btn.innerHTML=`🔋 ${num}`;
+}
+
+function toggleGreen(btn){
+  if(btn.classList.contains('green')){
+    btn.classList.remove('green'); btn.classList.add('terminal');
+  } else if(btn.classList.contains('terminal')){
+    btn.classList.remove('terminal'); btn.classList.add('lading');
+  } else {
+    btn.classList.remove('lading'); btn.classList.add('green');
+  }
+  setEmoji(btn);
+}
+
+function updateNumbering(){
+  [...leftColumn.querySelectorAll('.item')].forEach((it,i)=>it.querySelector('.prefix').textContent=String(i+1).padStart(2,' '));
+}
+
+function adjustTrainPosition(){
+  const col1Height = rightCol1.scrollHeight;
+  const col2Height = rightCol2.scrollHeight;
+  const maxHeight = Math.max(col1Height,col2Height);
+  trainSection.style.top = (maxHeight + 50) + "px";
+}
+
+function moveToCorrectBlue(evt){
+  const btn=evt.item.querySelector('.button');
+  const num=parseInt(btn.dataset.value);
+  // Strip til blå stil
+  btn.classList.remove('green','terminal','lading');
+  btn.classList.add('blue');
+  btn.innerHTML=num;
+  evt.item.querySelector('.prefix').textContent='';
+  // Flytt til korrekt blå
+  if(group1.includes(num)) rightCol1.appendChild(evt.item);
+  if(group2.includes(num)) rightCol2.appendChild(evt.item);
+  adjustTrainPosition();
+}
+
+new Sortable(leftColumn,{
+  group:{name:"numbers",pull:true,put:true},
+  sort:true,
+  animation:200,
+  onAdd:function(evt){
+    const btn=evt.item.querySelector('.button');
+    btn.className='button green';
+    setEmoji(btn);
+    btn.onclick=()=>toggleGreen(btn);
+    updateNumbering();
+    adjustTrainPosition();
+  },
+  onRemove:function(){ updateNumbering(); adjustTrainPosition(); }
+});
+
+new Sortable(rightCol1,{
+  group:{name:"blue1",pull:true,put:true},
+  sort:true,
+  animation:200,
+  onAdd:function(evt){
+    const num=parseInt(evt.item.querySelector('.button').dataset.value);
+    if(!group1.includes(num)) moveToCorrectBlue(evt);
+    else {
+      const btn=evt.item.querySelector('.button');
+      btn.dataset.group='group1';
+      btn.className='button blue';
+      btn.innerHTML=`${num}`;
+      evt.item.querySelector('.prefix').textContent='';
+      adjustTrainPosition();
+    }
+  }
+});
+
+new Sortable(rightCol2,{
+  group:{name:"blue2",pull:true,put:true},
+  sort:true,
+  animation:200,
+  onAdd:function(evt){
+    const num=parseInt(evt.item.querySelector('.button').dataset.value);
+    if(!group2.includes(num)) moveToCorrectBlue(evt);
+    else {
+      const btn=evt.item.querySelector('.button');
+      btn.dataset.group='group2';
+      btn.className='button blue';
+      btn.innerHTML=`${num}`;
+      evt.item.querySelector('.prefix').textContent='';
+      adjustTrainPosition();
+    }
+  }
+});
+
+// Togtider
+const stopId="NSR:StopPlace:59958";
+async function fetchCalls(){
+  const q=`query { stopPlace(id:"${stopId}") { estimatedCalls(timeRange:86400,numberOfDepartures:20) { aimedArrivalTime expectedArrivalTime aimedDepartureTime expectedDepartureTime }}}`;
+  try {
+    const r=await fetch("https://api.entur.io/journey-planner/v3/graphql",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "ET-Client-Name":"voss-taxi"
+      },
+      body:JSON.stringify({query:q})
+    });
+    const j=await r.json();
+    return j.data?.stopPlace?.estimatedCalls||[];
+  } catch(e){
+    console.error("Feil ved henting av togtider:",e);
+    return [];
+  }
+}
+function fmtTime(t){const d=new Date(t);return d.toLocaleTimeString("no-NO",{hour:"2-digit",minute:"2-digit"});}
+function delayStr(a,e){const diff=(new Date(e)-new Date(a))/60000;return diff>0?` (+${Math.round(diff)} min)`:'';}
+async function updateTrains(){
+  let calls=await fetchCalls();
+  if(!calls.length){
+    calls=[
+      {type:'Avg',aimed:new Date(),expected:new Date()},
+      {type:'Ank',aimed:new Date(),expected:new Date()}
+    ];
+  }
+  const list=[];
+  calls.forEach(c=>{
+    if(c.expectedDepartureTime)list.push({type:'Avg',aimed:c.aimedDepartureTime,expected:c.expectedDepartureTime});
+    if(c.expectedArrivalTime)list.push({type:'Ank',aimed:c.aimedArrivalTime,expected:c.expectedArrivalTime});
+  });
+  list.sort((a,b)=>new Date(a.expected)-new Date(b.expected));
+  document.getElementById("trainTable").innerHTML=list.slice(0,10).map(t=>
+    `<div class="train-item">${t.type} ${fmtTime(t.expected)}${delayStr(t.aimed,t.expected)}</div>`
+  ).join("");
+}
+document.addEventListener("DOMContentLoaded",()=>adjustTrainPosition());
+updateTrains();setInterval(updateTrains,60000);
+</script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Voss Taxi - Fast Horisontal Layout med Smal Togkolonne</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      background: #1e1e1e;
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      height: 100%;
+      min-height: 100vh;
+      width: 100vw;
+      box-sizing: border-box;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      overflow-x: hidden;
+    }
+    body {
+      min-width: 100vw;
+      min-height: 100vh;
+      width: 100vw;
+      overflow-x: auto;
+      overflow-y: auto;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      width: 100vw;
+      max-width: none;
+      min-width: 900px;
+      min-height: 99vh;
+      justify-content: center;
+      align-items: stretch;
+      box-sizing: border-box;
+      overflow-x: auto;
+      overflow-y: visible;
+    }
+    .column, .train {
+      flex: 1 1 340px;
+      background: rgba(44,44,44,0.25);
+      backdrop-filter: blur(10px) brightness(0.9);
+      border-radius: 16px;
+      padding: 16px 10px;
+      min-height: 700px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      box-sizing: border-box;
+      min-width: 290px;
+      max-width: 450px;
+      margin: 0;
+    }
+    .train {
+      flex: 0 0 200px;
+      min-width: 150px;
+      max-width: 220px;
+      padding: 10px 4px;
+      align-items: center;
+    }
+    .header {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 14px;
+      width: 100%;
+      font-size: 1.38rem;
+      background: linear-gradient(to right, #fff, #bbb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.04em;
+      user-select: none;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 9px 0;
+      width: 100%;
+      user-select: none;
+      scroll-snap-align: start;
+      padding: 5px 0;
+      touch-action: manipulation;
+    }
+    .right-subcolumn .item {
+      margin: 3px 0;
+    }
+    .prefix {
+      min-width: 40px;
+      text-align: right;
+      font-weight: 600;
+      font-size: clamp(20px, 3.7vw, 36px);
+      user-select: none;
+      letter-spacing: 0.03em;
+      padding-right: 2px;
+      color: #ffe;
+      opacity: 0.92;
+    }
+    .button {
+      position: relative;
+      border-radius: 14px;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      color: white;
+      outline: none;
+      font-family: inherit;
+      min-width: clamp(120px, 19vw, 330px);
+      max-width: 97vw;
+      width: 100%;
+      height: clamp(56px, 9vh, 110px);
+      font-size: clamp(19px, 3vw, 38px);
+      padding: 0 11px;
+      margin: 0 auto;
+      box-shadow: 0 1.5px 10px #0006;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      transition: filter 0.13s, background 0.13s, box-shadow 0.13s;
+      cursor: pointer;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .button, .item { cursor: grab !important; }
+      .button:active { cursor: grabbing !important; }
+    }
+    @media (hover: none) and (pointer: coarse) {
+      .button, .item { cursor: pointer !important; }
+    }
+    .button:active, .button.touched {
+      filter: brightness(1.16) drop-shadow(0 3px 14px #fff4);
+      box-shadow: 0 1.5px 18px #fff6, 0 2px 12px #003c;
+      z-index: 3;
+      outline: 2.5px solid #fff3;
+    }
+    .button:focus-visible {
+      outline: 2.5px solid #ffe45e;
+      box-shadow: 0 0 0 6px #ffe55e22;
+    }
+    .button .icon {
+      position: absolute;
+      left: 6px;
+      font-size: 1.7em;
+      top: 50%;
+      transform: translateY(-50%);
+      user-select: none;
+      pointer-events: none;
+    }
+    .button .arrow-right {
+      position: absolute;
+      right: 12px;
+      font-size: 1.2em;
+      user-select: none;
+      pointer-events: none;
+      color: white;
+    }
+    .button .arrow-left {
+      position: absolute;
+      left: 6px;
+      font-size: 1.2em;
+      user-select: none;
+      pointer-events: none;
+      color: white;
+    }
+    .terminal {
+      background: linear-gradient(to bottom, #ffcc00, #b38f00) !important;
+      color: black !important;
+      box-shadow: 0 0 7px 1px #ff0b, 0 1px 2px #888a;
+    }
+    .terminal .arrow-right { color: white !important; }
+    .lading {
+      background: linear-gradient(to bottom, #b30000, #800000) !important;
+      color: white !important;
+      box-shadow: 0 0 7px 1px #b00a, 0 1px 2px #888a;
+    }
+    .left .button {
+      background: linear-gradient(to bottom, #4cd964, #28a745);
+    }
+    .right .button {
+      min-width: clamp(100px, 14vw, 210px);
+      width: 100%;
+      height: clamp(44px, 7vh, 72px);
+      font-size: clamp(15px, 2.1vw, 25px);
+      padding: 0 7px;
+      background: linear-gradient(to bottom, #4da3ff, #0066cc);
+    }
+    .right-columns {
+      display: flex;
+      gap: 1px;
+      width: 100%;
+      justify-content: space-between;
+    }
+    #rightCol1 { border-right: none; padding-right: 0; }
+    #rightCol2 { padding-left: 4px; }
+    .right-subcolumn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 350px;
+    }
+    .train-times table {
+      width: 100%;
+      border-collapse: collapse;
+      color: white;
+      font-size: 1.2rem;
+    }
+    .train-times th, .train-times td {
+      padding: 6px;
+      border-bottom: 1px solid #555;
+      text-align: center;
+      border-radius: 5px;
+      background: none !important;
+    }
+    .train-times .delayed {
+      color: #ff5555;
+      font-weight: bold;
+      text-shadow: 0 0 6px #b00;
+    }
+    .train-logo {
+      margin-top: 18px;
+      width: 75%;
+      opacity: 0.18;
+      user-select: none;
+      pointer-events: none;
+      max-width: 95px;
+    }
+    /* Ingen stacking! */
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="column left" id="leftColumn">
+    <div class="header">Inne</div>
+  </div>
+  <div class="column right" id="rightColumn">
+    <div class="header">Ute</div>
+    <div class="right-columns">
+      <div class="right-subcolumn" id="rightCol1"></div>
+      <div class="right-subcolumn" id="rightCol2"></div>
+    </div>
+  </div>
+  <div class="column train">
+    <div class="header">Togtider</div>
+    <div class="train-times">
+      <table><tbody id="trains"></tbody></table>
+    </div>
+    <img src="logo.png" class="train-logo" alt="Logo" />
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+<script>
+const group1 = [34,40,164,174,169,190,280,2036,844];
+const group2 = [161,166,167,2065,2267,2488,2979,2980,2624];
+const allNumbers = [...group1, ...group2];
+
+const leftColumn = document.getElementById('leftColumn');
+const rightCol1 = document.getElementById('rightCol1');
+const rightCol2 = document.getElementById('rightCol2');
+
+// Alltid korrekt kolonneplassering på høyresiden!
+function rebuildFromStorage() {
+  leftColumn.innerHTML = '<div class="header">Inne</div>';
+  rightCol1.innerHTML = '';
+  rightCol2.innerHTML = '';
+
+  let found = {};
+  const saved = JSON.parse(localStorage.getItem('taxiOrder'));
+  if(saved) {
+    (saved.left || []).forEach(({num, state}) => found[Number(num)] = {side: 'left', state});
+    (saved.right1 || []).forEach(({num, state}) => found[Number(num)] = {side: 'right1', state});
+    (saved.right2 || []).forEach(({num, state}) => found[Number(num)] = {side: 'right2', state});
+  }
+  allNumbers.forEach(num => {
+    let n = Number(num);
+    let data = found[n];
+    if(data && data.side === 'left') {
+      leftColumn.appendChild(createItem(n, 'left', data.state));
+    } else if(data && (data.side === 'right1' || data.side === 'right2')) {
+      if (group1.includes(n)) {
+        rightCol1.appendChild(createItem(n, 'right', 'number'));
+      } else {
+        rightCol2.appendChild(createItem(n, 'right', 'number'));
+      }
+    } else {
+      if(group1.includes(n)) rightCol1.appendChild(createItem(n, 'right'));
+      else rightCol2.appendChild(createItem(n, 'right'));
+    }
+  });
+  sortRightColumns();
+  updateNumbering();
+  saveOrder();
+}
+
+function createItem(num, side, state = 'number') {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'item';
+
+  const prefix = document.createElement('div');
+  prefix.className = 'prefix';
+  wrapper.appendChild(prefix);
+
+  const btn = document.createElement('button');
+  btn.className = 'button';
+  btn.dataset.value = num;
+  btn.dataset.state = state;
+  btn.textContent = num;
+  btn.draggable = false;
+
+  // Touch feedback på alle knapper!
+  btn.addEventListener('touchstart', e => {
+    btn.classList.add('touched');
+    setTimeout(() => btn.classList.remove('touched'), 220);
+  }, {passive: true});
+  btn.addEventListener('touchend', e => btn.classList.remove('touched'), {passive: true});
+  btn.addEventListener('touchcancel', e => btn.classList.remove('touched'), {passive: true});
+
+  if(side === 'left') {
+    addStateToggle(btn);
+  }
+
+  updateButtonColor(btn, side === 'left' ? 'left' : 'right');
+  wrapper.appendChild(btn);
+  return wrapper;
+}
+
+function addStateToggle(btn) {
+  if (btn.hasStateToggle) return;
+  btn.addEventListener('click', () => {
+    if(btn.dataset.state === 'number') btn.dataset.state = 'terminal';
+    else if(btn.dataset.state === 'terminal') btn.dataset.state = 'lading';
+    else btn.dataset.state = 'number';
+    updateButtonColor(btn, 'left');
+    saveOrder();
+  });
+  btn.hasStateToggle = true;
+}
+
+function updateButtonColor(btn, location) {
+  btn.classList.remove('terminal', 'lading', 'blue', 'green');
+
+  let iconHTML = '';
+  if (btn.dataset.state === 'terminal') {
+    btn.classList.add('terminal');
+    iconHTML = '<span class="icon">🚋</span>';
+  } else if (btn.dataset.state === 'lading') {
+    btn.classList.add('lading');
+    iconHTML = '<span class="icon">🔋</span>';
+  } else {
+    btn.classList.add(location === 'left' ? 'green' : 'blue');
+  }
+
+  if(location === 'left'){
+    btn.innerHTML = `${iconHTML}<span style="flex:1; text-align:center;">${btn.dataset.value}</span><span class="arrow-right">▶</span>`;
+  } else {
+    btn.innerHTML = `<span class="arrow-left">◀</span>${iconHTML}<span style="flex:1; text-align:center;">${btn.dataset.value}</span>`;
+    btn.dataset.state = 'number'; 
+  }
+}
+
+function updateNumbering() {
+  [...leftColumn.querySelectorAll('.item')].forEach((item, i) => {
+    item.querySelector('.prefix').textContent = `${i+1}:`;
+  });
+}
+
+function saveOrder(){
+  const order = {
+    left: [...leftColumn.querySelectorAll('.button')].map(btn => ({
+      num: btn.dataset.value,
+      state: btn.dataset.state
+    })),
+    right1: [...rightCol1.querySelectorAll('.button')].map(btn => ({
+      num: btn.dataset.value,
+      state: btn.dataset.state
+    })),
+    right2: [...rightCol2.querySelectorAll('.button')].map(btn => ({
+      num: btn.dataset.value,
+      state: btn.dataset.state
+    })),
+  };
+  localStorage.setItem('taxiOrder', JSON.stringify(order));
+}
+
+function sortRightColumns() {
+  [rightCol1, rightCol2].forEach(col => {
+    const items = Array.from(col.querySelectorAll('.item'));
+    items.sort((a,b) => {
+      const aNum = Number(a.querySelector('button').dataset.value);
+      const bNum = Number(b.querySelector('button').dataset.value);
+      return aNum - bNum;
+    });
+    items.forEach(i => col.appendChild(i));
+  });
+}
+
+function onAddHandler(evt) {
+  const item = evt.item;
+  const btn = item.querySelector('button');
+  const num = Number(btn.dataset.value);
+
+  // Fjern duplikater fra de ANDRE kolonnene
+  [leftColumn, rightCol1, rightCol2].forEach(col => {
+    if (col !== evt.to) {
+      [...col.querySelectorAll('.button')].forEach(b => {
+        if (Number(b.dataset.value) === num) {
+          b.closest('.item').remove();
+        }
+      });
+    }
+  });
+
+  // Oppdater knappens state og stil basert på kolonne
+  if (evt.to === leftColumn) {
+    btn.dataset.state = btn.dataset.state || 'number';
+    updateButtonColor(btn, 'left');
+    updateNumbering();
+    addStateToggle(btn);
+  } else {
+    btn.dataset.state = 'number';
+    updateButtonColor(btn, 'right');
+  }
+
+  sortRightColumns();
+  saveOrder();
+}
+
+function onEndHandler() {
+  sortRightColumns();
+  saveOrder();
+}
+
+const sortableLeft = new Sortable(leftColumn, {
+  group: {
+    name: 'numbers',
+    pull: true,
+    put: true
+  },
+  animation: 150,
+  fallbackOnBody: true,
+  swapThreshold: 0.65,
+  onAdd: onAddHandler,
+  onUpdate: () => {
+    updateNumbering();
+    saveOrder();
+  }
+});
+
+const sortableRight1 = new Sortable(rightCol1, {
+  group: {
+    name: 'numbers',
+    pull: true,
+    put: true
+  },
+  animation: 150,
+  fallbackOnBody: true,
+  swapThreshold: 0.65,
+  onAdd: onAddHandler,
+  onEnd: onEndHandler,
+  onUpdate: onEndHandler
+});
+
+const sortableRight2 = new Sortable(rightCol2, {
+  group: {
+    name: 'numbers',
+    pull: true,
+    put: true
+  },
+  animation: 150,
+  fallbackOnBody: true,
+  swapThreshold: 0.65,
+  onAdd: onAddHandler,
+  onEnd: onEndHandler,
+  onUpdate: onEndHandler
+});
+
+// Togtider fra API
+const stopId = "NSR:StopPlace:59958";
+const endpoint = "https://api.entur.io/journey-planner/v3/graphql";
+function fmt(t) {
+  const d = new Date(t);
+  return d.toLocaleTimeString("no-NO", { hour: "2-digit", minute: "2-digit" });
+}
+function delayMinutes(aimed, expected) {
+  const diff = (new Date(expected) - new Date(aimed)) / 60000;
+  return diff > 0 ? ` (+${Math.round(diff)} min)` : "";
+}
+async function fetchCalls() {
+  const query = `
+    query {
+      stopPlace(id: "${stopId}") {
+        estimatedCalls(timeRange: 86400, numberOfDepartures: 100) {
+          aimedArrivalTime
+          expectedArrivalTime
+          aimedDepartureTime
+          expectedDepartureTime
+          serviceJourney { journeyPattern { line { publicCode }}}
+        }
+      }
+    }`;
+  const resp = await fetch(endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "ET-Client-Name": "voss-tider" },
+    body: JSON.stringify({ query })
+  });
+  const json = await resp.json();
+  return json.data?.stopPlace?.estimatedCalls || [];
+}
+async function updateTrains() {
+  const calls = await fetchCalls();
+  const trains = calls.filter(c => /^R|^F|^VY/.test(c.serviceJourney.journeyPattern.line.publicCode))
+    .map(c => {
+      const isDeparture = !!c.expectedDepartureTime;
+      const aimed = isDeparture ? c.aimedDepartureTime : c.aimedArrivalTime;
+      const expected = isDeparture ? c.expectedDepartureTime : c.expectedArrivalTime;
+      return { type: isDeparture ? "Avg" : "Ank", aimed, expected };
+    })
+    .sort((a, b) => new Date(a.expected) - new Date(b.expected))
+    .slice(0, 5);
+  document.getElementById("trains").innerHTML = trains.map(t => {
+    const delay = delayMinutes(t.aimed, t.expected);
+    const delayedClass = delay ? "delayed" : "";
+    return `<tr><td>${t.type}</td><td class="${delayedClass}">${fmt(t.expected)}${delay}</td></tr>`;
+  }).join("");
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  rebuildFromStorage();
+  updateTrains();
+  setInterval(updateTrains, 60000);
+});
+</script>
+</body>
+</html>

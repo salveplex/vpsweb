@@ -1,0 +1,290 @@
+:root {
+  --bg-main: #fff;
+  --text-main: #222;
+  --header-bg: #f2f2f2;
+  --header-border: #ccc;
+  --header-text: #007bff;
+  --column-bg: #fff;
+  --button-bg-ute: #e4e9f5;
+  --button-border-ute: #a0baf0;
+  --button-text-ute: #222;
+  --button-bg-inne-1: #6ecc85;
+  --button-border-inne-1: #398946;
+  --button-text-inne-1: #18491d;
+  --button-bg-inne-2: #f5e87a;
+  --button-border-inne-2: #c7b934;
+  --button-text-inne-2: #5c4f00;
+  --button-bg-inne-3: #800000;
+  --button-border-inne-3: #4d0000;
+  --button-text-inne-3: #fff;
+  --prefix-bg: #e4e9f5;
+  --prefix-text: #222;
+  --placeholder-bg: #ddd;
+  --placeholder-border: #aaa;
+  --sleep-overlay-bg: black;
+}
+.dark-mode {
+  --bg-main: #121212;
+  --text-main: #ddd;
+  --header-bg: #222;
+  --header-border: #444;
+  --header-text: #4fc3f7;
+  --column-bg: #1e1e1e;
+  --button-bg-ute: #2a2a2a;
+  --button-border-ute: #4fc3f7;
+  --button-text-ute: #ddd;
+  --button-bg-inne-1: #2f6f34;
+  --button-border-inne-1: #255522;
+  --button-text-inne-1: #c8f0b3;
+  --button-bg-inne-2: #b9a93e;
+  --button-border-inne-2: #9c8d2a;
+  --button-text-inne-2: #f0eaa0;
+  --button-bg-inne-3: #5c0000;
+  --button-border-inne-3: #3b0000;
+  --button-text-inne-3: #f8d4d4;
+  --prefix-bg: #2a2a2a;
+  --prefix-text: #4fc3f7;
+  --placeholder-bg: #333;
+  --placeholder-border: #555;
+  --sleep-overlay-bg: black;
+}
+html, body {
+  margin:0; padding:0;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family:sans-serif;
+  width:100vw; height:100vh;
+  user-select:none; overflow:hidden; touch-action:none;
+}
+.container {
+  display:flex; padding:10px; gap:10px;
+  width:100vw; height:100vh;
+  background: var(--bg-main);
+  box-sizing:border-box;
+  position:relative;
+}
+.reset-btn, .sleep-btn {
+  position:absolute;
+  bottom:80px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  font-size:20px;
+  font-weight:bold;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:transform 0.3s;
+  border:none;
+  user-select:none;
+}
+.reset-btn {
+  right:20px;
+  background:#ff5555;
+}
+.reset-btn:active {
+  transform:scale(1.05);
+}
+.sleep-btn {
+  right:90px;
+  background:#444;
+}
+.sleep-btn:active {
+  transform:scale(1.05);
+}
+.reset-ring {
+  position:absolute;
+  top:0; left:0;
+  width:60px; height:60px;
+  pointer-events:none;
+  transform:rotate(-90deg);
+}
+.column {
+  flex:1 1 0; min-width:0; min-height:0;
+  padding:10px;
+  display:flex; flex-direction:column; align-items:center;
+  background: var(--column-bg);
+  overflow:hidden;
+}
+.header {
+  font-size:36px;
+  margin-bottom:10px;
+  letter-spacing:2px;
+  color: var(--header-text);
+  font-weight:bold;
+  background: var(--header-bg);
+  border:2px solid var(--header-border);
+  border-radius:8px;
+  padding:8px 0;
+  text-align:center;
+  box-sizing:border-box;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  user-select:none;
+  cursor:pointer;
+}
+.header-inne {
+  width:95%;
+}
+.header-ute {
+  width:100%;
+  max-width:calc(100% - 10px);
+}
+.ute-columns {
+  display:flex; width:100%; gap:15px;
+  flex:1 1 0; min-height:0;
+}
+.ute-col {
+  flex:1 1 0;
+  min-width:0;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background: var(--column-bg);
+  margin-top:0px;
+}
+.ute-col::-webkit-scrollbar { display:none; }
+
+/* 🎯 UTE-KNAPPER (Blå) */
+.button {
+  height:100px;
+  width:100%;
+  border-radius:15px;
+  font-size:42px;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  user-select:none;
+  touch-action:none;
+  margin:7px 0;
+  box-sizing:border-box;
+  padding:0 20px;
+  background: var(--button-bg-ute);
+  border:2px solid var(--button-border-ute);
+  color: var(--button-text-ute);
+  transition:background 0.3s ease, transform 0.15s ease;
+}
+.button:active { background:#3a3a3a; transform:scale(0.97); }
+
+/* 🎯 INNE-KNAPPER (Grønne) */
+.inne-list {
+  width:95%;
+  flex-grow: 1;
+  min-height: 0;
+  overflow-y: auto;
+  background: var(--column-bg);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 150px;
+}
+.inne-list::-webkit-scrollbar { display:none; }
+
+.inne-item {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:7px 0;
+  width:100%;
+  height:100px;
+}
+.prefix {
+  width:110px;
+  height:100px;
+  background: var(--prefix-bg);
+  font-size:72px;
+  color: var(--prefix-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  touch-action: pan-y;
+}
+.inne-btn:focus,
+.inne-btn:active {
+  outline: none;       /* Removes focus outline */
+  filter: none;        /* Prevents darkening */
+  opacity: 1 !important; /* Ensures no dim effect */
+}
+
+.inne-btn {
+  height:100px;
+  flex:1;
+  border-radius:15px;
+  font-size:54px;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  cursor:pointer;
+  user-select:none;
+  touch-action:none;
+  margin:0;
+  box-sizing:border-box;
+  padding-left: 20px;
+  gap: 10px;
+  white-space: nowrap;
+  color: var(--button-text-inne-1);
+  background: var(--button-bg-inne-1);
+  border: 2px solid var(--button-border-inne-1);
+}
+.inne-btn.state1 {
+  color: var(--button-text-inne-1);
+  background: var(--button-bg-inne-1);
+  border: 2px solid var(--button-border-inne-1);
+}
+.inne-btn.state2 {
+  color: var(--button-text-inne-2);
+  background: var(--button-bg-inne-2);
+  border: 2px solid var(--button-border-inne-2);
+}
+.inne-btn.state3 {
+  color: var(--button-text-inne-3);
+  background: var(--button-bg-inne-3);
+  border: 2px solid var(--button-border-inne-3);
+}
+.inne-emoji {
+  font-size: 72px;
+  line-height: 1;
+  flex-shrink: 0;
+  user-select:none;
+}
+.inne-val {
+  flex-grow: 1;
+  text-align: center;
+  user-select:none;
+}
+
+.placeholder-btn {
+  background: var(--placeholder-bg);
+  border: 2px dashed var(--placeholder-border);
+  color: transparent;
+  flex: 1;
+  margin: 5px 0;
+}
+
+.dragging {
+  position:fixed;
+  z-index:1000;
+  opacity:0.88;
+  pointer-events:none;
+}
+.pop {
+  animation: popAnim 0.15s ease;
+}
+@keyframes popAnim {
+  0% { transform:scale(1); }
+  50% { transform:scale(1.07); }
+  100% { transform:scale(1); }
+}
+
+#sleepOverlay {
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: var(--sleep-overlay-bg);
+  z-index: 9999;
+  display: none;
+}

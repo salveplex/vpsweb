@@ -1,0 +1,269 @@
+<!-- Voss Taxi - CLEAN BASE v4 (Gruppekontroll med stripping) -->
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1980, initial-scale=1.0, user-scalable=no" />
+<title>Voss Taxi CLEAN BASE v4</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #000; color: white;
+    font-family: system-ui, sans-serif;
+    height: 1980px; width: 1080px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background: #c0c0c0;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0 10px;
+    border-bottom: 2px solid #666;
+  }
+  .container {
+    display: flex;
+    height: calc(1980px - 70px);
+  }
+  .column {
+    padding: 10px;
+    overflow-y: auto;
+  }
+  .left {
+    width: 400px;
+    background: black;
+  }
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .right-columns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .subcolumn {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+  }
+  .prefix {
+    width: 60px;
+    text-align: right;
+    font-size: 24px;
+  }
+  .button {
+    border-radius: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+  }
+  .green, .terminal, .lading {
+    width: 300px;
+    height: 70px;
+    font-size: 36px;
+  }
+  .green { background: linear-gradient(to bottom, #4cd964, #28a745); color: black; }
+  .terminal { background: linear-gradient(to bottom, #ffcc00, #b38f00); color: black; }
+  .lading { background: linear-gradient(to bottom, #b30000, #800000); color: white; }
+  .blue {
+    background: linear-gradient(to bottom, #4da3ff, #0066cc);
+    color: white;
+    width: 150px;
+    height: 60px;
+    font-size: 28px;
+  }
+  .train-section {
+    margin-top: 20px;
+    background: #111;
+    border-radius: 8px;
+    padding: 10px;
+    width: 90%;
+  }
+  .train-header {
+    background: #c0c0c0;
+    color: black;
+    padding: 6px;
+    text-align: center;
+    border-radius: 6px 6px 0 0;
+    font-weight: bold;
+  }
+  .train-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 6px;
+  }
+  .train-item {
+    background: #222;
+    border-radius: 4px;
+    padding: 4px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>Inne</div>
+  <div>Ute</div>
+</div>
+
+<div class="container">
+  <div class="column left" id="leftColumn"></div>
+  <div class="column right">
+    <div class="right-columns">
+      <div class="subcolumn" id="rightCol1"></div>
+      <div class="subcolumn" id="rightCol2"></div>
+    </div>
+    <div class="train-section">
+      <div class="train-header">Togtider</div>
+      <div class="train-table" id="trainTable"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+<script>
+// Gruppe-data
+const group1=[34,40,174];
+const group2=[161,166,2980];
+const leftColumn=document.getElementById('leftColumn');
+const rightCol1=document.getElementById('rightCol1');
+const rightCol2=document.getElementById('rightCol2');
+
+function createGreen(num,state="green"){
+  const item=document.createElement('div');
+  item.className='item';
+  const prefix=document.createElement('div');
+  prefix.className='prefix';
+  const btn=document.createElement('div');
+  btn.className=`button ${state}`;
+  btn.dataset.value=num;
+  setEmoji(btn);
+  btn.onclick=()=>toggleGreen(btn);
+  item.appendChild(prefix);
+  item.appendChild(btn);
+  return item;
+}
+function createBlue(num){
+  const item=document.createElement('div');
+  item.className='item';
+  const btn=document.createElement('div');
+  btn.className='button blue';
+  btn.innerHTML=num;
+  btn.dataset.value=num;
+  item.appendChild(btn);
+  return item;
+}
+function setEmoji(btn){
+  const num=btn.dataset.value;
+  if(btn.classList.contains('green')) btn.innerHTML=`🚖 ${num}`;
+  if(btn.classList.contains('terminal')) btn.innerHTML=`🚋 ${num}`;
+  if(btn.classList.contains('lading')) btn.innerHTML=`🔋 ${num}`;
+}
+function toggleGreen(btn){
+  if(btn.classList.contains('green')){
+    btn.className='button terminal';
+  } else if(btn.classList.contains('terminal')){
+    btn.className='button lading';
+  } else {
+    btn.className='button green';
+  }
+  setEmoji(btn);
+  updatePrefix();
+}
+function updatePrefix(){
+  [...leftColumn.querySelectorAll('.item')].forEach((it,i)=>{
+    const pref=it.querySelector('.prefix');
+    pref.textContent=i+1;
+  });
+}
+
+// Initial setup
+group1.forEach(n=>rightCol1.appendChild(createBlue(n)));
+group2.forEach(n=>rightCol2.appendChild(createBlue(n)));
+[2036,280,844].forEach(n=>leftColumn.appendChild(createGreen(n)));
+updatePrefix();
+
+// Flytt til korrekt blå kolonne med stripping
+function moveToCorrectBlue(item){
+  const btn=item.querySelector('.button');
+  const num=parseInt(btn.dataset.value);
+  // Strip til blå stil
+  btn.className='button blue';
+  btn.innerHTML=num;
+  item.querySelector('.prefix').textContent='';
+  // Flytt til riktig gruppe
+  if(group1.includes(num)) rightCol1.appendChild(item);
+  else if(group2.includes(num)) rightCol2.appendChild(item);
+}
+
+// Drag & Drop
+new Sortable(leftColumn,{
+  group:'shared',
+  onAdd:(evt)=>{
+    const btn=evt.item.querySelector('.button');
+    btn.className='button green';
+    setEmoji(btn);
+    updatePrefix();
+  },
+  onRemove:updatePrefix
+});
+new Sortable(rightCol1,{
+  group:'shared',
+  onAdd:(evt)=>{
+    const num=parseInt(evt.item.querySelector('.button').dataset.value);
+    if(!group1.includes(num)) moveToCorrectBlue(evt.item);
+    else {
+      const btn=evt.item.querySelector('.button');
+      btn.className='button blue';
+      btn.innerHTML=btn.dataset.value;
+      evt.item.querySelector('.prefix').textContent='';
+    }
+  }
+});
+new Sortable(rightCol2,{
+  group:'shared',
+  onAdd:(evt)=>{
+    const num=parseInt(evt.item.querySelector('.button').dataset.value);
+    if(!group2.includes(num)) moveToCorrectBlue(evt.item);
+    else {
+      const btn=evt.item.querySelector('.button');
+      btn.className='button blue';
+      btn.innerHTML=btn.dataset.value;
+      evt.item.querySelector('.prefix').textContent='';
+    }
+  }
+});
+
+// Togtider Dummy
+const trains=[
+  {type:'Avg',time:'12:15'},
+  {type:'Ank',time:'12:22'},
+  {type:'Avg',time:'12:45'},
+  {type:'Ank',time:'13:00'},
+  {type:'Avg',time:'13:15'},
+  {type:'Ank',time:'13:25'}
+];
+document.getElementById('trainTable').innerHTML=trains.map(t=>
+  `<div class="train-item">${t.type} ${t.time}</div>`).join('');
+</script>
+
+</body>
+</html>

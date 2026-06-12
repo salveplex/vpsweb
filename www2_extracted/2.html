@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1980, initial-scale=1.0, user-scalable=no" />
+<title>Kiosk Drag & Drop – Emoji venstre, tekst midtstilt, større font</title>
+<style>
+  html, body {
+    margin:0; padding:0;
+    background:#fff; color:#222;
+    font-family:sans-serif;
+    width:100vw; height:100vh;
+    user-select:none; overflow:hidden; touch-action:none;
+  }
+  .container {
+    display:flex; padding:10px; gap:10px;
+    width:100vw; height:100vh;
+    background:#fff;
+    box-sizing:border-box;
+    position:relative;
+  }
+  .reset-btn, .sleep-btn {
+    position:absolute;
+    bottom:80px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    font-size:20px;
+    font-weight:bold;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:transform 0.3s;
+    border:none;
+    user-select:none;
+  }
+  .reset-btn {
+    right:20px;
+    background:#ff4d4d;
+  }
+  .reset-btn:active {
+    transform:scale(1.05);
+  }
+  .sleep-btn {
+    right:90px;
+    background:#333;
+  }
+  .sleep-btn:active {
+    transform:scale(1.05);
+  }
+  .reset-ring {
+    position:absolute;
+    top:0; left:0;
+    width:60px; height:60px;
+    pointer-events:none;
+    transform:rotate(-90deg);
+  }
+  .column {
+    flex:1 1 0; min-width:0; min-height:0;
+    padding:10px;
+    display:flex; flex-direction:column; align-items:center;
+    background:#fff;
+    overflow:hidden;
+  }
+  .header {
+    font-size:36px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+    color:#007bff;
+    font-weight:bold;
+    background:#f2f2f2;
+    border:2px solid #ccc;
+    border-radius:8px;
+    padding:8px 0;
+    text-align:center;
+    box-sizing:border-box;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    user-select:none;
+  }
+  .header-inne {
+    width:95%;
+  }
+  .header-ute {
+    width:100%;
+    max-width:calc(100% - 10px);
+    cursor:pointer;
+  }
+  .ute-columns {
+    display:flex; width:100%; gap:15px;
+    flex:1 1 0; min-height:0;
+  }
+  .ute-col {
+    flex:1 1 0;
+    min-width:0;
+    min-height:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background:#fff;
+    margin-top:0px;
+  }
+  .ute-col::-webkit-scrollbar { display:none; }
+
+  /* 🎯 UTE-KNAPPER (Blå) */
+  .button {
+    height:100px;
+    width:100%;
+    border-radius:15px;
+    font-size:36px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    user-select:none;
+    touch-action:none;
+    margin:7px 0;
+    box-sizing:border-box;
+    padding:0 20px;
+    background:#e4e9f5;
+    border:2px solid #a0baf0;
+    color:#222;
+    transition:background 0.3s ease, transform 0.15s ease;
+  }
+  .button:active { background:#d1dcf5; transform:scale(0.97); }
+
+  /* 🎯 INNE-KNAPPER (Grønne – lik bredde + spacing som før) */
+  .inne-list {
+    width:95%;
+    flex-grow: 1;
+    min-height: 0;
+    overflow-y: auto;
+    background:#fff;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 150px; /* god plass under siste knapp */
+  }
+  .inne-list::-webkit-scrollbar { display:none; }
+
+  .inne-item {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:7px 0;
+    width:100%;
+    height:100px;
+  }
+  .prefix {
+    width:110px;
+    height:100px;
+    background:#e4e9f5;
+    font-size:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    touch-action: pan-y;
+  }
+  .inne-btn {
+    height:100px;
+    flex:1;
+    border-radius:15px;
+    font-size:65px; /* 50% større */
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    cursor:pointer;
+    user-select:none;
+    touch-action:none;
+    margin:0;
+    box-sizing:border-box;
+    padding-left: 20px;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  .inne-emoji {
+    font-size: 72px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .inne-val {
+    flex-grow: 1;
+    text-align: center;
+    user-select: none;
+  }
+  .inne-btn.state1 { background:#6ecc85; border:2px solid #398946; color:#18491d; }
+  .inne-btn.state2 { background:#f5e87a; border:2px solid #c7b934; color:#5c4f00; }
+  .inne-btn.state3 { background:#800000; border:2px solid #4d0000; color:#fff; }
+
+  .placeholder-btn {
+    background:#ddd;
+    border:2px dashed #aaa;
+    color:transparent;
+    flex:1;
+    margin:5px 0;
+  }
+
+  .dragging {
+    position:fixed;
+    z-index:1000;
+    opacity:0.88;
+    pointer-events:none;
+  }
+  .pop {
+    animation: popAnim 0.15s ease;
+  }
+  @keyframes popAnim {
+    0% { transform:scale(1); }
+    50% { transform:scale(1.07); }
+    100% { transform:scale(1); }
+  }
+
+  /* Sove-overlay */
+  #sleepOverlay {
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: black;
+    z-index: 9999;
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <button class="sleep-btn" id="sleepBtn">Sove</button>
+  <button class="reset-btn" id="resetBtn">R
+    <svg class="reset-ring" viewBox="0 0 36 36">
+      <path id="resetPath" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"
+        stroke-dasharray="100" stroke-dashoffset="100"
+        d="M18 2 a 16 16 0 0 1 0 32 a 16 16 0 0 1 0 -32" />
+    </svg>
+  </button>
+  <div class="column" id="inne">
+    <div class="header header-inne">INNE</div>
+    <div class="inne-list" id="inneList"></div>
+  </div>
+  <div class="column" id="ute">
+    <div class="header header-ute">UTE</div>
+    <div class="ute-columns">
+      <div class="ute-col" id="uteCol1"></div>
+      <div class="ute-col" id="uteCol2"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Sleep overlay -->
+<div id="sleepOverlay"></div>
+
+<script>
+const GROUP1 = [34,40,164,169,174,190,280,844,2036,2133,2613];
+const GROUP2 = [161,166,167,2065,2267,2488,2614,2624,2979,2980,2988];
+let ute1, ute2, inne;
+let uniqueIdCounter = 0;
+
+const uteCol1 = document.getElementById('uteCol1');
+const uteCol2 = document.getElementById('uteCol2');
+const inneList = document.getElementById('inneList');
+const resetBtn = document.getElementById('resetBtn');
+const resetPath = document.getElementById('resetPath');
+const sleepBtn = document.getElementById('sleepBtn');
+const sleepOverlay = document.getElementById('sleepOverlay');
+
+function loadState(){
+  const data = JSON.parse(localStorage.getItem('taxiOrder'));
+  if(data && Array.isArray(data.inne) && Array.isArray(data.ute1) && Array.isArray(data.ute2)){
+    inne = data.inne; ute1 = data.ute1; ute2 = data.ute2;
+    if(inne.length>0) uniqueIdCounter = Math.max(...inne.map(i => i.id||0)) + 1;
+  } else {
+    inne = []; ute1 = [...GROUP1]; ute2 = [...GROUP2];
+    saveState();
+  }
+}
+function saveState(){
+  localStorage.setItem('taxiOrder', JSON.stringify({inne, ute1, ute2}));
+}
+
+/* Reset-knapp */
+let resetTimer;
+resetBtn.addEventListener('pointerdown', ()=>{
+  resetPath.style.transition="stroke-dashoffset 2s linear";
+  resetPath.style.strokeDashoffset="0";
+  resetTimer = setTimeout(()=>{
+    localStorage.removeItem('taxiOrder');
+    location.reload();
+  }, 2000);
+});
+resetBtn.addEventListener('pointerup', cancelReset);
+resetBtn.addEventListener('pointerleave', cancelReset);
+function cancelReset(){
+  clearTimeout(resetTimer);
+  resetPath.style.transition = "stroke-dashoffset 0.2s ease";
+  resetPath.style.strokeDashoffset = "100";
+}
+
+/* Sleep (Sove) knapp */
+sleepBtn.addEventListener('click', () => {
+  sleepOverlay.style.display = 'block';
+});
+sleepOverlay.addEventListener('click', () => {
+  sleepOverlay.style.display = 'none';
+});
+
+/* Rendering Ute */
+function renderUte(){
+  renderUteCol(uteCol1,1,ute1);
+  renderUteCol(uteCol2,2,ute2);
+}
+function renderUteCol(col,g,arr){
+  col.innerHTML = '';
+  let groupArray = g===1 ? GROUP1 : GROUP2;
+  let available = arr.filter(v => !inne.some(i => i.val === v));
+  available.sort((a,b) => groupArray.indexOf(a) - groupArray.indexOf(b));
+  for(let val of available){
+    let btn = document.createElement('button');
+    btn.className = 'button'; btn.textContent = val;
+    btn.dataset.val = val; btn.dataset.group = g;
+    btn.addEventListener('pointerdown', dragStart, {passive:false});
+    col.appendChild(btn);
+  }
+}
+
+/* Rendering Inne */
+function renderInne(previewObj=null, previewIdx=null){
+  inneList.innerHTML = '';
+  for(let i=0; i<inne.length; i++){
+    if(previewObj && previewIdx === i){
+      addPlaceholder(i+1);
+    }
+    addInneItem(i+1, inne[i]);
+  }
+  if(previewObj && previewIdx === inne.length){
+    addPlaceholder(previewIdx+1);
+  }
+}
+function addInneItem(prefixNum, item){
+  let wrap = document.createElement('div');
+  wrap.className = 'inne-item';
+  let pre = document.createElement('div');
+  pre.className = 'prefix'; pre.textContent = prefixNum;
+  let btn = document.createElement('button');
+  btn.className = `inne-btn state${item.state||1}`;
+  btn.dataset.val = item.val;
+  btn.dataset.group = item.group;
+  btn.dataset.state = item.state||1;
+  btn.dataset.id = item.id;
+  btn.addEventListener('pointerdown', dragStart, {passive:false});
+  btn.addEventListener('click', toggleInneColor);
+  btn.innerHTML = `<span class="inne-emoji">${getEmojiForState(item.state||1)}</span><span class="inne-val">${item.val}</span>`;
+  wrap.append(pre, btn);
+  inneList.appendChild(wrap);
+}
+function addPlaceholder(prefixNum){
+  let wrap = document.createElement('div');
+  wrap.className = 'inne-item';
+  let pre = document.createElement('div');
+  pre.className = 'prefix'; pre.textContent = prefixNum;
+  let placeholder = document.createElement('button');
+  placeholder.className = 'placeholder-btn';
+  wrap.append(pre, placeholder);
+  inneList.appendChild(wrap);
+}
+
+/* Emoji for state */
+function getEmojiForState(state){
+  switch(state){
+    case 1: return '🚕'; // grønn taxi
+    case 2: return '🚂'; // gul lokomotiv
+    case 3: return '🔋'; // maroon batteri
+    default: return '';
+  }
+}
+
+/* Toggle med pop-animasjon og emoji */
+function toggleInneColor(e){
+  let btn = e.currentTarget;
+  btn.classList.remove('pop');
+  void btn.offsetWidth;
+  btn.classList.add('pop');
+  let id = parseInt(btn.dataset.id);
+  let state = parseInt(btn.dataset.state);
+  state = state === 3 ? 1 : state + 1;
+  btn.dataset.state = state;
+  btn.className = `inne-btn state${state} pop`;
+  btn.innerHTML = `<span class="inne-emoji">${getEmojiForState(state)}</span><span class="inne-val">${btn.dataset.val}</span>`;
+
+  let item = inne.find(i => i.id === id);
+  if(item){
+    item.state = state;
+    localStorage.setItem('taxiOrder', JSON.stringify({inne, ute1, ute2}));
+  }
+}
+
+/* Drag */
+let draggingEl, dragData, offsetX=0, offsetY=0, isDragging=false, dropIdx=null, startX=0, startY=0, hasMoved=false;
+function getGroupForVal(val){
+  if(GROUP1.includes(val)) return 1;
+  if(GROUP2.includes(val)) return 2;
+  return 0;
+}
+function dragStart(e){
+  e.preventDefault();
+  startX = e.clientX;
+  startY = e.clientY;
+  hasMoved = false;
+  const val = parseInt(e.currentTarget.dataset.val);
+  let group = parseInt(e.currentTarget.dataset.group) || getGroupForVal(val);
+  let state = parseInt(e.currentTarget.dataset.state) || 1;
+  let id = parseInt(e.currentTarget.dataset.id) || Date.now() + uniqueIdCounter++;
+  dragData = {id, val, group, state};
+  draggingEl = document.createElement('button');
+  draggingEl.className = `inne-btn state${state} dragging`;
+  draggingEl.style.width = e.currentTarget.offsetWidth + 'px';
+  draggingEl.style.height = '100px';
+  draggingEl.innerHTML = `<span class="inne-emoji">${getEmojiForState(state)}</span><span class="inne-val">${val}</span>`;
+  document.body.appendChild(draggingEl);
+  const rect = e.currentTarget.getBoundingClientRect();
+  offsetX = e.clientX - rect.left;
+  offsetY = e.clientY - rect.top;
+  isDragging = true;
+  document.addEventListener('pointermove', pointerMove);
+  document.addEventListener('pointerup', pointerUp);
+}
+function pointerMove(e){
+  if(!isDragging) return;
+  if(Math.abs(e.clientX - startX) > 5 || Math.abs(e.clientY - startY) > 5){
+    hasMoved = true;
+  }
+  draggingEl.style.left = (e.pageX - offsetX) + 'px';
+  draggingEl.style.top = (e.pageY - offsetY) + 'px';
+  if(hasMoved){
+    const rect = inneList.getBoundingClientRect();
+    const over = (e.pageX > rect.left && e.pageX < rect.right && e.pageY > rect.top && e.pageY < rect.bottom);
+    calcDropIdx(e);
+    renderInne(dragData, over ? dropIdx : inne.length);
+  }
+}
+function pointerUp(){
+  document.removeEventListener('pointermove', pointerMove);
+  document.removeEventListener('pointerup', pointerUp);
+  if(!hasMoved){
+    draggingEl.remove();
+    isDragging = false;
+    return;
+  }
+  isDragging = false;
+  const rect = inneList.getBoundingClientRect();
+  if(event.pageX > rect.left && event.pageX < rect.right && event.pageY > rect.top && event.pageY < rect.bottom){
+    if(dropIdx === null) dropIdx = inne.length;
+    inne = inne.filter(i => i.id !== dragData.id);
+    ute1 = ute1.filter(v => v !== dragData.val);
+    ute2 = ute2.filter(v => v !== dragData.val);
+    inne.splice(dropIdx, 0, {id: dragData.id, val: dragData.val, group: getGroupForVal(dragData.val), state: dragData.state});
+  } else {
+    let g = getGroupForVal(dragData.val);
+    inne = inne.filter(i => i.id !== dragData.id);
+    if(g === 1 && !ute1.includes(dragData.val)){
+      ute1.push(dragData.val);
+      ute1.sort((a,b) => GROUP1.indexOf(a) - GROUP1.indexOf(b));
+    }
+    if(g === 2 && !ute2.includes(dragData.val)){
+      ute2.push(dragData.val);
+      ute2.sort((a,b) => GROUP2.indexOf(a) - GROUP2.indexOf(b));
+    }
+  }
+  saveState();
+  renderUte();
+  renderInne();
+  draggingEl.remove();
+}
+function calcDropIdx(e){
+  const items = [...inneList.querySelectorAll('.inne-item')];
+  if(items.length === 0) { dropIdx = 0; return; }
+  for(let i=0; i < items.length; i++){
+    const r = items[i].getBoundingClientRect();
+    if(e.pageY < r.top + r.height/2){ dropIdx = i; return; }
+  }
+  dropIdx = items.length;
+}
+
+loadState();
+renderUte();
+renderInne();
+</script>
+</body>
+</html>
