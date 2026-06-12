@@ -1,39 +1,46 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 
 export default function Layout() {
+  const location = useLocation();
+  const isActive = (path: string) => location.pathname === path ? 'active' : '';
+
   return (
-    <div className="hallmark-layout">
-      {/* N1 Utility Nav */}
-      <nav className="nav-bar">
-        <Link to="/" className="nav-brand">VOSS TAXI</Link>
-        <div className="nav-links">
-          <Link to="/om-oss">Om Oss</Link>
-          <Link to="/tjenester">Tjenester</Link>
-          <Link to="/galleri">Galleri</Link>
-          <Link to="/kontakt">Kontakt</Link>
+    <div className="app-container">
+      {/* Navigation - Glassmorphism */}
+      <header className="site-header">
+        <div className="nav-container">
+          <Link to="/" className="logo">
+            🚕 VOSS TAXI
+          </Link>
+          <div className="nav-links">
+            <Link to="/om-oss" className={`nav-link ${isActive('/om-oss')}`}>Om Oss</Link>
+            <Link to="/maxi-taxi" className={`nav-link ${isActive('/maxi-taxi')}`}>Maxi Taxi</Link>
+            <Link to="/pakker" className={`nav-link ${isActive('/pakker')}`}>Pakker</Link>
+            <Link to="/galleri" className={`nav-link ${isActive('/galleri')}`}>Galleri</Link>
+            <Link to="/kontakt" className={`nav-link ${isActive('/kontakt')}`}>Kontakt</Link>
+            <a href="tel:07000" className="book-btn">Bestill nå</a>
+          </div>
         </div>
-      </nav>
+      </header>
 
       <main className="main-content">
         <Outlet />
       </main>
 
-      {/* Ft1 Utility Footer */}
-      <footer className="footer">
+      {/* Footer */}
+      <footer className="site-footer">
         <div className="footer-content">
-          <div className="footer-col">
-            <strong>Voss Taxi SA</strong>
-            <p>Stasjonsovergangen 1<br/>5700 Voss</p>
+          <div className="footer-logo">VOSS TAXI SA</div>
+          <div className="footer-text">
+            <p>Stasjonsovergangen 1, 5700 Voss</p>
+            <p>Tlf: (+47) 56 51 13 40 | post@vosstaxi.no</p>
           </div>
-          <div className="footer-col">
-            <strong>Kontakt</strong>
-            <p>Tlf: 07000<br/>post@vosstaxi.no</p>
+          <div className="footer-text">
+            <p>© {new Date().getFullYear()} Voss Taxi SA. Alle rettigheter reservert.</p>
           </div>
-        </div>
-        <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Voss Taxi SA. Alle rettigheter reservert.</p>
         </div>
       </footer>
     </div>
   );
 }
+
