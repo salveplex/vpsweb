@@ -1,114 +1,76 @@
-import { useState, useEffect } from 'react';
-import { PhoneCall, CalendarCheck, Plane, BusFront, Package, Map } from 'lucide-react';
-
-interface FrontpageData {
-  title: string;
-  description: string;
-  phone: string;
-}
+import { Link } from 'react-router-dom';
 
 export default function Home() {
-  const [data, setData] = useState<FrontpageData | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const apiUrl = import.meta.env.VITE_STRAPI_API_URL || 'http://85.190.102.196:1337';
-    
-    fetch(`${apiUrl}/api/frontpage?populate=*`)
-      .then((res) => {
-        if (!res.ok) throw new Error('CMS error');
-        return res.json();
-      })
-      .then((json) => {
-        const attributes = json.data?.attributes || json.data || {};
-        setData({
-          title: attributes.title || 'Din Lokale Taxi',
-          description: attributes.description || 'Trygg, rask og pålitelig transport i Voss og omegn. Døgnåpen sentral for din trygghet.',
-          phone: attributes.phone || '07000'
-        });
-        setLoading(false);
-      })
-      .catch(() => {
-        setData({
-          title: 'Din Lokale Taxi',
-          description: 'Trygg, rask og pålitelig transport i Voss og omegn. Døgnåpen sentral for din trygghet.',
-          phone: '07000'
-        });
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="layout-loading">
-        <div className="spinner"></div>
-      </div>
-    );
-  }
-
   return (
     <>
-      {/* Video Hero Section */}
-      <section className="hero-video-wrapper">
-        <video 
-          className="hero-video" 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          poster="https://images.unsplash.com/photo-1624623277028-1b2c4c8d7f72?q=80&w=2070&auto=format&fit=crop"
-        >
-          <source src="https://cdn.pixabay.com/video/2020/05/26/40149-425114565_large.mp4" type="video/mp4" />
-        </video>
-        <div className="hero-overlay"></div>
-        <div className="hero-content">
-          <div className="hero-badge">Døgnåpen Sentral</div>
-          <h1 className="hero-title">
-            VOSS <span>TAXI</span>
-          </h1>
-          <p className="hero-desc">{data?.description}</p>
-          <div className="hero-actions">
-            <a href={`tel:${data?.phone}`} className="btn-primary">
-              <PhoneCall size={20} />
-              Ring {data?.phone}
-            </a>
-            <a href="https://booking.taxilink.no" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-              <CalendarCheck size={20} />
-              Bestill på nett
-            </a>
-          </div>
-        </div>
-      </section>
+      <div className="page-hero" style={{ backgroundColor: 'transparent', padding: '0', marginBottom: '2rem', border: 'none' }}>
+        <img 
+          src="https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240522_130220.jpg?etag=%2239d36c-6652016f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1160%2B870&extract=0%2B198%2B1160%2B395&quality=85" 
+          alt="Voss Taxi Bil" 
+          style={{ width: '100%', height: 'auto', borderRadius: '4px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
+        />
+        <h2 style={{ marginTop: '2rem', fontSize: '2rem', textAlign: 'center' }}>Du køyrer trygt, med oss frå Voss!</h2>
+        <p style={{ textAlign: 'center', fontSize: '1.25rem', color: '#666' }}>På vegen for deg, 24 timar i døgnet. 365 dagar i året.</p>
+      </div>
 
-      {/* Services Bento Grid */}
-      <section className="services-section" id="tjenester">
-        <div className="section-header">
-          <h2 className="section-title">Våre tjenester</h2>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
+        <div style={{ textAlign: 'center' }}>
+          <img 
+            src="https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180623_214943.jpg?etag=%22386370-5f083417%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1020%2B765&extract=0%2B0%2B1020%2B720&quality=85" 
+            alt="Historia Vår"
+            style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '4px', marginBottom: '1rem' }}
+          />
+          <Link to="/om-oss" className="btn btn-outline">Historia vår</Link>
         </div>
-        <div className="bento-grid">
-          <div className="bento-card">
-            <div className="bento-icon"><Plane size={32} /></div>
-            <h3>Flyplasstransport</h3>
-            <p>Direkte transport til og fra Bergen Lufthavn Flesland med faste priser. Bestill i god tid for garantert plass til ønsket tidspunkt.</p>
-          </div>
-          <div className="bento-card">
-            <div className="bento-icon"><BusFront size={32} /></div>
-            <h3>Maxi Taxi</h3>
-            <p>Vi har lang erfaring med pasient og rullestoltransport. Våre store minibusser passer perfekt for idrettslag og større grupper.</p>
-          </div>
-          <div className="bento-card">
-            <div className="bento-icon"><Package size={32} /></div>
-            <h3>Pakkekjøring</h3>
-            <p>Rask og sikker dør-til-dør levering av små og mellomstore pakker på Voss og i nærområdet. Vi er din lokale budbil.</p>
-          </div>
-          <div className="bento-card">
-            <div className="bento-icon"><Map size={32} /></div>
-            <h3>Sightseeing</h3>
-            <p>Opplev Voss! Våre sjåfører kan vise deg de beste severdighetene som Tvindefossen, Skjervsfossen og Bordalsgjelet.</p>
+        <div style={{ textAlign: 'center' }}>
+          <img 
+            src="https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180627_120230.jpg?etag=%2254054c-5f083445%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1020%2B765&extract=0%2B0%2B1020%2B720&quality=85" 
+            alt="Personvern"
+            style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '4px', marginBottom: '1rem' }}
+          />
+          <Link to="/kontakt" className="btn btn-outline">Personvern</Link>
+        </div>
+        <div style={{ textAlign: 'center' }}>
+          <img 
+            src="https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180523_114429.jpg?etag=%2257aec7-5f08344c%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=960%2B720&extract=0%2B0%2B933%2B720&quality=85" 
+            alt="Transportvilkår"
+            style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '4px', marginBottom: '1rem' }}
+          />
+          <Link to="/om-oss" className="btn btn-outline">Transportvilkår</Link>
+        </div>
+      </div>
+
+      <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <h1 style={{ fontSize: '3rem', marginBottom: '2rem' }}>Snappy Taxi</h1>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+          <img 
+            src="https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/1.png?etag=%222048b2-682cc693%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=145%2B181"
+            alt="Snappy Taxi App"
+            style={{ width: '145px', height: '181px' }}
+          />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <a href="https://apps.apple.com/no/app/snappy-taxi/id6479620974" target="_blank" rel="noreferrer">
+              <img src="https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/App-Store-Icon-300x104.png?etag=%222c90-5f0836be%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=192%2B66" alt="Last ned i App Store" />
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=no.snappytaxi.passenger&hl=no" target="_blank" rel="noreferrer">
+              <img src="https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/google-play-badge.png?etag=%2290f6-5f0836be%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=190%2B66" alt="Tilgjengelig på Google Play" />
+            </a>
           </div>
         </div>
-      </section>
+      </div>
+
+      <div className="prose">
+        <h2>Velkommen til Voss Taxi</h2>
+        <p>
+          Me tek på oss alle typar persontransport. Om de er eit stort reisefølgje har me Maxi Taxi med plass opp til 16 personar. Me har og minibuss som er tilpassa rullestolbrukarar med inntil 2 stolar på same tid. Av våre personbilar har vi både stasjonsvogner og 7/8 setarar med romsleg og god bagasjeplass.
+        </p>
+        <p>
+          Du finn oss i Uttrågata 19, i sentrum av Voss.
+        </p>
+        <p>
+          Me kan også ta på oss spesialtransport av pakkar og gods, dersom du har ei sending som hastar!
+        </p>
+      </div>
     </>
   );
 }
-
