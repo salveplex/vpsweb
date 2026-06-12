@@ -15,7 +15,7 @@ export default function Page() {
   useEffect(() => {
     const apiUrl = import.meta.env.VITE_STRAPI_API_URL || 'http://85.190.102.196:1337';
     
-    // We will query Strapi for pages filtering by slug
+    setLoading(true);
     fetch(`${apiUrl}/api/pages?filters[slug][$eq]=${slug}&populate=*`)
       .then((res) => {
         if (!res.ok) throw new Error('CMS error');
@@ -42,6 +42,7 @@ export default function Page() {
   if (loading) {
     return (
       <div className="layout-loading">
+        <div className="spinner"></div>
         <span>Laster inn innhold...</span>
       </div>
     );
@@ -49,18 +50,20 @@ export default function Page() {
 
   if (!data) {
     return (
-      <section className="page-section">
+      <section className="page-section error-section">
         <h1 className="page-title">404 - Siden finnes ikke</h1>
-        <p>Beklager, vi fant ikke siden du lette etter.</p>
+        <p>Beklager, vi fant ikke siden du lette etter. Prøv å bruke menyen på toppen.</p>
       </section>
     );
   }
 
   return (
-    <section className="page-section">
-      <h1 className="page-title">{data.title}</h1>
-      <div className="page-content">
-        <ReactMarkdown>{data.content}</ReactMarkdown>
+    <section className="page-section content-wrapper">
+      <div className="content-container">
+        <h1 className="page-title">{data.title}</h1>
+        <div className="page-content prose">
+          <ReactMarkdown>{data.content}</ReactMarkdown>
+        </div>
       </div>
     </section>
   );
