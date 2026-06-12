@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Phone, FileText } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
 export default function Layout() {
   const location = useLocation();
