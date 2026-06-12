@@ -43,29 +43,30 @@ export default function Page() {
     return (
       <div className="layout-loading">
         <div className="spinner"></div>
-        <span>Laster inn innhold...</span>
       </div>
     );
   }
 
   if (!data) {
     return (
-      <section className="page-section error-section">
+      <section className="content-wrapper">
         <h1 className="page-title">404 - Siden finnes ikke</h1>
-        <p>Beklager, vi fant ikke siden du lette etter. Prøv å bruke menyen på toppen.</p>
+        <p className="prose">Beklager, vi fant ikke siden du lette etter. Prøv å bruke menyen på toppen for å navigere.</p>
       </section>
     );
   }
 
   return (
-    <section className="page-section content-wrapper">
-      <div className="content-container">
-        <h1 className="page-title">{data.title}</h1>
-        <div className="page-content prose">
+    <>
+      <div className="page-hero">
+        <h1>{data.title}</h1>
+      </div>
+      <section className="content-wrapper">
+        <div className="prose">
           <ReactMarkdown>{data.content}</ReactMarkdown>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
