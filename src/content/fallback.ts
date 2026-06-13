@@ -208,10 +208,14 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
         id: 'feedback-no',
         locale: 'no',
         slug: 'ris-ros',
-        eyebrow: 'Ris og ros',
-        title: 'Send oss ris, ros eller klage.',
-        summary: 'Tilbakemeldingar hjelper oss å gjere tenesta betre.',
-        blocks: [],
+        title: 'Ris og Ros',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Ris og Ros',
+            body: 'Her kan du sende formelle klager, eller ros til oss.\n\n## Send klage\n\nVisst du ynskjer å retta ein formell klage, skal denne framsettast skriftleg på e-post til post@vosstaxi.no.\nMe sender deg innan 14 dagar ein skriftleg beskjed på at klagen er motteken, og informasjon om forventa behandlingstid.\n\nFormelle klagar vil besvarast skriftleg. Dokumentasjon vedrørande klagen oppbevarast hjå oss i tre år etter at klagebehandlinga er avslutta.\n\n## Gje oss ros eller ris\n\nMe ønskjer dine synspunkt, tilbakemeldingar og tips til forbetringar. Det er den beste hjelpen du kan gje oss i arbeidet med å verta endå betre.'
+          }
+        ],
       },
       {
         id: 'page-maxi-taxi-no',
@@ -745,7 +749,7 @@ Copyright © Voss Taxi SA
         title: 'Wheelchair',
         blocks: [
           {
-            type: 'text',
+            type: 'rich_text',
             title: 'Wheelchair',
             body: 'We have vehicles adapted for wheelchairs.'
           }
@@ -758,7 +762,7 @@ Copyright © Voss Taxi SA
         title: 'Feedback',
         blocks: [
           {
-            type: 'text',
+            type: 'rich_text',
             title: 'Feedback',
             body: 'Here you can send formal complaints or praise to us.\n\n## Send a complaint\n\nIf you wish to submit a formal complaint, this must be submitted in writing by email to post@vosstaxi.no.\nWe will send you a written confirmation within 14 days that the complaint has been received, along with information about the expected processing time.\n\nFormal complaints will be answered in writing. Documentation regarding the complaint is kept with us for three years after the complaint processing has concluded.\n\n## Give us praise or criticism\n\nWe welcome your views, feedback, and tips for improvement. It is the best help you can give us in our efforts to become even better.'
           }
