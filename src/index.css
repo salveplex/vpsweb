@@ -82,7 +82,7 @@ body {
     radial-gradient(circle at 4% 6%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 32rem),
     radial-gradient(circle at 86% 12%, color-mix(in srgb, var(--surface-soft) 62%, transparent), transparent 26rem),
     linear-gradient(180deg, color-mix(in srgb, var(--bg-elevated) 72%, transparent), transparent 42rem),
-    var(--bg);
+    transparent;
 }
 
 a {
@@ -452,10 +452,7 @@ a:focus-visible {
 }
 
 .hero-stage {
-  background:
-    linear-gradient(90deg, rgba(8, 8, 7, .78), rgba(8, 8, 7, .28)),
-    var(--hero-poster) center / cover no-repeat,
-    #d8ae3d;
+  background: transparent;
 }
 
 .hero-vignette {

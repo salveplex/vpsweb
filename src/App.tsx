@@ -264,20 +264,7 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
       style={{ '--hero-poster': `url("${activeHeroImage}")` } as React.CSSProperties}
     >
       <div className="hero-brand-mark" aria-hidden="true">VOSS</div>
-      <video
-        className="hero-video absolute inset-0 h-full w-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster={activeHeroImage}
-        aria-hidden="true"
-      >
-        <source src={heroVideo} type="video/mp4" />
-      </video>
-      <div className="hero-vignette absolute inset-0" />
-      <div className="hero-yellow-blade" aria-hidden="true" />
+      <div className="hero-yellow-blade relative z-10" aria-hidden="true" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,transparent,var(--bg))]" />
       {isHome && (
         <div className="hero-route-line absolute bottom-10 left-1/2 hidden w-[min(76rem,calc(100%-3rem))] -translate-x-1/2 md:block" aria-hidden="true">
@@ -287,7 +274,7 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
         </div>
       )}
 
-      <div className={`hero-grid relative mx-auto ${isHome ? 'grid min-h-[100dvh] items-center lg:grid-cols-[minmax(0,1fr)_minmax(390px,500px)]' : 'flex min-h-[40dvh] flex-col justify-end'} max-w-[92rem] gap-8 px-4 pb-12 pt-28 md:px-8 md:pb-16`}>
+      <div className={`hero-grid relative z-10 mx-auto ${isHome ? 'grid min-h-[100dvh] items-center lg:grid-cols-[minmax(0,1fr)_minmax(390px,500px)]' : 'flex min-h-[40dvh] flex-col justify-end'} max-w-[92rem] gap-8 px-4 pb-12 pt-28 md:px-8 md:pb-16`}>
         <div className="reveal max-w-6xl pb-4 text-white [--index:0]">
           <div className="hero-kicker mb-6 inline-flex w-fit items-center gap-2 rounded-[10px] border border-white/18 bg-white/10 px-3 py-2 font-mono text-[0.68rem] font-bold uppercase tracking-[0.2em] text-white/78 backdrop-blur-xl">
             <span className="size-2 rounded-full bg-taxi" />
@@ -645,6 +632,21 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
       <Header data={data} locale={route.locale} themeMode={themeMode} setThemeMode={setThemeMode} />
       <StatusBanner data={data} />
       {loading ? <LoadingSkeleton /> : null}
+      
+      <div className="fixed inset-0 -z-50 h-full w-full" style={{ background: 'var(--bg)' }}>
+        <video
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.15]"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#111]/30 to-[#111]" />
+      </div>
+
       <main id="main-content">
         <Hero page={page} data={data} locale={route.locale} isHome={isHome} />
         {isHome ? (
