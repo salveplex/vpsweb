@@ -231,7 +231,7 @@ function Header({
   )
 }
 
-function Hero({ page, data, locale }: { page: CmsPage; data: SiteData; locale: Locale }) {
+function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; locale: Locale; isHome: boolean }) {
   const heroImages = useMemo(
     () =>
       [
@@ -260,7 +260,7 @@ function Hero({ page, data, locale }: { page: CmsPage; data: SiteData; locale: L
 
   return (
     <section
-      className="hero-stage relative min-h-[100dvh] overflow-hidden"
+      className={`hero-stage relative overflow-hidden ${isHome ? 'min-h-[100dvh]' : 'min-h-[40dvh]'}`}
       style={{ '--hero-poster': `url("${activeHeroImage}")` } as React.CSSProperties}
     >
       <div className="hero-brand-mark" aria-hidden="true">VOSS</div>
@@ -279,13 +279,15 @@ function Hero({ page, data, locale }: { page: CmsPage; data: SiteData; locale: L
       <div className="hero-vignette absolute inset-0" />
       <div className="hero-yellow-blade" aria-hidden="true" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,transparent,var(--bg))]" />
-      <div className="hero-route-line absolute bottom-10 left-1/2 hidden w-[min(76rem,calc(100%-3rem))] -translate-x-1/2 md:block" aria-hidden="true">
-        <span />
-        <span />
-        <span />
-      </div>
+      {isHome && (
+        <div className="hero-route-line absolute bottom-10 left-1/2 hidden w-[min(76rem,calc(100%-3rem))] -translate-x-1/2 md:block" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+      )}
 
-      <div className="hero-grid relative mx-auto grid min-h-[100dvh] max-w-[92rem] items-center gap-8 px-4 pb-12 pt-28 lg:grid-cols-[minmax(0,1fr)_minmax(390px,500px)] md:px-8 md:pb-16">
+      <div className={`hero-grid relative mx-auto ${isHome ? 'grid min-h-[100dvh] items-center lg:grid-cols-[minmax(0,1fr)_minmax(390px,500px)]' : 'flex min-h-[40dvh] flex-col justify-end'} max-w-[92rem] gap-8 px-4 pb-12 pt-28 md:px-8 md:pb-16`}>
         <div className="reveal max-w-6xl pb-4 text-white [--index:0]">
           <div className="hero-kicker mb-6 inline-flex w-fit items-center gap-2 rounded-[10px] border border-white/18 bg-white/10 px-3 py-2 font-mono text-[0.68rem] font-bold uppercase tracking-[0.2em] text-white/78 backdrop-blur-xl">
             <span className="size-2 rounded-full bg-taxi" />
@@ -295,86 +297,92 @@ function Hero({ page, data, locale }: { page: CmsPage; data: SiteData; locale: L
             {page.title}
           </h1>
           <p className="mt-7 max-w-[58ch] text-pretty text-xl leading-8 text-white/78">{page.summary}</p>
-          <div className="hero-command-row mt-9 flex flex-col gap-3 sm:flex-row">
-            <a href={`tel:${data.settings.phone}`} className="hero-command hero-command-primary">
-              <span>{locale === 'en' ? 'Call now' : 'Ring nå'}</span>
-              <span><Phone size={18} weight={iconWeight} /></span>
-            </a>
-            <a href={data.settings.booking_url} className="hero-command">
-              <span>{locale === 'en' ? 'Book online' : 'Bestill på nett'}</span>
-              <span><ArrowUpRight size={18} weight={iconWeight} /></span>
-            </a>
-          </div>
-          <div className="hero-signal-grid mt-9 grid max-w-2xl grid-cols-3 gap-2">
-            {signals.map(([value, label], index) => (
-              <div key={label} className="hero-signal reveal" style={{ '--index': index + 2 } as React.CSSProperties}>
-                <span>{value}</span>
-                <small>{label}</small>
+          {isHome && (
+            <>
+              <div className="hero-command-row mt-9 flex flex-col gap-3 sm:flex-row">
+                <a href={`tel:${data.settings.phone}`} className="hero-command hero-command-primary">
+                  <span>{locale === 'en' ? 'Call now' : 'Ring nå'}</span>
+                  <span><Phone size={18} weight={iconWeight} /></span>
+                </a>
+                <a href={data.settings.booking_url} className="hero-command">
+                  <span>{locale === 'en' ? 'Book online' : 'Bestill på nett'}</span>
+                  <span><ArrowUpRight size={18} weight={iconWeight} /></span>
+                </a>
               </div>
-            ))}
-          </div>
+              <div className="hero-signal-grid mt-9 grid max-w-2xl grid-cols-3 gap-2">
+                {signals.map(([value, label], index) => (
+                  <div key={label} className="hero-signal reveal" style={{ '--index': index + 2 } as React.CSSProperties}>
+                    <span>{value}</span>
+                    <small>{label}</small>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
-        <aside className="hero-cockpit reveal [--index:1]">
-          <div className="cockpit-topline">
-            <span>{locale === 'en' ? 'Live dispatch' : 'Live sentral'}</span>
-            <span>{locale === 'en' ? 'Ready' : 'Klar'}</span>
-          </div>
-          <div className="cockpit-map" aria-hidden="true">
-            <span className="map-node map-node-a" />
-            <span className="map-node map-node-b" />
-            <span className="map-node map-node-c" />
-          </div>
-          <div className="booking-panel">
-            <div className="booking-panel-core">
-            <div className="flex items-start justify-between gap-5">
-              <div>
-                <div className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.22em]" style={{ color: 'var(--accent-strong)' }}>
-                  {locale === 'en' ? 'Book your trip' : 'Bestill tur'}
+        {isHome && (
+          <aside className="hero-cockpit reveal [--index:1]">
+            <div className="cockpit-topline">
+              <span>{locale === 'en' ? 'Live dispatch' : 'Live sentral'}</span>
+              <span>{locale === 'en' ? 'Ready' : 'Klar'}</span>
+            </div>
+            <div className="cockpit-map" aria-hidden="true">
+              <span className="map-node map-node-a" />
+              <span className="map-node map-node-b" />
+              <span className="map-node map-node-c" />
+            </div>
+            <div className="booking-panel">
+              <div className="booking-panel-core">
+              <div className="flex items-start justify-between gap-5">
+                <div>
+                  <div className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.22em]" style={{ color: 'var(--accent-strong)' }}>
+                    {locale === 'en' ? 'Book your trip' : 'Bestill tur'}
+                  </div>
+                  <h2 className="mt-4 text-3xl font-extrabold leading-none tracking-[-0.035em]">
+                    {locale === 'en' ? 'Taxi on Voss, without waiting.' : 'Taxi på Voss, uten ventestøy.'}
+                  </h2>
                 </div>
-                <h2 className="mt-4 text-3xl font-extrabold leading-none tracking-[-0.035em]">
-                  {locale === 'en' ? 'Taxi on Voss, without waiting.' : 'Taxi på Voss, uten ventestøy.'}
-                </h2>
+                <span className="booking-orb">
+                  <Timer size={22} weight={iconWeight} />
+                </span>
               </div>
-              <span className="booking-orb">
-                <Timer size={22} weight={iconWeight} />
-              </span>
+              <div className="mt-7 grid gap-3">
+                <a href={`tel:${data.settings.phone}`} className="booking-action booking-action-primary">
+                  <span>
+                    <span className="block text-sm opacity-70">{locale === 'en' ? 'Call dispatch' : 'Ring sentralen'}</span>
+                    <span className="block text-lg font-bold">{data.settings.phone_display}</span>
+                  </span>
+                  <span className="booking-action-icon"><Phone size={20} weight={iconWeight} /></span>
+                </a>
+                <a href={data.settings.booking_url} className="booking-action">
+                  <span>
+                    <span className="block text-sm opacity-70">{locale === 'en' ? 'Online booking' : 'Bestilling på nett'}</span>
+                    <span className="block font-bold">{locale === 'en' ? 'Start booking' : 'Start bestilling'}</span>
+                  </span>
+                  <span className="booking-action-icon"><ArrowUpRight size={20} weight={iconWeight} /></span>
+                </a>
+                <a href={data.settings.fare_calculator_url} className="booking-action">
+                  <span>
+                    <span className="block text-sm opacity-70">{locale === 'en' ? 'Fare estimate' : 'Priskalkulator'}</span>
+                    <span className="block font-bold">{locale === 'en' ? 'Check price' : 'Sjekk pris'}</span>
+                  </span>
+                  <span className="booking-action-icon"><Gauge size={20} weight={iconWeight} /></span>
+                </a>
+              </div>
+              <div className="booking-assurance mt-5">
+                <ShieldCheck size={18} weight={iconWeight} />
+                <span>{locale === 'en' ? 'Local drivers, known roads and pre-booked trips.' : 'Lokale sjåførar, kjende vegar og førehandstinging.'}</span>
+              </div>
+              </div>
             </div>
-            <div className="mt-7 grid gap-3">
-              <a href={`tel:${data.settings.phone}`} className="booking-action booking-action-primary">
-                <span>
-                  <span className="block text-sm opacity-70">{locale === 'en' ? 'Call dispatch' : 'Ring sentralen'}</span>
-                  <span className="block text-lg font-bold">{data.settings.phone_display}</span>
-                </span>
-                <span className="booking-action-icon"><Phone size={20} weight={iconWeight} /></span>
-              </a>
-              <a href={data.settings.booking_url} className="booking-action">
-                <span>
-                  <span className="block text-sm opacity-70">{locale === 'en' ? 'Online booking' : 'Bestilling på nett'}</span>
-                  <span className="block font-bold">{locale === 'en' ? 'Start booking' : 'Start bestilling'}</span>
-                </span>
-                <span className="booking-action-icon"><ArrowUpRight size={20} weight={iconWeight} /></span>
-              </a>
-              <a href={data.settings.fare_calculator_url} className="booking-action">
-                <span>
-                  <span className="block text-sm opacity-70">{locale === 'en' ? 'Fare estimate' : 'Priskalkulator'}</span>
-                  <span className="block font-bold">{locale === 'en' ? 'Check price' : 'Sjekk pris'}</span>
-                </span>
-                <span className="booking-action-icon"><Gauge size={20} weight={iconWeight} /></span>
-              </a>
+            <div className="cockpit-footer">
+              <span>Voss stasjon</span>
+              <span>Bavallen</span>
+              <span>Fleischer's</span>
             </div>
-            <div className="booking-assurance mt-5">
-              <ShieldCheck size={18} weight={iconWeight} />
-              <span>{locale === 'en' ? 'Local drivers, known roads and pre-booked trips.' : 'Lokale sjåførar, kjende vegar og førehandstinging.'}</span>
-            </div>
-            </div>
-          </div>
-          <div className="cockpit-footer">
-            <span>Voss stasjon</span>
-            <span>Bavallen</span>
-            <span>Fleischer's</span>
-          </div>
-        </aside>
+          </aside>
+        )}
       </div>
     </section>
   )
