@@ -409,59 +409,6 @@ function BookingStrip({ data, locale }: { data: SiteData; locale: Locale }) {
   )
 }
 
-function ServiceFocus({ locale }: { locale: Locale }) {
-  const chips = locale === 'en'
-    ? ['Station', 'Hotel', 'Bavallen', 'Wheelchair', 'Groups', 'Pre-booking']
-    : ['Stasjon', 'Hotell', 'Bavallen', 'Rullestol', 'Grupper', 'Førehandsting']
-  const rows = locale === 'en'
-    ? [
-        ['Everyday taxi', 'Sedans and spacious cars for short and long trips.'],
-        ['Larger groups', 'Maxi-taxi and minibuses for travel together.'],
-        ['Accessible travel', 'Wheelchair transport planned with care.'],
-      ]
-    : [
-        ['Kvardagstaxi', 'Personbilar og romslege bilar for korte og lengre turar.'],
-        ['Større grupper', 'Maxi-taxi og minibuss når fleire skal reise saman.'],
-        ['Tilrettelagt reise', 'Rullestoltransport planlagt med omtanke.'],
-      ]
-
-  return (
-    <section className="section-lift mx-auto max-w-[92rem] px-4 py-20 md:px-8 md:py-32">
-      <div className="grid gap-4 md:grid-cols-[.78fr_1.22fr]">
-        <div className="feature-panel reveal rounded-[26px] border p-7 md:p-10 [--index:0]" style={{ borderColor: 'var(--line)', background: 'var(--surface)' }}>
-          <p className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.22em]" style={{ color: 'var(--accent-strong)' }}>
-            {locale === 'en' ? 'Transport made clear' : 'Transport gjort oversiktleg'}
-          </p>
-          <h2 className="mt-5 max-w-xl text-balance text-4xl font-extrabold leading-[0.96] tracking-[-0.045em] md:text-5xl">
-            {locale === 'en' ? 'A calm way to choose the right car.' : 'Ein roleg måte å velje rett bil.'}
-          </h2>
-          <div className="mt-8 flex flex-wrap gap-2">
-            {chips.map((chip) => (
-              <span key={chip} className="rounded-full px-3 py-2 text-xs font-bold" style={{ background: 'var(--surface-soft)', color: 'var(--muted)' }}>
-                {chip}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="service-stack grid gap-4">
-          {rows.map((row, index) => (
-            <article key={row[0]} className="service-row reveal grid gap-4 rounded-[22px] border p-6 md:grid-cols-[auto_1fr] [--index:1]" style={{ '--index': index + 1, borderColor: 'var(--line)', background: 'var(--surface)' } as React.CSSProperties}>
-              <span className="grid size-12 place-items-center rounded-[12px] bg-taxi text-[#181511]">
-                <Car size={22} weight={iconWeight} />
-              </span>
-              <div>
-                <h3 className="text-xl font-bold">{row[0]}</h3>
-                <p className="mt-2 max-w-[58ch] leading-7" style={{ color: 'var(--muted)' }}>{row[1]}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function Services({ data, locale }: { data: SiteData; locale: Locale }) {
   return (
     <section className="fleet-section mx-auto max-w-[92rem] px-4 py-20 md:px-8 md:py-32">
