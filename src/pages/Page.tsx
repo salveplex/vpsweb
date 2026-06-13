@@ -57,16 +57,10 @@ export default function Page() {
   }
 
   return (
-    <>
-      <div className="page-hero">
-        <h1>{data.title}</h1>
-      </div>
-      <section className="content-wrapper">
-        <div className="prose">
-          <ReactMarkdown>{data.content}</ReactMarkdown>
-        </div>
-      </section>
-    </>
+    <div className="prose">
+      <h1 style={{ color: 'var(--accent-gold)', marginBottom: '2rem' }}>{data.title}</h1>
+      <ReactMarkdown>{data.content}</ReactMarkdown>
+    </div>
   );
 }
 
