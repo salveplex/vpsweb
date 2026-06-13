@@ -274,7 +274,7 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
         </div>
       )}
 
-      <div className={`hero-grid relative z-10 mx-auto ${isHome ? 'grid min-h-[100dvh] items-center lg:grid-cols-[minmax(0,1fr)_minmax(390px,500px)]' : 'flex min-h-[40dvh] flex-col justify-end'} max-w-[92rem] gap-8 px-4 pb-12 pt-28 md:px-8 md:pb-16`}>
+      <div className={`hero-grid relative z-10 mx-auto ${isHome ? 'flex min-h-[100dvh] flex-col justify-center lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(390px,500px)] lg:items-center' : 'flex min-h-[40dvh] flex-col justify-end'} max-w-[92rem] gap-8 px-4 pb-12 pt-28 md:px-8 md:pb-16`}>
         <div className="reveal max-w-6xl pb-4 text-white [--index:0]">
           <div className="hero-kicker mb-6 inline-flex w-fit items-center gap-2 rounded-[10px] border border-white/18 bg-white/10 px-3 py-2 font-mono text-[0.68rem] font-bold uppercase tracking-[0.2em] text-white/78 backdrop-blur-xl">
             <span className="size-2 rounded-full bg-taxi" />
