@@ -130,7 +130,8 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
       { id: 'nav-maxi-taxi', locale: 'no', label: 'Maxi Taxi', href: '/maxi-taxi', sort: 6 },
       { id: 'nav-bli-sjafor', locale: 'no', label: 'Bli sjåfør', href: '/bli-sjafor', sort: 7 },
       { id: 'nav-gallery', locale: 'no', label: 'Galleri', href: '/galleri', sort: 8 },
-      { id: 'nav-contact', locale: 'no', label: 'Kontakt', href: '/kontakt', sort: 9 },
+      { id: 'nav-ris-ros', locale: 'no', label: 'Ris og Ros', href: '/ris-ros', sort: 9 },
+      { id: 'nav-contact', locale: 'no', label: 'Kontakt', href: '/kontakt', sort: 10 },
     ],
     pages: [
       {
@@ -680,7 +681,8 @@ Copyright © Voss Taxi SA
       { id: 'nav-maxi-taxi-en', locale: 'en', label: 'Maxi Taxi', href: '/en/maxi-taxi', sort: 6 },
       { id: 'nav-bli-sjafor-en', locale: 'en', label: 'Become a driver', href: '/en/bli-sjafor', sort: 7 },
       { id: 'nav-gallery-en', locale: 'en', label: 'Gallery', href: '/en/galleri', sort: 8 },
-      { id: 'nav-contact-en', locale: 'en', label: 'Contact', href: '/en/kontakt', sort: 9 },
+      { id: 'nav-ris-ros-en', locale: 'en', label: 'Feedback', href: '/en/ris-ros', sort: 9 },
+      { id: 'nav-contact-en', locale: 'en', label: 'Contact', href: '/en/kontakt', sort: 10 },
     ],
     pages: [
       {
@@ -737,13 +739,30 @@ Copyright © Voss Taxi SA
         blocks: [],
       },
       {
-        id: 'wheelchair-en',
+        id: 'page-wheelchair-en',
         locale: 'en',
         slug: 'wheelchair',
-        eyebrow: 'Wheelchair',
-        title: 'Wheelchair-accessible transport.',
-        summary: 'Contact us to plan safe wheelchair transport in Voss.',
-        blocks: [],
+        title: 'Wheelchair',
+        blocks: [
+          {
+            type: 'text',
+            title: 'Wheelchair',
+            body: 'We have vehicles adapted for wheelchairs.'
+          }
+        ]
+      },
+      {
+        id: 'page-ris-ros-en',
+        locale: 'en',
+        slug: 'ris-ros',
+        title: 'Feedback',
+        blocks: [
+          {
+            type: 'text',
+            title: 'Feedback',
+            body: 'Here you can send formal complaints or praise to us.\n\n## Send a complaint\n\nIf you wish to submit a formal complaint, this must be submitted in writing by email to post@vosstaxi.no.\nWe will send you a written confirmation within 14 days that the complaint has been received, along with information about the expected processing time.\n\nFormal complaints will be answered in writing. Documentation regarding the complaint is kept with us for three years after the complaint processing has concluded.\n\n## Give us praise or criticism\n\nWe welcome your views, feedback, and tips for improvement. It is the best help you can give us in our efforts to become even better.'
+          }
+        ]
       },
     ],
     services: [
