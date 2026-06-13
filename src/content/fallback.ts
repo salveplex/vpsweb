@@ -150,9 +150,14 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
             body: 'Me har bilar til alle typar oppdrag og hjelper deg trygt frå tog, hotell, hytte, fjell og arrangement.',
           },
           {
+            type: 'rich_text',
+            title: 'Bestill via App',
+            body: '### Snappy Taxi\n\n[![Last ned i App Store](/images/app-store.png)](https://apps.apple.com/no/app/snappy-taxi/id6479620974) [![Få den på Google Play](/images/google-play.png)](https://play.google.com/store/apps/details?id=no.snappy.snappy.taxi&hl=no)\n\n### Bestill Taxi i VY appen\n\n[![Last ned i App Store](/images/app-store.png)](https://apps.apple.com/no/app/vy-nsb/id439655098) [![Få den på Google Play](/images/google-play.png)](https://play.google.com/store/apps/details?id=com.intele.nsbmob.app)'
+          },
+          {
             type: 'cta',
-            title: 'Bestill med telefon, app eller kalkulator',
-            body: 'Ring sentralen, bruk Snappy Taxi eller sjekk pris i kalkulatoren før turen.',
+            title: 'Bestill med telefon eller kalkulator',
+            body: 'Ring sentralen, eller sjekk pris i kalkulatoren før turen.',
             href: settings.booking_url,
             label: 'Bestill taxi',
           },
@@ -749,7 +754,19 @@ Copyright © Voss Taxi SA
           {
             type: 'rich_text',
             title: 'Book with confidence',
-            body: 'Use phone, app or fare calculator to plan your trip from Voss.',
+            body: 'We have vehicles for all types of assignments and will help you safely to and from trains, hotels, cabins, mountains, and events.',
+          },
+          {
+            type: 'rich_text',
+            title: 'Book via App',
+            body: '### Snappy Taxi\n\n[![Download on the App Store](/images/app-store.png)](https://apps.apple.com/no/app/snappy-taxi/id6479620974) [![Get it on Google Play](/images/google-play.png)](https://play.google.com/store/apps/details?id=no.snappy.snappy.taxi&hl=no)\n\n### Book Taxi in the VY app\n\n[![Download on the App Store](/images/app-store.png)](https://apps.apple.com/no/app/vy-nsb/id439655098) [![Get it on Google Play](/images/google-play.png)](https://play.google.com/store/apps/details?id=com.intele.nsbmob.app)'
+          },
+          {
+            type: 'cta',
+            title: 'Book by phone or calculator',
+            body: 'Call the taxi central or check prices in the calculator before your trip.',
+            href: settings.booking_url,
+            label: 'Book taxi',
           },
         ],
       },
