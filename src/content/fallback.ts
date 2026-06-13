@@ -246,9 +246,9 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
           {
             type: 'cta',
             title: 'Generell informasjon',
-            body: 'Spørsmål eller generell informasjon som ikkje fell under klage eller ros.',
-            href: 'mailto:post@vosstaxi.no?subject=Generell%20informasjon',
-            label: 'Send e-post'
+            body: 'Reglar, rettar og generell informasjon om taxi/drosje.',
+            href: '/generell-informasjon',
+            label: 'Les meir'
           }
         ],
       },
@@ -644,8 +644,20 @@ Copyright © Voss Taxi SA
 `
           }
         ]
+      },
+      {
+        id: 'generell-informasjon-no',
+        locale: 'no',
+        slug: 'generell-informasjon',
+        title: 'Generell informasjon',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Generell informasjon',
+            body: 'Klag først til taxien, hvis den er forsinket eller kjører feil. Blir dere ikke enige, kan du bringe saken inn til Forbrukertilsynet.\n\n## På denne siden\n- Kan du velge den drosjen du ønsker?\n- Hva kan du kreve hvis taxien kjører feil?\n- Hva kan du kreve hvis taxien er forsinket eller ikke kommer?\n- Hvordan går du frem for å klage?\n\n### Kan du velge den drosjen du ønsker?\nDet er fritt valg av taxi i Norge. Du kan velge den bilen eller det selskapet du ønsker – også i drosjekøen.\n\n### Hva kan du kreve hvis taxien kjører feil?\nDersom drosjesjåføren kjører feil kan du be ham om å stoppe taksameteret, og dersom det viser seg at sjåføren ikke har valgt den raskeste veien, vil du kunne kreve prisavslag. Dette bør du aller helst gjøre på stedet. Dersom du ikke når fram, bør du så snart som mulig ta dette opp skriftlig med taxisentralen.\n\n### Hva kan du kreve hvis taxien er forsinket eller ikke kommer?\nDu har krav på erstatning for økonomiske tap som oppstår hvis taxien er forsinket eller ikke kommer. Husk at du er ansvarlig for å begrense eventuelle økonomiske tap, ved å for eksempel bestille en ny taxi eller velge et annet transportmiddel.\n\nI praksis betyr dette at dersom du har beregnet rimelig tid, men ikke rekker flyet fordi taxien ikke dukket opp, vil du kunne kreve erstatning for ekstrakostnadene.\n\n> [!WARNING]\n> **OBS!** Kravet på erstatning faller bort hvis forsinkelsen skyldes forhold utenfor selskapets kontroll, slik som trafikkulykker eller ekstreme værforhold.\n\nNoen selskaper har også ordninger som går utover dine lovpålagte rettigheter, så det kan være lurt å sjekke transportvilkårene, hvis taxien ikke kommer som avtalt.\n\n### Hvordan går du frem for å klage?\n**Klag til taxien/taxisentralen**\nOm du har vært uheldig, bør det klages skriftlig til taxisentralen så snart som mulig. Det er viktig å få med opplysninger om den bestilte turen, og å dokumentere ekstrakostnader du har hatt.\n\n**Ta saken til mekling**\nHvis du ikke kommer til enighet med taxisentralen, kan du ta saken til Forbrukertilsynet.\n\n[Ta saken inn til Forbrukertilsynet for mekling](https://www.forbrukertilsynet.no/)\n\n[Klage mal](#)'
+          }
+        ]
       }
-
     ],
     services: [
       {
@@ -832,12 +844,25 @@ Copyright © Voss Taxi SA
           {
             type: 'cta',
             title: 'General information',
-            body: 'Questions or general information that does not fall under complaints or praise.',
-            href: 'mailto:post@vosstaxi.no?subject=General%20information',
-            label: 'Send email'
+            body: 'Rules, rights, and general information about taxis.',
+            href: '/general-information',
+            label: 'Read more'
           }
         ]
       },
+      {
+        id: 'generell-informasjon-en',
+        locale: 'en',
+        slug: 'general-information',
+        title: 'General information',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'General information',
+            body: 'Complain first to the taxi if it is delayed or drives the wrong way. If you cannot agree, you can bring the case to the Consumer Authority (Forbrukertilsynet).\n\n## On this page\n- Can you choose the taxi you want?\n- What can you demand if the taxi drives the wrong way?\n- What can you demand if the taxi is delayed or does not arrive?\n- How do you proceed to complain?\n\n### Can you choose the taxi you want?\nThere is free choice of taxi in Norway. You can choose the car or company you want – even in the taxi queue.\n\n### What can you demand if the taxi drives the wrong way?\nIf the taxi driver drives the wrong way, you can ask them to stop the taximeter, and if it turns out the driver did not choose the fastest route, you may demand a price reduction. You should ideally do this on the spot. If you are unsuccessful, you should raise this in writing with the taxi central as soon as possible.\n\n### What can you demand if the taxi is delayed or does not arrive?\nYou are entitled to compensation for financial losses that occur if the taxi is delayed or does not arrive. Remember that you are responsible for limiting any financial losses, for example by ordering a new taxi or choosing another means of transport.\n\nIn practice, this means that if you have calculated reasonable time but miss your flight because the taxi did not show up, you may claim compensation for the extra costs.\n\n> [!WARNING]\n> **NOTE!** The claim for compensation lapses if the delay is due to circumstances beyond the company\'s control, such as traffic accidents or extreme weather conditions.\n\nSome companies also have schemes that go beyond your statutory rights, so it may be wise to check the transport conditions if the taxi does not arrive as agreed.\n\n### How do you proceed to complain?\n**Complain to the taxi/taxi central**\nIf you have been unlucky, you should complain in writing to the taxi central as soon as possible. It is important to include information about the booked trip and to document any extra costs you have incurred.\n\n**Take the case to mediation**\nIf you cannot reach an agreement with the taxi central, you can take the case to the Consumer Authority.\n\n[Take the case to the Consumer Authority for mediation](https://www.forbrukertilsynet.no/)\n\n[Complaint template](#)'
+          }
+        ]
+      }
     ],
     services: [
       {
