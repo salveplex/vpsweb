@@ -213,6 +213,400 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
         summary: 'Tilbakemeldingar hjelper oss å gjere tenesta betre.',
         blocks: [],
       },
+      {
+        id: 'page-maxi-taxi-no',
+        locale: 'no',
+        slug: 'maxi-taxi',
+        title: 'Maxi Taxi',
+        eyebrow: 'Voss Taxi SA',
+        summary: '',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Maxi Taxi',
+            body: `
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
+
+Tlf: (+47) 56 51 13 40
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/DJI_0168.JPG?etag=%226fb506-66495405%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1160%2B773&extract=0%2B174%2B1160%2B429&quality=85)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240514_203506.jpg?etag=%225098a2-66495519%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=689%2B517&extract=0%2B0%2B689%2B479&quality=85)
+
+Rullestolbil
+
+Voss Taxi har lang erfaring med pasient og rullestoltransport. Me utfører dagleg rullestoloppdrag. Alle våre lokalkjente sjåførar er opplært og godkjent til å handtere ulike typar rullestolbrukarar. Og me har alltid fokus på brukarens sikkerheit under transporten.
+
+Me har pr. dags dato 2 minibussar tilpassa for å ta med ein eller to rullestolar. Samt 3 stk 8 setar rullestolbil, alle med rampe for lett ombordstigning.
+
+Me utfører kvart år eit stort antall transportar for Helse Bergen, og har mange års erfaring med å frakta passasjerar med behov for spesiell assistanse.
+
+Noko som og gjer oss til en naturleg transportpartnar også for private omsorgsinstitusjonar og andre som treng sikker transport av eldre og bevegelseshemma.
+
+Me er tilgjengelege kvar dag – heile året.
+
+Ring 93 24 98 44 eller send ein epost til maxi@vosstaxi.no
+
+## Ta kontakt
+
+Her kan du sende ein forespørsel direkte til maxi taxiane våre.
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/handicap-39397_960_720.png?etag=W%2F%2293ba-664bb5cc%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=296%2B296&extract=0%2B0%2B296%2B291)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+
+Scan QR Code and order
+
+Copyright © Voss Taxi SA
+
+`
+          }
+        ]
+      },
+      {
+        id: 'page-bli-sjafor-no',
+        locale: 'no',
+        slug: 'bli-sjafor',
+        title: 'Nyheter Og Praktisk Informasjon',
+        eyebrow: 'Voss Taxi SA',
+        summary: '',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Nyheter Og Praktisk Informasjon',
+            body: `
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
+
+Tlf: (+47) 56 51 13 40
+
+### Lyst til å ha verdas beste kontor utsikt?
+
+Me søkjer etter nye sjåførar til både heiltids og deltids stilling. Skift jobbing, dag, kveld og natt!
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Presentasjon1.jpg?etag=%2236c7e-64aee9ef%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=720%2B1040&extract=0%2B0%2B719%2B994&quality=85)
+
+Er du vår nye sjåfør?
+
+Voss Taxi er i vekst og søkjer sjåførar til oppdrag i Voss Herad og omegn.
+
+Arbeidsoppgåver: Persontransport, køyring av skuleborn, pasientransport m.m
+
+Me ser etter: Sjåfører som er blide og serviceinnstilte personar som likar å jobba med mennesker, og er glad i å køyra bil.
+
+Voss Taxi tilbyr
+
+Gratis sjåførkurs!
+
+Tilbudet betinger at du oppfyller vanlige krav for å bli taxisjåfør, det vil sei at du må være over 20 år og ha hatt førerkort i minst to år. Du må også ha tilfredsstillende norsk- kunnskaper. Du må som sjåførkandidat betale for obligatorisk teoriprøve hos Statens Vegvesen  – men denne kostnaden får du refundert dersom du fullfører kurset og byrjer å jobba for ein av våre taxieigere.
+
+Formelle krav til drosjesjåfører i Norge - Kjøreseddel
+
+For å kunne kjøre drosje i Norge må man ha kjøreseddel i tillegg til førerkort. Kravene for at man skal kunne få kjøreseddel er at ein:
+
+Må være fylt 20 år
+
+Må ha hatt førerkort i minimum 2 år sammenhengende
+
+Har bestått teoriprøve hos Statens vegvesen – eller YSK for persontransport
+
+Oppfyller helsekravene for persontransport mot vederlag
+
+Har en slik vandel at politiet ikkje finn vedkommande uegna til å føre drosje.
+
+Søkere frå land utenfor EØS området må ha minimum fire års botid i Norge
+
+I tillegg kommer Voss Taxi krav
+
+Gjennomført sjåfør opplæring hjå oss
+
+Kjenntmannsprøve
+
+Beherske norsk skriftleg og muntleg på B2 nivå eller bedre.
+
+Pliktar å utføre eventuelle kurs sentralen finn naudsynt. Som t.d. førstehjelp.
+
+Underskreven tausheit og lojalitets avtalar med sentralen
+
+Arbeidskontrakt med prøvetidsbestemmelsar
+
+Bestått pasientreiser E Læring kurs.
+
+## Send oss ein forespørsel på sjoff@vosstaxi.no
+
+## Gå inn på lenka under for meir informasjon
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+
+Scan QR Code and order
+
+Copyright © Voss Taxi SA
+
+`
+          }
+        ]
+      },
+      {
+        id: 'page-om-oss-no',
+        locale: 'no',
+        slug: 'om-oss',
+        title: 'Om Oss',
+        eyebrow: 'Voss Taxi SA',
+        summary: '',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Om Oss',
+            body: `
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
+
+Tlf: (+47) 56 51 13 40
+
+## Takster
+
+Jamførpris pr 15.04.2024
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Image.jpg?etag=%2279c22-66393eb6%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1116%2B726&quality=85)
+
+Betalingsløsninger
+
+I tillegg til kontant betaling kan du selvsagt betale med kredittkort.
+
+Alle våre biler tar imot VISA /Visa Electron, American Express, Diners, Eurocard og Mastercard.
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/mc_hrz_opt_pos_105_3x.png?etag=%22bac-5f09bf78%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=315%2B72&extract=0%2B0%2B313%2B72)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/AXP_BlueBoxLogo_EXTRALARGEscale_RGB_DIGITAL_1600x1600.png?etag=%228dd9-5f0836be%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=247%2B247&extract=0%2B0%2B247%2B247)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/contactless-indicator-vertical-800x450.png?etag=%22e1ed-5f0836bb%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=592%2B333&extract=189%2B0%2B211%2B333)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Diners-Club-Logo-1.png?etag=%22bc47-5f0836bc%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=310%2B247&extract=0%2B0%2B310%2B247)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/vipps-neg.png?etag=%223235-5f0836bd%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=371%2B222&extract=0%2B0%2B370%2B222)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Samsung_Pay-Logo.png?etag=%222fa5-6648d6e0%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=541%2B120&extract=0%2B0%2B541%2B112)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/applepay.png?etag=%22b3f-6648d6da%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=316%2B130&extract=0%2B0%2B316%2B123)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+
+Scan QR Code and order
+
+Copyright © Voss Taxi SA
+
+`
+          }
+        ]
+      },
+      {
+        id: 'page-pakker-no',
+        locale: 'no',
+        slug: 'pakker',
+        title: 'Pakker',
+        eyebrow: 'Voss Taxi SA',
+        summary: '',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Pakker',
+            body: `
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
+
+Tlf: (+47) 56 51 13 40
+
+Opplev Voss
+
+Få mer ut av oppholdet ditt.
+
+Sightseeing på Voss for 1-16 passasjerer med Voss Taxi.
+
+Våre sjåfører kan vise deg de beste severdighetene her på Voss. Du kan stoppe undervegs for å besøke de ulike destinasjonene, og du bestemmer selv hvor du vil begynne å avslutte reisen.
+
+Med Voss Taxi kan du skreddersy din egen sightseeing utflukt og gå akkurat der du vil gå i ditt eget tempo. Vi er glade for å gi forslag til ruter, men vil tilpasse ekskursjon til ønskene og interessene til deg og dine andre medreisende. Våre kjøretøyer kommer med profesjonelle og erfarne sjåfører med kjennskap til området.
+
+Tvindefossen
+
+Tvindefossen er den 98. høyeste fossen i Norge regnet ut i fra totalt fall. Fossen ligger ved Tvinde i Voss kommune, 12 km. nord for Voss sentrum like ved E-16. Fossen er en kjent turistattraksjon. Fossen har ett totalt fall på 110 meter hvor det lengste fallet er 85 meter. Vannet fra Tvindefossen kommer fra Kroelva og renner ut i Strandaelva.
+
+På slutten av 1990-tallet skapte også vatnet i Tvindefossen et rykte for foryngelse og gjenoppliving av seksuell styrke som gjorde det til et av de viktigste naturlige turistattraksjonene i Vest-Norge, med så mange som 200 000 mennesker i året fra USA, Japan og Russland besøker og fyller containere med vannet. På et tidspunkt var det Norges niende mest besøkte naturlige attraksjon, med 272 000 besøkende
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/TvindeFossen%2003.jpg?etag=%227fcb15-5f09c190%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=748%2B497&extract=0%2B0%2B748%2B490&quality=85)
+
+Skjervsfossen
+
+Skjervsfossen er en foss i Granvin kommune i Hordaland. Den ligger ved Skjervet, omtrent midt mellom Granvin og Voss. Riksvei 13 passerer på avsatsen mellom fossens øvre og nedre fall. R13 er en av Norges viktigste turist veier.
+
+Fossen ligger 15 kilometer fra Voss sentrum, men pass på å ta gamle veien og ikke tunnelen! Skjervefossen er en tvillingfoss i elva Storelvi med en total høyde på 125 meter. Den øvre delen er den mest imponerende med et vertikal fall på 60 meter.
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/SkjerveFossen%2003.jpg?etag=%2279e57d-5f09c169%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=757%2B503&extract=0%2B0%2B748%2B503&quality=85)
+
+Bordalsgjelet
+
+Bordalsgjelet er en spektakulær naturattraksjon i gangavstand frå sentrum. Det djupe og dramatiske Bordalsgjelet er tilrettelagt for publikum med, utsiktspunkt og benker.
+
+Når det ikke er snø og is er det òg en tilrettelagt sti du kan følge innover gjelet. Her får du god utsikt til de fantastiske jettegrytene som is og elven har formet gjennom årtusen, men hugs, for din egen sikkerhet: Hold deg til de merkede stiene!
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Bordalsgjelet%2002.jpg?etag=%226cd4e7-5f09c189%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=748%2B497&extract=0%2B0%2B748%2B497&quality=85)
+
+Mølstertunet
+
+Voss Folkemuseum ble grunnlagt i 1917. Museets første oppgåve var å kjøpe gårdstun på Mølster, som i dag er en av tre autentiske gårdstun som eies og konservert av museet. I disse tre gårdstun er alle bygningene fortsatt plassert akkurat der de var da folk bodde der.
+
+På Mølster gård, som lett kan sees i åssiden ovenfor Vossevangen, er det en nyere museums bygning, hvor permanente og midlertidige utstillinger gir den besøkende større kunnskap om den lokale kulturen. Det er og en museumsbutikk, og om sommeren har de vanligvis høner og sauer på gården. Det er mulig å nå museet til fots eller med bil.
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/M%C3%B8lster,_Voss_folkemuseum,_Hordaland_-_Riksantikvaren-T280_01_0036.jpg?etag=%22913613-5f09c170%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=762%2B519&extract=0%2B0%2B762%2B443&quality=85)
+
+Sightseeing – Voss Taxi (2026)
+
+Mandag – fredag
+
+1–4 personar (opptil 1 time): NOK 900
+
+5–6 personar (opptil 1 time): NOK 1000
+
+7–8 personar (opptil 1 time): NOK 1100
+
+9–16 personar (opptil 1 time): NOK 1150
+
+Laurdag – sundag
+
+1–4 personar (opptil 1 time): NOK 1000
+
+5–6 personar (opptil 1 time): NOK 1100
+
+7–8 personar (opptil 1 time): NOK 1200
+
+9–16 personar (opptil 1 time): NOK 1250
+
+Eventuelle bompengar kjem i tillegg.
+
+Vilkår
+
+Tida startar ved avtalt oppmøte og vert rekna fortløpande.
+
+Eventuell ventetid under stopp er inkludert i timen. Lengre stopp vert belasta ekstra.
+
+Turen må starte og avsluttast i Voss sentrum (Vossevangen).
+
+Turar utanfor dette området vert køyrde etter ordinær takst.
+
+Sightseeing gjeld lokal køyring i Voss-området. Lengre turar må avtalast på førehand.
+
+Pris vert fastsett etter faktisk tal passasjerar ved turstart.
+
+Ved forseinka oppmøte vert tida rekna frå avtalt tidspunkt.
+
+Manglande oppmøte kan verte fakturert.
+
+Avbestilling må skje seinast 12 timar før avtalt tid.
+
+Laurdag-/søndagspris gjeld òg for heilagdagar.
+
+Sightseeing omfattar transport med sjåfør. Guiding er ikkje inkludert med mindre anna er avtalt.
+
+Betaling skjer ved turstart eller etter avtale.
+
+Bestilling og kontakt
+
+Voss Taxi
+
+Uttrågata 19
+
+Tlf: +47 56 51 13 40
+
+Maxi-Taxi: +47 93 24 98 44
+
+post@vosstaxi.no
+
+www.vosstaxi.no
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+
+Scan QR Code and order
+
+Copyright © Voss Taxi SA
+
+`
+          }
+        ]
+      },
+      {
+        id: 'page-trygt-heim-no',
+        locale: 'no',
+        slug: 'trygt-heim',
+        title: 'Trygt Heim',
+        eyebrow: 'Voss Taxi SA',
+        summary: '',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Trygt Heim',
+            body: `
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
+
+Tlf: (+47) 56 51 13 40
+
+TRYGT HEIM
+
+Voss Taxi startar opp med skyss for ungdom kvar onsdag. Desse rutene vil gå ifrå Voss Stasjon kl.21:15. Det vert køyrd i følgjande retningar:
+
+Voss Stasjon – Bolstad
+
+Voss Stasjon – Tinghuset – Palmafossen – Tvinde
+
+For meir informasjon gå til:
+
+SKYSS
+
+https://www.skyss.no/reise/aktuelt/trygt-heim-voss-5.-februar
+
+VOSS HERAD
+
+https://voss.herad.no/aktuelt-fra-kommunen/nytt-transporttilbod-til-ungdom-trygt-heim-fra-vangen.11503.aspx
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180618_212754.jpg?etag=%223c5bfa-5f08341d%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=590%2B443&extract=6%2B0%2B577%2B392&quality=85)
+
+Du kjøper vanleg bussbillett i appen Skyss Billett, om bord med kontantar eller bankkort, på SMS eller i nettbutikken.
+
+Trygt Heim er eit tilbod for dei mellom 13 og 24, men kan også nyttast av andre dersom det er ledig plass. Så om det er reisande, uavhengig av alder så går tilbodet, men ungdom er prioritert.
+
+Tidlegare avgangar med Trygt heim natt til laurdag vert ikkje køyrd lenger.
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/tinywow_Student%20rabatt_54313707_1.jpg?etag=%225280e-662d516c%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=701%2B991&extract=0%2B0%2B701%2B987&quality=85)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+
+Scan QR Code and order
+
+Copyright © Voss Taxi SA
+
+`
+          }
+        ]
+      }
+
     ],
     services: [
       {
