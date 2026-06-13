@@ -714,7 +714,6 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
       <>
         <BookingStrip data={data} locale={locale} />
         <ServiceFocus locale={locale} />
-        <PageBlocks blocks={page.blocks} />
         <Services data={data} locale={locale} />
         <ContactPanel data={data} locale={locale} />
       </>
@@ -736,7 +735,6 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
     return (
       <>
         <Gallery data={data} locale={locale} />
-        <PageBlocks blocks={page.blocks} />
         <ContactPanel data={data} locale={locale} />
       </>
     )
