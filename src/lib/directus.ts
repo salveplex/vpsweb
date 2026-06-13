@@ -22,10 +22,14 @@ export async function fetchSiteData(locale: Locale): Promise<SiteData> {
     if (json.data && json.data.length > 0) {
       const strapiPages = json.data.map((item: any) => {
         const attr = item.attributes || item
+        let slug = attr.slug
+        if (slug === 'om-meg') slug = 'tenester'
+        if (slug === 'nyheter-og-praktisk-informasjon') slug = 'bli-sjafor'
+
         return {
           id: item.id.toString(),
           locale,
-          slug: attr.slug,
+          slug,
           title: attr.title,
           eyebrow: attr.eyebrow || 'Voss Taxi SA',
           summary: attr.summary || '',

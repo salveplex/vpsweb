@@ -695,13 +695,9 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
         {isHome ? (
           <>
             <BookingStrip data={data} locale={route.locale} />
-            <ServiceFocus locale={route.locale} />
             <PageBlocks blocks={page.blocks} />
-            <Services data={data} locale={route.locale} />
             <FaresAndLinks data={data} locale={route.locale} />
-            <Gallery data={data} locale={route.locale} />
             <Marquee />
-            <ContactPanel data={data} locale={route.locale} />
           </>
         ) : (
           <SubPage slug={route.slug} page={page} data={data} locale={route.locale} />
@@ -760,7 +756,6 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
     <>
       <BookingStrip data={data} locale={locale} />
       <PageBlocks blocks={page.blocks} />
-      <Services data={data} locale={locale} />
       <ContactPanel data={data} locale={locale} />
     </>
   )

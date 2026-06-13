@@ -136,10 +136,14 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
     source: 'fallback',
     navigation: [
       { id: 'nav-home', locale: 'no', label: 'Heim', href: '/', sort: 1 },
-      { id: 'nav-services', locale: 'no', label: 'Tenester', href: '/tenester', sort: 2 },
-      { id: 'nav-fares', locale: 'no', label: 'Takstar', href: '/takstar', sort: 3 },
-      { id: 'nav-gallery', locale: 'no', label: 'Galleri', href: '/galleri', sort: 4 },
-      { id: 'nav-contact', locale: 'no', label: 'Kontakt', href: '/kontakt', sort: 5 },
+      { id: 'nav-om-oss', locale: 'no', label: 'Om Oss', href: '/om-oss', sort: 2 },
+      { id: 'nav-services', locale: 'no', label: 'Tenester', href: '/tenester', sort: 3 },
+      { id: 'nav-pakker', locale: 'no', label: 'Pakker', href: '/pakker', sort: 4 },
+      { id: 'nav-trygt-heim', locale: 'no', label: 'Trygt Heim', href: '/trygt-heim', sort: 5 },
+      { id: 'nav-maxi-taxi', locale: 'no', label: 'Maxi Taxi', href: '/maxi-taxi', sort: 6 },
+      { id: 'nav-bli-sjafor', locale: 'no', label: 'Bli sjåfør', href: '/nyheter-og-praktisk-informasjon', sort: 7 },
+      { id: 'nav-gallery', locale: 'no', label: 'Galleri', href: '/galleri', sort: 8 },
+      { id: 'nav-contact', locale: 'no', label: 'Kontakt', href: '/kontakt', sort: 9 },
     ],
     pages: [
       {
@@ -267,10 +271,14 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
     source: 'fallback',
     navigation: [
       { id: 'nav-home-en', locale: 'en', label: 'Home', href: '/en', sort: 1 },
-      { id: 'nav-services-en', locale: 'en', label: 'Services', href: '/en/services', sort: 2 },
-      { id: 'nav-fares-en', locale: 'en', label: 'Fares', href: '/en/fares', sort: 3 },
-      { id: 'nav-gallery-en', locale: 'en', label: 'Gallery', href: '/en/gallery', sort: 4 },
-      { id: 'nav-contact-en', locale: 'en', label: 'Contact', href: '/en/contact', sort: 5 },
+      { id: 'nav-om-oss-en', locale: 'en', label: 'About Us', href: '/en/om-oss', sort: 2 },
+      { id: 'nav-services-en', locale: 'en', label: 'Services', href: '/en/tenester', sort: 3 },
+      { id: 'nav-pakker-en', locale: 'en', label: 'Packages', href: '/en/pakker', sort: 4 },
+      { id: 'nav-trygt-heim-en', locale: 'en', label: 'Safe Home', href: '/en/trygt-heim', sort: 5 },
+      { id: 'nav-maxi-taxi-en', locale: 'en', label: 'Maxi Taxi', href: '/en/maxi-taxi', sort: 6 },
+      { id: 'nav-bli-sjafor-en', locale: 'en', label: 'Become a driver', href: '/en/nyheter-og-praktisk-informasjon', sort: 7 },
+      { id: 'nav-gallery-en', locale: 'en', label: 'Gallery', href: '/en/galleri', sort: 8 },
+      { id: 'nav-contact-en', locale: 'en', label: 'Contact', href: '/en/kontakt', sort: 9 },
     ],
     pages: [
       {
