@@ -712,8 +712,6 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
   if (slug === 'tenester' || slug === 'services' || slug === 'rullestol' || slug === 'wheelchair') {
     return (
       <>
-        <BookingStrip data={data} locale={locale} />
-        <ServiceFocus locale={locale} />
         <Services data={data} locale={locale} />
         <ContactPanel data={data} locale={locale} />
       </>
@@ -723,7 +721,6 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
   if (slug === 'takstar' || slug === 'fares') {
     return (
       <>
-        <BookingStrip data={data} locale={locale} />
         <FaresAndLinks data={data} locale={locale} />
         <PageBlocks blocks={page.blocks} />
         <ContactPanel data={data} locale={locale} />
@@ -743,7 +740,6 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
   if (slug === 'kontakt' || slug === 'contact' || slug === 'ris-ros') {
     return (
       <>
-        <BookingStrip data={data} locale={locale} />
         <ContactPanel data={data} locale={locale} />
         <PageBlocks blocks={page.blocks} />
       </>
@@ -752,7 +748,6 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
 
   return (
     <>
-      <BookingStrip data={data} locale={locale} />
       <PageBlocks blocks={page.blocks} />
       <ContactPanel data={data} locale={locale} />
     </>
