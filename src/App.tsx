@@ -646,7 +646,7 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
       <StatusBanner data={data} />
       {loading ? <LoadingSkeleton /> : null}
       <main id="main-content">
-        <Hero page={page} data={data} locale={route.locale} />
+        <Hero page={page} data={data} locale={route.locale} isHome={isHome} />
         {isHome ? (
           <>
             <BookingStrip data={data} locale={route.locale} />
