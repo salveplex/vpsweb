@@ -263,9 +263,9 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
       className={`hero-stage relative overflow-hidden ${isHome ? 'min-h-[100dvh]' : 'min-h-[40dvh]'}`}
       style={{ '--hero-poster': `url("${activeHeroImage}")` } as React.CSSProperties}
     >
-      <div className="hero-brand-mark" aria-hidden="true">VOSS</div>
+      {isHome && <div className="hero-brand-mark" aria-hidden="true">VOSS</div>}
       <video
-        className="hero-video absolute inset-0 h-full w-full object-cover"
+        className="hero-video fixed inset-0 -z-20 h-full w-full object-cover"
         autoPlay
         muted
         loop
@@ -276,7 +276,7 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
       >
         <source src={heroVideo} type="video/mp4" />
       </video>
-      <div className="hero-vignette absolute inset-0" />
+      <div className="hero-vignette fixed inset-0 -z-10" />
       <div className="hero-yellow-blade" aria-hidden="true" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,transparent,var(--bg))]" />
       {isHome && (
@@ -523,9 +523,9 @@ function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
         {blocks.map((block, index) => {
           if (block.type === 'rich_text') {
             return (
-              <article key={`${block.type}-${index}`} className="rounded-[8px] border p-6" style={{ borderColor: 'var(--line)', background: 'var(--surface)' }}>
-                {block.title ? <h2 className="text-2xl font-bold">{block.title}</h2> : null}
-                <div className="mt-3 max-w-[76ch] leading-8" style={{ color: 'var(--muted)' }}>
+              <article key={`${block.type}-${index}`} className="rounded-[1.2rem] border p-8 shadow-lg backdrop-blur-2xl md:p-12" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--surface) 75%, transparent)' }}>
+                {block.title ? <h2 className="mb-6 text-3xl font-extrabold tracking-tight md:text-4xl">{block.title}</h2> : null}
+                <div className="markdown-body max-w-[76ch] text-lg leading-relaxed md:text-xl" style={{ color: 'var(--muted)' }}>
                   <ReactMarkdown>{block.body}</ReactMarkdown>
                 </div>
               </article>
