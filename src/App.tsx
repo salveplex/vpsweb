@@ -649,16 +649,25 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
 
       <main id="main-content">
         <Hero page={page} data={data} locale={route.locale} isHome={isHome} />
-        {isHome ? (
-          <>
-            <BookingStrip data={data} locale={route.locale} />
-            <PageBlocks blocks={page.blocks} />
-            <FaresAndLinks data={data} locale={route.locale} />
-            <Marquee />
-          </>
-        ) : (
-          <SubPage slug={route.slug} page={page} data={data} locale={route.locale} />
-        )}
+        <div style={{ background: 'var(--bg)' }} className="relative z-10 w-full rounded-t-[2.5rem] md:rounded-t-[4rem]">
+          <div className="absolute inset-0 -z-10 rounded-t-[2.5rem] md:rounded-t-[4rem]" style={{
+            background: `radial-gradient(circle at 4% 6%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 32rem),
+                         radial-gradient(circle at 86% 12%, color-mix(in srgb, var(--surface-soft) 62%, transparent), transparent 26rem),
+                         linear-gradient(180deg, color-mix(in srgb, var(--bg-elevated) 72%, transparent), transparent 42rem)`
+          }} />
+          <div className="pt-10">
+            {isHome ? (
+              <>
+                <BookingStrip data={data} locale={route.locale} />
+                <PageBlocks blocks={page.blocks} />
+                <FaresAndLinks data={data} locale={route.locale} />
+                <Marquee />
+              </>
+            ) : (
+              <SubPage slug={route.slug} page={page} data={data} locale={route.locale} />
+            )}
+          </div>
+        </div>
       </main>
       <Footer data={data} locale={route.locale} />
     </>
