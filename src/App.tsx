@@ -245,7 +245,7 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
       ],
     [data.gallery, data.settings.hero_media, page.hero_image],
   )
-  const activeHeroImage = heroImages[0]
+
   const signals = locale === 'en'
     ? [
         ['24/7', 'Dispatch'],
@@ -261,11 +261,9 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
   return (
     <section
       className={`hero-stage relative overflow-hidden ${isHome ? 'min-h-[75dvh]' : 'min-h-[25dvh]'}`}
-      style={{ '--hero-poster': `url("${activeHeroImage}")` } as React.CSSProperties}
     >
       <div className="hero-brand-mark" aria-hidden="true">VOSS</div>
       <div className="hero-yellow-blade relative z-10" aria-hidden="true" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,transparent,var(--bg))]" />
       {isHome && (
         <div className="hero-route-line absolute bottom-10 left-1/2 hidden w-[min(76rem,calc(100%-3rem))] -translate-x-1/2 md:block" aria-hidden="true">
           <span />
