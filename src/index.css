@@ -622,25 +622,25 @@ a:focus-visible {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.65rem, 9.6vw, 3.85rem);
-  line-height: 0.98;
-  letter-spacing: -0.035em;
-  text-shadow: 0 26px 90px rgba(0,0,0,.58);
+  font-size: clamp(2.1rem, 7vw, 2.85rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-shadow: 0 16px 50px rgba(0,0,0,.4);
 }
 
 @media (min-width: 640px) {
   .hero-title {
-    font-size: clamp(3.4rem, 7.2vw, 5.1rem);
-    line-height: 0.95;
-    letter-spacing: -0.04em;
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: clamp(4.8rem, 5.9vw, 7.15rem);
-    line-height: 0.9;
-    letter-spacing: -0.048em;
+    font-size: clamp(3.4rem, 4.5vw, 5.2rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
   }
 }
 
