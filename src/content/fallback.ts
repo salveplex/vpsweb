@@ -407,51 +407,31 @@ Copyright © Voss Taxi SA
             type: 'rich_text',
             title: 'Om Oss',
             body: `
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
-
 Tlf: (+47) 56 51 13 40
 
-## Takster
+## Voss Taxi
 
-Jamførpris pr 15.04.2024
+Voss Taxi SA hadde fram til 2013 namnet Voss Drosjebilsentral. Me er hovudleverandørar på køyring av pasientreiser og skuletransport i Voss Herad.
 
+Me leverer og tenester til ulike aktørar og kundar, som f.eks Kommune, Fylkeskommune, Vy, diverse legar/behandlarar-institusjonar. Både i nærmiljøet og i fylket.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Image.jpg?etag=%2279c22-66393eb6%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1116%2B726&quality=85)
+**LITT INFORMASJON**
 
-Betalingsløsninger
+Det er totalt 22 løyver som tilhøyrer Voss Taxi.
 
-I tillegg til kontant betaling kan du selvsagt betale med kredittkort.
+Slik ser bilparken ut med antall seter i kvar bil pr i dag.
 
-Alle våre biler tar imot VISA /Visa Electron, American Express, Diners, Eurocard og Mastercard.
+![Bilpark](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20200101_010840(1).jpg?etag=%222c9cc5-5f08340e%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1171%2B555&extract=12%2B0%2B1095%2B555&quality=85)
 
+Telefonen er bemanna døgnet rundt, heile året. Ved behov for større bil enn ein vanlig som tar 4 passasjerar, sjå meir info på "Kontakt" sida.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/mc_hrz_opt_pos_105_3x.png?etag=%22bac-5f09bf78%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=315%2B72&extract=0%2B0%2B313%2B72)
+Me held til midt i hjarta av Voss Sentrum. Du vil kanskje kjenna igjen den raude og kvite taxibua vår i frå fleire innslag i fjernsynet, deriblant Norge Rundt og Sommeråpent.
 
+Den er ikkje lenger i bruk ettersom at me kom inn i nye og større lokaler rett over gata. Bilparken vår står der som den alltid har gjort (ved den raude bua).
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/AXP_BlueBoxLogo_EXTRALARGEscale_RGB_DIGITAL_1600x1600.png?etag=%228dd9-5f0836be%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=247%2B247&extract=0%2B0%2B247%2B247)
+I våre nye lokaler har me og eit stort og oppvarma venterom med stolar og sofa der ein kan slappa av mens ein ventar.
 
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/contactless-indicator-vertical-800x450.png?etag=%22e1ed-5f0836bb%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=592%2B333&extract=189%2B0%2B211%2B333)
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Diners-Club-Logo-1.png?etag=%22bc47-5f0836bc%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=310%2B247&extract=0%2B0%2B310%2B247)
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/vipps-neg.png?etag=%223235-5f0836bd%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=371%2B222&extract=0%2B0%2B370%2B222)
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Samsung_Pay-Logo.png?etag=%222fa5-6648d6e0%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=541%2B120&extract=0%2B0%2B541%2B112)
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/applepay.png?etag=%22b3f-6648d6da%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=316%2B130&extract=0%2B0%2B316%2B123)
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
-
-Scan QR Code and order
-
-Copyright © Voss Taxi SA
-
+**Venterommet er ope 07-20 kvar dag.**
 `
           }
         ]
