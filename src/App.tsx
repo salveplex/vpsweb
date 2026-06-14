@@ -435,7 +435,7 @@ function Services({ data, locale }: { data: SiteData; locale: Locale }) {
 
 function FaresAndLinks({ data, locale }: { data: SiteData; locale: Locale }) {
   return (
-    <section className="border-y" style={{ borderColor: 'var(--line)', background: 'var(--bg-elevated)' }}>
+    <section className="border-y" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--bg-elevated) 40%, transparent)' }}>
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-[.9fr_1.1fr] md:px-6">
         <div>
           <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={{ color: 'var(--accent-strong)' }}>{locale === 'en' ? 'Fares' : 'Takstar'}</p>
@@ -541,7 +541,7 @@ function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
 
 function ContactPanel({ data, locale }: { data: SiteData; locale: Locale }) {
   return (
-    <section className="border-t" style={{ borderColor: 'var(--line)', background: 'var(--bg-elevated)' }}>
+    <section className="border-t" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--bg-elevated) 40%, transparent)' }}>
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 md:grid-cols-[.8fr_1.2fr] md:px-6">
         <div>
           <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={{ color: 'var(--accent-strong)' }}>{locale === 'en' ? 'Contact' : 'Kontakt'}</p>
@@ -569,7 +569,7 @@ function ContactCard({ href, icon: Icon, label, value }: { href: string; icon: t
 
 function Footer({ data, locale }: { data: SiteData; locale: Locale }) {
   return (
-    <footer className="border-t px-4 py-10 md:px-6" style={{ borderColor: 'var(--line)', background: 'var(--bg)' }}>
+    <footer className="border-t px-4 py-10 md:px-6" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--bg) 80%, transparent)' }}>
       <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center">
         <div>
           <div className="text-lg font-extrabold">{data.settings.site_name}</div>
@@ -644,12 +644,12 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#111]/30 to-[#111]" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, color-mix(in srgb, var(--bg) 10%, transparent), color-mix(in srgb, var(--bg) 80%, transparent))' }} />
       </div>
 
       <main id="main-content">
         <Hero page={page} data={data} locale={route.locale} isHome={isHome} />
-        <div style={{ background: 'var(--bg)' }} className="relative z-10 w-full rounded-t-[2.5rem] md:rounded-t-[4rem]">
+        <div style={{ background: 'color-mix(in srgb, var(--bg) 50%, transparent)', backdropFilter: 'blur(12px)' }} className="relative z-10 w-full rounded-t-[2.5rem] md:rounded-t-[4rem]">
           <div className="absolute inset-0 -z-10 rounded-t-[2.5rem] md:rounded-t-[4rem]" style={{
             background: `radial-gradient(circle at 4% 6%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 32rem),
                          radial-gradient(circle at 86% 12%, color-mix(in srgb, var(--surface-soft) 62%, transparent), transparent 26rem),
