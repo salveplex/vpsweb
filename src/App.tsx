@@ -22,7 +22,7 @@ import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react
 import { fallbackByLocale } from './content/fallback'
 import heroVideo from './content/vosstaxicomp.mp4'
 import { assetUrl, fetchSiteData } from './lib/directus'
-import { cleanGalleryImageUrl, collectHeroImages, optimizeHeroImageUrl } from './lib/heroImages'
+import { cleanGalleryImageUrl } from './lib/heroImages'
 import { getRedirectTarget, parseRoute } from './lib/routes'
 import { getInitialThemeMode, resolveThemeMode, type ThemeMode } from './lib/theme'
 import type { CmsPage, Locale, PageBlock, SiteData } from './types'
@@ -232,19 +232,6 @@ function Header({
 }
 
 function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; locale: Locale; isHome: boolean }) {
-  const heroImages = useMemo(
-    () =>
-      [
-        ...new Set(
-          collectHeroImages({
-            pageHero: page.hero_image,
-            settingsHero: data.settings.hero_media,
-            galleryImages: data.gallery.map((item) => item.image),
-          }).map((image) => optimizeHeroImageUrl(assetUrl(import.meta.env.VITE_DIRECTUS_URL ?? '', image))),
-        ),
-      ],
-    [data.gallery, data.settings.hero_media, page.hero_image],
-  )
 
   const signals = locale === 'en'
     ? [
