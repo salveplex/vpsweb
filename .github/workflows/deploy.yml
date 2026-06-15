@@ -21,14 +21,14 @@ jobs:
       - run: npm run build --emptyOutDir
 
       - name: Deploy via rsync
-        uses: burnett01/rsync-deployments@v8
+        uses: easingthemes/ssh-deploy@main
         with:
-          switches: -avz --delete
-          path: dist/
-          remote_path: ~/sites/vpsweb_test/
-          remote_host: 85.190.102.196
-          remote_user: vosstaxi
-          remote_key: ${{ secrets.VPS_SSH_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
+          REMOTE_HOST: 85.190.102.196
+          REMOTE_USER: vosstaxi
+          SOURCE: dist/
+          TARGET: ~/sites/vpsweb_test/
+          ARGS: -avz --delete
 
       - name: Restart PM2
         uses: appleboy/ssh-action@v1.2.0
