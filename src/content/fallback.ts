@@ -123,7 +123,7 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
     settings,
     source: 'fallback',
     navigation: [
-      { id: 'nav-home', locale: 'no', label: 'Heim', href: '/', sort: 1 },
+      { id: 'nav-home', locale: 'no', label: 'THeim', href: '/', sort: 1 },
       { id: 'nav-om-oss', locale: 'no', label: 'Om Oss', href: '/om-oss', sort: 2 },
       { id: 'nav-services', locale: 'no', label: 'Tenester', href: '/tenester', sort: 3 },
       { id: 'nav-pakker', locale: 'no', label: 'Pakker', href: '/pakker', sort: 4 },
