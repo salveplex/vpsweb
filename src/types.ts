@@ -1,4 +1,30 @@
-export type Locale = 'no' | 'en'
+﻿export type Locale = 'no' | 'en'
+
+export type StrapiPage = {
+  id: number
+  documentId: string
+  title: string
+  slug: string
+  content: string
+  createdAt: string
+  updatedAt: string
+  publishedAt: string
+  eyebrow?: string
+  summary?: string
+  hero_image?: string
+}
+
+export type StrapiResponse<T> = {
+  data: T[]
+  meta: {
+    pagination: {
+      page: number
+      pageSize: number
+      pageCount: number
+      total: number
+    }
+  }
+}
 
 export type SiteSettings = {
   id?: string

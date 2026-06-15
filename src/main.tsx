@@ -1,7 +1,8 @@
-import { Component, StrictMode, type ReactNode } from 'react'
+﻿import { Component, StrictMode, type ReactNode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
+import { HelmetProvider } from 'react-helmet-async'
 
 class AppErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean; message?: string }> {
   state = { hasError: false, message: undefined }
@@ -39,7 +40,9 @@ class AppErrorBoundary extends Component<{ children: ReactNode }, { hasError: bo
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AppErrorBoundary>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </AppErrorBoundary>
   </StrictMode>,
 )

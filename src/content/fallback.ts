@@ -1,4 +1,4 @@
-import type { SiteData } from '../types'
+﻿import type { SiteData } from '../types'
 
 const settings = {
   site_name: 'Voss Taxi SA',
@@ -15,7 +15,7 @@ const settings = {
   app_store_url: 'https://apps.apple.com/no/app/snappy-taxi/id6479620974',
   play_store_url: 'https://play.google.com/store/apps/details?id=no.snappy.snappy.taxi&hl=no',
   hero_media:
-    'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240522_130220.jpg?etag=%2239d36c-6652016f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1160%2B870&extract=0%2B198%2B1160%2B395&quality=85',
+    'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240522_130220.jpg?etag=%2239d36c-6652016f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&quality=85',
 }
 
 const originalGalleryImages = [
@@ -268,378 +268,301 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
           {
             type: 'rich_text',
             title: 'Maxi Taxi',
-            body: `
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
+            body: `### Rullestolbil og Maxi-Taxi 🚐
 
-Tlf: (+47) 56 51 13 40
+**Voss Taxi har lang erfaring med pasient- og rullestoltransport. Vi utfører rullestoloppdrag dagleg og er ein trygg transportpartnar i heile regionen.**
 
+Alle våre lokalkjende sjåførar er opplærte og godkjende for å handtere ulike typar rullestolbrukarar. Vi har alltid fullt fokus på passasjerane sin sikkerheit og komfort under heile transporten. 
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/DJI_0168.JPG?etag=%226fb506-66495405%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1160%2B773&extract=0%2B174%2B1160%2B429&quality=85)
+Me utfører kvart år eit stort tal transportar for Helse Bergen, og har mange års erfaring med å frakta passasjerar med behov for spesiell assistanse. Dette gjer oss til ein naturleg og profesjonell transportpartnar også for private omsorgsinstitusjonar, eldresenter, og andre som treng sikker transport av eldre og rørslehemma.
 
+> 📞 **Vi er tilgjengelege kvar dag – heile året.**
+> Ring (+47) 93 24 98 44 eller send ein e-post til maxi@vosstaxi.no
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240514_203506.jpg?etag=%225098a2-66495519%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=689%2B517&extract=0%2B0%2B689%2B479&quality=85)
+---
 
-Rullestolbil
+### Vår bilpark for rullestoltransport ♿
 
-Voss Taxi har lang erfaring med pasient og rullestoltransport. Me utfører dagleg rullestoloppdrag. Alle våre lokalkjente sjåførar er opplært og godkjent til å handtere ulike typar rullestolbrukarar. Og me har alltid fokus på brukarens sikkerheit under transporten.
+Vi har per dags dato:
+- **2 minibussar** spesialtilpassa for å ta med éin eller to rullestolar
+- **3 stk 8-seters rullestolbilar**, alle utstyrte med trygge og solide ramper for lett og behageleg ombordstiging
 
-Me har pr. dags dato 2 minibussar tilpassa for å ta med ein eller to rullestolar. Samt 3 stk 8 setar rullestolbil, alle med rampe for lett ombordstigning.
+Her kan du sjå eit par av bilane våre i teneste:
 
-Me utfører kvart år eit stort antall transportar for Helse Bergen, og har mange års erfaring med å frakta passasjerar med behov for spesiell assistanse.
+![Maxi Taxi bil](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/DJI_0168.JPG?etag=%226fb506-66495405%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&quality=85)
 
-Noko som og gjer oss til en naturleg transportpartnar også for private omsorgsinstitusjonar og andre som treng sikker transport av eldre og bevegelseshemma.
+![Rullestolbil rampe](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240514_203506.jpg?etag=%225098a2-66495519%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&quality=85)
 
-Me er tilgjengelege kvar dag – heile året.
+---
 
-Ring 93 24 98 44 eller send ein epost til maxi@vosstaxi.no
+### 📱 Rask bestilling
+Ønskjer du å bestille via TaxiFix-appen? Skann QR-koden under for å laste ned og bestille.
 
-## Ta kontakt
+![QR Kode bestilling Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+`
+          }
+        ]
+      },
+      {
+        id: 'transportvilkar-no',
+        locale: 'no',
+        slug: 'transportvilkar',
+        title: 'Transportvilkår',
+        summary: 'Våre transportvilkår og retningslinjer',
+        blocks: [
+          {
+            type: 'rich_text',
+            body: `Transportvilkår
 
-Her kan du sende ein forespørsel direkte til maxi taxiane våre.
+Utarbeidet av Norges Taxiforbund 2000
 
+§ 1 Transportvilkårenes anvendelse
+Transportvilkårene er avtalevilkår mellom den reisende og taxifører. På alle forhold som ikke er regulert her, kommer norsk lov til anvendelse.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/handicap-39397_960_720.png?etag=W%2F%2293ba-664bb5cc%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=296%2B296&extract=0%2B0%2B296%2B291)
+§ 2 Bestilling av taxi
+Ved bestilling av taxi gjennom sentral eller ved telefonbestilling direkte til holdeplass, skal bestiller gi relevante opplysninger som måtte være nødvendig for oppdragets utførelse. Dersom det kreves særskilt utrustet kjøretøy, utvidet setekapasitet eller særlig utstyr (spesialtransport), skal bestiller opplyse dette.
 
+Om bestillingen gjelder f. eks. flere enn fire passasjerer og det viser seg at det faktiske behov er redusert, regnes godtgjørelse og lignende i henhold til bestillingen.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+§ 3 Bruk av holdeplass. Fortrinnsrett til taxi.
+Ved kø på holdeplass, skal taxifører kjøre den reisende som står for tur. Syke, uføre og personer med småbarn har fortrinnsrett til taxi. For øvrig gjelder de av myndighetene fastsatte bestemmelser om fortrinnsrett til taxi.
+
+Reisende fra holdeplass er fortrinnsberettiget til ledig taxi. Publikum på holdeplass henvises til første ledige taxi, men de har selv rett til å velge taxi. Taxier som eventuelt står foran i køen, må om nødvendig flyttes for å gi plass til utkjøring.
+
+Ved påstigning skal den reisende oppgi sitt reisemål, om eventuell annen oppgjørsform enn kontant betaling og eventuelle andre forhold av betydning for oppdragets utførelse.
+
+§ 4 Praiing utenom holdeplass.
+Når taxi er ledig, skal taxifører sørge for at lediglampe er tent og synlig for publikum. Utenfor en avstand fra nærmeste holdeplass, angitt i sentralens kjørereglement/sjåførinstruks, kan fører plukke opp reisende som gir tydelige tegn, så sant stans og påstigning kan skje innenfor rammen av gjeldende trafikkregler og uten hinder for øvrig trafikk.
+
+§ 5 Taxiførers rett til å avvise turer
+Taxifører kan avvise ruset person, reisende som opptrer truende eller personer som av andre årsaker taxifører finner saklig grunn til å avvise.
+
+Den reisende har rett til å medbringe førerhund.
+
+Dersom person avvises, kan taxifører kreve godtgjørelse i samsvar med taksameterets pålydende.
+
+§ 6 Oppdragets utførelse
+En taxifører skal følge den kjørerute som tar kortest tid til bestemmelsesstedet, hvis den reisende ikke bestemmer noe annet.
+
+Taxifører plikter etter anmodning på samme turen å kjøre passasjerer til forskjellige steder (kombinering av tur). Hvis ikke annet er avtalt, er sist avstigende passasjer ansvarlig for betaling av turen
+
+Ansvar for påbudt bruk av bilbelte og eventuelt at barnesete er forsvarlig festet, følger veitrafikklovens bestemmelser.
+
+Person som trenger assistanse fra taxi til inngangsdør eller lignende, kan anmode om bistand. Bistand taxifører yter passasjeren, etter dennes ønske, til, fra eller utenfor transportmidlet skjer for passasjerens risiko.
+
+Under turen skal fører og passasjer opptre slik at det ikke oppstår fare for medtrafikanter, bagasje, bil og utstyr. Røyking i taxi er forbudt.
+
+Førers bruk av mobiltelefon, dataterminal og lignende under oppdrag skal skje i henhold til sentralens reglement. Bilradio kan benyttes etter den reisendes samtykke.
+
+Taxifører kan kreve forhåndsbetaling for turen.
+
+§ 7 Ventetid, avbrudd og forsinkelser
+Ved henting av passasjer og under kjøring plikter taxifører å vente i et tidsintervall som fremgår av kjørereglement/sjåførinstruks, hvis ikke annet er avtalt. For spesielle kjøreoppdrag av typen legekjøring, bryllup, barnedåp og begravelse følger ventetid av oppdragets art.
+
+Ved forhåndsbestilt taxi gjelder at faktisk fremmøte kan avvike fra avtalt fremmøtetidspunkt med et tidsintervall som er angitt i sentralens kjørereglement/sjåførinstruks.
+
+Må en tur avbrytes på grunn av feil med kjøretøyet, har taxifører ikke krav på betaling for den utførte kjøring, hvis han ikke innen rimelig tid kan skaffe annen taxi. Dersom ny taxi skaffes, kan taxifører kreve betalt for det han har kjørt, fratrukket den nye taxiens fremmøtepris. Hvis passasjeren ikke ønsker en annen taxi, har taxifører krav på betaling for den kjøring som er utført.
+
+Ved avbrytelse av tur på grunn av vær- og/eller føreforhold, har taxifører krav på betaling for kjørt lengde. Forsinkelser som skyldes trafikale og meteorologiske forhold gir den reisende ingen rett til avkortning i samlet takst.
+
+8 Betaling, veksling og kvittering
+Taxisentralens takstregulativ benyttes som grunnlag for takstberegningen, med mindre annet er avtalt.
+
+Taxiturer skal skje mot kontant betaling. Ved bruk av kredittkort, rekvisisjon eller annen betalingsform skal det avtales med taxifører før turens start. Dersom det gjennom skilting i taxien, sentralens annonsering eller lignende fremgår at bestemte rekvisisjoner, betalings-/kredittkort aksepteres, plikter taxifører å akseptere disse.
+
+Taxifører plikter ikke å veksle større seddelbeløp enn angitt i sentralens kjørereglement/sjåførinstruks. Kjøring i forbindelse med veksling av større beløp, belastes passasjer.
+
+Taxifører plikter på anmodning å gi passasjer datert kvittering. I kvitteringen skal oppgis taxiførers navn, taxiens løyvenummer, passasjerens på- og avstigningssted samt øvrige opplysninger som er nødvendig til kontroll av at vederlaget er regnet i samsvar med gjeldende takstregulativ. I taxi med kvitteringsskrivende taksameter, skal dette benyttes ved utskrift av kvittering.
+
+§ 9 Sikkerhet for betaling
+Taxifører skal snarest og innen 24 – tjuefire – timer underrette taxisentralen om gjenstander mottatt som sikkerhet for betaling. Offentlige dokumenter som f. eks. pass og førerkort, aksepteres ikke som panteobjekt. Taxifører plikter å gi passasjeren kvittering på sentralens godkjente blankett for mottatt pant.
+
+Pantekvittering skal være påført kjørerute, kjørebeløp, gebyr, tid og sted for tilbakelevering av pantet.
+
+Gjeldsbrev, godkjent av taxisentralen, kan benyttes som et alternativ til pant i forbindelse med sikkerhet for betaling.
+
+§ 10 Bagasje og lignende
+Taxifører skal hjelpe til med å anbringe bagasje og annet i taxien. Fører kan avvise bagasje og annet som etter sitt omfang eller utforming ikke er egnet til å bli transportert i taxien.
+
+Dersom den reisende ønsker å medbringe bagasje utover det som normalt kan påregnes medtatt i ordinær taxi, skal det opplyses til sentralen ved bestilling. Hvis mulig kan da sentralen formidle oppdraget til taxi tilpasset oppdragets art.
+
+§ 11 Hittegods
+Taxifører skal etter hver tur straks undersøke om noe er gjenglemt i taxien, slik at glemte saker kan bli levert tilbake til rette vedkommende med det samme.
+
+Er dette ikke mulig, skal fører levere gjenstander gjenglemt i taxien på det av sentralens anviste sted innen 24 timer. Han plikter å dra forsvarlig omsorg for gjenstanden.
+
+§ 12 Ansvar
+
+a) Skade på person
+Transportørens ansvar for skade på person under transport er nærmere regulert i bilansvarsloven. Transportøren skal ha forsikring i samsvar med de krav som lovgivningen bestemmer.
+
+b) Bagasje og annet gods
+Går håndbagasje eller ting som de reisende medbringer, helt eller delvis tapt, eller blir slike gjenstander skadd under reisen plikter transportøren å erstatte tapet eller skaden, dersom tapet eller skaden skyldes feil eller forsømmelser fra transportørens side.
+For skade på og/eller tap av bagasje eller andre ting passasjeren medbringer, er transportørens ansvar begrenset til kr. 60,- pr. kg. av den del av godset som er gått tapt eller blir skadet.
+
+c) Forsinkelse
+Erstatningsplikt for forsinkelse oppstår når fremmøte eller tiden for å fullføre oppdraget, overskrider hva som etter omstendighetene må anses som rimelig. Ansvar foreligger ikke dersom forsinkelsen skyldes passasjeren eller omstendigheter som taxifører ikke kunne unngå og hvis følger han ikke kunne forebygge. Transportørens ansvar for forsinkelser er begrenset til transportens kostnader.
+
+d) Den reisendes ansvar
+Den reisende plikter å erstatte skader som ved forsett eller uaktsomhet påføres transportøren.
+
+§ 13 Regler ved tvister
+Tvist mellom den reisende og taxifører som ikke lar seg løse mellom partene, kan den reisende forelegge sentralen.
+
+§ 14 Reklamasjon, frister og foreldelse
+Den som vil kreve erstatning for tap må gi transportøren og/eller den sentralen hvor transportøren er tilsluttet, meddelelse uten ugrunnet opphold.
+Krav om erstatning etter disse befordringsvedtekter, foreldes etter et år med mindre andre frister skal anvendes i medhold av annen lovgivning.
+
+§ 15 Opplysning
+Transportvilkårene skal, sammen med gjeldende takstregulativ, være tilgjengelig i taxien og forevises den reisende på forlangende.
 
 Scan QR Code and order
 
 Copyright © Voss Taxi SA
 
-`
-          }
-        ]
-      },
-      {
-        id: 'page-bli-sjafor-no',
-        locale: 'no',
-        slug: 'bli-sjafor',
-        title: 'Nyheter Og Praktisk Informasjon',
-        eyebrow: 'Voss Taxi SA',
-        summary: '',
-        blocks: [
-          {
-            type: 'rich_text',
-            title: 'Nyheter Og Praktisk Informasjon',
-            body: `
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
+Telefon+4756511340
 
-Tlf: (+47) 56 51 13 40
+E-postpost@vosstaxi.no
 
-### Lyst til å ha verdas beste kontor utsikt?
-
-Me søkjer etter nye sjåførar til både heiltids og deltids stilling. Skift jobbing, dag, kveld og natt!
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Presentasjon1.jpg?etag=%2236c7e-64aee9ef%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=720%2B1040&extract=0%2B0%2B719%2B994&quality=85)
-
-Er du vår nye sjåfør?
-
-Voss Taxi er i vekst og søkjer sjåførar til oppdrag i Voss Herad og omegn.
-
-Arbeidsoppgåver: Persontransport, køyring av skuleborn, pasientransport m.m
-
-Me ser etter: Sjåfører som er blide og serviceinnstilte personar som likar å jobba med mennesker, og er glad i å køyra bil.
-
-Voss Taxi tilbyr
-
-Gratis sjåførkurs!
-
-Tilbudet betinger at du oppfyller vanlige krav for å bli taxisjåfør, det vil sei at du må være over 20 år og ha hatt førerkort i minst to år. Du må også ha tilfredsstillende norsk- kunnskaper. Du må som sjåførkandidat betale for obligatorisk teoriprøve hos Statens Vegvesen  – men denne kostnaden får du refundert dersom du fullfører kurset og byrjer å jobba for ein av våre taxieigere.
-
-Formelle krav til drosjesjåfører i Norge - Kjøreseddel
-
-For å kunne kjøre drosje i Norge må man ha kjøreseddel i tillegg til førerkort. Kravene for at man skal kunne få kjøreseddel er at ein:
-
-Må være fylt 20 år
-
-Må ha hatt førerkort i minimum 2 år sammenhengende
-
-Har bestått teoriprøve hos Statens vegvesen – eller YSK for persontransport
-
-Oppfyller helsekravene for persontransport mot vederlag
-
-Har en slik vandel at politiet ikkje finn vedkommande uegna til å føre drosje.
-
-Søkere frå land utenfor EØS området må ha minimum fire års botid i Norge
-
-I tillegg kommer Voss Taxi krav
-
-Gjennomført sjåfør opplæring hjå oss
-
-Kjenntmannsprøve
-
-Beherske norsk skriftleg og muntleg på B2 nivå eller bedre.
-
-Pliktar å utføre eventuelle kurs sentralen finn naudsynt. Som t.d. førstehjelp.
-
-Underskreven tausheit og lojalitets avtalar med sentralen
-
-Arbeidskontrakt med prøvetidsbestemmelsar
-
-Bestått pasientreiser E Læring kurs.
-
-## Send oss ein forespørsel på sjoff@vosstaxi.no
-
-## Gå inn på lenka under for meir informasjon
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
-
-Scan QR Code and order
-
-Copyright © Voss Taxi SA
-
-`
-          }
-        ]
-      },
-      {
-        id: 'page-om-oss-no',
-        locale: 'no',
-        slug: 'om-oss',
-        title: 'Om Oss',
-        eyebrow: 'Voss Taxi SA',
-        summary: '',
-        blocks: [
-          {
-            type: 'rich_text',
-            title: 'Om Oss',
-            body: `
-Tlf: (+47) 56 51 13 40
-
-## Voss Taxi
-
-Voss Taxi SA hadde fram til 2013 namnet Voss Drosjebilsentral. Me er hovudleverandørar på køyring av pasientreiser og skuletransport i Voss Herad.
-
-Me leverer og tenester til ulike aktørar og kundar, som f.eks Kommune, Fylkeskommune, Vy, diverse legar/behandlarar-institusjonar. Både i nærmiljøet og i fylket.
-
-**LITT INFORMASJON**
-
-Det er totalt 22 løyver som tilhøyrer Voss Taxi.
-
-Slik ser bilparken ut med antall seter i kvar bil pr i dag.
-
-![Bilpark](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20200101_010840(1).jpg?etag=%222c9cc5-5f08340e%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1171%2B555&extract=12%2B0%2B1095%2B555&quality=85)
-
-Telefonen er bemanna døgnet rundt, heile året. Ved behov for større bil enn ein vanlig som tar 4 passasjerar, sjå meir info på "Kontakt" sida.
-
-Me held til midt i hjarta av Voss Sentrum. Du vil kanskje kjenna igjen den raude og kvite taxibua vår i frå fleire innslag i fjernsynet, deriblant Norge Rundt og Sommeråpent.
-
-Den er ikkje lenger i bruk ettersom at me kom inn i nye og større lokaler rett over gata. Bilparken vår står der som den alltid har gjort (ved den raude bua).
-
-I våre nye lokaler har me og eit stort og oppvarma venterom med stolar og sofa der ein kan slappa av mens ein ventar.
-
-**Venterommet er ope 07-20 kvar dag.**
-`
-          }
-        ]
-      },
-      {
-        id: 'page-pakker-no',
-        locale: 'no',
-        slug: 'pakker',
-        title: 'Pakker',
-        eyebrow: 'Voss Taxi SA',
-        summary: '',
-        blocks: [
-          {
-            type: 'rich_text',
-            title: 'Pakker',
-            body: `
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
-
-Tlf: (+47) 56 51 13 40
-
-Opplev Voss
-
-Få mer ut av oppholdet ditt.
-
-Sightseeing på Voss for 1-16 passasjerer med Voss Taxi.
-
-Våre sjåfører kan vise deg de beste severdighetene her på Voss. Du kan stoppe undervegs for å besøke de ulike destinasjonene, og du bestemmer selv hvor du vil begynne å avslutte reisen.
-
-Med Voss Taxi kan du skreddersy din egen sightseeing utflukt og gå akkurat der du vil gå i ditt eget tempo. Vi er glade for å gi forslag til ruter, men vil tilpasse ekskursjon til ønskene og interessene til deg og dine andre medreisende. Våre kjøretøyer kommer med profesjonelle og erfarne sjåfører med kjennskap til området.
-
-Tvindefossen
-
-Tvindefossen er den 98. høyeste fossen i Norge regnet ut i fra totalt fall. Fossen ligger ved Tvinde i Voss kommune, 12 km. nord for Voss sentrum like ved E-16. Fossen er en kjent turistattraksjon. Fossen har ett totalt fall på 110 meter hvor det lengste fallet er 85 meter. Vannet fra Tvindefossen kommer fra Kroelva og renner ut i Strandaelva.
-
-På slutten av 1990-tallet skapte også vatnet i Tvindefossen et rykte for foryngelse og gjenoppliving av seksuell styrke som gjorde det til et av de viktigste naturlige turistattraksjonene i Vest-Norge, med så mange som 200 000 mennesker i året fra USA, Japan og Russland besøker og fyller containere med vannet. På et tidspunkt var det Norges niende mest besøkte naturlige attraksjon, med 272 000 besøkende
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/TvindeFossen%2003.jpg?etag=%227fcb15-5f09c190%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=748%2B497&extract=0%2B0%2B748%2B490&quality=85)
-
-Skjervsfossen
-
-Skjervsfossen er en foss i Granvin kommune i Hordaland. Den ligger ved Skjervet, omtrent midt mellom Granvin og Voss. Riksvei 13 passerer på avsatsen mellom fossens øvre og nedre fall. R13 er en av Norges viktigste turist veier.
-
-Fossen ligger 15 kilometer fra Voss sentrum, men pass på å ta gamle veien og ikke tunnelen! Skjervefossen er en tvillingfoss i elva Storelvi med en total høyde på 125 meter. Den øvre delen er den mest imponerende med et vertikal fall på 60 meter.
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/SkjerveFossen%2003.jpg?etag=%2279e57d-5f09c169%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=757%2B503&extract=0%2B0%2B748%2B503&quality=85)
-
-Bordalsgjelet
-
-Bordalsgjelet er en spektakulær naturattraksjon i gangavstand frå sentrum. Det djupe og dramatiske Bordalsgjelet er tilrettelagt for publikum med, utsiktspunkt og benker.
-
-Når det ikke er snø og is er det òg en tilrettelagt sti du kan følge innover gjelet. Her får du god utsikt til de fantastiske jettegrytene som is og elven har formet gjennom årtusen, men hugs, for din egen sikkerhet: Hold deg til de merkede stiene!
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Bordalsgjelet%2002.jpg?etag=%226cd4e7-5f09c189%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=748%2B497&extract=0%2B0%2B748%2B497&quality=85)
-
-Mølstertunet
-
-Voss Folkemuseum ble grunnlagt i 1917. Museets første oppgåve var å kjøpe gårdstun på Mølster, som i dag er en av tre autentiske gårdstun som eies og konservert av museet. I disse tre gårdstun er alle bygningene fortsatt plassert akkurat der de var da folk bodde der.
-
-På Mølster gård, som lett kan sees i åssiden ovenfor Vossevangen, er det en nyere museums bygning, hvor permanente og midlertidige utstillinger gir den besøkende større kunnskap om den lokale kulturen. Det er og en museumsbutikk, og om sommeren har de vanligvis høner og sauer på gården. Det er mulig å nå museet til fots eller med bil.
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/M%C3%B8lster,_Voss_folkemuseum,_Hordaland_-_Riksantikvaren-T280_01_0036.jpg?etag=%22913613-5f09c170%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=762%2B519&extract=0%2B0%2B762%2B443&quality=85)
-
-Sightseeing – Voss Taxi (2026)
-
-Mandag – fredag
-
-1–4 personar (opptil 1 time): NOK 900
-
-5–6 personar (opptil 1 time): NOK 1000
-
-7–8 personar (opptil 1 time): NOK 1100
-
-9–16 personar (opptil 1 time): NOK 1150
-
-Laurdag – sundag
-
-1–4 personar (opptil 1 time): NOK 1000
-
-5–6 personar (opptil 1 time): NOK 1100
-
-7–8 personar (opptil 1 time): NOK 1200
-
-9–16 personar (opptil 1 time): NOK 1250
-
-Eventuelle bompengar kjem i tillegg.
-
-Vilkår
-
-Tida startar ved avtalt oppmøte og vert rekna fortløpande.
-
-Eventuell ventetid under stopp er inkludert i timen. Lengre stopp vert belasta ekstra.
-
-Turen må starte og avsluttast i Voss sentrum (Vossevangen).
-
-Turar utanfor dette området vert køyrde etter ordinær takst.
-
-Sightseeing gjeld lokal køyring i Voss-området. Lengre turar må avtalast på førehand.
-
-Pris vert fastsett etter faktisk tal passasjerar ved turstart.
-
-Ved forseinka oppmøte vert tida rekna frå avtalt tidspunkt.
-
-Manglande oppmøte kan verte fakturert.
-
-Avbestilling må skje seinast 12 timar før avtalt tid.
-
-Laurdag-/søndagspris gjeld òg for heilagdagar.
-
-Sightseeing omfattar transport med sjåfør. Guiding er ikkje inkludert med mindre anna er avtalt.
-
-Betaling skjer ved turstart eller etter avtale.
-
-Bestilling og kontakt
-
-Voss Taxi
-
+AdresseVoss Taxi SA
 Uttrågata 19
+5700 Voss
+Norway`
+          }
+        ]
+      },
+      {
+        id: 'personvern-no',
+        locale: 'no',
+        slug: 'personvern',
+        title: 'Personvern',
+        summary: 'Vår personvernerklæring',
+        blocks: [
+          {
+            type: 'rich_text',
+            body: `Når du brukar Voss Taxi SA, gjev du oss tilgang til opplysningar om deg. Her kan du lesa kva opplysningar me samlar inn, korleis me gjer det og kva me brukar dei til.
+Her finn du informasjon om korleis opplysningar om deg, og dine reiser behandlast i våre system. Elektroniske spor om deg knytt til våre tenester er trygge hjå oss, og me vil ikkje misbruka opplysningane dine. Voss Taxi SA vil behandla dine personopplysningar slik at du får ei enkel og god teneste. Drosjeselskapet er ansvarleg for dei personopplysningane som behandlast.
 
-Tlf: +47 56 51 13 40
+Formål
 
-Maxi-Taxi: +47 93 24 98 44
+For å kunna tilby digital bestilling, førehandsbetaling og tilleggstenester via vosstaxi.no og VY-Appen, må me kunne lagra informasjon som regnast som personopplysningar
 
-post@vosstaxi.no
+Gjennomføring av endringar
 
-www.vosstaxi.no
+Me vil i blant kunna oppdatera Voss Taxi SAs personvernerklæring for å gjenspeila endringar på nettstaden eller ved vår personvernerklæring. Ved større endringar vil me informera om dette via vår heimeside, eller du informerast ved neste gongs pålogging. I særlege tilfeller vil innlogga brukarar varslast direkte ved e-post eller varsel på SMS.
 
+Kva lagrar me og kvifor
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+Delar av korttype og –nummer for betaling med kreditt- og bankkort: Me lagrar ikkje heile kortnummeret hjå oss, men delar av da lagrast når du registrerar det direkte i våre tenester. Dette lagrast i vår database slik at kunden skal kunna førehandsbetala og henta ut sine digitale kvitteringar etter endt tur. Visst opplysningane registrerast i tredjepartsløysningar, som for eksempel ved lagring av kort via VY-appen, henvisast kunden til tredjeparts eigne vilkår. https://www.vy.no/vilkar-og-personvern/personvern
+
+Telefonnummer: Sjåførar kan bruka telefonnummer til å ta kontakt med kunde ved henting, eller om han eller ho finn gjengløymde ting i bilen. Me vil også bruka telefonnummer til å senda ut bekreftelsar på bestillingar, eller visst noko uforutsett har skjedd som har betydning for levering av tenester.
+
+For- og/eller etternamn: Lagrast slik at me kan gje betre kundeservice om me treng å kontakta kunden, og for å gjera opplevinga med Voss Taxi SA meir personleg.
+
+Start- og sluttadresser for turar: Brukast til å generera digitale kvitteringar.
+
+Dato og klokkeslett for turar køyrd: Brukast til å generera digitale kvitteringar.
+
+Karthistorikk: For å kunna henta favorittadresser for raskare bestilling.
+
+GPS: Ved bestilling av tur brukast GPS-signal for å finna ut kvar kunden befinn seg (startadresse).
+
+Utvikling av tenester
+
+Me utviklar stadig våre tenester. Når me utviklar tilleggstenester på vosstaxi.no som inneber lagring av personopplysningar, vil me oppdatera desse vilkåra. Oppdaterte vilkår vil til ei kvar tid væra tilgjengeleg på web.
+
+Kva er personopplysningar?
+
+Personopplysningar er informasjon som kan knytast til ein person, for eksempel namn, bustad, telefonnummer, e-postadresse, IP-adresse.
+
+Med personopplysning meiner me opplysningar som kan knytast til ein enkeltperson
+
+Innstillingar for personopplysningar
+
+Du kan begrensa lagring og behandling av opplysningar om deg. Våre tenester vil då ikkje i like stor grad være tilpassa deg.
+
+Du kan når som helst endra databehandlinga som skjer i våre appar i telefonens innstillingar. Her kan du slå av og på varslingar og opne eller slå av sending av GPS-data til lokasjons teneste. Dette påverkar moglegheitene til å få personaliserte tenester og målretta annonsar.
+
+Voss Taxi SA loggfører også data knytta til dei enkelte taxiturar.
+
+I tillegg er da kun dei opplysningar som du sjølv oppgjev til oss igjennom appen, som lagrast. Me vil ikkje be om opplysningar som me ikkje treng for å kunna oppfylla våre forpliktelsar ovanfor deg.
+
+Dine personopplysningar vil ikkje verta brukt til andre føremål, eller verta utlevert til andre, med mindre du samtykkjer til slik utvida bruk.
+
+Dersom du vel å registrera ein profil om deg sjølv i VY-appen, vil du sjølv kunna sjå, redigera og sletta dei personlege opplysningane som er lagra i” Min Profil”. Du må angje brukarnamn og passord for å få tilgang til desse opplysningane.
+
+VY-Appen brukar fleire sikkerhetsteknologiar for å beskytta dine personopplysningar mot uautorisert tilgang, bruk eller vidareformidling.
+
+Ved å kontakta oss kan du få innsyn i dine personopplysningar som er lagra hjå oss
+
+Vy-Appen ryddar løpande i sine databasar. Opplysningar som ikkje lenger er relevante, vert automatisk sletta. Ved å kontakta oss kan du krevja at dine personopplysningar som er lagra hjå oss, vert sletta. I så fall tar me kun vare på opplysningar som me er pålagd av lov å oppbevara.
+
+VY-Appen nyttar informasjonskapslar kun til å verifisera gyldig brukarkonto. Dersom du ønskjer å skreddarsy tenesta til dine spesifikke føremål og preferansar, kan du sjølv konfigurera ei rekkje parameter under «din profil».
+
+Oppdaterte «Retningslinjer for personvern knytt til Voss Taxi SA» er til ei kvar tid tilgjengeleg på http://vosstaxi.no.
+
+Nokon av våre tenester krevjer at kunden samtykkjer til brukarvilkår på grunn av tenestas omfang. Ved bruk av VY-appen må kunden godkjenna innhenting og lagring av personopplysningar ved fyrste oppstart. På VY.no godkjenner kunden innhenting av personopplysningar ved å registrera seg som brukar og bruke tenesta. Enkelte tenester vil ikkje fungera som tiltenkt utan aktivt samtykke, for eksempel stads tenester.
+
+Alle data kunden sjølv fyller inn for å bruka våre tenester lagrast i vår kundedatabase. Voss Taxi SA har ikkje anledning til å bruka informasjonen ut over vårt formål. Alt krypterast for å sikra at kommunikasjonen mellom tenestene våre er så sikkert som overhode mogeleg.
+
+Me har ikkje anledning til å lagra eller samla inn informasjon ut over det me har spesifisert i dette dokumentet. Endringar i kva me samlar inn vil bli meldt frå om på førehand.
+
+Me har ingen kontroll over, eller ansvar for, tredjepartsprogramvare med tanke på personopplysningar. Me vil ikkje bruka tredjepartsløysningar som er allment kjend for å bryta personvernopplysningslova i Noreg. Me brukar blant anna Google Maps, Vipps. Vennlegast sjå opplysningar om personvern i desse appane.
+
+Kva brukast informasjonen til?
+
+Me jobbar heile tida for å gje deg ei tilpassa og god oppleving av Voss Taxi SA. Her er dei viktigaste føremåla me brukar personopplysningar til:
+
+Levera tenestene du forventar av oss
+
+Spara deg for tid og arbeid
+
+Forstå markedstrender og behov
+
+Rett til innsyn, retting og sletting
+
+Kunden har rett til å krevje innsyn i dei registrerte opplysningane, samt rett til å krevje retting og sletting i henhold til personopplysningsloven. Ta kontakt på e-post for kundeservice: personvern@vosstaxi.no
+
+Dersom kunde slettar sin profil vil også tilhøyrande personopplysningar slettast. Reisekvitteringar vil som følgje av detta væra anonyme, slik som før oppretta profil.
+
+Behandlingsansvarleg &amp; Personvernombod
+
+Voss Taxi SA har eit eiget personvernombud for å sikra ein trygg og god behandling av personopplysningar. Ordninga er initiert av Datatilsynet. Du kan kontakte Voss Taxi SAs personvernombod på e-postadressa personvern@vosstaxi.no.
+
+Kva reglar gjeld for handtering av personopplysningar?
+
+Voss Taxi SA er ansvarleg for handteringa av personopplysningar som samlast inn ved bruk av våre tenester. Voss Taxi SA følgjer personopplysningsloven i behandlinga av personopplysningar.
+
+Når du lar oss formidla personopplysningar til andre, vil desse ha eit sjølvstendig ansvar for vidare behandling av opplysningane.
+
+Borns personvern
+
+Me ynskjer ikkje å samla inn eller på annan måte behandla personopplysningar om born under 16 års alder.
+
+Visst born under 16 år alikavel har gjett oss personopplysningar vil me sletta opplysningane så snart me vert oppmerksame på forholdet. Føresette kan kontakta oss som angitt nedanfor.
+
+Sletting av personopplysningar
+
+Me lagrar ikkje personopplysningar lenger og i større grad enn da som er nødvendig for å oppfylle formålet med behandlinga med mindre det er lovpålagt, for eksempel gjennom regnskapsloven. Me har omfattande rutinar for sletting og anonymisering. Du kan sjølv be om å få fjerna opplysningar frå din brukarprofil.
+
+Hovudregelen er at personopplysningar lagrast maksimalt i to år. Kor fort opplysninger vert sletta kan variere.
+
+Innsyn i lagra personopplysningar
+
+Ved ynskje om innsyn i kva slags opplysningar me har om deg, vennligst fyll ut vedlagt skjema og send dette til personvern@vosstaxi.no.Personvern skjema
 
 Scan QR Code and order
 
 Copyright © Voss Taxi SA
 
-`
-          }
-        ]
-      },
-      {
-        id: 'page-trygt-heim-no',
-        locale: 'no',
-        slug: 'trygt-heim',
-        title: 'Trygt Heim',
-        eyebrow: 'Voss Taxi SA',
-        summary: '',
-        blocks: [
-          {
-            type: 'rich_text',
-            title: 'Trygt Heim',
-            body: `
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
+Telefon+4756511340
 
-Tlf: (+47) 56 51 13 40
+E-postpost@vosstaxi.no
 
-TRYGT HEIM
-
-Voss Taxi startar opp med skyss for ungdom kvar onsdag. Desse rutene vil gå ifrå Voss Stasjon kl.21:15. Det vert køyrd i følgjande retningar:
-
-Voss Stasjon – Bolstad
-
-Voss Stasjon – Tinghuset – Palmafossen – Tvinde
-
-For meir informasjon gå til:
-
-SKYSS
-
-https://www.skyss.no/reise/aktuelt/trygt-heim-voss-5.-februar
-
-VOSS HERAD
-
-https://voss.herad.no/aktuelt-fra-kommunen/nytt-transporttilbod-til-ungdom-trygt-heim-fra-vangen.11503.aspx
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180618_212754.jpg?etag=%223c5bfa-5f08341d%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=590%2B443&extract=6%2B0%2B577%2B392&quality=85)
-
-Du kjøper vanleg bussbillett i appen Skyss Billett, om bord med kontantar eller bankkort, på SMS eller i nettbutikken.
-
-Trygt Heim er eit tilbod for dei mellom 13 og 24, men kan også nyttast av andre dersom det er ledig plass. Så om det er reisande, uavhengig av alder så går tilbodet, men ungdom er prioritert.
-
-Tidlegare avgangar med Trygt heim natt til laurdag vert ikkje køyrd lenger.
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/tinywow_Student%20rabatt_54313707_1.jpg?etag=%225280e-662d516c%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=701%2B991&extract=0%2B0%2B701%2B987&quality=85)
-
-
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
-
-Scan QR Code and order
-
-Copyright © Voss Taxi SA
-
-`
-          }
-        ]
-      },
-      {
-        id: 'generell-informasjon-no',
-        locale: 'no',
-        slug: 'generell-informasjon',
-        title: 'Generell informasjon',
-        blocks: [
-          {
-            type: 'rich_text',
-            title: 'Generell informasjon',
-            body: 'Klag først til taxien, hvis den er forsinket eller kjører feil. Blir dere ikke enige, kan du bringe saken inn til Forbrukertilsynet.\n\n## På denne siden\n- Kan du velge den drosjen du ønsker?\n- Hva kan du kreve hvis taxien kjører feil?\n- Hva kan du kreve hvis taxien er forsinket eller ikke kommer?\n- Hvordan går du frem for å klage?\n\n### Kan du velge den drosjen du ønsker?\nDet er fritt valg av taxi i Norge. Du kan velge den bilen eller det selskapet du ønsker – også i drosjekøen.\n\n### Hva kan du kreve hvis taxien kjører feil?\nDersom drosjesjåføren kjører feil kan du be ham om å stoppe taksameteret, og dersom det viser seg at sjåføren ikke har valgt den raskeste veien, vil du kunne kreve prisavslag. Dette bør du aller helst gjøre på stedet. Dersom du ikke når fram, bør du så snart som mulig ta dette opp skriftlig med taxisentralen.\n\n### Hva kan du kreve hvis taxien er forsinket eller ikke kommer?\nDu har krav på erstatning for økonomiske tap som oppstår hvis taxien er forsinket eller ikke kommer. Husk at du er ansvarlig for å begrense eventuelle økonomiske tap, ved å for eksempel bestille en ny taxi eller velge et annet transportmiddel.\n\nI praksis betyr dette at dersom du har beregnet rimelig tid, men ikke rekker flyet fordi taxien ikke dukket opp, vil du kunne kreve erstatning for ekstrakostnadene.\n\n> [!WARNING]\n> **OBS!** Kravet på erstatning faller bort hvis forsinkelsen skyldes forhold utenfor selskapets kontroll, slik som trafikkulykker eller ekstreme værforhold.\n\nNoen selskaper har også ordninger som går utover dine lovpålagte rettigheter, så det kan være lurt å sjekke transportvilkårene, hvis taxien ikke kommer som avtalt.\n\n### Hvordan går du frem for å klage?\n**Klag til taxien/taxisentralen**\nOm du har vært uheldig, bør det klages skriftlig til taxisentralen så snart som mulig. Det er viktig å få med opplysninger om den bestilte turen, og å dokumentere ekstrakostnader du har hatt.\n\n**Ta saken til mekling**\nHvis du ikke kommer til enighet med taxisentralen, kan du ta saken til Forbrukertilsynet.\n\n[Ta saken inn til Forbrukertilsynet for mekling](https://www.forbrukertilsynet.no/)\n\n[Klage mal](#)'
+AdresseVoss Taxi SA
+Uttrågata 19
+5700 Voss
+Norway`
           }
         ]
       }
@@ -857,6 +780,305 @@ Copyright © Voss Taxi SA
             type: 'rich_text',
             title: 'General information',
             body: 'Complain first to the taxi if it is delayed or drives the wrong way. If you cannot agree, you can bring the case to the Consumer Authority (Forbrukertilsynet).\n\n## On this page\n- Can you choose the taxi you want?\n- What can you demand if the taxi drives the wrong way?\n- What can you demand if the taxi is delayed or does not arrive?\n- How do you proceed to complain?\n\n### Can you choose the taxi you want?\nThere is free choice of taxi in Norway. You can choose the car or company you want – even in the taxi queue.\n\n### What can you demand if the taxi drives the wrong way?\nIf the taxi driver drives the wrong way, you can ask them to stop the taximeter, and if it turns out the driver did not choose the fastest route, you may demand a price reduction. You should ideally do this on the spot. If you are unsuccessful, you should raise this in writing with the taxi central as soon as possible.\n\n### What can you demand if the taxi is delayed or does not arrive?\nYou are entitled to compensation for financial losses that occur if the taxi is delayed or does not arrive. Remember that you are responsible for limiting any financial losses, for example by ordering a new taxi or choosing another means of transport.\n\nIn practice, this means that if you have calculated reasonable time but miss your flight because the taxi did not show up, you may claim compensation for the extra costs.\n\n> [!WARNING]\n> **NOTE!** The claim for compensation lapses if the delay is due to circumstances beyond the company\'s control, such as traffic accidents or extreme weather conditions.\n\nSome companies also have schemes that go beyond your statutory rights, so it may be wise to check the transport conditions if the taxi does not arrive as agreed.\n\n### How do you proceed to complain?\n**Complain to the taxi/taxi central**\nIf you have been unlucky, you should complain in writing to the taxi central as soon as possible. It is important to include information about the booked trip and to document any extra costs you have incurred.\n\n**Take the case to mediation**\nIf you cannot reach an agreement with the taxi central, you can take the case to the Consumer Authority.\n\n[Take the case to the Consumer Authority for mediation](https://www.forbrukertilsynet.no/)\n\n[Complaint template](#)'
+          }
+        ]
+      },
+
+      {
+        id: 'historia-var-en',
+        locale: 'en',
+        slug: 'historia-var',
+        title: 'Historia vår',
+        eyebrow: 'Om Voss Taxi',
+        summary: 'Sjå litt av historia til Voss Taxi. Gamle arkiv og bilder eksisterar det forbausande lite av i dag.',
+        blocks: [
+          {
+            type: 'rich_text',
+            body: `Sjå litt av historia til Voss Taxi. Gamle arkiv og bilder eksisterar det forbausande lite av i dag. Men etter all sannsynligheit har det nok vore drosjevirksomhet på Voss i over 100 år om ikkje lenger, Soga tyder at Voss Drosjeeigarlag blei stifta 10 februar 1930. Her er det litt uklart kvar dei var stasjonerte, men etter det me klarar å tyda ut ifrå gamle møtereferat er at dei heldt til ved fiskatorget, og seinare bak Voss bokhandel. Store delar av historia til laget gjekk tapt under bombinga av Vossevangen under andre verdenskrig.
+
+![Historisk bilde Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/image.jpg?etag=%22958b-5f037053%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio)
+
+Etter krigen gjekk drosjeeigarlaget saman med Voss lastebilforening om ein avtale med Norsk Brenselsolje (BP) i dag Statoil om ein eigen bensintank mot at dei fylte eksklusivt ved denne. I avtalen vart det også ordna med husrom for drosjesjåførane i form av ei brakke som dei fekk av BP. Brakka vart plassert på Hestavangen tidlig på 50 talet. Men ut i frå gamle bilder kan det sjå ut til at dei allereie var på Hestavangen kring 1937.
+
+![Historisk bilde 2 Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/IMG_20200706_0003.jpg?etag=%22b21ec-5f037055%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio)
+
+På sekstitalet freista dokter Bonsaksen å byggja helsehus på tomta der drosjene heldt til. Det vart då ein klausul i kjøpskontrakta med Kommunen at sjåførane burde få nytta første etasje når nybygget stod ferdigt.
+
+Det var då i 1968 at brakka blei flytta vestover på plassen, der den framleis står den dag i dag. Dette skulle vera ei mellombels flytting inntil nytt husvære var ferdig. Men når bygget var ferdig og klart for innflytting ville det visa seg for drosjene at lokala ikkje var eigna nok, det var alt for stort og husleiga ville verta for høg, med tanke på dei betalte pr kvadrat. Tidlegare hadde BP vore med å haldt husvære for sjåførane men dei meinte at denne auken i husleige vart urimeleg i så måte. Det var og planar i dei dagar om underjordisk toalett fasilitetar med drosjene oppå denne. Men dette vart det heller aldri noko av.
+
+Så etter ei lengre behandlingstid og fleire brev mellom kommune, drosjene, dr Bonsaksen m.m så glei heile hus spørsmålet ut i det blå og sjåførane vart verande i bua heilt fram til vinteren 2014. Då fekk dei endeleg koma heimat, som dei seier. Der dei var ifrå starten og der dei var opprinneleg lova nytt husly.
+
+![Historisk bilde 3 Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/1594033487309-3673ee32-eb67-4713-8214-ebb1da48e841.jpg?etag=%22b11b9-5f037056%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio)
+
+**Tidslinje:**
+- 1930 – ca. 1950 Voss Drosjeeigarlag
+- 1950 – 2014 Drosjebilsentralen/Voss Drosjebilsentral
+- 2014 - Voss Taxi SA
+
+Voss Taxi fyller 90 år 10 februar 2020.`
+          }
+        ]
+      },
+      {
+        id: 'transportvilkar-en',
+        locale: 'en',
+        slug: 'transportvilkar',
+        title: 'Transportvilkår',
+        summary: 'Våre transportvilkår og retningslinjer',
+        blocks: [
+          {
+            type: 'rich_text',
+            body: `Transportvilkår
+
+Utarbeidet av Norges Taxiforbund 2000
+
+§ 1 Transportvilkårenes anvendelse
+Transportvilkårene er avtalevilkår mellom den reisende og taxifører. På alle forhold som ikke er regulert her, kommer norsk lov til anvendelse.
+
+§ 2 Bestilling av taxi
+Ved bestilling av taxi gjennom sentral eller ved telefonbestilling direkte til holdeplass, skal bestiller gi relevante opplysninger som måtte være nødvendig for oppdragets utførelse. Dersom det kreves særskilt utrustet kjøretøy, utvidet setekapasitet eller særlig utstyr (spesialtransport), skal bestiller opplyse dette.
+
+Om bestillingen gjelder f. eks. flere enn fire passasjerer og det viser seg at det faktiske behov er redusert, regnes godtgjørelse og lignende i henhold til bestillingen.
+
+§ 3 Bruk av holdeplass. Fortrinnsrett til taxi.
+Ved kø på holdeplass, skal taxifører kjøre den reisende som står for tur. Syke, uføre og personer med småbarn har fortrinnsrett til taxi. For øvrig gjelder de av myndighetene fastsatte bestemmelser om fortrinnsrett til taxi.
+
+Reisende fra holdeplass er fortrinnsberettiget til ledig taxi. Publikum på holdeplass henvises til første ledige taxi, men de har selv rett til å velge taxi. Taxier som eventuelt står foran i køen, må om nødvendig flyttes for å gi plass til utkjøring.
+
+Ved påstigning skal den reisende oppgi sitt reisemål, om eventuell annen oppgjørsform enn kontant betaling og eventuelle andre forhold av betydning for oppdragets utførelse.
+
+§ 4 Praiing utenom holdeplass.
+Når taxi er ledig, skal taxifører sørge for at lediglampe er tent og synlig for publikum. Utenfor en avstand fra nærmeste holdeplass, angitt i sentralens kjørereglement/sjåførinstruks, kan fører plukke opp reisende som gir tydelige tegn, så sant stans og påstigning kan skje innenfor rammen av gjeldende trafikkregler og uten hinder for øvrig trafikk.
+
+§ 5 Taxiførers rett til å avvise turer
+Taxifører kan avvise ruset person, reisende som opptrer truende eller personer som av andre årsaker taxifører finner saklig grunn til å avvise.
+
+Den reisende har rett til å medbringe førerhund.
+
+Dersom person avvises, kan taxifører kreve godtgjørelse i samsvar med taksameterets pålydende.
+
+§ 6 Oppdragets utførelse
+En taxifører skal følge den kjørerute som tar kortest tid til bestemmelsesstedet, hvis den reisende ikke bestemmer noe annet.
+
+Taxifører plikter etter anmodning på samme turen å kjøre passasjerer til forskjellige steder (kombinering av tur). Hvis ikke annet er avtalt, er sist avstigende passasjer ansvarlig for betaling av turen
+
+Ansvar for påbudt bruk av bilbelte og eventuelt at barnesete er forsvarlig festet, følger veitrafikklovens bestemmelser.
+
+Person som trenger assistanse fra taxi til inngangsdør eller lignende, kan anmode om bistand. Bistand taxifører yter passasjeren, etter dennes ønske, til, fra eller utenfor transportmidlet skjer for passasjerens risiko.
+
+Under turen skal fører og passasjer opptre slik at det ikke oppstår fare for medtrafikanter, bagasje, bil og utstyr. Røyking i taxi er forbudt.
+
+Førers bruk av mobiltelefon, dataterminal og lignende under oppdrag skal skje i henhold til sentralens reglement. Bilradio kan benyttes etter den reisendes samtykke.
+
+Taxifører kan kreve forhåndsbetaling for turen.
+
+§ 7 Ventetid, avbrudd og forsinkelser
+Ved henting av passasjer og under kjøring plikter taxifører å vente i et tidsintervall som fremgår av kjørereglement/sjåførinstruks, hvis ikke annet er avtalt. For spesielle kjøreoppdrag av typen legekjøring, bryllup, barnedåp og begravelse følger ventetid av oppdragets art.
+
+Ved forhåndsbestilt taxi gjelder at faktisk fremmøte kan avvike fra avtalt fremmøtetidspunkt med et tidsintervall som er angitt i sentralens kjørereglement/sjåførinstruks.
+
+Må en tur avbrytes på grunn av feil med kjøretøyet, har taxifører ikke krav på betaling for den utførte kjøring, hvis han ikke innen rimelig tid kan skaffe annen taxi. Dersom ny taxi skaffes, kan taxifører kreve betalt for det han har kjørt, fratrukket den nye taxiens fremmøtepris. Hvis passasjeren ikke ønsker en annen taxi, har taxifører krav på betaling for den kjøring som er utført.
+
+Ved avbrytelse av tur på grunn av vær- og/eller føreforhold, har taxifører krav på betaling for kjørt lengde. Forsinkelser som skyldes trafikale og meteorologiske forhold gir den reisende ingen rett til avkortning i samlet takst.
+
+8 Betaling, veksling og kvittering
+Taxisentralens takstregulativ benyttes som grunnlag for takstberegningen, med mindre annet er avtalt.
+
+Taxiturer skal skje mot kontant betaling. Ved bruk av kredittkort, rekvisisjon eller annen betalingsform skal det avtales med taxifører før turens start. Dersom det gjennom skilting i taxien, sentralens annonsering eller lignende fremgår at bestemte rekvisisjoner, betalings-/kredittkort aksepteres, plikter taxifører å akseptere disse.
+
+Taxifører plikter ikke å veksle større seddelbeløp enn angitt i sentralens kjørereglement/sjåførinstruks. Kjøring i forbindelse med veksling av større beløp, belastes passasjer.
+
+Taxifører plikter på anmodning å gi passasjer datert kvittering. I kvitteringen skal oppgis taxiførers navn, taxiens løyvenummer, passasjerens på- og avstigningssted samt øvrige opplysninger som er nødvendig til kontroll av at vederlaget er regnet i samsvar med gjeldende takstregulativ. I taxi med kvitteringsskrivende taksameter, skal dette benyttes ved utskrift av kvittering.
+
+§ 9 Sikkerhet for betaling
+Taxifører skal snarest og innen 24 – tjuefire – timer underrette taxisentralen om gjenstander mottatt som sikkerhet for betaling. Offentlige dokumenter som f. eks. pass og førerkort, aksepteres ikke som panteobjekt. Taxifører plikter å gi passasjeren kvittering på sentralens godkjente blankett for mottatt pant.
+
+Pantekvittering skal være påført kjørerute, kjørebeløp, gebyr, tid og sted for tilbakelevering av pantet.
+
+Gjeldsbrev, godkjent av taxisentralen, kan benyttes som et alternativ til pant i forbindelse med sikkerhet for betaling.
+
+§ 10 Bagasje og lignende
+Taxifører skal hjelpe til med å anbringe bagasje og annet i taxien. Fører kan avvise bagasje og annet som etter sitt omfang eller utforming ikke er egnet til å bli transportert i taxien.
+
+Dersom den reisende ønsker å medbringe bagasje utover det som normalt kan påregnes medtatt i ordinær taxi, skal det opplyses til sentralen ved bestilling. Hvis mulig kan da sentralen formidle oppdraget til taxi tilpasset oppdragets art.
+
+§ 11 Hittegods
+Taxifører skal etter hver tur straks undersøke om noe er gjenglemt i taxien, slik at glemte saker kan bli levert tilbake til rette vedkommende med det samme.
+
+Er dette ikke mulig, skal fører levere gjenstander gjenglemt i taxien på det av sentralens anviste sted innen 24 timer. Han plikter å dra forsvarlig omsorg for gjenstanden.
+
+§ 12 Ansvar
+
+a) Skade på person
+Transportørens ansvar for skade på person under transport er nærmere regulert i bilansvarsloven. Transportøren skal ha forsikring i samsvar med de krav som lovgivningen bestemmer.
+
+b) Bagasje og annet gods
+Går håndbagasje eller ting som de reisende medbringer, helt eller delvis tapt, eller blir slike gjenstander skadd under reisen plikter transportøren å erstatte tapet eller skaden, dersom tapet eller skaden skyldes feil eller forsømmelser fra transportørens side.
+For skade på og/eller tap av bagasje eller andre ting passasjeren medbringer, er transportørens ansvar begrenset til kr. 60,- pr. kg. av den del av godset som er gått tapt eller blir skadet.
+
+c) Forsinkelse
+Erstatningsplikt for forsinkelse oppstår når fremmøte eller tiden for å fullføre oppdraget, overskrider hva som etter omstendighetene må anses som rimelig. Ansvar foreligger ikke dersom forsinkelsen skyldes passasjeren eller omstendigheter som taxifører ikke kunne unngå og hvis følger han ikke kunne forebygge. Transportørens ansvar for forsinkelser er begrenset til transportens kostnader.
+
+d) Den reisendes ansvar
+Den reisende plikter å erstatte skader som ved forsett eller uaktsomhet påføres transportøren.
+
+§ 13 Regler ved tvister
+Tvist mellom den reisende og taxifører som ikke lar seg løse mellom partene, kan den reisende forelegge sentralen.
+
+§ 14 Reklamasjon, frister og foreldelse
+Den som vil kreve erstatning for tap må gi transportøren og/eller den sentralen hvor transportøren er tilsluttet, meddelelse uten ugrunnet opphold.
+Krav om erstatning etter disse befordringsvedtekter, foreldes etter et år med mindre andre frister skal anvendes i medhold av annen lovgivning.
+
+§ 15 Opplysning
+Transportvilkårene skal, sammen med gjeldende takstregulativ, være tilgjengelig i taxien og forevises den reisende på forlangende.
+
+Scan QR Code and order
+
+Copyright © Voss Taxi SA
+
+Telefon+4756511340
+
+E-postpost@vosstaxi.no
+
+AdresseVoss Taxi SA
+Uttrågata 19
+5700 Voss
+Norway`
+          }
+        ]
+      },
+      {
+        id: 'personvern-en',
+        locale: 'en',
+        slug: 'personvern',
+        title: 'Personvern',
+        summary: 'Vår personvernerklæring',
+        blocks: [
+          {
+            type: 'rich_text',
+            body: `Når du brukar Voss Taxi SA, gjev du oss tilgang til opplysningar om deg. Her kan du lesa kva opplysningar me samlar inn, korleis me gjer det og kva me brukar dei til.
+Her finn du informasjon om korleis opplysningar om deg, og dine reiser behandlast i våre system. Elektroniske spor om deg knytt til våre tenester er trygge hjå oss, og me vil ikkje misbruka opplysningane dine. Voss Taxi SA vil behandla dine personopplysningar slik at du får ei enkel og god teneste. Drosjeselskapet er ansvarleg for dei personopplysningane som behandlast.
+
+Formål
+
+For å kunna tilby digital bestilling, førehandsbetaling og tilleggstenester via vosstaxi.no og VY-Appen, må me kunne lagra informasjon som regnast som personopplysningar
+
+Gjennomføring av endringar
+
+Me vil i blant kunna oppdatera Voss Taxi SAs personvernerklæring for å gjenspeila endringar på nettstaden eller ved vår personvernerklæring. Ved større endringar vil me informera om dette via vår heimeside, eller du informerast ved neste gongs pålogging. I særlege tilfeller vil innlogga brukarar varslast direkte ved e-post eller varsel på SMS.
+
+Kva lagrar me og kvifor
+
+Delar av korttype og –nummer for betaling med kreditt- og bankkort: Me lagrar ikkje heile kortnummeret hjå oss, men delar av da lagrast når du registrerar det direkte i våre tenester. Dette lagrast i vår database slik at kunden skal kunna førehandsbetala og henta ut sine digitale kvitteringar etter endt tur. Visst opplysningane registrerast i tredjepartsløysningar, som for eksempel ved lagring av kort via VY-appen, henvisast kunden til tredjeparts eigne vilkår. https://www.vy.no/vilkar-og-personvern/personvern
+
+Telefonnummer: Sjåførar kan bruka telefonnummer til å ta kontakt med kunde ved henting, eller om han eller ho finn gjengløymde ting i bilen. Me vil også bruka telefonnummer til å senda ut bekreftelsar på bestillingar, eller visst noko uforutsett har skjedd som har betydning for levering av tenester.
+
+For- og/eller etternamn: Lagrast slik at me kan gje betre kundeservice om me treng å kontakta kunden, og for å gjera opplevinga med Voss Taxi SA meir personleg.
+
+Start- og sluttadresser for turar: Brukast til å generera digitale kvitteringar.
+
+Dato og klokkeslett for turar køyrd: Brukast til å generera digitale kvitteringar.
+
+Karthistorikk: For å kunna henta favorittadresser for raskare bestilling.
+
+GPS: Ved bestilling av tur brukast GPS-signal for å finna ut kvar kunden befinn seg (startadresse).
+
+Utvikling av tenester
+
+Me utviklar stadig våre tenester. Når me utviklar tilleggstenester på vosstaxi.no som inneber lagring av personopplysningar, vil me oppdatera desse vilkåra. Oppdaterte vilkår vil til ei kvar tid væra tilgjengeleg på web.
+
+Kva er personopplysningar?
+
+Personopplysningar er informasjon som kan knytast til ein person, for eksempel namn, bustad, telefonnummer, e-postadresse, IP-adresse.
+
+Med personopplysning meiner me opplysningar som kan knytast til ein enkeltperson
+
+Innstillingar for personopplysningar
+
+Du kan begrensa lagring og behandling av opplysningar om deg. Våre tenester vil då ikkje i like stor grad være tilpassa deg.
+
+Du kan når som helst endra databehandlinga som skjer i våre appar i telefonens innstillingar. Her kan du slå av og på varslingar og opne eller slå av sending av GPS-data til lokasjons teneste. Dette påverkar moglegheitene til å få personaliserte tenester og målretta annonsar.
+
+Voss Taxi SA loggfører også data knytta til dei enkelte taxiturar.
+
+I tillegg er da kun dei opplysningar som du sjølv oppgjev til oss igjennom appen, som lagrast. Me vil ikkje be om opplysningar som me ikkje treng for å kunna oppfylla våre forpliktelsar ovanfor deg.
+
+Dine personopplysningar vil ikkje verta brukt til andre føremål, eller verta utlevert til andre, med mindre du samtykkjer til slik utvida bruk.
+
+Dersom du vel å registrera ein profil om deg sjølv i VY-appen, vil du sjølv kunna sjå, redigera og sletta dei personlege opplysningane som er lagra i” Min Profil”. Du må angje brukarnamn og passord for å få tilgang til desse opplysningane.
+
+VY-Appen brukar fleire sikkerhetsteknologiar for å beskytta dine personopplysningar mot uautorisert tilgang, bruk eller vidareformidling.
+
+Ved å kontakta oss kan du få innsyn i dine personopplysningar som er lagra hjå oss
+
+Vy-Appen ryddar løpande i sine databasar. Opplysningar som ikkje lenger er relevante, vert automatisk sletta. Ved å kontakta oss kan du krevja at dine personopplysningar som er lagra hjå oss, vert sletta. I så fall tar me kun vare på opplysningar som me er pålagd av lov å oppbevara.
+
+VY-Appen nyttar informasjonskapslar kun til å verifisera gyldig brukarkonto. Dersom du ønskjer å skreddarsy tenesta til dine spesifikke føremål og preferansar, kan du sjølv konfigurera ei rekkje parameter under «din profil».
+
+Oppdaterte «Retningslinjer for personvern knytt til Voss Taxi SA» er til ei kvar tid tilgjengeleg på http://vosstaxi.no.
+
+Nokon av våre tenester krevjer at kunden samtykkjer til brukarvilkår på grunn av tenestas omfang. Ved bruk av VY-appen må kunden godkjenna innhenting og lagring av personopplysningar ved fyrste oppstart. På VY.no godkjenner kunden innhenting av personopplysningar ved å registrera seg som brukar og bruke tenesta. Enkelte tenester vil ikkje fungera som tiltenkt utan aktivt samtykke, for eksempel stads tenester.
+
+Alle data kunden sjølv fyller inn for å bruka våre tenester lagrast i vår kundedatabase. Voss Taxi SA har ikkje anledning til å bruka informasjonen ut over vårt formål. Alt krypterast for å sikra at kommunikasjonen mellom tenestene våre er så sikkert som overhode mogeleg.
+
+Me har ikkje anledning til å lagra eller samla inn informasjon ut over det me har spesifisert i dette dokumentet. Endringar i kva me samlar inn vil bli meldt frå om på førehand.
+
+Me har ingen kontroll over, eller ansvar for, tredjepartsprogramvare med tanke på personopplysningar. Me vil ikkje bruka tredjepartsløysningar som er allment kjend for å bryta personvernopplysningslova i Noreg. Me brukar blant anna Google Maps, Vipps. Vennlegast sjå opplysningar om personvern i desse appane.
+
+Kva brukast informasjonen til?
+
+Me jobbar heile tida for å gje deg ei tilpassa og god oppleving av Voss Taxi SA. Her er dei viktigaste føremåla me brukar personopplysningar til:
+
+Levera tenestene du forventar av oss
+
+Spara deg for tid og arbeid
+
+Forstå markedstrender og behov
+
+Rett til innsyn, retting og sletting
+
+Kunden har rett til å krevje innsyn i dei registrerte opplysningane, samt rett til å krevje retting og sletting i henhold til personopplysningsloven. Ta kontakt på e-post for kundeservice: personvern@vosstaxi.no
+
+Dersom kunde slettar sin profil vil også tilhøyrande personopplysningar slettast. Reisekvitteringar vil som følgje av detta væra anonyme, slik som før oppretta profil.
+
+Behandlingsansvarleg &amp; Personvernombod
+
+Voss Taxi SA har eit eiget personvernombud for å sikra ein trygg og god behandling av personopplysningar. Ordninga er initiert av Datatilsynet. Du kan kontakte Voss Taxi SAs personvernombod på e-postadressa personvern@vosstaxi.no.
+
+Kva reglar gjeld for handtering av personopplysningar?
+
+Voss Taxi SA er ansvarleg for handteringa av personopplysningar som samlast inn ved bruk av våre tenester. Voss Taxi SA følgjer personopplysningsloven i behandlinga av personopplysningar.
+
+Når du lar oss formidla personopplysningar til andre, vil desse ha eit sjølvstendig ansvar for vidare behandling av opplysningane.
+
+Borns personvern
+
+Me ynskjer ikkje å samla inn eller på annan måte behandla personopplysningar om born under 16 års alder.
+
+Visst born under 16 år alikavel har gjett oss personopplysningar vil me sletta opplysningane så snart me vert oppmerksame på forholdet. Føresette kan kontakta oss som angitt nedanfor.
+
+Sletting av personopplysningar
+
+Me lagrar ikkje personopplysningar lenger og i større grad enn da som er nødvendig for å oppfylle formålet med behandlinga med mindre det er lovpålagt, for eksempel gjennom regnskapsloven. Me har omfattande rutinar for sletting og anonymisering. Du kan sjølv be om å få fjerna opplysningar frå din brukarprofil.
+
+Hovudregelen er at personopplysningar lagrast maksimalt i to år. Kor fort opplysninger vert sletta kan variere.
+
+Innsyn i lagra personopplysningar
+
+Ved ynskje om innsyn i kva slags opplysningar me har om deg, vennligst fyll ut vedlagt skjema og send dette til personvern@vosstaxi.no.Personvern skjema
+
+Scan QR Code and order
+
+Copyright © Voss Taxi SA
+
+Telefon+4756511340
+
+E-postpost@vosstaxi.no
+
+AdresseVoss Taxi SA
+Uttrågata 19
+5700 Voss
+Norway`
           }
         ]
       }

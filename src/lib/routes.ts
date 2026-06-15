@@ -7,7 +7,6 @@ const legacyRedirects: Record<string, string> = {
   '/Hjem/om/hittegods': '/hittegods',
   '/Hjem/om-meg': '/tenester',
   '/Hjem/pakker': '/pakker',
-  '/Hjem/trygt-heim': '/trygt-heim',
   '/Hjem/om-oss': '/takstar',
   '/Hjem/kontakt': '/kontakt',
   '/Hjem/galleri': '/galleri',
@@ -55,6 +54,10 @@ export function parseRoute(pathname: string): { locale: Locale; slug: string } {
   const parts = cleanPath.split('/')
   if (parts[0] === 'en') {
     return { locale: 'en', slug: parts[1] ?? 'home' }
+  }
+  
+  if (parts[0] === 'no') {
+    return { locale: 'no', slug: parts[1] ?? 'home' }
   }
 
   return { locale: 'no', slug: parts[0] }

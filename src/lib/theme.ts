@@ -1,4 +1,4 @@
-export type ThemeMode = 'system' | 'light' | 'dark'
+﻿export type ThemeMode = 'system' | 'light' | 'dark'
 export type ResolvedTheme = 'light' | 'dark'
 
 export function getInitialThemeMode(savedMode: string | null): ThemeMode {
