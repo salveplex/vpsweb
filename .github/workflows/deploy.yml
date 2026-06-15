@@ -1,0 +1,40 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build --emptyOutDir
+
+      - name: Copy dist to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 85.190.102.196
+          username: vosstaxi
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: dist/
+          target: ~/sites/vpsweb_test/
+          strip_components: 1
+
+      - name: Restart PM2
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: 85.190.102.196
+          username: vosstaxi
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd ~/sites/vpsweb_test
+            pm2 delete vpsweb_test 2>/dev/null || true
+            pm2 serve . 3050 --name 'vpsweb_test' --spa

@@ -1,22 +1,18 @@
-import {
+﻿import {
   ArrowRight,
   ArrowUpRight,
-  CalendarCheck,
   Car,
-  Desktop,
-  DeviceMobile,
   EnvelopeSimple,
   Gauge,
-  List,
   MapPin,
-  Moon,
   Phone,
   ShieldCheck,
   Timer,
-  Sun,
-  X,
+  BookOpen,
+  FileText,
+  LockKey,
 } from '@phosphor-icons/react'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, createContext, useContext, useCallback } from 'react'
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 
 import { fallbackByLocale } from './content/fallback'
@@ -25,15 +21,20 @@ import { assetUrl, fetchSiteData } from './lib/directus'
 import { cleanGalleryImageUrl } from './lib/heroImages'
 import { getRedirectTarget, parseRoute } from './lib/routes'
 import { getInitialThemeMode, resolveThemeMode, type ThemeMode } from './lib/theme'
+import { glassCardStyles, glassCardStrongStyles, glassBlurredStyles, accentColor, mutedColor, lineColor } from './lib/styles'
+import { formatPhone, iconWeight } from './lib/shared'
 import type { CmsPage, Locale, PageBlock, SiteData } from './types'
 import ReactMarkdown from 'react-markdown'
+import { Helmet } from 'react-helmet-async'
 
-const iconWeight = 'light' as const
-const themeLabels: Record<ThemeMode, string> = {
-  system: 'System',
-  light: 'Lys',
-  dark: 'Mørk',
-}
+import { StatusBanner } from './components/StatusBanner'
+import { Marquee } from './components/Marquee'
+import { LoadingSkeleton } from './components/LoadingSkeleton'
+import { Header } from './components/Header'
+import { Footer } from './components/Footer'
+import { Lightbox } from './components/Lightbox'
+
+const LightboxContext = createContext<(url: string) => void>(() => {})
 
 function readStoredThemeMode() {
   try {
@@ -47,7 +48,7 @@ function writeStoredThemeMode(mode: ThemeMode) {
   try {
     localStorage.setItem('theme-mode', mode)
   } catch {
-    // Browsers can block localStorage in strict privacy contexts.
+    return
   }
 }
 
@@ -96,140 +97,7 @@ function useSiteData(locale: Locale) {
   return { data, loading }
 }
 
-function ThemeToggle({ mode, onChange }: { mode: ThemeMode; onChange: (mode: ThemeMode) => void }) {
-  const options: Array<{ mode: ThemeMode; icon: typeof Desktop }> = [
-    { mode: 'system', icon: Desktop },
-    { mode: 'light', icon: Sun },
-    { mode: 'dark', icon: Moon },
-  ]
 
-  return (
-    <div className="grid grid-cols-3 rounded-full border p-1" style={{ borderColor: 'var(--line)', background: 'var(--glass)' }}>
-      {options.map((option) => (
-        <button
-          key={option.mode}
-          type="button"
-          className="grid size-9 place-items-center rounded-full transition-[transform,background,color] duration-500 ease-[cubic-bezier(.32,.72,0,1)] active:scale-[0.96]"
-          style={{
-            background: mode === option.mode ? 'var(--surface)' : 'transparent',
-            color: mode === option.mode ? 'var(--text)' : 'var(--muted)',
-          }}
-          aria-label={`Velg ${themeLabels[option.mode]} tema`}
-          aria-pressed={mode === option.mode}
-          onClick={() => onChange(option.mode)}
-          title={themeLabels[option.mode]}
-        >
-          <option.icon size={17} weight={iconWeight} />
-        </button>
-      ))}
-    </div>
-  )
-}
-
-function Header({
-  data,
-  locale,
-  themeMode,
-  setThemeMode,
-}: {
-  data: SiteData
-  locale: Locale
-  themeMode: ThemeMode
-  setThemeMode: (mode: ThemeMode) => void
-}) {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const alternate = locale === 'en' ? '/' : '/en'
-  const location = useLocation()
-
-  return (
-    <header className="fixed left-0 right-0 top-0 z-30 px-3 pt-3 md:px-6">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-[18px] border px-3 py-3 backdrop-blur-2xl md:px-4" style={{ borderColor: 'rgba(255,255,255,.18)', background: 'rgba(18,17,15,.48)', color: '#fffaf0' }}>
-        <Link to={locale === 'en' ? '/en' : '/'} className="group flex items-center gap-3">
-          <span className="grid size-11 place-items-center rounded-[12px] bg-taxi text-[#181511] transition-transform duration-500 ease-[cubic-bezier(.32,.72,0,1)] group-hover:-translate-y-0.5 group-active:scale-[0.98]">
-            <Car size={24} weight="fill" />
-          </span>
-          <span>
-            <span className="block text-lg font-extrabold tracking-tight">Voss Taxi</span>
-            <span className="block font-mono text-[10px] uppercase tracking-[0.24em]" style={{ color: 'var(--accent-strong)' }}>SA</span>
-          </span>
-        </Link>
-
-        <nav className="hidden items-center rounded-[12px] border border-white/10 bg-white/8 p-1 lg:flex" aria-label="Hovudmeny">
-          {data.navigation.map((item) => {
-            const active = location.pathname === item.href
-            return (
-              <Link
-                key={item.id}
-                to={item.href}
-                className="rounded-[9px] px-4 py-2 text-sm font-semibold transition-[transform,background,color] duration-500 ease-[cubic-bezier(.32,.72,0,1)] active:scale-[0.98]"
-                style={{
-                  background: active ? 'var(--surface)' : 'transparent',
-                  color: active ? 'var(--text)' : 'rgba(255,255,255,.72)',
-                }}
-              >
-                {item.label}
-              </Link>
-            )
-          })}
-        </nav>
-
-        <div className="hidden items-center gap-2 md:flex">
-          <ThemeToggle mode={themeMode} onChange={setThemeMode} />
-          <Link
-            to={alternate}
-            className="rounded-[10px] border px-4 py-2 font-mono text-xs uppercase tracking-[0.18em] transition active:scale-[0.98]"
-            style={{ borderColor: 'rgba(255,255,255,.16)', color: 'rgba(255,255,255,.72)' }}
-          >
-            {locale === 'en' ? 'NO' : 'EN'}
-          </Link>
-          <a
-            href={`tel:${data.settings.phone}`}
-            className="group inline-flex items-center gap-3 rounded-[12px] bg-taxi py-1.5 pl-4 pr-1.5 text-sm font-bold text-[#181511] transition duration-500 ease-[cubic-bezier(.32,.72,0,1)] hover:bg-taxi-soft active:scale-[0.98]"
-          >
-            {data.settings.phone_display}
-            <span className="grid size-8 place-items-center rounded-full bg-[#181511]/10 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <Phone size={16} weight={iconWeight} />
-            </span>
-          </a>
-        </div>
-
-        <button
-          className="relative grid size-11 place-items-center rounded-full border lg:hidden"
-          style={{ borderColor: 'rgba(255,255,255,.18)' }}
-          type="button"
-          aria-label={menuOpen ? 'Lukk meny' : 'Opne meny'}
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          {menuOpen ? <X size={20} /> : <List size={22} />}
-        </button>
-      </div>
-
-      {menuOpen ? (
-        <div className="mt-3 rounded-[2rem] border p-4 shadow-[0_26px_90px_-48px_var(--shadow)] backdrop-blur-2xl lg:hidden" style={{ borderColor: 'var(--line)', background: 'var(--glass-strong)' }}>
-          <nav className="grid gap-2">
-            {data.navigation.map((item, index) => (
-              <Link
-                key={item.id}
-                to={item.href}
-                onClick={() => setMenuOpen(false)}
-                className="reveal rounded-[1.3rem] border px-4 py-3 font-semibold"
-                style={{ '--index': index, borderColor: 'var(--line)' } as React.CSSProperties}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="mt-2 flex items-center justify-between gap-3">
-              <Link to={alternate} onClick={() => setMenuOpen(false)} className="rounded-md border px-4 py-3 font-mono text-sm uppercase" style={{ borderColor: 'var(--line)', color: 'var(--accent-strong)' }}>
-                {locale === 'en' ? 'Norsk' : 'English'}
-              </Link>
-              <ThemeToggle mode={themeMode} onChange={setThemeMode} />
-            </div>
-          </nav>
-        </div>
-      ) : null}
-    </header>
-  )
-}
 
 function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; locale: Locale; isHome: boolean }) {
 
@@ -323,7 +191,7 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
                 <a href={`tel:${data.settings.phone}`} className="booking-action booking-action-primary">
                   <span>
                     <span className="block text-sm opacity-70">{locale === 'en' ? 'Call dispatch' : 'Ring sentralen'}</span>
-                    <span className="block text-lg font-bold">{data.settings.phone_display}</span>
+                    <span className="block text-lg font-bold">{formatPhone(data.settings.phone_display)}</span>
                   </span>
                   <span className="booking-action-icon"><Phone size={20} weight={iconWeight} /></span>
                 </a>
@@ -360,56 +228,29 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
   )
 }
 
-function BookingStrip({ data, locale }: { data: SiteData; locale: Locale }) {
-  const items = [
-    { icon: Phone, label: locale === 'en' ? 'Call dispatch' : 'Ring sentralen', value: data.settings.phone_display, href: `tel:${data.settings.phone}` },
-    { icon: Gauge, label: locale === 'en' ? 'Fare estimate' : 'Priskalkulator', value: locale === 'en' ? 'Open calculator' : 'Opne kalkulator', href: data.settings.fare_calculator_url },
-    { icon: CalendarCheck, label: locale === 'en' ? 'Book online' : 'Bestill på nett', value: locale === 'en' ? 'Start booking' : 'Start bestilling', href: data.settings.booking_url },
-  ]
 
-  return (
-    <section className="booking-strip px-4 md:px-6">
-      <div className="booking-strip-shell mx-auto grid max-w-[92rem] gap-3 rounded-[30px] border p-2 md:grid-cols-[1.2fr_.9fr_.9fr]" style={{ borderColor: 'var(--line)', background: 'var(--surface)' }}>
-        {items.map((item, index) => (
-          <a key={item.label} href={item.href} className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-[1.45rem] p-5 transition duration-700 ease-[cubic-bezier(.32,.72,0,1)] hover:-translate-y-1 active:scale-[0.985]" style={{ background: index === 0 ? 'var(--accent)' : 'var(--surface)', color: index === 0 ? 'var(--accent-ink)' : 'var(--text)' }}>
-            <span className="grid size-12 place-items-center rounded-full" style={{ background: index === 0 ? 'rgba(24,21,17,.12)' : 'var(--surface-soft)' }}>
-              <item.icon size={21} weight={iconWeight} />
-            </span>
-            <span>
-              <span className="block text-sm opacity-70">{item.label}</span>
-              <span className="block font-bold">{item.value}</span>
-            </span>
-            <span className="grid size-9 place-items-center rounded-full bg-current/8 transition duration-700 group-hover:translate-x-1 group-hover:-translate-y-0.5">
-              <ArrowRight size={19} />
-            </span>
-          </a>
-        ))}
-      </div>
-    </section>
-  )
-}
 
 function Services({ data, locale }: { data: SiteData; locale: Locale }) {
   return (
     <section className="fleet-section mx-auto max-w-[92rem] px-4 py-20 md:px-8 md:py-32">
       <div className="grid gap-12 md:grid-cols-[.72fr_1.28fr]">
         <div>
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={{ color: 'var(--accent-strong)' }}>{locale === 'en' ? 'Services' : 'Tenester'}</p>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{locale === 'en' ? 'Services' : 'Tenester'}</p>
           <h2 className="mt-4 text-balance text-4xl font-extrabold leading-none tracking-tight md:text-5xl">
             {locale === 'en' ? 'A cleaner overview of the fleet.' : 'Eit ryddigare overblikk over bilparken.'}
           </h2>
         </div>
         <div className="fleet-list grid gap-3">
           {data.services.map((service, index) => (
-            <article key={service.id} className="service-list-card reveal grid gap-5 rounded-[18px] border p-5 transition md:grid-cols-[auto_1fr_auto]" style={{ '--index': index, borderColor: 'var(--line)', background: 'var(--surface)' } as React.CSSProperties}>
+            <article key={service.id} className="service-list-card reveal grid gap-5 rounded-[24px] border p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 md:grid-cols-[auto_1fr_auto]" style={{ '--index': index, ...glassCardStyles } as React.CSSProperties}>
               <span className="grid size-11 place-items-center rounded-md bg-taxi text-[#181511]">
                 <Car size={20} weight={iconWeight} />
               </span>
               <div>
                 <h3 className="text-xl font-bold">{service.title}</h3>
-                <p className="mt-2 max-w-[68ch] leading-7" style={{ color: 'var(--muted)' }}>{service.description}</p>
+                <p className="mt-2 max-w-[68ch] leading-7" style={mutedColor}>{service.description}</p>
               </div>
-              {service.capacity ? <div className="font-mono text-sm uppercase tracking-[0.14em]" style={{ color: 'var(--accent-strong)' }}>{service.capacity}</div> : null}
+              {service.capacity ? <div className="font-mono text-sm uppercase tracking-[0.14em]" style={accentColor}>{service.capacity}</div> : null}
             </article>
           ))}
         </div>
@@ -420,19 +261,19 @@ function Services({ data, locale }: { data: SiteData; locale: Locale }) {
 
 function FaresAndLinks({ data, locale }: { data: SiteData; locale: Locale }) {
   return (
-    <section className="border-y" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--surface) 85%, transparent)', backdropFilter: 'blur(16px)' }}>
+    <section className="border-y" style={{ ...lineColor, ...glassBlurredStyles }}>
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-[.9fr_1.1fr] md:px-6">
         <div>
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={{ color: 'var(--accent-strong)' }}>{locale === 'en' ? 'Fares' : 'Takstar'}</p>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{locale === 'en' ? 'Fares' : 'Takstar'}</p>
           <h2 className="mt-4 text-balance text-4xl font-extrabold tracking-tight">{locale === 'en' ? 'Fast choices before the trip.' : 'Raske valg før turen.'}</h2>
-          <div className="mt-8 divide-y" style={{ borderColor: 'var(--line)' }}>
+          <div className="mt-8 divide-y" style={lineColor}>
             {data.fares.map((fare) => (
               <div key={fare.id} className="grid grid-cols-[1fr_auto] gap-4 py-5">
                 <div>
                   <h3 className="font-bold">{fare.label}</h3>
-                  <p className="mt-1 text-sm" style={{ color: 'var(--muted)' }}>{fare.note}</p>
+                  <p className="mt-1 text-sm" style={mutedColor}>{fare.note}</p>
                 </div>
-                <div className="font-mono" style={{ color: 'var(--accent-strong)' }}>{fare.value}</div>
+                <div className="font-mono" style={accentColor}>{fare.value}</div>
               </div>
             ))}
           </div>
@@ -440,14 +281,14 @@ function FaresAndLinks({ data, locale }: { data: SiteData; locale: Locale }) {
 
         <div className="grid gap-3 sm:grid-cols-2">
           {data.quickLinks.map((link, index) => (
-            <a key={link.id} href={link.href} className="group flex min-h-44 flex-col justify-between rounded-[8px] border p-5 transition hover:-translate-y-0.5 active:translate-y-px" style={{ '--index': index, borderColor: 'var(--line)', background: 'var(--surface)' } as React.CSSProperties}>
+            <a key={link.id} href={link.href} className="group flex min-h-44 flex-col justify-between rounded-[24px] border p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 active:translate-y-px" style={{ '--index': index, ...glassCardStyles } as React.CSSProperties}>
               <div>
                 <div className="mb-5 flex justify-between gap-4">
-                  <span className="font-mono text-xs uppercase tracking-[0.18em]" style={{ color: 'var(--accent-strong)' }}>0{index + 1}</span>
+                  <span className="font-mono text-xs uppercase tracking-[0.18em]" style={accentColor}>0{index + 1}</span>
                   <ArrowRight className="transition group-hover:translate-x-1" size={20} />
                 </div>
                 <h3 className="text-xl font-bold">{link.title}</h3>
-                <p className="mt-2 text-pretty" style={{ color: 'var(--muted)' }}>{link.description}</p>
+                <p className="mt-2 text-pretty" style={mutedColor}>{link.description}</p>
               </div>
               <span className="mt-6 font-mono text-xs uppercase tracking-[0.18em]">{link.label}</span>
             </a>
@@ -461,23 +302,29 @@ function FaresAndLinks({ data, locale }: { data: SiteData; locale: Locale }) {
 function Gallery({ data, locale }: { data: SiteData; locale: Locale }) {
   const [failedImages, setFailedImages] = useState<Set<string>>(() => new Set())
   const visibleGallery = data.gallery.filter((item) => !failedImages.has(item.id))
+  const openLightbox = useContext(LightboxContext)
+
+  const handleImageError = useCallback((itemId: string) => {
+    setFailedImages((current) => new Set(current).add(itemId))
+  }, [])
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-18 md:px-6 md:py-24">
       <div className="mb-8 max-w-2xl">
-        <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={{ color: 'var(--accent-strong)' }}>{locale === 'en' ? 'Gallery' : 'Galleri'}</p>
+        <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{locale === 'en' ? 'Gallery' : 'Galleri'}</p>
         <h2 className="mt-4 text-balance text-4xl font-extrabold tracking-tight">{locale === 'en' ? 'Real Voss Taxi material.' : 'Ekte Voss Taxi-materiale.'}</h2>
       </div>
       <div className="gallery-grid grid gap-4 md:grid-cols-4">
         {visibleGallery.map((item, index) => (
-          <figure key={item.id} className="gallery-tile reveal overflow-hidden rounded-[18px] border" style={{ '--index': index, borderColor: 'var(--line)', background: 'var(--surface)' } as React.CSSProperties}>
+          <figure key={item.id} className="gallery-tile reveal overflow-hidden rounded-[18px] border" style={{ '--index': index, ...lineColor, background: 'var(--surface)' } as React.CSSProperties}>
             <img
-              className="gallery-image w-full object-cover transition duration-500 hover:scale-[1.025]"
+              className="gallery-image w-full cursor-pointer object-cover transition duration-500 hover:scale-[1.025]"
               src={cleanGalleryImageUrl(assetUrl(import.meta.env.VITE_DIRECTUS_URL ?? '', item.image))}
               alt={item.alt}
               loading="lazy"
               decoding="async"
-              onError={() => setFailedImages((current) => new Set(current).add(item.id))}
+              onClick={() => openLightbox(cleanGalleryImageUrl(assetUrl(import.meta.env.VITE_DIRECTUS_URL ?? '', item.image)))}
+              onError={() => handleImageError(item.id)}
             />
           </figure>
         ))}
@@ -487,6 +334,7 @@ function Gallery({ data, locale }: { data: SiteData; locale: Locale }) {
 }
 
 function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
+  const openLightbox = useContext(LightboxContext)
   if (!blocks.length) return null
 
   return (
@@ -495,10 +343,46 @@ function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
         {blocks.map((block, index) => {
           if (block.type === 'rich_text') {
             return (
-              <article key={`${block.type}-${index}`} className="rounded-[1.2rem] border p-8 shadow-lg backdrop-blur-2xl md:p-12" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--surface) 75%, transparent)' }}>
+              <article key={`${block.type}-${index}`} className="rounded-[1.2rem] border p-8 shadow-lg backdrop-blur-2xl md:p-12" style={{ ...lineColor, background: 'color-mix(in srgb, var(--surface) 75%, transparent)' }}>
                 {block.title ? <h2 className="mb-6 text-3xl font-extrabold tracking-tight md:text-4xl">{block.title}</h2> : null}
-                <div className="markdown-body max-w-[76ch] text-lg leading-relaxed md:text-xl" style={{ color: 'var(--muted)' }}>
-                  <ReactMarkdown>{block.body.replace(/!\[image\]\(https:\/\/impro\.usercontent\.one\/appid\/oneComWsb\/domain\/vosstaxi\.no\/media\/vosstaxi\.no\/onewebmedia\/2\.3___serialized1\.png[^)]*\)/g, '')}</ReactMarkdown>
+                <div className="markdown-body max-w-[76ch] text-lg leading-relaxed md:text-xl" style={mutedColor}>
+                  <ReactMarkdown
+                    components={{
+                      img: ({ src, alt }) => {
+                        const isBadge = src && (src.includes('app-store') || src.includes('google-play'));
+                        if (isBadge) {
+                           return (
+                             <img
+                               src={src || ''}
+                               alt={alt}
+                               className="inline-block transition-transform hover:scale-[1.05]"
+                               style={{ height: '56px', width: 'auto', margin: '0 16px 16px 0', borderRadius: '8px' }}
+                             />
+                           );
+                        }
+                        const optimizedSrc = cleanGalleryImageUrl(src || '');
+                        return (
+                          <span className="my-12 block">
+                            <img
+                              src={optimizedSrc}
+                              alt={alt}
+                              onClick={() => src && openLightbox(src)}
+                              className="mx-auto cursor-pointer rounded-2xl border-[6px] object-cover shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-transform hover:scale-[1.02]"
+                              style={{
+                                borderColor: 'var(--surface)',
+                                backgroundColor: 'var(--surface)',
+                                display: 'block',
+                                width: '100%',
+                                height: 'auto',
+                                maxWidth: '90%'
+                              }}
+                            />
+                            {alt ? <span className="mt-4 block text-center text-sm italic opacity-70">{alt}</span> : null}
+                          </span>
+                        );
+                      }
+                    }}
+                  >{block.body.replace(/<br\s*\/?>/gi, '\n\n')}</ReactMarkdown>
                 </div>
               </article>
             )
@@ -506,10 +390,10 @@ function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
 
           if (block.type === 'cta') {
             return (
-              <a key={`${block.type}-${index}`} href={block.href} className="group rounded-[8px] border p-6 transition" style={{ borderColor: 'var(--line)', background: 'var(--surface)' }}>
+              <a key={`${block.type}-${index}`} href={block.href} className="group rounded-[8px] border p-6 transition" style={{ ...lineColor, background: 'var(--surface)' }}>
                 <h2 className="text-2xl font-bold">{block.title}</h2>
-                <p className="mt-3" style={{ color: 'var(--muted)' }}>{block.body}</p>
-                <span className="mt-5 inline-flex items-center gap-2 font-bold" style={{ color: 'var(--accent-strong)' }}>
+                <p className="mt-3" style={mutedColor}>{block.body}</p>
+                <span className="mt-5 inline-flex items-center gap-2 font-bold" style={accentColor}>
                   {block.label}
                   <ArrowRight className="transition group-hover:translate-x-1" size={18} />
                 </span>
@@ -526,14 +410,14 @@ function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
 
 function ContactPanel({ data, locale }: { data: SiteData; locale: Locale }) {
   return (
-    <section className="border-t" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--surface) 85%, transparent)', backdropFilter: 'blur(16px)' }}>
+    <section className="border-t" style={{ ...lineColor, ...glassBlurredStyles }}>
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 md:grid-cols-[.8fr_1.2fr] md:px-6">
         <div>
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={{ color: 'var(--accent-strong)' }}>{locale === 'en' ? 'Contact' : 'Kontakt'}</p>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{locale === 'en' ? 'Contact' : 'Kontakt'}</p>
           <h2 className="mt-4 text-balance text-4xl font-extrabold tracking-tight">{locale === 'en' ? 'Ready when Voss moves.' : 'Klar når Voss skal vidare.'}</h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
-          <ContactCard href={`tel:${data.settings.phone}`} icon={Phone} label={locale === 'en' ? 'Phone' : 'Telefon'} value={data.settings.phone_display} />
+          <ContactCard href={`tel:${data.settings.phone}`} icon={Phone} label={locale === 'en' ? 'Phone' : 'Telefon'} value={formatPhone(data.settings.phone_display)} />
           <ContactCard href={`mailto:${data.settings.email}`} icon={EnvelopeSimple} label="E-post" value={data.settings.email} />
           <ContactCard href={data.settings.map_url} icon={MapPin} label={locale === 'en' ? 'Address' : 'Adresse'} value={data.settings.address} />
         </div>
@@ -544,60 +428,16 @@ function ContactPanel({ data, locale }: { data: SiteData; locale: Locale }) {
 
 function ContactCard({ href, icon: Icon, label, value }: { href: string; icon: typeof Phone; label: string; value: string }) {
   return (
-    <a href={href} className="rounded-[8px] border p-5 transition hover:-translate-y-0.5 active:translate-y-px" style={{ borderColor: 'var(--line)', background: 'var(--surface)' }}>
+    <a href={href} className="rounded-[20px] border p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 active:translate-y-px" style={{ ...glassCardStyles }}>
       <Icon size={24} weight={iconWeight} />
-      <span className="mt-5 block text-sm" style={{ color: 'var(--muted)' }}>{label}</span>
+      <span className="mt-5 block text-sm" style={mutedColor}>{label}</span>
       <span className="block break-words font-bold">{value}</span>
     </a>
   )
 }
 
-function Footer({ data, locale }: { data: SiteData; locale: Locale }) {
-  return (
-    <footer className="border-t px-4 py-10 md:px-6" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--surface) 95%, transparent)', backdropFilter: 'blur(24px)' }}>
-      <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center">
-        <div>
-          <div className="text-lg font-extrabold">{data.settings.site_name}</div>
-          <div className="mt-2 text-sm" style={{ color: 'var(--muted)' }}>{data.settings.address}</div>
-        </div>
-        <div className="flex flex-wrap gap-3 text-sm" style={{ color: 'var(--muted)' }}>
-          <a className="hover:underline" href={data.settings.facebook_url}>Facebook</a>
-          <a className="hover:underline" href={data.settings.instagram_url}>Instagram</a>
-          <a className="hover:underline" href={data.settings.app_store_url}>App Store</a>
-          <a className="hover:underline" href={data.settings.play_store_url}>Google Play</a>
-          <span>{locale === 'en' ? 'Public transport links preserved.' : 'Eksisterande transportlenker er bevart.'}</span>
-        </div>
-      </div>
-    </footer>
-  )
-}
 
-function LoadingSkeleton() {
-  return (
-    <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-2 md:px-6">
-      <div className="space-y-5">
-        <div className="h-4 w-40 animate-pulse rounded bg-current opacity-10" />
-        <div className="h-16 w-full animate-pulse rounded bg-current opacity-10" />
-        <div className="h-24 w-2/3 animate-pulse rounded bg-current opacity-10" />
-      </div>
-      <div className="aspect-[4/3] animate-pulse rounded-lg bg-current opacity-10" />
-    </div>
-  )
-}
 
-function StatusBanner({ data }: { data: SiteData }) {
-  if (data.source === 'directus') return null
-
-  return (
-    <div className="border-b px-4 py-3 text-sm md:px-6" style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--accent) 12%, transparent)', color: 'var(--accent-strong)' }}>
-      <div className="mx-auto max-w-7xl">
-        {data.error
-          ? `Directus content could not be loaded, using fallback content. ${data.error}`
-          : 'Using local fallback content until VITE_DIRECTUS_URL is configured.'}
-      </div>
-    </div>
-  )
-}
 
 function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode: (mode: ThemeMode) => void }) {
   const location = useLocation()
@@ -609,38 +449,95 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
     [data.pages, route.locale, route.slug],
   )
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+
   if (redirectTarget) return <Navigate to={redirectTarget} replace />
   const isHome = route.slug === 'home'
 
   return (
     <>
+      <Helmet>
+        <title>{page.seo_title || page.title || data.settings.site_name}</title>
+        <meta name="description" content={page.seo_description || page.summary || ''} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'TaxiService',
+            name: data.settings.site_name,
+            telephone: data.settings.phone,
+            email: data.settings.email,
+            address: data.settings.address,
+            url: 'https://vosstaxi.no',
+            areaServed: 'Voss',
+            priceRange: '$$'
+          })}
+        </script>
+      </Helmet>
       <Header data={data} locale={route.locale} themeMode={themeMode} setThemeMode={setThemeMode} />
-      <StatusBanner data={data} />
+      <StatusBanner data={data} locale={route.locale} />
       {loading ? <LoadingSkeleton /> : null}
       
       <div className="fixed inset-0 -z-50 h-full w-full bg-black">
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        {isHome ? (
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+        ) : null}
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
       <main id="main-content">
         <Hero page={page} data={data} locale={route.locale} isHome={isHome} />
-        <div className="relative z-10 w-full rounded-t-[2.5rem] md:rounded-t-[4rem]">
+        <div className="relative z-10 w-full rounded-t-[2.5rem] md:rounded-t-[4rem]" style={{ background: 'var(--bg)' }}>
           <div className="pt-10">
             {isHome ? (
               <>
-                <BookingStrip data={data} locale={route.locale} />
+                <section className="mx-auto max-w-7xl px-4 pt-10 md:px-6">
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                    <Link to={route.locale === 'en' ? '/en/historia-var' : '/no/historia-var'} className="flex items-center gap-4 rounded-2xl border p-5 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 active:scale-[0.98]" style={{ ...glassCardStyles }}>
+                      <BookOpen size={28} weight={iconWeight} style={accentColor} />
+                      <span className="text-base font-bold">{route.locale === 'en' ? 'Our History' : 'Historia vår'}</span>
+                    </Link>
+                    <Link to={route.locale === 'en' ? '/en/transportvilkar' : '/no/transportvilkar'} className="flex items-center gap-4 rounded-2xl border p-5 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 active:scale-[0.98]" style={{ ...glassCardStyles }}>
+                      <FileText size={28} weight={iconWeight} style={accentColor} />
+                      <span className="text-base font-bold">{route.locale === 'en' ? 'Terms & Conditions' : 'Transportvilkår'}</span>
+                    </Link>
+                    <Link to={route.locale === 'en' ? '/en/personvern' : '/no/personvern'} className="flex items-center gap-4 rounded-2xl border p-5 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 active:scale-[0.98]" style={{ ...glassCardStyles }}>
+                      <LockKey size={28} weight={iconWeight} style={accentColor} />
+                      <span className="text-base font-bold">{route.locale === 'en' ? 'Privacy Policy' : 'Personvern'}</span>
+                    </Link>
+                  </div>
+                </section>
+                <section className="mx-auto max-w-7xl px-4 py-8 md:px-6">
+                  <article className="rounded-3xl border p-8 shadow-xl backdrop-blur-2xl transition-all duration-500 hover:shadow-2xl md:p-12" style={{ ...glassCardStrongStyles }}>
+                    <h2 className="mb-6 text-3xl font-extrabold tracking-tight md:text-4xl">{route.locale === 'en' ? 'Safety in Focus' : 'Tryggleik i fokus'}</h2>
+                    <div className="markdown-body max-w-[76ch] text-lg leading-relaxed md:text-xl" style={mutedColor}>
+                      <p>{route.locale === 'en' ? 'Our goal is that you feel safe and cared for when you travel with us. We have professional and experienced drivers and staff. All our cars are equipped with:' : 'Målet vårt er at du skal kunna føla deg trygg og ivaretatt når du sitt på med oss. Me har profesjonelle og erfarne sjåførar og tilsette. Samstundes som alle bilane våre har:'}</p>
+                      <ul className="mt-4 list-disc pl-6 space-y-2">
+                        <li>Taksameter (TDS - Transport Data Systems)</li>
+                        <li>Betalingsterminalar (Ingenico) for kortbetaling og TT</li>
+                        <li>Minimum Euro6 motorar / Heil elektriske bilar</li>
+                        <li>Periodiske køyretøykontrollar kvart år (PKK)</li>
+                        <li>Drosjeforsikring og Løyvegaranti</li>
+                        <li>Godkjend barnesikringsutstyr</li>
+                        <li>Førstehjelpskurs og Gyldig Køyreseddel</li>
+                        <li>Taushetsavtalar og Kompetansekrav (Løyvekurs)</li>
+                        <li>Glattkøyringskurs</li>
+                        <li>Lampe på taket, Logo & Løyvenummer</li>
+                      </ul>
+                    </div>
+                  </article>
+                </section>
                 <PageBlocks blocks={page.blocks} />
-                <FaresAndLinks data={data} locale={route.locale} />
                 <Marquee />
               </>
             ) : (
@@ -649,7 +546,7 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
           </div>
         </div>
       </main>
-      <Footer data={data} locale={route.locale} />
+      <Footer data={data} />
     </>
   )
 }
@@ -700,52 +597,25 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
   )
 }
 
-function Marquee() {
-  return (
-    <section className="overflow-hidden border-t py-4" style={{ borderColor: 'var(--line)' }}>
-      <div className="marquee-track flex w-max gap-8 whitespace-nowrap font-mono text-xs uppercase tracking-[0.24em]" style={{ color: 'var(--muted)' }}>
-        {Array.from({ length: 2 }).map((_, index) => (
-          <span key={index} className="flex gap-8">
-            <span>Voss Taxi SA</span>
-            <span>Trygg transport</span>
-            <span>Maxi-taxi</span>
-            <span>Rullestolbil</span>
-            <span>Takstar</span>
-            <span>Bestilling</span>
-          </span>
-        ))}
-      </div>
-    </section>
-  )
-}
 
 function AppRoutes() {
   const { mode, setMode } = useThemeMode()
-  const [mobilePreview, setMobilePreview] = useState(false)
+  const [lightbox, setLightbox] = useState<string | null>(null)
+  const closeLightbox = useCallback(() => setLightbox(null), [])
 
   return (
-    <>
-      <button
-        type="button"
-        className="preview-toggle"
-        aria-pressed={mobilePreview}
-        onClick={() => setMobilePreview((enabled) => !enabled)}
-      >
-        <DeviceMobile size={18} weight={iconWeight} />
-        {mobilePreview ? 'Avslutt mobilvisning' : 'Simuler mobil'}
-      </button>
+    <LightboxContext.Provider value={setLightbox}>
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-40 focus:rounded-md focus:bg-taxi focus:px-4 focus:py-3 focus:font-bold focus:text-[#181511]">
         Hopp til innhald
       </a>
       <div className="grain" aria-hidden="true" />
-      <div className={mobilePreview ? 'mobile-preview-stage' : undefined}>
-        <div className={mobilePreview ? 'mobile-preview-device' : undefined}>
-          <Routes>
-            <Route path="*" element={<Page themeMode={mode} setThemeMode={setMode} />} />
-          </Routes>
-        </div>
+      <div>
+        <Routes>
+          <Route path="*" element={<Page themeMode={mode} setThemeMode={setMode} />} />
+        </Routes>
       </div>
-    </>
+      <Lightbox src={lightbox} onClose={closeLightbox} />
+    </LightboxContext.Provider>
   )
 }
 
