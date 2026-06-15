@@ -12,21 +12,21 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - run: npm ci
       - run: npm run build --emptyOutDir
 
-      - name: Copy dist to VPS
-        uses: appleboy/scp-action@v0.1.7
+      - name: Deploy via rsync
+        uses: burnett01/rsync-deployments@7.0.2
         with:
-          host: 85.190.102.196
-          username: vosstaxi
-          key: ${{ secrets.VPS_SSH_KEY }}
-          source: dist/
-          target: ~/sites/vpsweb_test/
-          strip_components: 1
+          switches: -avz --delete --exclude=node_modules
+          path: dist/
+          remote_path: ~/sites/vpsweb_test/
+          remote_host: 85.190.102.196
+          remote_user: vosstaxi
+          remote_key: ${{ secrets.VPS_SSH_KEY }}
 
       - name: Restart PM2
         uses: appleboy/ssh-action@v1.2.0
