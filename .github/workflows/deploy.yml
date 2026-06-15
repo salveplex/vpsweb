@@ -7,6 +7,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - uses: actions/checkout@v4
 
@@ -19,9 +21,9 @@ jobs:
       - run: npm run build --emptyOutDir
 
       - name: Deploy via rsync
-        uses: burnett01/rsync-deployments@7.0.2
+        uses: burnett01/rsync-deployments@8.1.0
         with:
-          switches: -avz --delete --exclude=node_modules
+          switches: -avz --delete
           path: dist/
           remote_path: ~/sites/vpsweb_test/
           remote_host: 85.190.102.196
