@@ -15,24 +15,24 @@ const settings = {
   app_store_url: 'https://apps.apple.com/no/app/snappy-taxi/id6479620974',
   play_store_url: 'https://play.google.com/store/apps/details?id=no.snappy.snappy.taxi&hl=no',
   hero_media:
-    'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240522_130220.jpg?etag=%2239d36c-6652016f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&quality=85',
+    'https://cms.vosstaxi.no/uploads/20240522_130220_bbadf2752f.jpg',
 }
 
 const originalGalleryImages = [
   ['Voss Taxi Bilde 1', 'Galleri Bilde 1', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308'],
-  ['Voss Taxi Bilde 2', 'Galleri Bilde 2', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/1714421291589.jpg?etag=%221c33d-6648e8fd%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
+  ['Voss Taxi Bilde 2', 'Galleri Bilde 2', 'https://cms.vosstaxi.no/uploads/1714421291589_b408a586ac.jpg'],
   ['Voss Taxi Bilde 3', 'Galleri Bilde 3', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/1714421291592.jpg?etag=%222ba09-6648e8fe%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
-  ['Voss Taxi Bilde 4', 'Galleri Bilde 4', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/4.Desember.jpg?etag=%2237631-6648e8ff%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,1070&extract=0,164,739,740'],
-  ['Voss Taxi Bilde 5', 'Galleri Bilde 5', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/7.Desember.jpg?etag=%2239600-6648e8ff%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,1078&extract=0,169,739,740'],
-  ['Voss Taxi Bilde 6', 'Galleri Bilde 6', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.Desember.jpg?etag=%224b171-6648e900%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,1116&extract=0,187,739,740'],
+  ['Voss Taxi Bilde 4', 'Galleri Bilde 4', 'https://cms.vosstaxi.no/uploads/4_Desember_fb18e187fb.jpg'],
+  ['Voss Taxi Bilde 5', 'Galleri Bilde 5', 'https://cms.vosstaxi.no/uploads/7_Desember_fecd5997fd.jpg'],
+  ['Voss Taxi Bilde 6', 'Galleri Bilde 6', 'https://cms.vosstaxi.no/uploads/2_Desember_16b4855560.jpg'],
   ['Voss Taxi Bilde 7', 'Galleri Bilde 7', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/1714421291595.jpg?etag=%223dd47-6648e901%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
-  ['Voss Taxi Bilde 8', 'Galleri Bilde 8', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/1714421291597.jpg?etag=%2237507-6648e901%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
-  ['Voss Taxi Bilde 9', 'Galleri Bilde 9', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/19.Desember.jpeg?etag=%22453e4-6648e902%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,1315&extract=0,287,739,740'],
-  ['Voss Taxi Bilde 10', 'Galleri Bilde 10', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/image0000001002.jpg?etag=%2247268-6648e903%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=636,1131&extract=0,247,636,636'],
-  ['Voss Taxi Bilde 11', 'Galleri Bilde 11', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/15.Desember.jpg?etag=%227bf06-6648e903%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
-  ['Voss Taxi Bilde 12', 'Galleri Bilde 12', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Osa.jpg?etag=%22de699-6648e904%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,740'],
+  ['Voss Taxi Bilde 8', 'Galleri Bilde 8', 'https://cms.vosstaxi.no/uploads/1714421291597_067d74b5e4.jpg'],
+  ['Voss Taxi Bilde 9', 'Galleri Bilde 9', 'https://cms.vosstaxi.no/uploads/19_Desember_b5ea82f757.jpeg'],
+  ['Voss Taxi Bilde 10', 'Galleri Bilde 10', 'https://cms.vosstaxi.no/uploads/image0000001002_c7c2fd8637.jpg'],
+  ['Voss Taxi Bilde 11', 'Galleri Bilde 11', 'https://cms.vosstaxi.no/uploads/15_Desember_e18f147802.jpg'],
+  ['Voss Taxi Bilde 12', 'Galleri Bilde 12', 'https://cms.vosstaxi.no/uploads/Osa_2774ae3d20.jpg'],
   ['Voss Taxi Bilde 13', 'Galleri Bilde 13', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/23.Desember___serialized1.jpg?etag=%222d13bb-6648e9af%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1272,740&extract=266,0,739,740'],
-  ['Voss Taxi Bilde 14', 'Galleri Bilde 14', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/IMG_6539.jpg?etag=%222dec84-6648e906%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,1315&extract=0,287,739,740'],
+  ['Voss Taxi Bilde 14', 'Galleri Bilde 14', 'https://cms.vosstaxi.no/uploads/IMG_6539_dc892c6e66.jpg'],
   ['Voss Taxi Bilde 15', 'Galleri Bilde 15', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240501_185247___serialized1.jpg?etag=%22553a7d-6648ead7%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
   ['Voss Taxi Bilde 16', 'Galleri Bilde 16', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/6.Desember___serialized1.jpg?etag=%22538b19-6648e9ca%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
   ['Voss Taxi Bilde 17', 'Galleri Bilde 17', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240507_190615___serialized1.jpg?etag=%227046fd-6648ea99%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
@@ -53,49 +53,49 @@ const originalGalleryImages = [
   ['Voss Taxi Bilde 32', 'Galleri Bilde 32', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240501_185431___serialized1.jpg?etag=%2259f802-6648e9f9%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
   ['Voss Taxi Bilde 33', 'Galleri Bilde 33', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240507_190055.jpg?etag=%2259c18c-6648e91d%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
   ['Voss Taxi Bilde 34', 'Galleri Bilde 34', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240507_190121.jpg?etag=%225ab39c-6648e91e%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 35', 'Galleri Bilde 35', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240507_190114.jpg?etag=%225c8a52-6648e91f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 36', 'Galleri Bilde 36', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240507_190102.jpg?etag=%225dfed2-6648e920%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
+  ['Voss Taxi Bilde 35', 'Galleri Bilde 35', 'https://cms.vosstaxi.no/uploads/20240507_190114_d3b10c61fc.jpg'],
+  ['Voss Taxi Bilde 36', 'Galleri Bilde 36', 'https://cms.vosstaxi.no/uploads/20240507_190102_709f18b705.jpg'],
   ['Voss Taxi Bilde 37', 'Galleri Bilde 37', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240507_190050.jpg?etag=%2260c2cc-6648e921%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 38', 'Galleri Bilde 38', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240507_190046.jpg?etag=%22610898-6648e923%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
+  ['Voss Taxi Bilde 38', 'Galleri Bilde 38', 'https://cms.vosstaxi.no/uploads/20240507_190046_7854c924a7.jpg'],
   ['Voss Taxi Bilde 39', 'Galleri Bilde 39', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240501_185331___serialized1.jpg?etag=%226e206b-6648ea38%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
-  ['Voss Taxi Bilde 40', 'Galleri Bilde 40', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240501_185013.jpg?etag=%227dc2f5-6648e929%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 41', 'Galleri Bilde 41', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240501_185146.jpg?etag=%2290aac6-6648e92b%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
+  ['Voss Taxi Bilde 40', 'Galleri Bilde 40', 'https://cms.vosstaxi.no/uploads/20240501_185013_b80c0cda68.jpg'],
+  ['Voss Taxi Bilde 41', 'Galleri Bilde 41', 'https://cms.vosstaxi.no/uploads/20240501_185146_8d69714689.jpg'],
   ['Voss Taxi Bilde 42', 'Galleri Bilde 42', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240501_185225___serialized1.jpg?etag=%227d1909-6648ea0b%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
-  ['Voss Taxi Bilde 43', 'Galleri Bilde 43', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240501_185206.jpg?etag=%2299e245-6648e92f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 44', 'Galleri Bilde 44', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240501_185210.jpg?etag=%229d62c3-6648e931%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 45', 'Galleri Bilde 45', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Bergo%20i%20ulvik.jpg?etag=%225946ad-6648e933%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
+  ['Voss Taxi Bilde 43', 'Galleri Bilde 43', 'https://cms.vosstaxi.no/uploads/20240501_185206_b79896aa21.jpg'],
+  ['Voss Taxi Bilde 44', 'Galleri Bilde 44', 'https://cms.vosstaxi.no/uploads/20240501_185210_f57fa1dd8b.jpg'],
+  ['Voss Taxi Bilde 45', 'Galleri Bilde 45', 'https://cms.vosstaxi.no/uploads/Bergo_i_ulvik_4031876385.jpg'],
   ['Voss Taxi Bilde 46', 'Galleri Bilde 46', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/16.Desember___serialized1.jpg?etag=%227fb03d-6648ea1a%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
   ['Voss Taxi Bilde 47', 'Galleri Bilde 47', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20230805_214844___serialized1.jpg?etag=%225ce8fc-6648ea2c%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
-  ['Voss Taxi Bilde 48', 'Galleri Bilde 48', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/160.1.jpg?etag=%222d8be7-5f35bc91%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1602,740&extract=431,0,739,740'],
-  ['Voss Taxi Bilde 49', 'Galleri Bilde 49', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/160.3.jpg?etag=%222a9675-5f35bc8e%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1235,740&extract=247,0,739,740'],
-  ['Voss Taxi Bilde 50', 'Galleri Bilde 50', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180523_114411.jpg?etag=%22526a49-5f083441%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 51', 'Galleri Bilde 51', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20161005_160420.jpg?etag=%225c6f26-5f083455%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 52', 'Galleri Bilde 52', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/160.5.jpg?etag=%2224c7fe-5f35bc89%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,1602&extract=0,431,739,740'],
-  ['Voss Taxi Bilde 53', 'Galleri Bilde 53', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180618_212754.jpg?etag=%223c5bfa-5f08341d%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 54', 'Galleri Bilde 54', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180523_211231.jpg?etag=%2235d256-5f083415%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1315,740&extract=287,0,739,740'],
-  ['Voss Taxi Bilde 55', 'Galleri Bilde 55', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180623_214725.jpg?etag=%22591648-5f083451%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 56', 'Galleri Bilde 56', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180623_214654.jpg?etag=%224a0a45-5f083436%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 57', 'Galleri Bilde 57', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180623_214643.jpg?etag=%22573e5a-5f08344d%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 58', 'Galleri Bilde 58', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180623_214845.jpg?etag=%2254aadb-5f083443%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 59', 'Galleri Bilde 59', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180711_081817.jpg?etag=%225129be-5f083440%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 60', 'Galleri Bilde 60', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180623_214951.jpg?etag=%222d5882-5f083410%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
+  ['Voss Taxi Bilde 48', 'Galleri Bilde 48', 'https://cms.vosstaxi.no/uploads/160_1_b16fd0b4a4.jpg'],
+  ['Voss Taxi Bilde 49', 'Galleri Bilde 49', 'https://cms.vosstaxi.no/uploads/160_3_e018af40c0.jpg'],
+  ['Voss Taxi Bilde 50', 'Galleri Bilde 50', 'https://cms.vosstaxi.no/uploads/20180523_114411_9c70d2a165.jpg'],
+  ['Voss Taxi Bilde 51', 'Galleri Bilde 51', 'https://cms.vosstaxi.no/uploads/20161005_160420_8c95d25793.jpg'],
+  ['Voss Taxi Bilde 52', 'Galleri Bilde 52', 'https://cms.vosstaxi.no/uploads/160_5_3bfafaf73b.jpg'],
+  ['Voss Taxi Bilde 53', 'Galleri Bilde 53', 'https://cms.vosstaxi.no/uploads/20180618_212754_6a44b65cee.jpg'],
+  ['Voss Taxi Bilde 54', 'Galleri Bilde 54', 'https://cms.vosstaxi.no/uploads/20180523_211231_265f67da83.jpg'],
+  ['Voss Taxi Bilde 55', 'Galleri Bilde 55', 'https://cms.vosstaxi.no/uploads/20180623_214725_33b00f00aa.jpg'],
+  ['Voss Taxi Bilde 56', 'Galleri Bilde 56', 'https://cms.vosstaxi.no/uploads/20180623_214654_fe447de56a.jpg'],
+  ['Voss Taxi Bilde 57', 'Galleri Bilde 57', 'https://cms.vosstaxi.no/uploads/20180623_214643_eaeeae1ed1.jpg'],
+  ['Voss Taxi Bilde 58', 'Galleri Bilde 58', 'https://cms.vosstaxi.no/uploads/20180623_214845_19fb76c84f.jpg'],
+  ['Voss Taxi Bilde 59', 'Galleri Bilde 59', 'https://cms.vosstaxi.no/uploads/20180711_081817_a00d81288d.jpg'],
+  ['Voss Taxi Bilde 60', 'Galleri Bilde 60', 'https://cms.vosstaxi.no/uploads/20180623_214951_730c917b88.jpg'],
   ['Voss Taxi Bilde 61', 'Galleri Bilde 61', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180627_120313.jpg?etag=%22283191-5f08340d%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 62', 'Galleri Bilde 62', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180627_120309.jpg?etag=%222bd9ec-5f08340d%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
+  ['Voss Taxi Bilde 62', 'Galleri Bilde 62', 'https://cms.vosstaxi.no/uploads/20180627_120309_09fd628e5a.jpg'],
   ['Voss Taxi Bilde 63', 'Galleri Bilde 63', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180627_120230.jpg?etag=%2254054c-5f083445%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 64', 'Galleri Bilde 64', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180820_124336.jpg?etag=%223e25c4-5f083420%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 65', 'Galleri Bilde 65', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180716_133738.jpg?etag=%22576c33-5f08344f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1521,740&extract=390,0,739,740'],
-  ['Voss Taxi Bilde 66', 'Galleri Bilde 66', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180715_000941.jpg?etag=%223ecf6c-5f083423%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
+  ['Voss Taxi Bilde 64', 'Galleri Bilde 64', 'https://cms.vosstaxi.no/uploads/20180820_124336_f5493340fa.jpg'],
+  ['Voss Taxi Bilde 65', 'Galleri Bilde 65', 'https://cms.vosstaxi.no/uploads/20180716_133738_76af7f0d1e.jpg'],
+  ['Voss Taxi Bilde 66', 'Galleri Bilde 66', 'https://cms.vosstaxi.no/uploads/20180715_000941_3d0ae27a51.jpg'],
   ['Voss Taxi Bilde 67', 'Galleri Bilde 67', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180711_084522.jpg?etag=%2277b789-5f08345f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 68', 'Galleri Bilde 68', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180820_124458.jpg?etag=%22467420-5f08342d%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 69', 'Galleri Bilde 69', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180820_124520.jpg?etag=%223ca2b4-5f08341c%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
+  ['Voss Taxi Bilde 68', 'Galleri Bilde 68', 'https://cms.vosstaxi.no/uploads/20180820_124458_56fb61303c.jpg'],
+  ['Voss Taxi Bilde 69', 'Galleri Bilde 69', 'https://cms.vosstaxi.no/uploads/20180820_124520_3a9a79cf5f.jpg'],
   ['Voss Taxi Bilde 70', 'Galleri Bilde 70', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20200531_042600.jpg?etag=%222e15ae-5f083411%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 71', 'Galleri Bilde 71', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20200531_042738.jpg?etag=%2214119b-5f083404%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
+  ['Voss Taxi Bilde 71', 'Galleri Bilde 71', 'https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg'],
   ['Voss Taxi Bilde 72', 'Galleri Bilde 72', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Snapchat-449315587.jpg?etag=%22b5964-5f083402%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,1421&extract=0,340,739,740'],
-  ['Voss Taxi Bilde 73', 'Galleri Bilde 73', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/R-40%20Stalheim.jpg?etag=%2253a319-602051a9%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=740,986&extract=0,123,739,740'],
+  ['Voss Taxi Bilde 73', 'Galleri Bilde 73', 'https://cms.vosstaxi.no/uploads/R_40_Stalheim_e5b208bc00.jpg'],
   ['Voss Taxi Bilde 74', 'Galleri Bilde 74', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/sub___serialized1.jpg?etag=%22784d8e-5f09c03c%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 75', 'Galleri Bilde 75', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/subb.jpg?etag=%22419958-5f083429%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
-  ['Voss Taxi Bilde 76', 'Galleri Bilde 76', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/r-161-1.png?etag=%22549f5-602051a5%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=500,429&extract=35,0,429,429'],
-  ['Voss Taxi Bilde 77', 'Galleri Bilde 77', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/r-160-1.jpg?etag=%225e7f9-60204fc0%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740'],
+  ['Voss Taxi Bilde 75', 'Galleri Bilde 75', 'https://cms.vosstaxi.no/uploads/subb_b1cc73e67b.jpg'],
+  ['Voss Taxi Bilde 76', 'Galleri Bilde 76', 'https://cms.vosstaxi.no/uploads/r_161_1_cdae0df338.png'],
+  ['Voss Taxi Bilde 77', 'Galleri Bilde 77', 'https://cms.vosstaxi.no/uploads/r_160_1_4a3a5599f2.jpg'],
   ['Voss Taxi Bilde 78', 'Galleri Bilde 78', 'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200'],
 ]
 
@@ -289,9 +289,9 @@ Vi har per dags dato:
 
 Her kan du sjå eit par av bilane våre i teneste:
 
-![Maxi Taxi bil](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/DJI_0168.JPG?etag=%226fb506-66495405%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&quality=85)
+![Maxi Taxi bil](https://cms.vosstaxi.no/uploads/DJI_0168_af2b600165.JPG)
 
-![Rullestolbil rampe](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240514_203506.jpg?etag=%225098a2-66495519%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&quality=85)
+![Rullestolbil rampe](https://cms.vosstaxi.no/uploads/20240514_203506_53aa74368f.jpg)
 
 ---
 
@@ -796,11 +796,11 @@ Norway`
             type: 'rich_text',
             body: `Sjå litt av historia til Voss Taxi. Gamle arkiv og bilder eksisterar det forbausande lite av i dag. Men etter all sannsynligheit har det nok vore drosjevirksomhet på Voss i over 100 år om ikkje lenger, Soga tyder at Voss Drosjeeigarlag blei stifta 10 februar 1930. Her er det litt uklart kvar dei var stasjonerte, men etter det me klarar å tyda ut ifrå gamle møtereferat er at dei heldt til ved fiskatorget, og seinare bak Voss bokhandel. Store delar av historia til laget gjekk tapt under bombinga av Vossevangen under andre verdenskrig.
 
-![Historisk bilde Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/image.jpg?etag=%22958b-5f037053%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio)
+![Historisk bilde Voss Taxi](https://cms.vosstaxi.no/uploads/image0000001002_c7c2fd8637.jpg)
 
 Etter krigen gjekk drosjeeigarlaget saman med Voss lastebilforening om ein avtale med Norsk Brenselsolje (BP) i dag Statoil om ein eigen bensintank mot at dei fylte eksklusivt ved denne. I avtalen vart det også ordna med husrom for drosjesjåførane i form av ei brakke som dei fekk av BP. Brakka vart plassert på Hestavangen tidlig på 50 talet. Men ut i frå gamle bilder kan det sjå ut til at dei allereie var på Hestavangen kring 1937.
 
-![Historisk bilde 2 Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/IMG_20200706_0003.jpg?etag=%22b21ec-5f037055%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio)
+![Historisk bilde 2 Voss Taxi](https://cms.vosstaxi.no/uploads/IMG_20200706_0003_b681eecd88.jpg)
 
 På sekstitalet freista dokter Bonsaksen å byggja helsehus på tomta der drosjene heldt til. Det vart då ein klausul i kjøpskontrakta med Kommunen at sjåførane burde få nytta første etasje når nybygget stod ferdigt.
 
@@ -808,7 +808,7 @@ Det var då i 1968 at brakka blei flytta vestover på plassen, der den framleis 
 
 Så etter ei lengre behandlingstid og fleire brev mellom kommune, drosjene, dr Bonsaksen m.m så glei heile hus spørsmålet ut i det blå og sjåførane vart verande i bua heilt fram til vinteren 2014. Då fekk dei endeleg koma heimat, som dei seier. Der dei var ifrå starten og der dei var opprinneleg lova nytt husly.
 
-![Historisk bilde 3 Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/1594033487309-3673ee32-eb67-4713-8214-ebb1da48e841.jpg?etag=%22b11b9-5f037056%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio)
+![Historisk bilde 3 Voss Taxi](https://cms.vosstaxi.no/uploads/1594033487309_3673ee32_eb67_4713_8214_ebb1da48e841_f59ab126c6.jpg)
 
 **Tidslinje:**
 - 1930 – ca. 1950 Voss Drosjeeigarlag

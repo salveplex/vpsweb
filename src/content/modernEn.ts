@@ -33,7 +33,7 @@ A twin waterfall with a 125-meter drop along the picturesque national road 13. L
 
 A dramatic gorge within walking distance from the center with accessible paths and great viewpoints. Perfect for nature enthusiasts.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Bordalsgjelet%2002.jpg?etag=%226cd4e7-5f09c189%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=748%2B497&extract=0%2B0%2B748%2B497&quality=85)
+![image](https://cms.vosstaxi.no/uploads/Bordalsgjelet_02_0a9c5bcc81.jpg)
 
 ### Mølstertunet
 
@@ -107,7 +107,7 @@ We offer services to the municipality, the county municipality, Vy, and health i
 
 Our fleet includes everything from sedans (4 passengers) to 16-seater Maxi-taxis with room for wheelchairs. We offer specialized services such as wheelchair transport, child seats, and much more.
 
-![Voss Taxi Fleet](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20200101_010840(1).jpg?etag=%222c9cc5-5f08340e%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1171%2B555&extract=12%2B0%2B1095%2B555&quality=85)
+![Voss Taxi Fleet](https://cms.vosstaxi.no/uploads/20200101_010840_1_de63ba6622.jpg).jpg?etag=%222c9cc5-5f08340e%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1171%2B555&extract=12%2B0%2B1095%2B555&quality=85)
 
 ---
 
@@ -273,11 +273,11 @@ Norway
       {
         type: 'rich_text',
         title: 'Pictures from our everyday life',
-        body: `![Picture 1](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180820_124458.jpg?etag=%22467420-5f08342d%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740)
+        body: `![Picture 1](https://cms.vosstaxi.no/uploads/20180820_124458_56fb61303c.jpg)
 
-![Picture 2](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180716_133738.jpg?etag=%22576c33-5f08344f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1521,740&extract=390,0,739,740)
+![Picture 2](https://cms.vosstaxi.no/uploads/20180716_133738_76af7f0d1e.jpg)
 
-![Picture 3](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20200531_042738.jpg?etag=%2214119b-5f083404%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740)
+![Picture 3](https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg)
 `
       }
     ]
@@ -314,9 +314,9 @@ We currently have:
 
 Here are a couple of our vehicles in service:
 
-![Maxi Taxi bil](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/DJI_0168.JPG?etag=%226fb506-66495405%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&quality=85)
+![Maxi Taxi bil](https://cms.vosstaxi.no/uploads/DJI_0168_af2b600165.JPG)
 
-![Rullestolbil rampe](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240514_203506.jpg?etag=%225098a2-66495519%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&quality=85)
+![Rullestolbil rampe](https://cms.vosstaxi.no/uploads/20240514_203506_53aa74368f.jpg)
 
 ---
 

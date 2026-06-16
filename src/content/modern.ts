@@ -33,7 +33,7 @@ Tvillingfoss med 125 meters fall langs den maleriske riksvei 13. 15 km fra sentr
 
 Dramatisk geilje i gangavstand fra sentrum med tilrettelagte stier og flotte utsiktspunkter. Perfekt for naturentusiaster.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Bordalsgjelet%2002.jpg?etag=%226cd4e7-5f09c189%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=748%2B497&extract=0%2B0%2B748%2B497&quality=85)
+![image](https://cms.vosstaxi.no/uploads/Bordalsgjelet_02_0a9c5bcc81.jpg)
 
 ### Mølstertunet
 
@@ -107,7 +107,7 @@ Vi tilbyr tenestar til kommune, fylkeskommune, Vy, og helseinstitusjonar—både
 
 Bilparken inneheld alt frå personbilar (4 passasjerar) til 16-seters Maxi-taxiar med plass til rullestolar. Vi tilbyr spesialiserte tenestar som rullestoltransport, barnesete, og fleire andre tilbod.
 
-![Bilpark Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20200101_010840(1).jpg?etag=%222c9cc5-5f08340e%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1171%2B555&extract=12%2B0%2B1095%2B555&quality=85)
+![Bilpark Voss Taxi](https://cms.vosstaxi.no/uploads/20200101_010840_1_de63ba6622.jpg).jpg?etag=%222c9cc5-5f08340e%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1171%2B555&extract=12%2B0%2B1095%2B555&quality=85)
 
 ---
 
@@ -272,11 +272,11 @@ Uttrågata 19
       {
         type: 'rich_text',
         title: 'Bilete frå kvardagen vår',
-        body: `![Bilete 1](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180820_124458.jpg?etag=%22467420-5f08342d%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740)
+        body: `![Bilete 1](https://cms.vosstaxi.no/uploads/20180820_124458_56fb61303c.jpg)
 
-![Bilete 2](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180716_133738.jpg?etag=%22576c33-5f08344f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1521,740&extract=390,0,739,740)
+![Bilete 2](https://cms.vosstaxi.no/uploads/20180716_133738_76af7f0d1e.jpg)
 
-![Bilete 3](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20200531_042738.jpg?etag=%2214119b-5f083404%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=986,740&extract=123,0,739,740)
+![Bilete 3](https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg)
 `
       }
     ]
