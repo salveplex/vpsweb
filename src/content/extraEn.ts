@@ -36,7 +36,7 @@ So after a long processing time and several letters between the municipality, th
 **Timeline:**
 - 1930 – approx. 1950 Voss Drosjeeigarlag
 - 1950 – 2014 Drosjebilsentralen / Voss Drosjebilsentral
-- 2014 - Voss Taxi SA
+- 2014 - Voss Taxi
 
 Voss Taxi turned 90 on February 10, 2020.`
       }
@@ -47,7 +47,7 @@ Voss Taxi turned 90 on February 10, 2020.`
     locale: 'en',
     slug: 'transportvilkar',
     title: 'Terms of Transport',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: 'Our terms and conditions of transport',
     blocks: [
       {
@@ -157,11 +157,11 @@ The terms of transport, together with the current fare regulations, must be avai
 
 Scan QR Code and order
 
-Copyright © Voss Taxi SA
+Copyright © Voss Taxi
 Phone +47 56 51 13 40
 Email post@vosstaxi.no
 
-Address Voss Taxi SA
+Address Voss Taxi
 Uttrågata 19
 5700 Voss
 Norway`
@@ -173,14 +173,14 @@ Norway`
     locale: 'en',
     slug: 'personvern',
     title: 'Privacy Policy',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: 'Our Privacy Policy',
     blocks: [
       {
         type: 'rich_text',
         title: 'Privacy Policy',
-        body: `When you use Voss Taxi SA, you give us access to information about you. Here you can read what information we collect, how we do it, and what we use it for.
-Here you will find information about how information about you and your travels is processed in our systems. Electronic traces about you related to our services are safe with us, and we will not misuse your information. Voss Taxi SA will process your personal information so that you get a simple and good service. The taxi company is responsible for the personal data processed.
+        body: `When you use Voss Taxi, you give us access to information about you. Here you can read what information we collect, how we do it, and what we use it for.
+Here you will find information about how information about you and your travels is processed in our systems. Electronic traces about you related to our services are safe with us, and we will not misuse your information. Voss Taxi will process your personal information so that you get a simple and good service. The taxi company is responsible for the personal data processed.
 
 ### Purpose
 
@@ -188,7 +188,7 @@ To be able to offer digital booking, prepayment, and additional services via vos
 
 ### Implementing Changes
 
-We may occasionally update Voss Taxi SA's privacy policy to reflect changes on the website or to our privacy policy. For major changes, we will inform you of this via our website, or you will be informed the next time you log in. In special cases, logged-in users will be notified directly by email or SMS alert.
+We may occasionally update Voss Taxi's privacy policy to reflect changes on the website or to our privacy policy. For major changes, we will inform you of this via our website, or you will be informed the next time you log in. In special cases, logged-in users will be notified directly by email or SMS alert.
 
 ### What We Store and Why
 
@@ -196,7 +196,7 @@ We may occasionally update Voss Taxi SA's privacy policy to reflect changes on t
 
 **Phone number:** Drivers can use the phone number to contact the customer upon pickup, or if he or she finds forgotten items in the car. We will also use phone numbers to send out confirmations of bookings, or if something unforeseen has happened that affects the delivery of services.
 
-**First and/or last name:** Stored so that we can provide better customer service if we need to contact the customer, and to make the experience with Voss Taxi SA more personal.
+**First and/or last name:** Stored so that we can provide better customer service if we need to contact the customer, and to make the experience with Voss Taxi more personal.
 
 **Start and end addresses for trips:** Used to generate digital receipts.
 
@@ -221,11 +221,11 @@ You can ask us to delete your user account and/or your history by sending us an 
 ### How We Share the Information We Collect
 
 **Internal:**
-The information we collect is shared internally within Voss Taxi SA, so that we can provide you with the services we offer, understand your needs, and develop our services.
+The information we collect is shared internally within Voss Taxi, so that we can provide you with the services we offer, understand your needs, and develop our services.
 
 We will never sell your personal information to a third party.
 
-Updated "Privacy Guidelines related to Voss Taxi SA" are always available at http://vosstaxi.no.
+Updated "Privacy Guidelines related to Voss Taxi" are always available at http://vosstaxi.no.
 
 ### Links to Other Websites and Services
 
@@ -235,7 +235,7 @@ We have no control over, or responsibility for, third-party software regarding p
 
 ### Securing Personal Data
 
-The personal data we process is stored securely. We take your privacy seriously and have established routines and measures to ensure that your personal data is not compromised. Only authorized personnel at Voss Taxi SA and our subcontractors have access to the information.
+The personal data we process is stored securely. We take your privacy seriously and have established routines and measures to ensure that your personal data is not compromised. Only authorized personnel at Voss Taxi and our subcontractors have access to the information.
 
 ### The Customer's Rights
 
@@ -243,9 +243,9 @@ The customer has the right to request access to the registered information, as w
 
 ### Data Controller & Data Protection Officer
 
-Voss Taxi SA has its own data protection officer to ensure safe and proper processing of personal data. The scheme is initiated by the Norwegian Data Protection Authority. You can contact Voss Taxi SA's data protection officer at the email address personvern@vosstaxi.no.
+Voss Taxi has its own data protection officer to ensure safe and proper processing of personal data. The scheme is initiated by the Norwegian Data Protection Authority. You can contact Voss Taxi's data protection officer at the email address personvern@vosstaxi.no.
 
-If you believe that Voss Taxi SA is processing your personal data unlawfully, you also have the right to complain to the Norwegian Data Protection Authority. More information can be found at www.datatilsynet.no.
+If you believe that Voss Taxi is processing your personal data unlawfully, you also have the right to complain to the Norwegian Data Protection Authority. More information can be found at www.datatilsynet.no.
 
 ### Children's Privacy
 

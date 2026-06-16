@@ -36,7 +36,7 @@ Så etter ei lengre behandlingstid og fleire brev mellom kommune, drosjene, dr B
 **Tidslinje:**
 - 1930 – ca. 1950 Voss Drosjeeigarlag
 - 1950 – 2014 Drosjebilsentralen/Voss Drosjebilsentral
-- 2014 - Voss Taxi SA
+- 2014 - Voss Taxi
 
 Voss Taxi fyller 90 år 10 februar 2020.`
       }

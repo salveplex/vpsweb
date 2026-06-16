@@ -1,7 +1,7 @@
 import type { SiteData } from '../types'
 
 const settings = {
-  site_name: 'Voss Taxi SA',
+  site_name: 'Voss Taxi',
   phone: '+4756511340',
   phone_display: '56 51 13 40',
   email: 'post@vosstaxi.no',
@@ -226,7 +226,7 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
         locale: 'no',
         slug: 'maxi-taxi',
         title: 'Maxi Taxi',
-        eyebrow: 'Voss Taxi SA',
+        eyebrow: 'Voss Taxi',
         summary: '',
         blocks: [
           {
@@ -377,13 +377,13 @@ Transportvilkårene skal, sammen med gjeldende takstregulativ, være tilgjengeli
 
 Scan QR Code and order
 
-Copyright © Voss Taxi SA
+Copyright © Voss Taxi
 
 Telefon+4756511340
 
 E-postpost@vosstaxi.no
 
-AdresseVoss Taxi SA
+AdresseVoss Taxi
 Uttrågata 19
 5700 Voss
 Norway`
@@ -399,8 +399,8 @@ Norway`
         blocks: [
           {
             type: 'rich_text',
-            body: `Når du brukar Voss Taxi SA, gjev du oss tilgang til opplysningar om deg. Her kan du lesa kva opplysningar me samlar inn, korleis me gjer det og kva me brukar dei til.
-Her finn du informasjon om korleis opplysningar om deg, og dine reiser behandlast i våre system. Elektroniske spor om deg knytt til våre tenester er trygge hjå oss, og me vil ikkje misbruka opplysningane dine. Voss Taxi SA vil behandla dine personopplysningar slik at du får ei enkel og god teneste. Drosjeselskapet er ansvarleg for dei personopplysningane som behandlast.
+            body: `Når du brukar Voss Taxi, gjev du oss tilgang til opplysningar om deg. Her kan du lesa kva opplysningar me samlar inn, korleis me gjer det og kva me brukar dei til.
+Her finn du informasjon om korleis opplysningar om deg, og dine reiser behandlast i våre system. Elektroniske spor om deg knytt til våre tenester er trygge hjå oss, og me vil ikkje misbruka opplysningane dine. Voss Taxi vil behandla dine personopplysningar slik at du får ei enkel og god teneste. Drosjeselskapet er ansvarleg for dei personopplysningane som behandlast.
 
 Formål
 
@@ -408,7 +408,7 @@ For å kunna tilby digital bestilling, førehandsbetaling og tilleggstenester vi
 
 Gjennomføring av endringar
 
-Me vil i blant kunna oppdatera Voss Taxi SAs personvernerklæring for å gjenspeila endringar på nettstaden eller ved vår personvernerklæring. Ved større endringar vil me informera om dette via vår heimeside, eller du informerast ved neste gongs pålogging. I særlege tilfeller vil innlogga brukarar varslast direkte ved e-post eller varsel på SMS.
+Me vil i blant kunna oppdatera Voss Taxis personvernerklæring for å gjenspeila endringar på nettstaden eller ved vår personvernerklæring. Ved større endringar vil me informera om dette via vår heimeside, eller du informerast ved neste gongs pålogging. I særlege tilfeller vil innlogga brukarar varslast direkte ved e-post eller varsel på SMS.
 
 Kva lagrar me og kvifor
 
@@ -416,7 +416,7 @@ Delar av korttype og –nummer for betaling med kreditt- og bankkort: Me lagrar 
 
 Telefonnummer: Sjåførar kan bruka telefonnummer til å ta kontakt med kunde ved henting, eller om han eller ho finn gjengløymde ting i bilen. Me vil også bruka telefonnummer til å senda ut bekreftelsar på bestillingar, eller visst noko uforutsett har skjedd som har betydning for levering av tenester.
 
-For- og/eller etternamn: Lagrast slik at me kan gje betre kundeservice om me treng å kontakta kunden, og for å gjera opplevinga med Voss Taxi SA meir personleg.
+For- og/eller etternamn: Lagrast slik at me kan gje betre kundeservice om me treng å kontakta kunden, og for å gjera opplevinga med Voss Taxi meir personleg.
 
 Start- og sluttadresser for turar: Brukast til å generera digitale kvitteringar.
 
@@ -442,7 +442,7 @@ Du kan begrensa lagring og behandling av opplysningar om deg. Våre tenester vil
 
 Du kan når som helst endra databehandlinga som skjer i våre appar i telefonens innstillingar. Her kan du slå av og på varslingar og opne eller slå av sending av GPS-data til lokasjons teneste. Dette påverkar moglegheitene til å få personaliserte tenester og målretta annonsar.
 
-Voss Taxi SA loggfører også data knytta til dei enkelte taxiturar.
+Voss Taxi loggfører også data knytta til dei enkelte taxiturar.
 
 I tillegg er da kun dei opplysningar som du sjølv oppgjev til oss igjennom appen, som lagrast. Me vil ikkje be om opplysningar som me ikkje treng for å kunna oppfylla våre forpliktelsar ovanfor deg.
 
@@ -458,11 +458,11 @@ Vy-Appen ryddar løpande i sine databasar. Opplysningar som ikkje lenger er rele
 
 VY-Appen nyttar informasjonskapslar kun til å verifisera gyldig brukarkonto. Dersom du ønskjer å skreddarsy tenesta til dine spesifikke føremål og preferansar, kan du sjølv konfigurera ei rekkje parameter under «din profil».
 
-Oppdaterte «Retningslinjer for personvern knytt til Voss Taxi SA» er til ei kvar tid tilgjengeleg på http://vosstaxi.no.
+Oppdaterte «Retningslinjer for personvern knytt til Voss Taxi» er til ei kvar tid tilgjengeleg på http://vosstaxi.no.
 
 Nokon av våre tenester krevjer at kunden samtykkjer til brukarvilkår på grunn av tenestas omfang. Ved bruk av VY-appen må kunden godkjenna innhenting og lagring av personopplysningar ved fyrste oppstart. På VY.no godkjenner kunden innhenting av personopplysningar ved å registrera seg som brukar og bruke tenesta. Enkelte tenester vil ikkje fungera som tiltenkt utan aktivt samtykke, for eksempel stads tenester.
 
-Alle data kunden sjølv fyller inn for å bruka våre tenester lagrast i vår kundedatabase. Voss Taxi SA har ikkje anledning til å bruka informasjonen ut over vårt formål. Alt krypterast for å sikra at kommunikasjonen mellom tenestene våre er så sikkert som overhode mogeleg.
+Alle data kunden sjølv fyller inn for å bruka våre tenester lagrast i vår kundedatabase. Voss Taxi har ikkje anledning til å bruka informasjonen ut over vårt formål. Alt krypterast for å sikra at kommunikasjonen mellom tenestene våre er så sikkert som overhode mogeleg.
 
 Me har ikkje anledning til å lagra eller samla inn informasjon ut over det me har spesifisert i dette dokumentet. Endringar i kva me samlar inn vil bli meldt frå om på førehand.
 
@@ -470,7 +470,7 @@ Me har ingen kontroll over, eller ansvar for, tredjepartsprogramvare med tanke p
 
 Kva brukast informasjonen til?
 
-Me jobbar heile tida for å gje deg ei tilpassa og god oppleving av Voss Taxi SA. Her er dei viktigaste føremåla me brukar personopplysningar til:
+Me jobbar heile tida for å gje deg ei tilpassa og god oppleving av Voss Taxi. Her er dei viktigaste føremåla me brukar personopplysningar til:
 
 Levera tenestene du forventar av oss
 
@@ -486,11 +486,11 @@ Dersom kunde slettar sin profil vil også tilhøyrande personopplysningar sletta
 
 Behandlingsansvarleg &amp; Personvernombod
 
-Voss Taxi SA har eit eiget personvernombud for å sikra ein trygg og god behandling av personopplysningar. Ordninga er initiert av Datatilsynet. Du kan kontakte Voss Taxi SAs personvernombod på e-postadressa personvern@vosstaxi.no.
+Voss Taxi har eit eiget personvernombud for å sikra ein trygg og god behandling av personopplysningar. Ordninga er initiert av Datatilsynet. Du kan kontakte Voss Taxis personvernombod på e-postadressa personvern@vosstaxi.no.
 
 Kva reglar gjeld for handtering av personopplysningar?
 
-Voss Taxi SA er ansvarleg for handteringa av personopplysningar som samlast inn ved bruk av våre tenester. Voss Taxi SA følgjer personopplysningsloven i behandlinga av personopplysningar.
+Voss Taxi er ansvarleg for handteringa av personopplysningar som samlast inn ved bruk av våre tenester. Voss Taxi følgjer personopplysningsloven i behandlinga av personopplysningar.
 
 Når du lar oss formidla personopplysningar til andre, vil desse ha eit sjølvstendig ansvar for vidare behandling av opplysningane.
 
@@ -512,13 +512,13 @@ Ved ynskje om innsyn i kva slags opplysningar me har om deg, vennligst fyll ut v
 
 Scan QR Code and order
 
-Copyright © Voss Taxi SA
+Copyright © Voss Taxi
 
 Telefon+4756511340
 
 E-postpost@vosstaxi.no
 
-AdresseVoss Taxi SA
+AdresseVoss Taxi
 Uttrågata 19
 5700 Voss
 Norway`
@@ -772,7 +772,7 @@ Så etter ei lengre behandlingstid og fleire brev mellom kommune, drosjene, dr B
 **Tidslinje:**
 - 1930 – ca. 1950 Voss Drosjeeigarlag
 - 1950 – 2014 Drosjebilsentralen/Voss Drosjebilsentral
-- 2014 - Voss Taxi SA
+- 2014 - Voss Taxi
 
 Voss Taxi fyller 90 år 10 februar 2020.`
           }
@@ -893,13 +893,13 @@ Transportvilkårene skal, sammen med gjeldende takstregulativ, være tilgjengeli
 
 Scan QR Code and order
 
-Copyright © Voss Taxi SA
+Copyright © Voss Taxi
 
 Telefon+4756511340
 
 E-postpost@vosstaxi.no
 
-AdresseVoss Taxi SA
+AdresseVoss Taxi
 Uttrågata 19
 5700 Voss
 Norway`
@@ -915,8 +915,8 @@ Norway`
         blocks: [
           {
             type: 'rich_text',
-            body: `Når du brukar Voss Taxi SA, gjev du oss tilgang til opplysningar om deg. Her kan du lesa kva opplysningar me samlar inn, korleis me gjer det og kva me brukar dei til.
-Her finn du informasjon om korleis opplysningar om deg, og dine reiser behandlast i våre system. Elektroniske spor om deg knytt til våre tenester er trygge hjå oss, og me vil ikkje misbruka opplysningane dine. Voss Taxi SA vil behandla dine personopplysningar slik at du får ei enkel og god teneste. Drosjeselskapet er ansvarleg for dei personopplysningane som behandlast.
+            body: `Når du brukar Voss Taxi, gjev du oss tilgang til opplysningar om deg. Her kan du lesa kva opplysningar me samlar inn, korleis me gjer det og kva me brukar dei til.
+Her finn du informasjon om korleis opplysningar om deg, og dine reiser behandlast i våre system. Elektroniske spor om deg knytt til våre tenester er trygge hjå oss, og me vil ikkje misbruka opplysningane dine. Voss Taxi vil behandla dine personopplysningar slik at du får ei enkel og god teneste. Drosjeselskapet er ansvarleg for dei personopplysningane som behandlast.
 
 Formål
 
@@ -924,7 +924,7 @@ For å kunna tilby digital bestilling, førehandsbetaling og tilleggstenester vi
 
 Gjennomføring av endringar
 
-Me vil i blant kunna oppdatera Voss Taxi SAs personvernerklæring for å gjenspeila endringar på nettstaden eller ved vår personvernerklæring. Ved større endringar vil me informera om dette via vår heimeside, eller du informerast ved neste gongs pålogging. I særlege tilfeller vil innlogga brukarar varslast direkte ved e-post eller varsel på SMS.
+Me vil i blant kunna oppdatera Voss Taxis personvernerklæring for å gjenspeila endringar på nettstaden eller ved vår personvernerklæring. Ved større endringar vil me informera om dette via vår heimeside, eller du informerast ved neste gongs pålogging. I særlege tilfeller vil innlogga brukarar varslast direkte ved e-post eller varsel på SMS.
 
 Kva lagrar me og kvifor
 
@@ -932,7 +932,7 @@ Delar av korttype og –nummer for betaling med kreditt- og bankkort: Me lagrar 
 
 Telefonnummer: Sjåførar kan bruka telefonnummer til å ta kontakt med kunde ved henting, eller om han eller ho finn gjengløymde ting i bilen. Me vil også bruka telefonnummer til å senda ut bekreftelsar på bestillingar, eller visst noko uforutsett har skjedd som har betydning for levering av tenester.
 
-For- og/eller etternamn: Lagrast slik at me kan gje betre kundeservice om me treng å kontakta kunden, og for å gjera opplevinga med Voss Taxi SA meir personleg.
+For- og/eller etternamn: Lagrast slik at me kan gje betre kundeservice om me treng å kontakta kunden, og for å gjera opplevinga med Voss Taxi meir personleg.
 
 Start- og sluttadresser for turar: Brukast til å generera digitale kvitteringar.
 
@@ -958,7 +958,7 @@ Du kan begrensa lagring og behandling av opplysningar om deg. Våre tenester vil
 
 Du kan når som helst endra databehandlinga som skjer i våre appar i telefonens innstillingar. Her kan du slå av og på varslingar og opne eller slå av sending av GPS-data til lokasjons teneste. Dette påverkar moglegheitene til å få personaliserte tenester og målretta annonsar.
 
-Voss Taxi SA loggfører også data knytta til dei enkelte taxiturar.
+Voss Taxi loggfører også data knytta til dei enkelte taxiturar.
 
 I tillegg er da kun dei opplysningar som du sjølv oppgjev til oss igjennom appen, som lagrast. Me vil ikkje be om opplysningar som me ikkje treng for å kunna oppfylla våre forpliktelsar ovanfor deg.
 
@@ -974,11 +974,11 @@ Vy-Appen ryddar løpande i sine databasar. Opplysningar som ikkje lenger er rele
 
 VY-Appen nyttar informasjonskapslar kun til å verifisera gyldig brukarkonto. Dersom du ønskjer å skreddarsy tenesta til dine spesifikke føremål og preferansar, kan du sjølv konfigurera ei rekkje parameter under «din profil».
 
-Oppdaterte «Retningslinjer for personvern knytt til Voss Taxi SA» er til ei kvar tid tilgjengeleg på http://vosstaxi.no.
+Oppdaterte «Retningslinjer for personvern knytt til Voss Taxi» er til ei kvar tid tilgjengeleg på http://vosstaxi.no.
 
 Nokon av våre tenester krevjer at kunden samtykkjer til brukarvilkår på grunn av tenestas omfang. Ved bruk av VY-appen må kunden godkjenna innhenting og lagring av personopplysningar ved fyrste oppstart. På VY.no godkjenner kunden innhenting av personopplysningar ved å registrera seg som brukar og bruke tenesta. Enkelte tenester vil ikkje fungera som tiltenkt utan aktivt samtykke, for eksempel stads tenester.
 
-Alle data kunden sjølv fyller inn for å bruka våre tenester lagrast i vår kundedatabase. Voss Taxi SA har ikkje anledning til å bruka informasjonen ut over vårt formål. Alt krypterast for å sikra at kommunikasjonen mellom tenestene våre er så sikkert som overhode mogeleg.
+Alle data kunden sjølv fyller inn for å bruka våre tenester lagrast i vår kundedatabase. Voss Taxi har ikkje anledning til å bruka informasjonen ut over vårt formål. Alt krypterast for å sikra at kommunikasjonen mellom tenestene våre er så sikkert som overhode mogeleg.
 
 Me har ikkje anledning til å lagra eller samla inn informasjon ut over det me har spesifisert i dette dokumentet. Endringar i kva me samlar inn vil bli meldt frå om på førehand.
 
@@ -986,7 +986,7 @@ Me har ingen kontroll over, eller ansvar for, tredjepartsprogramvare med tanke p
 
 Kva brukast informasjonen til?
 
-Me jobbar heile tida for å gje deg ei tilpassa og god oppleving av Voss Taxi SA. Her er dei viktigaste føremåla me brukar personopplysningar til:
+Me jobbar heile tida for å gje deg ei tilpassa og god oppleving av Voss Taxi. Her er dei viktigaste føremåla me brukar personopplysningar til:
 
 Levera tenestene du forventar av oss
 
@@ -1002,11 +1002,11 @@ Dersom kunde slettar sin profil vil også tilhøyrande personopplysningar sletta
 
 Behandlingsansvarleg &amp; Personvernombod
 
-Voss Taxi SA har eit eiget personvernombud for å sikra ein trygg og god behandling av personopplysningar. Ordninga er initiert av Datatilsynet. Du kan kontakte Voss Taxi SAs personvernombod på e-postadressa personvern@vosstaxi.no.
+Voss Taxi har eit eiget personvernombud for å sikra ein trygg og god behandling av personopplysningar. Ordninga er initiert av Datatilsynet. Du kan kontakte Voss Taxis personvernombod på e-postadressa personvern@vosstaxi.no.
 
 Kva reglar gjeld for handtering av personopplysningar?
 
-Voss Taxi SA er ansvarleg for handteringa av personopplysningar som samlast inn ved bruk av våre tenester. Voss Taxi SA følgjer personopplysningsloven i behandlinga av personopplysningar.
+Voss Taxi er ansvarleg for handteringa av personopplysningar som samlast inn ved bruk av våre tenester. Voss Taxi følgjer personopplysningsloven i behandlinga av personopplysningar.
 
 Når du lar oss formidla personopplysningar til andre, vil desse ha eit sjølvstendig ansvar for vidare behandling av opplysningane.
 
@@ -1028,13 +1028,13 @@ Ved ynskje om innsyn i kva slags opplysningar me har om deg, vennligst fyll ut v
 
 Scan QR Code and order
 
-Copyright © Voss Taxi SA
+Copyright © Voss Taxi
 
 Telefon+4756511340
 
 E-postpost@vosstaxi.no
 
-AdresseVoss Taxi SA
+AdresseVoss Taxi
 Uttrågata 19
 5700 Voss
 Norway`

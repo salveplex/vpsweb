@@ -6,7 +6,7 @@ export const modernPages: CmsPage[] = [
     locale: 'no',
     slug: 'pakker',
     title: 'Pakker',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     blocks: [
       {
@@ -69,7 +69,7 @@ Betaling skjer ved turstart eller etter avtale.
 
 ## Bestilling
 
-**Voss Taxi SA**
+**Voss Taxi**
 Uttrågata 19, 5700 Voss
 Tlf: +47 56 51 13 40
 E-post: post@vosstaxi.no
@@ -83,16 +83,16 @@ www.vosstaxi.no
     locale: 'no',
     slug: 'om-oss',
     title: 'Om Oss',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     status: 'published',
     blocks: [
       {
         type: 'rich_text',
         title: 'Om Oss',
-        body: `## Velkomen til Voss Taxi SA
+        body: `## Velkomen til Voss Taxi
 
-Voss Taxi SA er ein av regionen sin hovuddispachørar for persontransport, pasientkøyring og skuletransport. Sidan 1917 har vi drive med taxitransport på Voss.
+Voss Taxi er ein av regionen sin hovuddispachørar for persontransport, pasientkøyring og skuletransport. Sidan 1917 har vi drive med taxitransport på Voss.
 
 Vi tilbyr tenestar til kommune, fylkeskommune, Vy, og helseinstitusjonar—både lokalt og på fylkesnivå.
 
@@ -122,7 +122,7 @@ Bilparken vår står på si tradisjonelle plass ved den røde og kvite taxibua�
     locale: 'no',
     slug: 'om-meg',
     title: 'Tenestene Våre',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     status: 'published',
     blocks: [
@@ -174,7 +174,7 @@ Alle våre bilar og sjåførar tek med hund.
     locale: 'no',
     slug: 'bli-sjafor',
     title: 'Bli Sjåfør',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     status: 'published',
     blocks: [
@@ -221,7 +221,7 @@ Me dekkar teoriprøva ved Statens Vegvesen. Kostnaden vert refundert når du ful
     locale: 'no',
     slug: 'kontakt',
     title: 'Ta Kontakt',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     status: 'published',
     blocks: [
@@ -240,7 +240,7 @@ Me dekkar teoriprøva ved Statens Vegvesen. Kostnaden vert refundert når du ful
 
 ## Besøksadresse
 
-Voss Taxi SA
+Voss Taxi
 Uttrågata 19
 5700 Voss
 
@@ -260,7 +260,7 @@ Uttrågata 19
     locale: 'no',
     slug: 'galleri',
     title: 'Galleri',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     status: 'published',
     blocks: [
