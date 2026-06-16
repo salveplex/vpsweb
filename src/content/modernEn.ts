@@ -21,13 +21,11 @@ Sightseeing packages for 1–16 passengers. Customize your own excursion and dis
 
 An impressive waterfall with a total drop of 110 meters, located 12 km north of the center. One of Norway's most visited natural attractions.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/TvindeFossen%2003.jpg?etag=%227fcb15-5f09c190%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=748%2B497&extract=0%2B0%2B748%2B490&quality=85)
 
 ### Skjervsfossen Waterfall
 
 A twin waterfall with a 125-meter drop along the picturesque national road 13. Located 15 km from the center.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/SkjerveFossen%2003.jpg?etag=%2279e57d-5f09c169%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=757%2B503&extract=0%2B0%2B748%2B503&quality=85)
 
 ### Bordalsgjelet Gorge
 
@@ -39,7 +37,6 @@ A dramatic gorge within walking distance from the center with accessible paths a
 
 Voss Folk Museum from 1917 showcases authentic rural and cultural history. Three original farmsteads with permanent and temporary exhibitions. Museum café and shop.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/M%C3%B8lster,_Voss_folkemuseum,_Hordaland_-_Riksantikvaren-T280_01_0036.jpg?etag=%22913613-5f09c170%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=762%2B519&extract=0%2B0%2B762%2B443&quality=85)
 
 ## Pricing
 
@@ -134,7 +131,6 @@ Our fleet is parked at its traditional spot by the red and white taxi booth—a 
         title: 'Our Services',
         body: `## We have vehicles for all types of missions
 
-![Voss Taxi Car](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180820_124413.jpg?etag=%223970c3-5f083418%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=587%2B440&extract=6%2B0%2B580%2B440&quality=85)
 
 ### ✈️ Airport Transport
 Fixed price to Flesland (Bergen Airport). Call or email for a quote.
@@ -191,7 +187,6 @@ We are looking for drivers for full-time and part-time positions (day, evening, 
 
 Passenger transport, school runs, patient transport—meaningful and flexible work.
 
-![Driver](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Presentasjon1.jpg?etag=%2236c7e-64aee9ef%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=720%2B1040&extract=0%2B0%2B719%2B994&quality=85)
 
 ---
 
@@ -321,9 +316,7 @@ Here are a couple of our vehicles in service:
 ---
 
 ### 📱 Quick Booking
-Want to book via the TaxiFix app? Scan the QR code below to download and book.
 
-![QR Code booking Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
 `
       }
     ]

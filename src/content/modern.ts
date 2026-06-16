@@ -21,13 +21,11 @@ Sightseeing-pakker for 1–16 passasjerer. Skreddersy din egen utflukt og oppdag
 
 Imponerende foss med 110 meters totalt fall, 12 km nord for sentrum. En av Norges mest besøkte naturlige attraksjoner.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/TvindeFossen%2003.jpg?etag=%227fcb15-5f09c190%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=748%2B497&extract=0%2B0%2B748%2B490&quality=85)
 
 ### Skjervsfossen
 
 Tvillingfoss med 125 meters fall langs den maleriske riksvei 13. 15 km fra sentrum.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/SkjerveFossen%2003.jpg?etag=%2279e57d-5f09c169%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=757%2B503&extract=0%2B0%2B748%2B503&quality=85)
 
 ### Bordalsgjelet
 
@@ -39,7 +37,6 @@ Dramatisk geilje i gangavstand fra sentrum med tilrettelagte stier og flotte uts
 
 Voss Folkemuseum frå 1917 viser autentisk bygde- og kulturhistorie. Tre originale gårdstuner med permanente og midlertidlige utstillinger. Museumskafé og butikk.
 
-![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/M%C3%B8lster,_Voss_folkemuseum,_Hordaland_-_Riksantikvaren-T280_01_0036.jpg?etag=%22913613-5f09c170%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=762%2B519&extract=0%2B0%2B762%2B443&quality=85)
 
 ## Prising
 
@@ -134,7 +131,6 @@ Bilparken vår står på si tradisjonelle plass ved den røde og kvite taxibua�
         title: 'Tenestene våre',
         body: `## Me har bilar til alle typar oppdrag
 
-![Voss Taxi bil](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180820_124413.jpg?etag=%223970c3-5f083418%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=587%2B440&extract=6%2B0%2B580%2B440&quality=85)
 
 ### ✈️ Lufthavn-transport
 Fastpris til Flesland. Ring eller send e-post for tilbud.
@@ -191,7 +187,6 @@ Me søkjer sjåførar til heiltids- og deltidsstillingar (dag, kveld, og natt).
 
 Persontransport, skulekøyring, pasienttransport—arbeid som gir meining og fleksibilitet.
 
-![Sjåfør bil](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Presentasjon1.jpg?etag=%2236c7e-64aee9ef%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=720%2B1040&extract=0%2B0%2B719%2B994&quality=85)
 
 ---
 
