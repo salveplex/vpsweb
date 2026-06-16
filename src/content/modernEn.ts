@@ -104,7 +104,7 @@ We offer services to the municipality, the county municipality, Vy, and health i
 
 Our fleet includes everything from sedans (4 passengers) to 16-seater Maxi-taxis with room for wheelchairs. We offer specialized services such as wheelchair transport, child seats, and much more.
 
-![Voss Taxi Fleet](https://cms.vosstaxi.no/uploads/20200101_010840_1_de63ba6622.jpg).jpg?etag=%222c9cc5-5f08340e%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1171%2B555&extract=12%2B0%2B1095%2B555&quality=85)
+![Voss Taxi Fleet](https://cms.vosstaxi.no/uploads/20200101_010840_1_de63ba6622.jpg)
 
 ---
 

@@ -1,4 +1,4 @@
-﻿import type { CmsPage } from '../types'
+import type { CmsPage } from '../types'
 
 export const modernPages: CmsPage[] = [
   {
@@ -104,7 +104,7 @@ Vi tilbyr tenestar til kommune, fylkeskommune, Vy, og helseinstitusjonar—både
 
 Bilparken inneheld alt frå personbilar (4 passasjerar) til 16-seters Maxi-taxiar med plass til rullestolar. Vi tilbyr spesialiserte tenestar som rullestoltransport, barnesete, og fleire andre tilbod.
 
-![Bilpark Voss Taxi](https://cms.vosstaxi.no/uploads/20200101_010840_1_de63ba6622.jpg).jpg?etag=%222c9cc5-5f08340e%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1171%2B555&extract=12%2B0%2B1095%2B555&quality=85)
+![Bilpark Voss Taxi](https://cms.vosstaxi.no/uploads/20200101_010840_1_de63ba6622.jpg)
 
 ---
 
