@@ -35,7 +35,6 @@ export function Header({
           <img src={logoImg} alt="Voss Taxi" className="h-10 w-auto object-contain transition-transform duration-500 ease-[cubic-bezier(.32,.72,0,1)] group-hover:-translate-y-0.5 group-active:scale-[0.98]" />
           <span>
             <span className="block text-lg font-extrabold tracking-tight">Voss Taxi</span>
-            <span className="block font-mono text-[10px] uppercase tracking-[0.24em]" style={{ color: 'var(--accent-strong)' }}>SA</span>
           </span>
         </Link>
 
