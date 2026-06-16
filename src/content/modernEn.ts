@@ -314,9 +314,6 @@ Here are a couple of our vehicles in service:
 ![Rullestolbil rampe](https://cms.vosstaxi.no/uploads/20240514_203506_53aa74368f.jpg)
 
 ---
-
-### 📱 Quick Booking
-
 `
       }
     ]

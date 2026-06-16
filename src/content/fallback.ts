@@ -258,9 +258,6 @@ Her kan du sjå eit par av bilane våre i teneste:
 ![Rullestolbil rampe](https://cms.vosstaxi.no/uploads/20240514_203506_53aa74368f.jpg)
 
 ---
-
-### 📱 Rask bestilling
-
 `
           }
         ]
