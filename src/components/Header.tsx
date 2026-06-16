@@ -33,9 +33,6 @@ export function Header({
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-[18px] border px-3 py-3 backdrop-blur-2xl md:px-4" style={{ borderColor: 'rgba(255,255,255,.18)', background: 'rgba(18,17,15,.48)', color: '#fffaf0' }}>
         <Link to={locale === 'en' ? '/en' : '/'} className="group flex items-center gap-3">
           <img src={logoImg} alt="Voss Taxi" className="h-10 w-auto object-contain transition-transform duration-500 ease-[cubic-bezier(.32,.72,0,1)] group-hover:-translate-y-0.5 group-active:scale-[0.98]" />
-          <span>
-            <span className="block text-lg font-extrabold tracking-tight">Voss Taxi</span>
-          </span>
         </Link>
 
         <nav className="hidden items-center rounded-[12px] border border-white/10 bg-white/8 p-1 lg:flex" aria-label="Hovudmeny">
