@@ -3,6 +3,7 @@ import { fallbackByLocale } from '../content/fallback'
 import { modernPages } from '../content/modern'
 import { modernPagesEn } from '../content/modernEn'
 import { extraPagesEn } from '../content/extraEn'
+import { extraPagesNo } from '../content/extraNo'
 
 export function assetUrl(baseUrl: string, media?: string) {
   if (!media) return ''
@@ -12,7 +13,7 @@ export function assetUrl(baseUrl: string, media?: string) {
 
 export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
   const fallback = fallbackByLocale[locale]
-  const overrides = locale === 'no' ? modernPages : [...modernPagesEn, ...extraPagesEn]
+  const overrides = locale === 'no' ? [...modernPages, ...extraPagesNo] : [...modernPagesEn, ...extraPagesEn]
   
   const patchedFallbackPages = [...fallback.pages]
   for (const override of overrides) {
