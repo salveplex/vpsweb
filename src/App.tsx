@@ -439,7 +439,7 @@ function ContactPanel({ data, locale }: { data: SiteData; locale: Locale }) {
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 md:grid-cols-[.8fr_1.2fr] md:px-6">
         <div>
           <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{locale === 'en' ? 'Contact' : 'Kontakt'}</p>
-          <h2 className="mt-4 text-balance text-4xl font-extrabold tracking-tight">{locale === 'en' ? 'Ready when Voss moves.' : 'Klar når Voss skal vidare.'}</h2>
+          <h2 className="mt-4 text-balance text-4xl font-extrabold tracking-tight">{locale === 'en' ? 'Ready when you are.' : 'Klar når du er.'}</h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
           <ContactCard href={`tel:${data.settings.phone}`} icon={Phone} label={locale === 'en' ? 'Phone' : 'Telefon'} value={formatPhone(data.settings.phone_display)} />
@@ -658,7 +658,11 @@ function AppRoutes() {
   useEffect(() => {
     // Auto-redirect for non-Norwegian browsers on root
     if (location.pathname === '/') {
-      const hasChosen = localStorage.getItem('hasChosenLanguage')
+      let hasChosen = false
+      try {
+        hasChosen = !!localStorage.getItem('hasChosenLanguage')
+      } catch(e) {}
+      
       if (!hasChosen) {
         const lang = navigator.language.toLowerCase()
         if (!lang.startsWith('no') && !lang.startsWith('nb') && !lang.startsWith('nn')) {

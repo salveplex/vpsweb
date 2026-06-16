@@ -14,19 +14,24 @@ export const extraPagesEn: CmsPage[] = [
         title: 'Our History',
         body: `Learn a bit about the history of Voss Taxi. Surprisingly few old archives and pictures exist today. However, in all likelihood, there has been taxi activity in Voss for over 100 years, if not longer. Records indicate that Voss Taxi Owners' Association (Voss Drosjeeigarlag) was founded on February 10, 1930. It is a bit unclear where they were stationed, but from what we can decipher from old meeting minutes, they were located by the fish market, and later behind the Voss bookstore. Large parts of the association's history were lost during the bombing of Vossevangen during World War II.
 
-![Historic picture Voss Taxi](https://cms.vosstaxi.no/uploads/image0000001002_c7c2fd8637.jpg)
+![Historic picture 1](https://cms.vosstaxi.no/uploads/1594031017144_00c7caf4_5ac3_4a54_ba3b_253f2a56aad7_4f98a48e94.jpg)
 
 After the war, the taxi owners' association joined forces with the Voss truck association for an agreement with Norsk Brenselsolje (BP) - today Statoil/Circle K - for their own gas tank, on the condition that they filled exclusively there. The agreement also provided housing for the taxi drivers in the form of a barrack given by BP. The barrack was placed at Hestavangen in the early 50s. However, judging from old pictures, it seems they were already at Hestavangen around 1937.
 
-![Historic picture 2 Voss Taxi](https://cms.vosstaxi.no/uploads/IMG_20200706_0003_b681eecd88.jpg)
+![Historic picture 2](https://cms.vosstaxi.no/uploads/1594033590475_920ec5d0_fa60_4b9c_b132_45045145a9f9_14ca3489ef.jpg)
 
 In the sixties, Dr. Bonsaksen attempted to build a health center on the plot where the taxis were located. A clause in the purchase contract with the municipality stated that the drivers should be allowed to use the ground floor when the new building was completed.
 
+![Historic picture 3](https://cms.vosstaxi.no/uploads/IMG_20200706_0003_b681eecd88.jpg)
+
 It was then in 1968 that the barrack was moved further west on the site, where it still stands today. This was supposed to be a temporary move until the new premises were ready. However, when the building was finished and ready for move-in, it turned out that the premises were not suitable for the taxis; it was far too large and the rent would be too high considering the price per square meter. Previously, BP had helped provide housing for the drivers, but they believed this increase in rent was unreasonable. There were also plans in those days for underground toilet facilities with the taxis on top. But this never materialized either.
+
+![Historic picture 4](https://cms.vosstaxi.no/uploads/1594033950011_0dbdd0e0_d971_4beb_aff2_e793c9dbad3c_19c793f208.jpg)
 
 So after a long processing time and several letters between the municipality, the taxis, Dr. Bonsaksen, etc., the whole housing question faded away and the drivers remained in the booth until the winter of 2014. Then they finally got to "come home", as they say. Where they were from the start and where they were originally promised a new shelter.
 
-![Historic picture 3 Voss Taxi](https://cms.vosstaxi.no/uploads/1594033487309_3673ee32_eb67_4713_8214_ebb1da48e841_f59ab126c6.jpg)
+![Historic picture 5](https://cms.vosstaxi.no/uploads/1594033487309_3673ee32_eb67_4713_8214_ebb1da48e841_f59ab126c6.jpg)
+![Historic picture 6](https://cms.vosstaxi.no/uploads/1594031162280_775ca4e4_b462_442f_9e94_103488400b80_991d51b7bf.jpg)
 
 **Timeline:**
 - 1930 – approx. 1950 Voss Drosjeeigarlag

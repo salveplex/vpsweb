@@ -62,6 +62,9 @@ export function Header({
           <ThemeToggle mode={themeMode} onChange={setThemeMode} />
           <Link
             to={alternate}
+            onClick={() => {
+              try { localStorage.setItem('hasChosenLanguage', 'true') } catch (e) {}
+            }}
             className="rounded-[10px] border px-4 py-2 font-mono text-xs uppercase tracking-[0.18em] transition active:scale-[0.98]"
             style={{ borderColor: 'rgba(255,255,255,.16)', color: 'rgba(255,255,255,.72)' }}
           >
@@ -104,7 +107,15 @@ export function Header({
               </Link>
             ))}
             <div className="mt-2 flex items-center justify-between gap-3">
-              <Link to={alternate} onClick={() => { setMenuOpen(false); localStorage.setItem('hasChosenLanguage', 'true'); }} className="rounded-md border px-4 py-3 font-mono text-sm uppercase" style={{ borderColor: 'var(--line)', color: 'var(--accent-strong)' }}>
+              <Link 
+                to={alternate} 
+                onClick={() => { 
+                  setMenuOpen(false); 
+                  try { localStorage.setItem('hasChosenLanguage', 'true') } catch(e) {} 
+                }} 
+                className="rounded-md border px-4 py-3 font-mono text-sm uppercase" 
+                style={{ borderColor: 'var(--line)', color: 'var(--accent-strong)' }}
+              >
                 {locale === 'en' ? 'Norsk' : 'English'}
               </Link>
               <ThemeToggle mode={themeMode} onChange={setThemeMode} />

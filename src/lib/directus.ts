@@ -32,8 +32,13 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
 
     if (json.data && json.data.length > 0) {
       const strapiPages: CmsPage[] = json.data
-        .filter(item => item.slug !== 'pakker' && item.slug !== 'om-oss' && item.slug !== 'maxi-taxi' && item.slug !== 'trygt-heim')
         .map((item) => {
+        // Clean up legacy Markdown image query parameters that break the parser
+        let cleanContent = item.content || ''
+        cleanContent = cleanContent.replace(/\?etag=[^\)]+/g, '')
+        cleanContent = cleanContent.replace(/&sourceContentType=[^\)]+/g, '')
+        cleanContent = cleanContent.replace(/&ignoreAspectRatio/g, '')
+
         return {
           id: item.id.toString(),
           locale,
@@ -42,7 +47,7 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
           eyebrow: item.eyebrow || 'Voss Taxi SA',
           summary: item.summary || '',
           status: 'published',
-          blocks: [{ type: 'rich_text' as const, body: item.content }],
+          blocks: [{ type: 'rich_text' as const, body: cleanContent }],
         }
 
       })
@@ -51,9 +56,7 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
 
       for (const override of overrides) {
         const idx = finalPages.findIndex(p => p.slug === override.slug)
-        if (idx !== -1) {
-          finalPages[idx] = override
-        } else {
+        if (idx === -1) {
           finalPages.push(override)
         }
       }
