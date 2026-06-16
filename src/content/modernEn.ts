@@ -6,7 +6,7 @@ export const modernPagesEn: CmsPage[] = [
     locale: 'en',
     slug: 'pakker',
     title: 'Packages',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     blocks: [
       {
@@ -69,7 +69,7 @@ Payment is made at the start of the trip or by agreement.
 
 ## Booking
 
-**Voss Taxi SA**
+**Voss Taxi**
 Uttrågata 19, 5700 Voss
 Phone: +47 56 51 13 40
 Email: post@vosstaxi.no
@@ -83,16 +83,16 @@ www.vosstaxi.no
     locale: 'en',
     slug: 'om-oss',
     title: 'About Us',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     status: 'published',
     blocks: [
       {
         type: 'rich_text',
         title: 'About Us',
-        body: `## Welcome to Voss Taxi SA
+        body: `## Welcome to Voss Taxi
 
-Voss Taxi SA is one of the region's main dispatchers for passenger transport, patient transport, and school transport. We have been providing taxi services in Voss since 1917.
+Voss Taxi is one of the region's main dispatchers for passenger transport, patient transport, and school transport. We have been providing taxi services in Voss since 1917.
 
 We offer services to the municipality, the county municipality, Vy, and health institutions—both locally and at the county level.
 
@@ -122,7 +122,7 @@ Our fleet is parked at its traditional spot by the red and white taxi booth—a 
     locale: 'en',
     slug: 'tenester',
     title: 'Our Services',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     status: 'published',
     blocks: [
@@ -174,7 +174,7 @@ All our vehicles and drivers welcome guide dogs.
     locale: 'en',
     slug: 'bli-sjafor',
     title: 'Become a Driver',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     status: 'published',
     blocks: [
@@ -221,7 +221,7 @@ We cover the cost of the theory test at the Norwegian Public Roads Administratio
     locale: 'en',
     slug: 'kontakt',
     title: 'Contact Us',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     status: 'published',
     blocks: [
@@ -240,7 +240,7 @@ We cover the cost of the theory test at the Norwegian Public Roads Administratio
 
 ## Visiting Address
 
-Voss Taxi SA
+Voss Taxi
 Uttrågata 19
 5700 Voss
 Norway
@@ -261,7 +261,7 @@ Norway
     locale: 'en',
     slug: 'galleri',
     title: 'Gallery',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     status: 'published',
     blocks: [
@@ -282,7 +282,7 @@ Norway
     locale: 'en',
     slug: 'maxi-taxi',
     title: 'Maxi Taxi',
-    eyebrow: 'Voss Taxi SA',
+    eyebrow: 'Voss Taxi',
     summary: '',
     blocks: [
       {

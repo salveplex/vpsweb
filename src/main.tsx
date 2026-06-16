@@ -20,7 +20,7 @@ class AppErrorBoundary extends Component<{ children: ReactNode }, { hasError: bo
       return (
         <main className="grid min-h-screen place-items-center bg-[#0b0b09] px-6 text-[#fff8e8]">
           <section className="max-w-2xl">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#d8ae3d]">Voss Taxi SA</p>
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#d8ae3d]">Voss Taxi</p>
             <h1 className="mt-5 text-5xl font-extrabold leading-none">Nettsiden stoppet i nettleseren.</h1>
             <p className="mt-5 text-lg leading-8 text-[#d8d0bd]">
               Last siden på nytt. Hvis feilen fortsetter, send denne meldingen til utvikler:

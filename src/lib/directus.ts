@@ -44,7 +44,7 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
           locale,
           slug: item.slug,
           title: item.title,
-          eyebrow: item.eyebrow || 'Voss Taxi SA',
+          eyebrow: item.eyebrow || 'Voss Taxi',
           summary: item.summary || '',
           status: 'published',
           blocks: [{ type: 'rich_text' as const, body: cleanContent }],
