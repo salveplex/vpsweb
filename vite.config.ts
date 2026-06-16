@@ -35,6 +35,7 @@ export default defineConfig({
       },
       workbox: {
         navigateFallback: '/index.html',
+        navigateFallbackDenylist: [/^\/portal/, /^\/mrs/, /^\/fliser/],
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,mp4}'],
         maximumFileSizeToCacheInBytes: 5000000
       }
