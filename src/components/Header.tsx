@@ -19,8 +19,14 @@ export function Header({
   setThemeMode: (mode: ThemeMode) => void
 }) {
   const [menuOpen, setMenuOpen] = useState(false)
-  const alternate = locale === 'en' ? '/' : '/en'
   const location = useLocation()
+  let alternate = '/'
+  if (locale === 'en') {
+    alternate = location.pathname.replace(/^\/en\/?/, '/')
+  } else {
+    alternate = location.pathname === '/' ? '/en' : `/en${location.pathname}`
+  }
+  alternate = alternate.replace(/\/\/+/g, '/')
 
   return (
     <header className="fixed left-0 right-0 top-0 z-30 px-3 pt-3 md:px-6">
@@ -98,7 +104,7 @@ export function Header({
               </Link>
             ))}
             <div className="mt-2 flex items-center justify-between gap-3">
-              <Link to={alternate} onClick={() => setMenuOpen(false)} className="rounded-md border px-4 py-3 font-mono text-sm uppercase" style={{ borderColor: 'var(--line)', color: 'var(--accent-strong)' }}>
+              <Link to={alternate} onClick={() => { setMenuOpen(false); localStorage.setItem('hasChosenLanguage', 'true'); }} className="rounded-md border px-4 py-3 font-mono text-sm uppercase" style={{ borderColor: 'var(--line)', color: 'var(--accent-strong)' }}>
                 {locale === 'en' ? 'Norsk' : 'English'}
               </Link>
               <ThemeToggle mode={themeMode} onChange={setThemeMode} />

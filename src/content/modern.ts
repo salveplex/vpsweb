@@ -1,4 +1,4 @@
-import type { CmsPage } from '../types'
+﻿import type { CmsPage } from '../types'
 
 export const modernPages: CmsPage[] = [
   {
@@ -176,7 +176,7 @@ Alle våre bilar og sjåførar tek med hund.
   {
     id: 'page-nyheter-no',
     locale: 'no',
-    slug: 'nyheter-og-praktisk-informasjon',
+    slug: 'bli-sjafor',
     title: 'Bli Sjåfør',
     eyebrow: 'Voss Taxi SA',
     summary: '',

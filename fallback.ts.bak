@@ -1,4 +1,4 @@
-import type { SiteData } from '../types'
+﻿import type { SiteData } from '../types'
 
 const settings = {
   site_name: 'Voss Taxi SA',
@@ -15,7 +15,7 @@ const settings = {
   app_store_url: 'https://apps.apple.com/no/app/snappy-taxi/id6479620974',
   play_store_url: 'https://play.google.com/store/apps/details?id=no.snappy.snappy.taxi&hl=no',
   hero_media:
-    'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240522_130220.jpg?etag=%2239d36c-6652016f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&quality=85',
+    'https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240522_130220.jpg?etag=%2239d36c-6652016f%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1160%2B870&extract=0%2B198%2B1160%2B395&quality=85',
 }
 
 const originalGalleryImages = [
@@ -268,38 +268,414 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
           {
             type: 'rich_text',
             title: 'Maxi Taxi',
-            body: `### Rullestolbil og Maxi-Taxi 🚐
+            body: `
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
 
-**Voss Taxi har lang erfaring med pasient- og rullestoltransport. Vi utfører rullestoloppdrag dagleg og er ein trygg transportpartnar i heile regionen.**
+Tlf: (+47) 56 51 13 40
 
-Alle våre lokalkjende sjåførar er opplærte og godkjende for å handtere ulike typar rullestolbrukarar. Vi har alltid fullt fokus på passasjerane sin sikkerheit og komfort under heile transporten. 
 
-Me utfører kvart år eit stort tal transportar for Helse Bergen, og har mange års erfaring med å frakta passasjerar med behov for spesiell assistanse. Dette gjer oss til ein naturleg og profesjonell transportpartnar også for private omsorgsinstitusjonar, eldresenter, og andre som treng sikker transport av eldre og rørslehemma.
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/DJI_0168.JPG?etag=%226fb506-66495405%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1160%2B773&extract=0%2B174%2B1160%2B429&quality=85)
 
-> 📞 **Vi er tilgjengelege kvar dag – heile året.**
-> Ring (+47) 93 24 98 44 eller send ein e-post til maxi@vosstaxi.no
 
----
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240514_203506.jpg?etag=%225098a2-66495519%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=689%2B517&extract=0%2B0%2B689%2B479&quality=85)
 
-### Vår bilpark for rullestoltransport ♿
+Rullestolbil
 
-Vi har per dags dato:
-- **2 minibussar** spesialtilpassa for å ta med éin eller to rullestolar
-- **3 stk 8-seters rullestolbilar**, alle utstyrte med trygge og solide ramper for lett og behageleg ombordstiging
+Voss Taxi har lang erfaring med pasient og rullestoltransport. Me utfører dagleg rullestoloppdrag. Alle våre lokalkjente sjåførar er opplært og godkjent til å handtere ulike typar rullestolbrukarar. Og me har alltid fokus på brukarens sikkerheit under transporten.
 
-Her kan du sjå eit par av bilane våre i teneste:
+Me har pr. dags dato 2 minibussar tilpassa for å ta med ein eller to rullestolar. Samt 3 stk 8 setar rullestolbil, alle med rampe for lett ombordstigning.
 
-![Maxi Taxi bil](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/DJI_0168.JPG?etag=%226fb506-66495405%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&quality=85)
+Me utfører kvart år eit stort antall transportar for Helse Bergen, og har mange års erfaring med å frakta passasjerar med behov for spesiell assistanse.
 
-![Rullestolbil rampe](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20240514_203506.jpg?etag=%225098a2-66495519%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&quality=85)
+Noko som og gjer oss til en naturleg transportpartnar også for private omsorgsinstitusjonar og andre som treng sikker transport av eldre og bevegelseshemma.
 
----
+Me er tilgjengelege kvar dag – heile året.
 
-### 📱 Rask bestilling
-Ønskjer du å bestille via TaxiFix-appen? Skann QR-koden under for å laste ned og bestille.
+Ring 93 24 98 44 eller send ein epost til maxi@vosstaxi.no
 
-![QR Kode bestilling Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+## Ta kontakt
+
+Her kan du sende ein forespørsel direkte til maxi taxiane våre.
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/handicap-39397_960_720.png?etag=W%2F%2293ba-664bb5cc%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=296%2B296&extract=0%2B0%2B296%2B291)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+
+Scan QR Code and order
+
+Copyright © Voss Taxi SA
+
 `
+          }
+        ]
+      },
+      {
+        id: 'page-bli-sjafor-no',
+        locale: 'no',
+        slug: 'bli-sjafor',
+        title: 'Nyheter Og Praktisk Informasjon',
+        eyebrow: 'Voss Taxi SA',
+        summary: '',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Nyheter Og Praktisk Informasjon',
+            body: `
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
+
+Tlf: (+47) 56 51 13 40
+
+### Lyst til å ha verdas beste kontor utsikt?
+
+Me søkjer etter nye sjåførar til både heiltids og deltids stilling. Skift jobbing, dag, kveld og natt!
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Presentasjon1.jpg?etag=%2236c7e-64aee9ef%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=720%2B1040&extract=0%2B0%2B719%2B994&quality=85)
+
+Er du vår nye sjåfør?
+
+Voss Taxi er i vekst og søkjer sjåførar til oppdrag i Voss Herad og omegn.
+
+Arbeidsoppgåver: Persontransport, køyring av skuleborn, pasientransport m.m
+
+Me ser etter: Sjåfører som er blide og serviceinnstilte personar som likar å jobba med mennesker, og er glad i å køyra bil.
+
+Voss Taxi tilbyr
+
+Gratis sjåførkurs!
+
+Tilbudet betinger at du oppfyller vanlige krav for å bli taxisjåfør, det vil sei at du må være over 20 år og ha hatt førerkort i minst to år. Du må også ha tilfredsstillende norsk- kunnskaper. Du må som sjåførkandidat betale for obligatorisk teoriprøve hos Statens Vegvesen  – men denne kostnaden får du refundert dersom du fullfører kurset og byrjer å jobba for ein av våre taxieigere.
+
+Formelle krav til drosjesjåfører i Norge - Kjøreseddel
+
+For å kunne kjøre drosje i Norge må man ha kjøreseddel i tillegg til førerkort. Kravene for at man skal kunne få kjøreseddel er at ein:
+
+Må være fylt 20 år
+
+Må ha hatt førerkort i minimum 2 år sammenhengende
+
+Har bestått teoriprøve hos Statens vegvesen – eller YSK for persontransport
+
+Oppfyller helsekravene for persontransport mot vederlag
+
+Har en slik vandel at politiet ikkje finn vedkommande uegna til å føre drosje.
+
+Søkere frå land utenfor EØS området må ha minimum fire års botid i Norge
+
+I tillegg kommer Voss Taxi krav
+
+Gjennomført sjåfør opplæring hjå oss
+
+Kjenntmannsprøve
+
+Beherske norsk skriftleg og muntleg på B2 nivå eller bedre.
+
+Pliktar å utføre eventuelle kurs sentralen finn naudsynt. Som t.d. førstehjelp.
+
+Underskreven tausheit og lojalitets avtalar med sentralen
+
+Arbeidskontrakt med prøvetidsbestemmelsar
+
+Bestått pasientreiser E Læring kurs.
+
+## Send oss ein forespørsel på sjoff@vosstaxi.no
+
+## Gå inn på lenka under for meir informasjon
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+
+Scan QR Code and order
+
+Copyright © Voss Taxi SA
+
+`
+          }
+        ]
+      },
+      {
+        id: 'page-om-oss-no',
+        locale: 'no',
+        slug: 'om-oss',
+        title: 'Om Oss',
+        eyebrow: 'Voss Taxi SA',
+        summary: '',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Om Oss',
+            body: `
+Tlf: (+47) 56 51 13 40
+
+## Voss Taxi
+
+Voss Taxi SA hadde fram til 2013 namnet Voss Drosjebilsentral. Me er hovudleverandørar på køyring av pasientreiser og skuletransport i Voss Herad.
+
+Me leverer og tenester til ulike aktørar og kundar, som f.eks Kommune, Fylkeskommune, Vy, diverse legar/behandlarar-institusjonar. Både i nærmiljøet og i fylket.
+
+**LITT INFORMASJON**
+
+Det er totalt 22 løyver som tilhøyrer Voss Taxi.
+
+Slik ser bilparken ut med antall seter i kvar bil pr i dag.
+
+![Bilpark](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20200101_010840(1).jpg?etag=%222c9cc5-5f08340e%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=1171%2B555&extract=12%2B0%2B1095%2B555&quality=85)
+
+Telefonen er bemanna døgnet rundt, heile året. Ved behov for større bil enn ein vanlig som tar 4 passasjerar, sjå meir info på "Kontakt" sida.
+
+Me held til midt i hjarta av Voss Sentrum. Du vil kanskje kjenna igjen den raude og kvite taxibua vår i frå fleire innslag i fjernsynet, deriblant Norge Rundt og Sommeråpent.
+
+Den er ikkje lenger i bruk ettersom at me kom inn i nye og større lokaler rett over gata. Bilparken vår står der som den alltid har gjort (ved den raude bua).
+
+I våre nye lokaler har me og eit stort og oppvarma venterom med stolar og sofa der ein kan slappa av mens ein ventar.
+
+**Venterommet er ope 07-20 kvar dag.**
+`
+          }
+        ]
+      },
+      {
+        id: 'page-pakker-no',
+        locale: 'no',
+        slug: 'pakker',
+        title: 'Pakker',
+        eyebrow: 'Voss Taxi SA',
+        summary: '',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Pakker',
+            body: `
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
+
+Tlf: (+47) 56 51 13 40
+
+Opplev Voss
+
+Få mer ut av oppholdet ditt.
+
+Sightseeing på Voss for 1-16 passasjerer med Voss Taxi.
+
+Våre sjåfører kan vise deg de beste severdighetene her på Voss. Du kan stoppe undervegs for å besøke de ulike destinasjonene, og du bestemmer selv hvor du vil begynne å avslutte reisen.
+
+Med Voss Taxi kan du skreddersy din egen sightseeing utflukt og gå akkurat der du vil gå i ditt eget tempo. Vi er glade for å gi forslag til ruter, men vil tilpasse ekskursjon til ønskene og interessene til deg og dine andre medreisende. Våre kjøretøyer kommer med profesjonelle og erfarne sjåfører med kjennskap til området.
+
+Tvindefossen
+
+Tvindefossen er den 98. høyeste fossen i Norge regnet ut i fra totalt fall. Fossen ligger ved Tvinde i Voss kommune, 12 km. nord for Voss sentrum like ved E-16. Fossen er en kjent turistattraksjon. Fossen har ett totalt fall på 110 meter hvor det lengste fallet er 85 meter. Vannet fra Tvindefossen kommer fra Kroelva og renner ut i Strandaelva.
+
+På slutten av 1990-tallet skapte også vatnet i Tvindefossen et rykte for foryngelse og gjenoppliving av seksuell styrke som gjorde det til et av de viktigste naturlige turistattraksjonene i Vest-Norge, med så mange som 200 000 mennesker i året fra USA, Japan og Russland besøker og fyller containere med vannet. På et tidspunkt var det Norges niende mest besøkte naturlige attraksjon, med 272 000 besøkende
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/TvindeFossen%2003.jpg?etag=%227fcb15-5f09c190%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=748%2B497&extract=0%2B0%2B748%2B490&quality=85)
+
+Skjervsfossen
+
+Skjervsfossen er en foss i Granvin kommune i Hordaland. Den ligger ved Skjervet, omtrent midt mellom Granvin og Voss. Riksvei 13 passerer på avsatsen mellom fossens øvre og nedre fall. R13 er en av Norges viktigste turist veier.
+
+Fossen ligger 15 kilometer fra Voss sentrum, men pass på å ta gamle veien og ikke tunnelen! Skjervefossen er en tvillingfoss i elva Storelvi med en total høyde på 125 meter. Den øvre delen er den mest imponerende med et vertikal fall på 60 meter.
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/SkjerveFossen%2003.jpg?etag=%2279e57d-5f09c169%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=757%2B503&extract=0%2B0%2B748%2B503&quality=85)
+
+Bordalsgjelet
+
+Bordalsgjelet er en spektakulær naturattraksjon i gangavstand frå sentrum. Det djupe og dramatiske Bordalsgjelet er tilrettelagt for publikum med, utsiktspunkt og benker.
+
+Når det ikke er snø og is er det òg en tilrettelagt sti du kan følge innover gjelet. Her får du god utsikt til de fantastiske jettegrytene som is og elven har formet gjennom årtusen, men hugs, for din egen sikkerhet: Hold deg til de merkede stiene!
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/Bordalsgjelet%2002.jpg?etag=%226cd4e7-5f09c189%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=748%2B497&extract=0%2B0%2B748%2B497&quality=85)
+
+Mølstertunet
+
+Voss Folkemuseum ble grunnlagt i 1917. Museets første oppgåve var å kjøpe gårdstun på Mølster, som i dag er en av tre autentiske gårdstun som eies og konservert av museet. I disse tre gårdstun er alle bygningene fortsatt plassert akkurat der de var da folk bodde der.
+
+På Mølster gård, som lett kan sees i åssiden ovenfor Vossevangen, er det en nyere museums bygning, hvor permanente og midlertidige utstillinger gir den besøkende større kunnskap om den lokale kulturen. Det er og en museumsbutikk, og om sommeren har de vanligvis høner og sauer på gården. Det er mulig å nå museet til fots eller med bil.
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/M%C3%B8lster,_Voss_folkemuseum,_Hordaland_-_Riksantikvaren-T280_01_0036.jpg?etag=%22913613-5f09c170%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=762%2B519&extract=0%2B0%2B762%2B443&quality=85)
+
+Sightseeing – Voss Taxi (2026)
+
+Mandag – fredag
+
+1–4 personar (opptil 1 time): NOK 900
+
+5–6 personar (opptil 1 time): NOK 1000
+
+7–8 personar (opptil 1 time): NOK 1100
+
+9–16 personar (opptil 1 time): NOK 1150
+
+Laurdag – sundag
+
+1–4 personar (opptil 1 time): NOK 1000
+
+5–6 personar (opptil 1 time): NOK 1100
+
+7–8 personar (opptil 1 time): NOK 1200
+
+9–16 personar (opptil 1 time): NOK 1250
+
+Eventuelle bompengar kjem i tillegg.
+
+Vilkår
+
+Tida startar ved avtalt oppmøte og vert rekna fortløpande.
+
+Eventuell ventetid under stopp er inkludert i timen. Lengre stopp vert belasta ekstra.
+
+Turen må starte og avsluttast i Voss sentrum (Vossevangen).
+
+Turar utanfor dette området vert køyrde etter ordinær takst.
+
+Sightseeing gjeld lokal køyring i Voss-området. Lengre turar må avtalast på førehand.
+
+Pris vert fastsett etter faktisk tal passasjerar ved turstart.
+
+Ved forseinka oppmøte vert tida rekna frå avtalt tidspunkt.
+
+Manglande oppmøte kan verte fakturert.
+
+Avbestilling må skje seinast 12 timar før avtalt tid.
+
+Laurdag-/søndagspris gjeld òg for heilagdagar.
+
+Sightseeing omfattar transport med sjåfør. Guiding er ikkje inkludert med mindre anna er avtalt.
+
+Betaling skjer ved turstart eller etter avtale.
+
+Bestilling og kontakt
+
+Voss Taxi
+
+Uttrågata 19
+
+Tlf: +47 56 51 13 40
+
+Maxi-Taxi: +47 93 24 98 44
+
+post@vosstaxi.no
+
+www.vosstaxi.no
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+
+Scan QR Code and order
+
+Copyright © Voss Taxi SA
+
+`
+          }
+        ]
+      },
+      {
+        id: 'page-trygt-heim-no',
+        locale: 'no',
+        slug: 'trygt-heim',
+        title: 'Trygt Heim',
+        eyebrow: 'Voss Taxi SA',
+        summary: '',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Trygt Heim',
+            body: `
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/2.3___serialized1.png?etag=W%2F%22b9762-66313ecf%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=543%2B308)
+
+Tlf: (+47) 56 51 13 40
+
+TRYGT HEIM
+
+Voss Taxi startar opp med skyss for ungdom kvar onsdag. Desse rutene vil gå ifrå Voss Stasjon kl.21:15. Det vert køyrd i følgjande retningar:
+
+Voss Stasjon – Bolstad
+
+Voss Stasjon – Tinghuset – Palmafossen – Tvinde
+
+For meir informasjon gå til:
+
+SKYSS
+
+https://www.skyss.no/reise/aktuelt/trygt-heim-voss-5.-februar
+
+VOSS HERAD
+
+https://voss.herad.no/aktuelt-fra-kommunen/nytt-transporttilbod-til-ungdom-trygt-heim-fra-vangen.11503.aspx
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/20180618_212754.jpg?etag=%223c5bfa-5f08341d%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=590%2B443&extract=6%2B0%2B577%2B392&quality=85)
+
+Du kjøper vanleg bussbillett i appen Skyss Billett, om bord med kontantar eller bankkort, på SMS eller i nettbutikken.
+
+Trygt Heim er eit tilbod for dei mellom 13 og 24, men kan også nyttast av andre dersom det er ledig plass. Så om det er reisande, uavhengig av alder så går tilbodet, men ungdom er prioritert.
+
+Tidlegare avgangar med Trygt heim natt til laurdag vert ikkje køyrd lenger.
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/tinywow_Student%20rabatt_54313707_1.jpg?etag=%225280e-662d516c%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=701%2B991&extract=0%2B0%2B701%2B987&quality=85)
+
+
+![image](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/QR-Kode%20bestilling%20Voss%20Taxi.png?etag=%22333-5f09be43%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=200%2B200)
+
+Scan QR Code and order
+
+Copyright © Voss Taxi SA
+
+`
+          }
+        ]
+      },
+      {
+        id: 'generell-informasjon-no',
+        locale: 'no',
+        slug: 'generell-informasjon',
+        title: 'Generell informasjon',
+        blocks: [
+          {
+            type: 'rich_text',
+            title: 'Generell informasjon',
+            body: 'Klag først til taxien, hvis den er forsinket eller kjører feil. Blir dere ikke enige, kan du bringe saken inn til Forbrukertilsynet.\n\n## På denne siden\n- Kan du velge den drosjen du ønsker?\n- Hva kan du kreve hvis taxien kjører feil?\n- Hva kan du kreve hvis taxien er forsinket eller ikke kommer?\n- Hvordan går du frem for å klage?\n\n### Kan du velge den drosjen du ønsker?\nDet er fritt valg av taxi i Norge. Du kan velge den bilen eller det selskapet du ønsker – også i drosjekøen.\n\n### Hva kan du kreve hvis taxien kjører feil?\nDersom drosjesjåføren kjører feil kan du be ham om å stoppe taksameteret, og dersom det viser seg at sjåføren ikke har valgt den raskeste veien, vil du kunne kreve prisavslag. Dette bør du aller helst gjøre på stedet. Dersom du ikke når fram, bør du så snart som mulig ta dette opp skriftlig med taxisentralen.\n\n### Hva kan du kreve hvis taxien er forsinket eller ikke kommer?\nDu har krav på erstatning for økonomiske tap som oppstår hvis taxien er forsinket eller ikke kommer. Husk at du er ansvarlig for å begrense eventuelle økonomiske tap, ved å for eksempel bestille en ny taxi eller velge et annet transportmiddel.\n\nI praksis betyr dette at dersom du har beregnet rimelig tid, men ikke rekker flyet fordi taxien ikke dukket opp, vil du kunne kreve erstatning for ekstrakostnadene.\n\n> [!WARNING]\n> **OBS!** Kravet på erstatning faller bort hvis forsinkelsen skyldes forhold utenfor selskapets kontroll, slik som trafikkulykker eller ekstreme værforhold.\n\nNoen selskaper har også ordninger som går utover dine lovpålagte rettigheter, så det kan være lurt å sjekke transportvilkårene, hvis taxien ikke kommer som avtalt.\n\n### Hvordan går du frem for å klage?\n**Klag til taxien/taxisentralen**\nOm du har vært uheldig, bør det klages skriftlig til taxisentralen så snart som mulig. Det er viktig å få med opplysninger om den bestilte turen, og å dokumentere ekstrakostnader du har hatt.\n\n**Ta saken til mekling**\nHvis du ikke kommer til enighet med taxisentralen, kan du ta saken til Forbrukertilsynet.\n\n[Ta saken inn til Forbrukertilsynet for mekling](https://www.forbrukertilsynet.no/)\n\n[Klage mal](#)'
+          }
+        ]
+      },
+
+      {
+        id: 'historia-var-no',
+        locale: 'no',
+        slug: 'historia-var',
+        title: 'Historia vår',
+        eyebrow: 'Om Voss Taxi',
+        summary: 'Så litt av historia til Voss Taxi. Gamle arkiv og bilder eksisterar det forbausande lite av i dag.',
+        blocks: [
+          {
+            type: 'rich_text',
+            body: `Så litt av historia til Voss Taxi. Gamle arkiv og bilder eksisterar det forbausande lite av i dag. Men etter all sannsynligheit har det nok vore drosjevirksomhet på Voss i over 100 år om ikkje lenger, Soga tyder at Voss Drosjeeigarlag blei stifta 10 februar 1930. Her er det litt uklart kvar dei var stasjonerte, men etter det me klarar å tyda ut ifrå gamle møtereferat er at dei heldt til ved fiskatorget, og seinare bak Voss bokhandel. Store delar av historia til laget gjekk tapt under bombinga av Vossevangen under andre verdenskrig.
+
+![Historisk bilde Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/image.jpg?etag=%22958b-5f037053%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio)
+
+Etter krigen gjekk drosjeeigarlaget saman med Voss lastebilforening om ein avtale med Norsk Brenselsolje (BP) i dag Statoil om ein eigen bensintank mot at dei fylte eksklusivt ved denne. I avtalen vart det også ordna med husrom for drosjesjåførane i form av ei brakke som dei fekk av BP. Brakka vart plassert på Hestavangen tidlig på 50 talet. Men ut i frå gamle bilder kan det sjå ut til at dei allereie var på Hestavangen kring 1937.
+
+![Historisk bilde 2 Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/IMG_20200706_0003.jpg?etag=%22b21ec-5f037055%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio)
+
+På sekstitalet freista dokter Bonsaksen å byggja helsehus på tomta der drosjene heldt til. Det vart då ein klausul i kjøpskontrakta med Kommunen at sjåførane burde få nytta første etasje når nybygget stod ferdigt.
+
+Det var då i 1968 at brakka blei flytta vestover på plassen, der den framleis står den dag i dag. Dette skulle væra ei mellombels flytting inntil nytt husvære var ferdig. Men når bygget var ferdig og klart for innflytting ville det visa seg for drosjene at lokala ikkje var eigna nok, det var alt for stort og husleiga ville verta for høg, med tanke på dei betalte pr kvadrat. Tidlegare hadde BP vore med å haldt husvære for sjåførane men dei meinte at denne auken i husleige vart urimeleg i så måte. Det var og planar i dei dagar om underjordisk toalett fasilitetar med drosjene oppå denne. Men dette vart det heller aldri noko av.
+
+Så etter ei lengre behandlingstid og fleire brev mellom kommune, drosjene, dr Bonsaksen m.m så glei heile hus spørsmålet ut i det blå og sjåførane vart værande i bua heilt fram til vinteren 2014. Då fekk dei endeleg koma heimat, som dei seier. Der dei var i frå starten og der dei var opprinneleg lova nytt husly.
+
+![Historisk bilde 3 Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/1594033487309-3673ee32-eb67-4713-8214-ebb1da48e841.jpg?etag=%22b11b9-5f037056%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio)
+
+**Tidslinje:**
+- 1930 – ca. 1950 Voss Drosjeeigarlag
+- 1950 – 2014 Drosjebilsentralen/Voss Drosjebilsentral
+- 2014 - Voss Taxi SA
+
+Voss Taxi fyller 90 år 10 februar 2020.`
           }
         ]
       },
@@ -790,11 +1166,11 @@ Norway`
         slug: 'historia-var',
         title: 'Historia vår',
         eyebrow: 'Om Voss Taxi',
-        summary: 'Sjå litt av historia til Voss Taxi. Gamle arkiv og bilder eksisterar det forbausande lite av i dag.',
+        summary: 'Så litt av historia til Voss Taxi. Gamle arkiv og bilder eksisterar det forbausande lite av i dag.',
         blocks: [
           {
             type: 'rich_text',
-            body: `Sjå litt av historia til Voss Taxi. Gamle arkiv og bilder eksisterar det forbausande lite av i dag. Men etter all sannsynligheit har det nok vore drosjevirksomhet på Voss i over 100 år om ikkje lenger, Soga tyder at Voss Drosjeeigarlag blei stifta 10 februar 1930. Her er det litt uklart kvar dei var stasjonerte, men etter det me klarar å tyda ut ifrå gamle møtereferat er at dei heldt til ved fiskatorget, og seinare bak Voss bokhandel. Store delar av historia til laget gjekk tapt under bombinga av Vossevangen under andre verdenskrig.
+            body: `Så litt av historia til Voss Taxi. Gamle arkiv og bilder eksisterar det forbausande lite av i dag. Men etter all sannsynligheit har det nok vore drosjevirksomhet på Voss i over 100 år om ikkje lenger, Soga tyder at Voss Drosjeeigarlag blei stifta 10 februar 1930. Her er det litt uklart kvar dei var stasjonerte, men etter det me klarar å tyda ut ifrå gamle møtereferat er at dei heldt til ved fiskatorget, og seinare bak Voss bokhandel. Store delar av historia til laget gjekk tapt under bombinga av Vossevangen under andre verdenskrig.
 
 ![Historisk bilde Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/image.jpg?etag=%22958b-5f037053%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio)
 
@@ -804,9 +1180,9 @@ Etter krigen gjekk drosjeeigarlaget saman med Voss lastebilforening om ein avtal
 
 På sekstitalet freista dokter Bonsaksen å byggja helsehus på tomta der drosjene heldt til. Det vart då ein klausul i kjøpskontrakta med Kommunen at sjåførane burde få nytta første etasje når nybygget stod ferdigt.
 
-Det var då i 1968 at brakka blei flytta vestover på plassen, der den framleis står den dag i dag. Dette skulle vera ei mellombels flytting inntil nytt husvære var ferdig. Men når bygget var ferdig og klart for innflytting ville det visa seg for drosjene at lokala ikkje var eigna nok, det var alt for stort og husleiga ville verta for høg, med tanke på dei betalte pr kvadrat. Tidlegare hadde BP vore med å haldt husvære for sjåførane men dei meinte at denne auken i husleige vart urimeleg i så måte. Det var og planar i dei dagar om underjordisk toalett fasilitetar med drosjene oppå denne. Men dette vart det heller aldri noko av.
+Det var då i 1968 at brakka blei flytta vestover på plassen, der den framleis står den dag i dag. Dette skulle væra ei mellombels flytting inntil nytt husvære var ferdig. Men når bygget var ferdig og klart for innflytting ville det visa seg for drosjene at lokala ikkje var eigna nok, det var alt for stort og husleiga ville verta for høg, med tanke på dei betalte pr kvadrat. Tidlegare hadde BP vore med å haldt husvære for sjåførane men dei meinte at denne auken i husleige vart urimeleg i så måte. Det var og planar i dei dagar om underjordisk toalett fasilitetar med drosjene oppå denne. Men dette vart det heller aldri noko av.
 
-Så etter ei lengre behandlingstid og fleire brev mellom kommune, drosjene, dr Bonsaksen m.m så glei heile hus spørsmålet ut i det blå og sjåførane vart verande i bua heilt fram til vinteren 2014. Då fekk dei endeleg koma heimat, som dei seier. Der dei var ifrå starten og der dei var opprinneleg lova nytt husly.
+Så etter ei lengre behandlingstid og fleire brev mellom kommune, drosjene, dr Bonsaksen m.m så glei heile hus spørsmålet ut i det blå og sjåførane vart værande i bua heilt fram til vinteren 2014. Då fekk dei endeleg koma heimat, som dei seier. Der dei var i frå starten og der dei var opprinneleg lova nytt husly.
 
 ![Historisk bilde 3 Voss Taxi](https://impro.usercontent.one/appid/oneComWsb/domain/vosstaxi.no/media/vosstaxi.no/onewebmedia/1594033487309-3673ee32-eb67-4713-8214-ebb1da48e841.jpg?etag=%22b11b9-5f037056%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio)
 

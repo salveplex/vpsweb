@@ -40,6 +40,8 @@
   --accent-strong: #ca8a04;
   --accent-ink: #111111;
   --shadow: rgba(0, 0, 0, 0.06);
+  --bg-gradient: radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--accent) 25%, transparent) 0%, transparent 65%),
+                 radial-gradient(circle at 85% 100%, color-mix(in srgb, var(--accent) 20%, transparent) 0%, transparent 65%);
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -63,6 +65,8 @@
   --accent-strong: #f4d56e;
   --accent-ink: #12110f;
   --shadow: rgba(0, 0, 0, 0.45);
+  --bg-gradient: radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--accent) 5%, transparent) 0%, transparent 60%),
+                 radial-gradient(circle at 85% 100%, color-mix(in srgb, var(--accent) 3%, transparent) 0%, transparent 60%);
 }
 
 * {
@@ -79,6 +83,12 @@ body {
   min-height: 100dvh;
   color: var(--text);
   background: transparent;
+}
+
+.main-content-bg {
+  background-color: var(--bg);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
 }
 
 a {
@@ -750,27 +760,10 @@ a:focus-visible {
 .gallery-image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   background: var(--surface-soft);
-}
-
-@media (min-width: 768px) {
-  .gallery-tile:nth-child(1),
-  .gallery-tile:nth-child(6n) {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-
-  .gallery-tile:nth-child(1) .gallery-image,
-  .gallery-tile:nth-child(6n) .gallery-image {
-    aspect-ratio: 16 / 10;
-  }
-
-  .gallery-tile:nth-child(4n) {
-    grid-column: span 2;
-  }
 }
 
 .muted {

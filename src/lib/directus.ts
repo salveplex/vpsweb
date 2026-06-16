@@ -1,6 +1,8 @@
-﻿import type { Locale, SiteData, StrapiResponse, StrapiPage, CmsPage } from '../types'
+import type { Locale, SiteData, StrapiResponse, StrapiPage, CmsPage } from '../types'
 import { fallbackByLocale } from '../content/fallback'
 import { modernPages } from '../content/modern'
+import { modernPagesEn } from '../content/modernEn'
+import { extraPagesEn } from '../content/extraEn'
 
 export function assetUrl(baseUrl: string, media?: string) {
   if (!media) return ''
@@ -8,8 +10,17 @@ export function assetUrl(baseUrl: string, media?: string) {
   return `${baseUrl.replace(/\/+$/, '')}/assets/${media}`
 }
 
-export async function fetchSiteData(locale: Locale): Promise<SiteData> {
+export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
   const fallback = fallbackByLocale[locale]
+  const overrides = locale === 'no' ? modernPages : [...modernPagesEn, ...extraPagesEn]
+  
+  const patchedFallbackPages = [...fallback.pages]
+  for (const override of overrides) {
+    const idx = patchedFallbackPages.findIndex(p => p.slug === override.slug)
+    if (idx !== -1) patchedFallbackPages[idx] = override
+    else patchedFallbackPages.push(override)
+  }
+  const patchedFallback = { ...fallback, pages: patchedFallbackPages }
 
   try {
     const apiUrl = import.meta.env.VITE_STRAPI_API_URL || 'https://cms.vosstaxi.no'
@@ -37,7 +48,6 @@ export async function fetchSiteData(locale: Locale): Promise<SiteData> {
 
       const finalPages = [...strapiPages]
 
-      const overrides = locale === 'no' ? modernPages : []
       for (const override of overrides) {
         const idx = finalPages.findIndex(p => p.slug === override.slug)
         if (idx !== -1) {
@@ -61,13 +71,13 @@ export async function fetchSiteData(locale: Locale): Promise<SiteData> {
     }
 
     return {
-      ...fallback,
+      ...patchedFallback,
       source: 'fallback',
       error: 'Strapi returned no pages',
     }
   } catch (error) {
     return {
-      ...fallback,
+      ...patchedFallback,
       source: 'fallback',
       error: error instanceof Error ? error.message : 'Could not load Strapi content',
     }
