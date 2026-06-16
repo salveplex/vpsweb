@@ -75,6 +75,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -83,6 +84,7 @@ body {
   min-height: 100dvh;
   color: var(--text);
   background: transparent;
+  overflow-x: hidden;
 }
 
 .main-content-bg {
@@ -925,6 +927,8 @@ a:focus-visible {
 /* Markdown Typography styling */
 .markdown-body {
   font-family: inherit;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 .markdown-body h2 {
   font-size: 1.8rem;
