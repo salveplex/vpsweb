@@ -58,6 +58,8 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
         const idx = finalPages.findIndex(p => p.slug === override.slug)
         if (idx === -1) {
           finalPages.push(override)
+        } else {
+          finalPages[idx] = override
         }
       }
 
