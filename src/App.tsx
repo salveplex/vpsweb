@@ -567,8 +567,9 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
           loop
           playsInline
           preload="auto"
+          controls
         >
-          <source src={heroVideo} type="video/mp4" />
+          <source src={heroVideo} type={'video/mp4; codecs="avc1.42E01E"'} />
         </video>
         <div className="absolute inset-0 bg-black/40" />
       </div>
