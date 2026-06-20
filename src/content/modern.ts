@@ -254,6 +254,9 @@ Uttrågata 19
 - **Sykkel:** Oppgje at du har sykkel så me tek stativ med
 - **Ekstra utstyr:** Rullestol, førarhund, osv.
 `
+      },
+      {
+        type: 'contact_form'
       }
     ]
   },

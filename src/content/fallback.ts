@@ -668,6 +668,9 @@ Norway`
             body: 'Here you can send formal complaints or praise to us.\n\n## Send a complaint\n\nIf you wish to submit a formal complaint, this must be submitted in writing by using the options below, or by email to post@vosstaxi.no.\nWe will send you a written confirmation within 14 days that the complaint has been received, along with information about the expected processing time.\n\nFormal complaints will be answered in writing. Documentation regarding the complaint is kept with us for three years after the complaint processing has concluded.\n\n## Give us praise or criticism\n\nWe welcome your views, feedback, and tips for improvement. It is the best help you can give us in our efforts to become even better.'
           },
           {
+            type: 'contact_form'
+          },
+          {
             type: 'cta',
             title: 'General information',
             body: 'Rules, rights, and general information about taxis.',
