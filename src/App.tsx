@@ -17,6 +17,7 @@ import {
 import { useEffect, useMemo, useState, createContext, useContext, useCallback, useRef } from 'react'
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 
+import { ContactForm } from './components/ContactForm'
 import { fallbackByLocale } from './content/fallback'
 import heroVideo from './content/hero_bg.mp4'
 import { assetUrl, fetchSiteData } from './lib/directus'
@@ -421,6 +422,10 @@ function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
             )
           }
 
+          if (block.type === 'contact_form') {
+            return <ContactForm key={`${block.type}-${index}`} />
+          }
+
           return null
         })}
       </div>
@@ -438,7 +443,7 @@ function ContactPanel({ data, locale }: { data: SiteData; locale: Locale }) {
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
           <ContactCard href={`tel:${data.settings.phone}`} icon={Phone} label={locale === 'en' ? 'Phone' : 'Telefon'} value={formatPhone(data.settings.phone_display)} />
-          <ContactCard href={`mailto:${data.settings.email}`} icon={EnvelopeSimple} label="E-post" value={data.settings.email} />
+          <ContactCard href="/kontakt" icon={EnvelopeSimple} label="E-post" value={data.settings.email} />
           <ContactCard href={data.settings.map_url} icon={MapPin} label={locale === 'en' ? 'Address' : 'Adresse'} value={data.settings.address} />
         </div>
       </div>

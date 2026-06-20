@@ -230,9 +230,9 @@ We cover the cost of the theory test at the Norwegian Public Roads Administratio
         title: 'Contact Us',
         body: `## Contact Information
 
-**General inquiries and booking:** [post@vosstaxi.no](mailto:post@vosstaxi.no)
-**Maxi-Taxi:** [maxi@vosstaxi.no](mailto:maxi@vosstaxi.no)
-**Invoice:** [faktura@vosstaxi.no](mailto:faktura@vosstaxi.no)
+**Dispatch Center / Booking:** +47 56 51 13 40 (24/7)
+
+You can also use the contact form below to send us an email.
 
 **Dispatch Center / Booking:** +47 56 51 13 40 (24/7)
 
@@ -253,6 +253,9 @@ Norway
 - **Bicycle:** Let us know if you have a bike so we can bring a rack
 - **Extra equipment:** Wheelchair, guide dog, etc.
 `
+      },
+      {
+        type: 'contact_form'
       }
     ]
   },

@@ -232,9 +232,9 @@ Me dekkar teoriprøva ved Statens Vegvesen. Kostnaden vert refundert når du ful
         title: 'Ta kontakt',
         body: `## Kontakt oss
 
-**Generelle henvendelsar og bestilling:** [post@vosstaxi.no](mailto:post@vosstaxi.no)
-**Maxi-Taxi:** [maxi@vosstaxi.no](mailto:maxi@vosstaxi.no)
-**Faktura:** [faktura@vosstaxi.no](mailto:faktura@vosstaxi.no)
+**Telefonsentral:** +47 56 51 13 40 (24/7)
+
+Du kan òg nytte kontaktskjemaet nedanfor for å senda oss ein e-post.
 
 **Telefonsentral:** +47 56 51 13 40 (24/7)
 
@@ -275,6 +275,9 @@ Uttrågata 19
 
 ![](https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg)
 `
+      },
+      {
+        type: 'contact_form'
       }
     ]
   }

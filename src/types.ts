@@ -1,4 +1,4 @@
-﻿export type Locale = 'no' | 'en'
+export type Locale = 'no' | 'en'
 
 export type StrapiPage = {
   id: number
@@ -56,6 +56,7 @@ export type PageBlock =
   | { type: 'rich_text'; title?: string; body: string }
   | { type: 'feature_grid'; title?: string; items: Array<{ title: string; body: string }> }
   | { type: 'cta'; title: string; body: string; href: string; label: string }
+  | { type: 'contact_form' }
 
 export type CmsPage = {
   id: string

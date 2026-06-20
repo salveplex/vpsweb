@@ -185,32 +185,7 @@ export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
             body: 'Her kan du sende formelle klager, eller ros til oss.\n\n## Send klage\n\nVisst du ynskjer å retta ein formell klage, skal denne framsettast skriftleg ved å nytte vala nedanfor, eller på e-post til post@vosstaxi.no.\nMe sender deg innan 14 dagar ein skriftleg beskjed på at klagen er motteken, og informasjon om forventa behandlingstid.\n\nFormelle klagar vil besvarast skriftleg. Dokumentasjon vedrørande klagen oppbevarast hjå oss i tre år etter at klagebehandlinga er avslutta.\n\n## Gje oss ros eller ris\n\nMe ønskjer dine synspunkt, tilbakemeldingar og tips til forbetringar. Det er den beste hjelpen du kan gje oss i arbeidet med å verta endå betre.'
           },
           {
-            type: 'cta',
-            title: 'Klage på sjåfør',
-            body: 'Ynskjer du å sende ein klage på ein av våre sjåførar.',
-            href: 'mailto:post@vosstaxi.no?subject=Klage%20på%20sjåfør',
-            label: 'Send klage'
-          },
-          {
-            type: 'cta',
-            title: 'Klage utført oppdrag',
-            body: 'Ynskjer du å klage på eit oppdrag me har utført.',
-            href: 'mailto:post@vosstaxi.no?subject=Klage%20utført%20oppdrag',
-            label: 'Send klage'
-          },
-          {
-            type: 'cta',
-            title: 'Generelle klager',
-            body: 'Har du andre generelle klager på våre tenester.',
-            href: 'mailto:post@vosstaxi.no?subject=Generell%20klage',
-            label: 'Send klage'
-          },
-          {
-            type: 'cta',
-            title: 'Ros',
-            body: 'Me set stor pris på ros når du har hatt ein god oppleving med oss!',
-            href: 'mailto:post@vosstaxi.no?subject=Ros%20til%20Voss%20Taxi',
-            label: 'Send ros'
+            type: 'contact_form'
           },
           {
             type: 'cta',
@@ -444,7 +419,7 @@ Du kan når som helst endra databehandlinga som skjer i våre appar i telefonens
 
 Voss Taxi loggfører også data knytta til dei enkelte taxiturar.
 
-I tillegg er da kun dei opplysningar som du sjølv oppgjev til oss igjennom appen, som lagrast. Me vil ikkje be om opplysningar som me ikkje treng for å kunna oppfylla våre forpliktelsar ovanfor deg.
+I tillegg er da kun dei opplysningar som du sjølv oppgjev til oss igjennom appen, som lagrast. Me vil ikkje be om opplysningar som me ikkje treng for å kunna oppfylla våre forplittelsar ovanfor deg.
 
 Dine personopplysningar vil ikkje verta brukt til andre føremål, eller verta utlevert til andre, med mindre du samtykkjer til slik utvida bruk.
 
@@ -691,34 +666,6 @@ Norway`
             type: 'rich_text',
             title: 'Feedback',
             body: 'Here you can send formal complaints or praise to us.\n\n## Send a complaint\n\nIf you wish to submit a formal complaint, this must be submitted in writing by using the options below, or by email to post@vosstaxi.no.\nWe will send you a written confirmation within 14 days that the complaint has been received, along with information about the expected processing time.\n\nFormal complaints will be answered in writing. Documentation regarding the complaint is kept with us for three years after the complaint processing has concluded.\n\n## Give us praise or criticism\n\nWe welcome your views, feedback, and tips for improvement. It is the best help you can give us in our efforts to become even better.'
-          },
-          {
-            type: 'cta',
-            title: 'Complaint regarding driver',
-            body: 'If you wish to submit a complaint about one of our drivers.',
-            href: 'mailto:post@vosstaxi.no?subject=Complaint%20regarding%20driver',
-            label: 'Send complaint'
-          },
-          {
-            type: 'cta',
-            title: 'Complaint regarding service',
-            body: 'If you wish to complain about a service we have provided.',
-            href: 'mailto:post@vosstaxi.no?subject=Complaint%20regarding%20service',
-            label: 'Send complaint'
-          },
-          {
-            type: 'cta',
-            title: 'General complaints',
-            body: 'If you have other general complaints about our services.',
-            href: 'mailto:post@vosstaxi.no?subject=General%20complaint',
-            label: 'Send complaint'
-          },
-          {
-            type: 'cta',
-            title: 'Praise',
-            body: 'We greatly appreciate praise when you have had a good experience with us!',
-            href: 'mailto:post@vosstaxi.no?subject=Praise%20for%20Voss%20Taxi',
-            label: 'Send praise'
           },
           {
             type: 'cta',
