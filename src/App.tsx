@@ -519,7 +519,7 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
     video.addEventListener('play', setRandomTime, { once: true })
 
     return () => video.removeEventListener('play', setRandomTime)
-  }, [route.slug])
+  }, [])
 
   if (location.pathname === '/umami' || location.pathname === '/statistikk') {
     window.location.replace('https://cloud.umami.is/analytics/eu/websites/b2606af9-4c2a-48f5-ba9d-9aa552c9ab0d')
@@ -560,19 +560,17 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
       {loading ? <LoadingSkeleton /> : null}
       
       <div className="fixed inset-0 -z-50 h-full w-full bg-black">
-        {isHome ? (
-          <video
-            ref={videoRef}
-            className="absolute inset-0 h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-          >
-            <source src={heroVideo} type="video/mp4" />
-          </video>
-        ) : null}
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
