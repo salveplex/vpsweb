@@ -510,12 +510,6 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
     video.defaultMuted = true
     video.muted = true
 
-    // Attempt to play immediately
-    const playPromise = video.play()
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {}) // Ignore autoplay block errors
-    }
-
     const setRandomTime = () => {
       if (video.duration && !video.dataset.randomized) {
         video.dataset.randomized = "true"
@@ -524,18 +518,28 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
       }
     }
 
-    if (video.readyState >= 1) {
-      setRandomTime()
-    } else {
-      video.addEventListener('loadedmetadata', setRandomTime)
-      return () => video.removeEventListener('loadedmetadata', setRandomTime)
+    const attemptPlay = () => {
+      const playPromise = video.play()
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.log('Video autoplay blocked:', error.name)
+          // Browsers block autoplay, but user can still play manually
+        })
+      }
     }
 
-    // Attempt to play with error handling (Firefox requires explicit play() call)
-    video.play().catch(error => {
-      console.warn('Video autoplay failed:', error)
-      // Video will not autoplay, but site still works fine
-    })
+    // Set random time when metadata is loaded
+    if (video.readyState >= 1) {
+      setRandomTime()
+      attemptPlay()
+    } else {
+      const onLoadedMetadata = () => {
+        setRandomTime()
+        attemptPlay()
+      }
+      video.addEventListener('loadedmetadata', onLoadedMetadata)
+      return () => video.removeEventListener('loadedmetadata', onLoadedMetadata)
+    }
   }, [route.slug])
 
   if (location.pathname === '/umami' || location.pathname === '/statistikk') {
