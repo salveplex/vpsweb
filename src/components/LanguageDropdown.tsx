@@ -78,8 +78,8 @@ export function LanguageDropdown({
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 rounded-[10px] border px-3 py-1.5 transition outline-none cursor-pointer hover:bg-white/5 active:scale-[0.98]"
-        style={{ borderColor: 'rgba(255,255,255,.16)', color: 'rgba(255,255,255,.9)' }}
+        className="flex items-center gap-2 rounded-[10px] border px-3 py-1.5 transition outline-none cursor-pointer active:scale-[0.98]"
+        style={{ borderColor: 'var(--line)', color: 'var(--text)' }}
         aria-label="Velg språk"
         type="button"
       >
@@ -100,7 +100,11 @@ export function LanguageDropdown({
                   onChange(l)
                   setOpen(false)
                 }}
-                className={`flex items-center gap-3 rounded-[9px] px-3 py-2 text-sm text-left transition hover:bg-white/10 ${locale === l ? 'bg-white/10 font-bold text-white' : 'text-white/80'}`}
+                className={`flex items-center gap-3 rounded-[9px] px-3 py-2 text-sm text-left transition ${locale === l ? 'font-bold' : 'opacity-80'}`}
+                style={{
+                  background: locale === l ? 'var(--surface-soft)' : 'transparent',
+                  color: 'var(--text)'
+                }}
               >
                 {flags[l]}
                 {names[l]}
