@@ -506,10 +506,6 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
     const video = videoRef.current
     if (!video) return
 
-    // Firefox fix: Explicitly set muted properties before attempting play
-    video.defaultMuted = true
-    video.muted = true
-
     const setRandomTime = () => {
       if (video.duration && !video.dataset.randomized) {
         video.dataset.randomized = "true"
@@ -518,27 +514,12 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
       }
     }
 
-    const attemptPlay = () => {
-      const playPromise = video.play()
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.log('Video autoplay blocked:', error.name)
-          // Browsers block autoplay, but user can still play manually
-        })
-      }
-    }
-
     // Set random time when metadata is loaded
     if (video.readyState >= 1) {
       setRandomTime()
-      attemptPlay()
     } else {
-      const onLoadedMetadata = () => {
-        setRandomTime()
-        attemptPlay()
-      }
-      video.addEventListener('loadedmetadata', onLoadedMetadata)
-      return () => video.removeEventListener('loadedmetadata', onLoadedMetadata)
+      video.addEventListener('loadedmetadata', setRandomTime)
+      return () => video.removeEventListener('loadedmetadata', setRandomTime)
     }
   }, [route.slug])
 
@@ -589,7 +570,7 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
           >
             <source src={heroVideo} type="video/mp4" />
           </video>
