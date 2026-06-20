@@ -124,10 +124,9 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
 
   return (
     <section
-      className={`hero-stage relative overflow-hidden ${isHome ? 'min-h-[75dvh]' : 'min-h-[25dvh]'}`}
+      className={`hero-stage relative ${isHome ? 'min-h-[75dvh]' : 'min-h-[25dvh]'}`}
     >
       <div className="hero-brand-mark" aria-hidden="true">VOSS</div>
-      <div className="hero-yellow-blade relative z-10" aria-hidden="true" />
       {isHome && (
         <div className="hero-route-line absolute bottom-10 left-1/2 hidden w-[min(76rem,calc(100%-3rem))] -translate-x-1/2 md:block" aria-hidden="true">
           <span />
@@ -570,10 +569,13 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
+      <div className="hero-yellow-blade" aria-hidden="true" />
+
       <main id="main-content">
         <Hero page={page} data={data} locale={route.locale} isHome={isHome} />
-        <div className="relative z-10 w-full rounded-t-[2.5rem] md:rounded-t-[4rem] main-content-bg">
-          <div className="pt-10">
+        <div className="relative w-full rounded-t-[2.5rem] md:rounded-t-[4rem]">
+          <div className="absolute inset-0 rounded-[inherit] main-content-bg" style={{ zIndex: -20 }} />
+          <div className="relative z-10 pt-10">
             {isHome ? (
               <>
                 <section className="mx-auto max-w-7xl px-4 pt-10 md:px-6">

@@ -486,17 +486,19 @@ a:focus-visible {
 }
 
 .hero-yellow-blade {
-  position: absolute;
-  inset: 0 0 auto auto;
-  z-index: 1;
-  width: min(34vw, 32rem);
-  height: 100%;
+  position: fixed;
+  inset: 0 -10vw auto auto;
+  z-index: -10;
+  width: min(48vw, 46rem);
+  height: 100vh;
   background:
     linear-gradient(180deg, rgba(216, 174, 61, 0.96), rgba(216, 174, 61, 0.62)),
     var(--accent);
-  clip-path: polygon(36% 0, 100% 0, 100% 100%, 0 100%);
+  transform: skewX(-16deg);
+  transform-origin: top right;
   mix-blend-mode: screen;
   opacity: 0.82;
+  pointer-events: none;
 }
 
 .hero-grid {
