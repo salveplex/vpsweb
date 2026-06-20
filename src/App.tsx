@@ -12,6 +12,12 @@ import {
   FileText,
   LockKey,
   ChatCircleDots,
+  AirplaneTilt,
+  Wheelchair,
+  SuitcaseRolling,
+  Baby,
+  Bicycle,
+  Dog,
   type Icon,
 } from '@phosphor-icons/react'
 import { useEffect, useMemo, useState, createContext, useContext, useCallback, useRef } from 'react'
@@ -239,18 +245,27 @@ function Services({ data, locale }: { data: SiteData; locale: Locale }) {
           </h2>
         </div>
         <div className="fleet-list grid gap-3">
-          {data.services.map((service, index) => (
-            <article key={service.id} className="service-list-card reveal grid gap-5 rounded-[24px] border p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 md:grid-cols-[auto_1fr_auto]" style={{ '--index': index, ...glassCardStyles } as React.CSSProperties}>
-              <span className="grid size-11 place-items-center rounded-md bg-taxi text-[#181511]">
-                <Car size={20} weight={iconWeight} />
-              </span>
-              <div>
+          {data.services.map((service, index) => {
+            let ServiceIcon = Car
+            if (service.id.includes('-1')) ServiceIcon = AirplaneTilt
+            else if (service.id.includes('-2')) ServiceIcon = Wheelchair
+            else if (service.id.includes('-3')) ServiceIcon = SuitcaseRolling
+            else if (service.id.includes('-4')) ServiceIcon = Baby
+            else if (service.id.includes('-5')) ServiceIcon = Bicycle
+            else if (service.id.includes('-6')) ServiceIcon = Dog
+            
+            return (
+              <article key={service.id} className="service-list-card reveal grid gap-5 rounded-[24px] border p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 md:grid-cols-[auto_1fr_auto]" style={{ '--index': index, ...glassCardStyles } as React.CSSProperties}>
+                <span className="grid size-11 place-items-center rounded-md bg-taxi text-[#181511]">
+                  <ServiceIcon size={20} weight={iconWeight} />
+                </span>
+                <div>
                 <h3 className="text-xl font-bold">{service.title}</h3>
                 <p className="mt-2 max-w-[68ch] leading-7" style={mutedColor}>{service.description}</p>
               </div>
               {service.capacity ? <div className="font-mono text-sm uppercase tracking-[0.14em]" style={accentColor}>{service.capacity}</div> : null}
             </article>
-          ))}
+          )})}
         </div>
       </div>
     </section>
