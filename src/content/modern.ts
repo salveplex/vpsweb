@@ -92,27 +92,29 @@ www.vosstaxi.no
         title: 'Om Oss',
         body: `## Velkomen til Voss Taxi
 
-Voss Taxi er ein av regionen sin hovuddispachørar for persontransport, pasientkøyring og skuletransport. Sidan 1917 har vi drive med taxitransport på Voss.
+Voss Taxi er ein sentral aktør innan persontransport, pasientkøyring og skuletransport i Voss og regionen rundt. Vi har lange tradisjonar for drosjetransport på Voss, med røter tilbake til 1930 talet.
 
-Vi tilbyr tenestar til kommune, fylkeskommune, Vy, og helseinstitusjonar—både lokalt og på fylkesnivå.
+I dag leverer vi transporttenester til privatkundar, kommune, fylkeskommune, Vy, helseinstitusjonar og andre samarbeidspartnarar – både lokalt og regionalt.
 
 ---
 
-## Om Oss
+## Trygg transport – heile døgnet
 
-**22 løyver** i drift, **døgnbemannet** telefonsentralen, år rundt.
+Voss Taxi har 22 løyve i drift og ein døgnbemanna telefonsentral året rundt. Vi legg vekt på tryggleik, punktlegheit og god service, anten det gjeld korte lokale turar, lengre transportoppdrag, pasientreiser eller skuletransport.
 
-Bilparken inneheld alt frå personbilar (4 passasjerar) til 16-seters Maxi-taxiar med plass til rullestolar. Vi tilbyr spesialiserte tenestar som rullestoltransport, barnesete, og fleire andre tilbod.
+Bilparken vår omfattar alt frå personbilar med plass til fire passasjerar, til 16-seters maxi-taxiar med plass til rullestol. Vi tilbyr òg tilpassa transport, mellom anna rullestoltransport, barnesete og andre løysingar etter behov.
 
 ![Bilpark Voss Taxi](https://cms.vosstaxi.no/uploads/20200101_010840_1_de63ba6622.jpg)
 
 ---
 
-## Våre Lokalar
+## Våre lokale
 
-Lokalisert midt i Voss sentrum. I våre nye lokalar finn du eit oppvarma venterom (open 07:00–20:00 dagleg).
+Du finn oss midt i Voss sentrum, tett ved Voss stasjon og den tradisjonsrike taxioppstillingsplassen vår.
 
-Bilparken vår står på si tradisjonelle plass ved den røde og kvite taxibua—eit gjenkjenneleg landemerke.
+I dei nye lokala våre har vi eit oppvarma venterom som er ope kvar dag frå kl. 07.00 til 20.00.
+
+Bilane våre står framleis på den velkjende plassen ved den raude og kvite taxibua – eit fast og lett synleg landemerke i sentrum.
 `
       }
     ]
