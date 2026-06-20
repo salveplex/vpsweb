@@ -18,7 +18,7 @@ Drosjehistoria på Voss strekkjer seg langt tilbake. Det har truleg vore drosjek
 
 Mykje av den eldste historia er vanskeleg å dokumentera fullt ut. Store delar av arkivmaterialet gjekk tapt under bombinga av Vossevangen under andre verdskrig. Det me veit, er bygd på gamle møtebøker, bilete, munnlege kjelder og seinare dokumentasjon frå drosjemiljøet på Voss.
 
-![Historisk bilde 1](https://cms.vosstaxi.no/uploads/1594031017144_00c7caf4_5ac3_4a54_ba3b_253f2a56aad7_4f98a48e94.jpg)
+![](https://cms.vosstaxi.no/uploads/1594031017144_00c7caf4_5ac3_4a54_ba3b_253f2a56aad7_4f98a48e94.jpg)
 
 ### Dei første haldeplassane
 
@@ -26,7 +26,7 @@ I dei første tiåra heldt drosjene til sentralt på Vossevangen. Gamle kjelder 
 
 Gamle bilete kan tyda på at drosjene var knytte til Hestavangen alt kring 1930-åra, sjølv om den faste brakka som mange hugsar, kom seinare.
 
-![Historisk bilde 2](https://cms.vosstaxi.no/uploads/1594033590475_920ec5d0_fa60_4b9c_b132_45045145a9f9_14ca3489ef.jpg)
+![](https://cms.vosstaxi.no/uploads/1594033590475_920ec5d0_fa60_4b9c_b132_45045145a9f9_14ca3489ef.jpg)
 
 ### Brakka på Hestavangen
 
@@ -34,11 +34,11 @@ Etter krigen fekk drosjeeigarane, saman med Voss lastebilforening, avtale med No
 
 Denne brakka var først plassert nedom skulehaugen der som Voss parkeringshus heldt til i dag. Deretter vart ho flytta bort på Hestavangen tidleg på 1950-talet. Her vart ho plassert attmed huset til Arne Nilsen. Ho vart etter kvart eit fast samlingspunkt for drosjene på Voss – både som venterom, arbeidsplass og sosial møteplass for sjåførane.
 
-![Historisk bilde 3](https://cms.vosstaxi.no/uploads/IMG_20200706_0003_b681eecd88.jpg)
+![](https://cms.vosstaxi.no/uploads/IMG_20200706_0003_b681eecd88.jpg)
 
 På 1960-talet kom det planar om nytt helsehus på området der brakka stod. I samband med dette vart det diskutert nye lokale for drosjene, og i 1968 vart brakka flytta vestover på plassen. Flyttinga skulle eigentleg vera mellombels, men slik gjekk det ikkje. Planane om nye lokale vart aldri løyste slik drosjene hadde sett føre seg, og brakka vart ståande i bruk heilt fram til 2014.
 
-![Historisk bilde 4](https://cms.vosstaxi.no/uploads/1594033950011_0dbdd0e0_d971_4beb_aff2_e793c9dbad3c_19c793f208.jpg)
+![](https://cms.vosstaxi.no/uploads/1594033950011_0dbdd0e0_d971_4beb_aff2_e793c9dbad3c_19c793f208.jpg)
 
 For mange vossingar vart den raude og kvite taxibua eit kjent innslag i sentrum. Ho vart ein del av bybiletet, og er framleis eit syn mange knyter til drosjehistoria på Voss.
 
@@ -48,7 +48,7 @@ I 2014 flytta Voss Taxi inn i nye lokale ved Uttrågata 19, rett over gata frå 
 
 Dei nye lokala gav betre arbeidsforhold, meir plass og eit oppvarma venterom for kundar. Samstundes vart den historiske tilknytinga til Hestavangen og Vossevangen teken vidare.
 
-![Historisk bilde 5](https://cms.vosstaxi.no/uploads/1594033487309_3673ee32_eb67_4713_8214_ebb1da48e841_f59ab126c6.jpg)
+![](https://cms.vosstaxi.no/uploads/1594033487309_3673ee32_eb67_4713_8214_ebb1da48e841_f59ab126c6.jpg)
 
 ### Voss Taxi i dag
 
@@ -66,7 +66,7 @@ I 2026 vart arbeidet med ny selskapsstruktur sett i gang, og Voss Taxi AS vart e
 
 Voss Taxi byggjer vidare på historia frå 1930 – med røter i lokalt eigarskap, praktisk samarbeid og trygg transport for folk på Voss.
 
-![Historisk bilde 6](https://cms.vosstaxi.no/uploads/1594031162280_775ca4e4_b462_442f_9e94_103488400b80_991d51b7bf.jpg)
+![](https://cms.vosstaxi.no/uploads/1594031162280_775ca4e4_b462_442f_9e94_103488400b80_991d51b7bf.jpg)
 
 ### Tidslinje
 

@@ -31,7 +31,7 @@ Tvillingfoss med 125 meters fall langs den maleriske riksvei 13. 15 km fra sentr
 
 Dramatisk geilje i gangavstand fra sentrum med tilrettelagte stier og flotte utsiktspunkter. Perfekt for naturentusiaster.
 
-![image](https://cms.vosstaxi.no/uploads/Bordalsgjelet_02_0a9c5bcc81.jpg)
+![](https://cms.vosstaxi.no/uploads/Bordalsgjelet_02_0a9c5bcc81.jpg)
 
 ### Mølstertunet
 
@@ -104,7 +104,7 @@ Voss Taxi har 22 løyve i drift og ein døgnbemanna telefonsentral året rundt. 
 
 Bilparken vår omfattar alt frå personbilar med plass til fire passasjerar, til 16-seters maxi-taxiar med plass til rullestol. Vi tilbyr òg tilpassa transport, mellom anna rullestoltransport, barnesete og andre løysingar etter behov.
 
-![Bilpark Voss Taxi](https://cms.vosstaxi.no/uploads/20200101_010840_1_de63ba6622.jpg)
+![](https://cms.vosstaxi.no/uploads/20200101_010840_1_de63ba6622.jpg)
 
 ---
 
@@ -269,11 +269,11 @@ Uttrågata 19
       {
         type: 'rich_text',
         title: 'Bilete frå kvardagen vår',
-        body: `![Bilete 1](https://cms.vosstaxi.no/uploads/20180820_124458_56fb61303c.jpg)
+        body: `![](https://cms.vosstaxi.no/uploads/20180820_124458_56fb61303c.jpg)
 
-![Bilete 2](https://cms.vosstaxi.no/uploads/20180716_133738_76af7f0d1e.jpg)
+![](https://cms.vosstaxi.no/uploads/20180716_133738_76af7f0d1e.jpg)
 
-![Bilete 3](https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg)
+![](https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg)
 `
       }
     ]
