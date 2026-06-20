@@ -59,15 +59,15 @@ export function Header({
           <select
             value={locale}
             onChange={(e) => handleLanguageChange(e.target.value)}
-            className="rounded-[10px] border px-2 py-2 font-mono text-xs uppercase tracking-[0.18em] transition bg-transparent outline-none cursor-pointer"
-            style={{ borderColor: 'rgba(255,255,255,.16)', color: 'rgba(255,255,255,.72)' }}
+            className="rounded-[10px] border pl-2 pr-1 py-1.5 text-base transition bg-transparent outline-none cursor-pointer"
+            style={{ borderColor: 'rgba(255,255,255,.16)', color: 'rgba(255,255,255,.9)' }}
             aria-label="Velg språk"
           >
-            <option value="no" className="bg-[#181511] text-white">NO</option>
-            <option value="en" className="bg-[#181511] text-white">EN</option>
-            <option value="de" className="bg-[#181511] text-white">DE</option>
-            <option value="fr" className="bg-[#181511] text-white">FR</option>
-            <option value="es" className="bg-[#181511] text-white">ES</option>
+            <option value="no" className="bg-[#181511] text-white">🇳🇴</option>
+            <option value="en" className="bg-[#181511] text-white">🇬🇧</option>
+            <option value="de" className="bg-[#181511] text-white">🇩🇪</option>
+            <option value="fr" className="bg-[#181511] text-white">🇫🇷</option>
+            <option value="es" className="bg-[#181511] text-white">🇪🇸</option>
           </select>
           <a
             href={`tel:${data.settings.phone}`}
@@ -112,15 +112,15 @@ export function Header({
                   setMenuOpen(false);
                   handleLanguageChange(e.target.value);
                 }}
-                className="rounded-md border px-4 py-3 font-mono text-sm uppercase bg-transparent outline-none cursor-pointer"
+                className="rounded-md border px-4 py-3 text-base bg-transparent outline-none cursor-pointer"
                 style={{ borderColor: 'var(--line)', color: 'var(--accent-strong)' }}
                 aria-label="Velg språk"
               >
-                <option value="no" className="bg-[#181511] text-white">Norsk</option>
-                <option value="en" className="bg-[#181511] text-white">English</option>
-                <option value="de" className="bg-[#181511] text-white">Deutsch</option>
-                <option value="fr" className="bg-[#181511] text-white">Français</option>
-                <option value="es" className="bg-[#181511] text-white">Español</option>
+                <option value="no" className="bg-[#181511] text-white">🇳🇴 Norsk</option>
+                <option value="en" className="bg-[#181511] text-white">🇬🇧 English</option>
+                <option value="de" className="bg-[#181511] text-white">🇩🇪 Deutsch</option>
+                <option value="fr" className="bg-[#181511] text-white">🇫🇷 Français</option>
+                <option value="es" className="bg-[#181511] text-white">🇪🇸 Español</option>
               </select>
               <ThemeToggle mode={themeMode} onChange={setThemeMode} />
             </div>
