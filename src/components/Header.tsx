@@ -20,13 +20,13 @@ export function Header({
 }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
-  let alternate = '/'
-  if (locale === 'en') {
-    alternate = location.pathname.replace(/^\/en\/?/, '/')
-  } else {
-    alternate = location.pathname === '/' ? '/en' : `/en${location.pathname}`
+  const handleLanguageChange = (newLang: string) => {
+    try { localStorage.setItem('hasChosenLanguage', 'true') } catch (e) {}
+    let slug = location.pathname.replace(/^\/(en|de|fr|es)(\/|$)/, '/').replace(/^\/+/, '')
+    if (!slug) slug = ''
+    const newPath = newLang === 'no' ? `/${slug}` : `/${newLang}/${slug}`
+    window.location.href = newPath.replace(/\/+$/, '') || '/'
   }
-  alternate = alternate.replace(/\/\/+/g, '/')
 
   return (
     <header className="fixed left-0 right-0 top-0 z-30 px-3 pt-3 md:px-6">
@@ -56,16 +56,19 @@ export function Header({
 
         <div className="hidden items-center gap-2 md:flex">
           <ThemeToggle mode={themeMode} onChange={setThemeMode} />
-          <Link
-            to={alternate}
-            onClick={() => {
-              try { localStorage.setItem('hasChosenLanguage', 'true') } catch (e) {}
-            }}
-            className="rounded-[10px] border px-4 py-2 font-mono text-xs uppercase tracking-[0.18em] transition active:scale-[0.98]"
+          <select
+            value={locale}
+            onChange={(e) => handleLanguageChange(e.target.value)}
+            className="rounded-[10px] border px-2 py-2 font-mono text-xs uppercase tracking-[0.18em] transition bg-transparent outline-none cursor-pointer"
             style={{ borderColor: 'rgba(255,255,255,.16)', color: 'rgba(255,255,255,.72)' }}
+            aria-label="Velg språk"
           >
-            {locale === 'en' ? 'NO' : 'EN'}
-          </Link>
+            <option value="no" className="bg-[#181511] text-white">NO</option>
+            <option value="en" className="bg-[#181511] text-white">EN</option>
+            <option value="de" className="bg-[#181511] text-white">DE</option>
+            <option value="fr" className="bg-[#181511] text-white">FR</option>
+            <option value="es" className="bg-[#181511] text-white">ES</option>
+          </select>
           <a
             href={`tel:${data.settings.phone}`}
             className="group inline-flex items-center gap-3 rounded-[12px] bg-taxi py-1.5 pl-4 pr-1.5 text-sm font-bold text-[#181511] transition duration-500 ease-[cubic-bezier(.32,.72,0,1)] hover:bg-taxi-soft active:scale-[0.98]"
@@ -103,17 +106,22 @@ export function Header({
               </Link>
             ))}
             <div className="mt-2 flex items-center justify-between gap-3">
-              <Link 
-                to={alternate} 
-                onClick={() => { 
-                  setMenuOpen(false); 
-                  try { localStorage.setItem('hasChosenLanguage', 'true') } catch(e) {} 
-                }} 
-                className="rounded-md border px-4 py-3 font-mono text-sm uppercase" 
+              <select
+                value={locale}
+                onChange={(e) => {
+                  setMenuOpen(false);
+                  handleLanguageChange(e.target.value);
+                }}
+                className="rounded-md border px-4 py-3 font-mono text-sm uppercase bg-transparent outline-none cursor-pointer"
                 style={{ borderColor: 'var(--line)', color: 'var(--accent-strong)' }}
+                aria-label="Velg språk"
               >
-                {locale === 'en' ? 'Norsk' : 'English'}
-              </Link>
+                <option value="no" className="bg-[#181511] text-white">Norsk</option>
+                <option value="en" className="bg-[#181511] text-white">English</option>
+                <option value="de" className="bg-[#181511] text-white">Deutsch</option>
+                <option value="fr" className="bg-[#181511] text-white">Français</option>
+                <option value="es" className="bg-[#181511] text-white">Español</option>
+              </select>
               <ThemeToggle mode={themeMode} onChange={setThemeMode} />
             </div>
           </nav>

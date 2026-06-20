@@ -1,4 +1,4 @@
-export type Locale = 'no' | 'en'
+export type Locale = 'no' | 'en' | 'de' | 'fr' | 'es'
 
 export type StrapiPage = {
   id: number

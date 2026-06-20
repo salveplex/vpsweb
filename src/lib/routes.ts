@@ -39,10 +39,10 @@ export function getRedirectTarget(pathname: string) {
 export function localizeSlug(slug: string, locale: Locale) {
   const cleanSlug = slug.replace(/^\/+|\/+$/g, '')
   if (!cleanSlug) {
-    return locale === 'en' ? '/en' : '/'
+    return locale === 'no' ? '/' : `/${locale}`
   }
 
-  return locale === 'en' ? `/en/${cleanSlug}` : `/${cleanSlug}`
+  return locale === 'no' ? `/${cleanSlug}` : `/${locale}/${cleanSlug}`
 }
 
 export function parseRoute(pathname: string): { locale: Locale; slug: string } {
@@ -52,13 +52,14 @@ export function parseRoute(pathname: string): { locale: Locale; slug: string } {
   }
 
   const parts = cleanPath.split('/')
-  if (parts[0] === 'en') {
-    return { locale: 'en', slug: parts[1] ?? 'home' }
+  const validLocales = ['en', 'de', 'fr', 'es'] as const
+  if (validLocales.includes(parts[0] as any)) {
+    return { locale: parts[0] as Locale, slug: parts[1] ?? 'home' }
   }
   
   if (parts[0] === 'no') {
     return { locale: 'no', slug: parts[1] ?? 'home' }
   }
-
+  
   return { locale: 'no', slug: parts[0] }
 }

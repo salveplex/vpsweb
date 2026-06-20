@@ -2,6 +2,9 @@ import type { Locale, SiteData, StrapiResponse, StrapiPage, CmsPage } from '../t
 import { fallbackByLocale } from '../content/fallback'
 import { modernPages } from '../content/modern'
 import { modernPagesEn } from '../content/modernEn'
+import { modernPagesDe } from '../content/modernDe'
+import { modernPagesFr } from '../content/modernFr'
+import { modernPagesEs } from '../content/modernEs'
 import { extraPagesEn } from '../content/extraEn'
 import { extraPagesNo } from '../content/extraNo'
 
@@ -13,7 +16,12 @@ export function assetUrl(baseUrl: string, media?: string) {
 
 export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
   const fallback = fallbackByLocale[locale]
-  const overrides = locale === 'no' ? [...modernPages, ...extraPagesNo] : [...modernPagesEn, ...extraPagesEn]
+  let overrides: CmsPage[] = []
+  if (locale === 'no') overrides = [...modernPages, ...extraPagesNo]
+  else if (locale === 'en') overrides = [...modernPagesEn, ...extraPagesEn]
+  else if (locale === 'de') overrides = [...modernPagesDe]
+  else if (locale === 'fr') overrides = [...modernPagesFr]
+  else if (locale === 'es') overrides = [...modernPagesEs]
   
   const patchedFallbackPages = [...fallback.pages]
   for (const override of overrides) {
@@ -25,7 +33,7 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
 
   try {
     const apiUrl = import.meta.env.VITE_STRAPI_API_URL || 'https://cms.vosstaxi.no'
-    const localeParam = locale === 'en' ? 'en' : 'no'
+    const localeParam = locale
     const res = await fetch(`${apiUrl}/api/pages?populate=*&locale=${localeParam}`)
     if (!res.ok) throw new Error('Strapi network error')
     const json = (await res.json()) as StrapiResponse<StrapiPage>

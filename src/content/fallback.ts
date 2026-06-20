@@ -82,7 +82,14 @@ const englishGallery: SiteData['gallery'] = originalGalleryImages.map(([title, a
   sort: index + 1,
 }))
 
-export const fallbackByLocale: Record<'no' | 'en', SiteData> = {
+import { fallbackDe } from './fallbackDe'
+import { fallbackFr } from './fallbackFr'
+import { fallbackEs } from './fallbackEs'
+
+export const fallbackByLocale: Record<'no' | 'en' | 'de' | 'fr' | 'es', SiteData> = {
+  de: fallbackDe,
+  fr: fallbackFr,
+  es: fallbackEs,
   no: {
     settings,
     source: 'fallback',
