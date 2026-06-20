@@ -106,12 +106,12 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
   const signals = locale === 'en'
     ? [
         ['24/7', 'Dispatch'],
-        ['6 min', 'Voss centre'],
+        ['Wheelchairs', 'Electric & manual'],
         ['Maxi', 'Groups'],
       ]
     : [
         ['24/7', 'Sentral'],
-        ['6 min', 'Voss sentrum'],
+        ['Rullestolbilar', 'Elektrisk og manuell'],
         ['Maxi', 'Grupper'],
       ]
 
@@ -217,11 +217,6 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
                 <span>{locale === 'en' ? 'Local drivers, known roads and pre-booked trips.' : 'Lokale sjåførar, kjende vegar og førehandstinging.'}</span>
               </div>
               </div>
-            </div>
-            <div className="cockpit-footer">
-              <span>Voss stasjon</span>
-              <span>Bavallen</span>
-              <span>Fleischer's</span>
             </div>
           </aside>
         )}
