@@ -475,13 +475,25 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
 
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  const handleVideoLoaded = useCallback(() => {
-    if (videoRef.current && videoRef.current.duration) {
-      const duration = videoRef.current.duration
-      const maxStart = Math.max(0, duration - 20)
-      videoRef.current.currentTime = Math.random() * maxStart
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const setRandomTime = () => {
+      if (video.duration && !video.dataset.randomized) {
+        video.dataset.randomized = "true"
+        const maxStart = Math.max(0, video.duration - 20)
+        video.currentTime = Math.random() * maxStart
+      }
     }
-  }, [])
+
+    if (video.readyState >= 1) {
+      setRandomTime()
+    } else {
+      video.addEventListener('loadedmetadata', setRandomTime)
+      return () => video.removeEventListener('loadedmetadata', setRandomTime)
+    }
+  }, [route.slug])
 
   if (location.pathname === '/umami' || location.pathname === '/statistikk') {
     window.location.replace('https://cloud.umami.is/analytics/eu/websites/b2606af9-4c2a-48f5-ba9d-9aa552c9ab0d')
@@ -525,7 +537,6 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
         {isHome ? (
           <video
             ref={videoRef}
-            onLoadedMetadata={handleVideoLoaded}
             className="absolute inset-0 h-full w-full object-cover"
             autoPlay
             muted
