@@ -584,7 +584,7 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
                       <p>{route.locale === 'en' ? 'Our goal is that you feel safe and cared for when you travel with us. We have professional and experienced drivers and staff. All our cars are equipped with:' : 'Målet vårt er at du skal kunna føla deg trygg og ivaretatt når du sitt på med oss. Me har profesjonelle og erfarne sjåførar og tilsette. Samstundes som alle bilane våre har:'}</p>
                       <ul className="mt-4 list-disc pl-6 space-y-2">
                         <li>Taksameter (TDS - Transport Data Systems)</li>
-                        <li>Betalingsterminalar (Ingenico) for kortbetaling og TT</li>
+                        <li>Betalingsterminalar for kortbetaling og TT</li>
                         <li>Minimum Euro6 motorar / Heil elektriske bilar</li>
                         <li>Periodiske køyretøykontrollar kvart år (PKK)</li>
                         <li>Drosjeforsikring og Løyvegaranti</li>
