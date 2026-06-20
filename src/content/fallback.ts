@@ -1,6 +1,6 @@
 import type { SiteData } from '../types'
 
-const settings = {
+export const settings = {
   site_name: 'Voss Taxi',
   phone: '+4756511340',
   phone_display: '56 51 13 40',
@@ -18,7 +18,7 @@ const settings = {
     'https://cms.vosstaxi.no/uploads/20240522_130220_bbadf2752f.jpg',
 }
 
-const originalGalleryImages = [
+export const originalGalleryImages = [
   ['Voss Taxi Bilde 2', 'Galleri Bilde 2', 'https://cms.vosstaxi.no/uploads/1714421291589_b408a586ac.jpg'],
   ['Voss Taxi Bilde 4', 'Galleri Bilde 4', 'https://cms.vosstaxi.no/uploads/4_Desember_fb18e187fb.jpg'],
   ['Voss Taxi Bilde 5', 'Galleri Bilde 5', 'https://cms.vosstaxi.no/uploads/7_Desember_fecd5997fd.jpg'],

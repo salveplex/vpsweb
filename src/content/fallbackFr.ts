@@ -1,7 +1,7 @@
 import type { SiteData } from '../types'
 import { settings, originalGalleryImages } from './fallback'
 
-const frGallery: SiteData['gallery'] = originalGalleryImages.map(([title, alt, image], index) => ({
+const frGallery: SiteData['gallery'] = originalGalleryImages.map(([title, alt, image]: string[], index: number) => ({
   id: `gallery-original-fr-${index + 1}`,
   locale: 'fr',
   title,
@@ -165,17 +165,6 @@ export const fallbackFr: SiteData = {
       href: '/fr/services',
       label: 'En savoir plus',
       sort: 2,
-    },
-  ],
-  legal: [
-    {
-      id: 'legal-no-fr',
-      locale: 'fr',
-      slug: 'regles',
-      title: 'Règlements de Voss Taxi',
-      eyebrow: 'Règlements',
-      summary: 'Règles importantes.',
-      blocks: [],
     },
   ],
 }
