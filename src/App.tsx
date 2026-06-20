@@ -514,13 +514,11 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
       }
     }
 
-    // Set random time when metadata is loaded
-    if (video.readyState >= 1) {
-      setRandomTime()
-    } else {
-      video.addEventListener('loadedmetadata', setRandomTime)
-      return () => video.removeEventListener('loadedmetadata', setRandomTime)
-    }
+    // Set random time after video starts playing (not before)
+    // This prevents interfering with autoplay in Firefox
+    video.addEventListener('play', setRandomTime, { once: true })
+
+    return () => video.removeEventListener('play', setRandomTime)
   }, [route.slug])
 
   if (location.pathname === '/umami' || location.pathname === '/statistikk') {
