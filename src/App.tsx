@@ -502,24 +502,23 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
 
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    const setRandomTime = () => {
-      if (video.duration && !video.dataset.randomized) {
-        video.dataset.randomized = "true"
-        const maxStart = Math.max(0, video.duration - 20)
-        video.currentTime = Math.random() * maxStart
-      }
-    }
-
-    // Set random time after video starts playing (not before)
-    // This prevents interfering with autoplay in Firefox
-    video.addEventListener('play', setRandomTime, { once: true })
-
-    return () => video.removeEventListener('play', setRandomTime)
-  }, [])
+  // Video autoplay is handled by HTML attributes
+  // Random time feature commented out due to Firefox autoplay issues
+  // useEffect(() => {
+  //   const video = videoRef.current
+  //   if (!video) return
+  //
+  //   const setRandomTime = () => {
+  //     if (video.duration && !video.dataset.randomized) {
+  //       video.dataset.randomized = "true"
+  //       const maxStart = Math.max(0, video.duration - 20)
+  //       video.currentTime = Math.random() * maxStart
+  //     }
+  //   }
+  //
+  //   video.addEventListener('play', setRandomTime, { once: true })
+  //   return () => video.removeEventListener('play', setRandomTime)
+  // }, [])
 
   if (location.pathname === '/umami' || location.pathname === '/statistikk') {
     window.location.replace('https://cloud.umami.is/analytics/eu/websites/b2606af9-4c2a-48f5-ba9d-9aa552c9ab0d')
