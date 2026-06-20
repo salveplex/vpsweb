@@ -506,7 +506,7 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
     const video = videoRef.current
     if (!video) return
 
-    // Explicitly set muted properties before attempting play
+    // Firefox fix: Explicitly set muted properties before attempting play
     video.defaultMuted = true
     video.muted = true
 
@@ -530,6 +530,12 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
       video.addEventListener('loadedmetadata', setRandomTime)
       return () => video.removeEventListener('loadedmetadata', setRandomTime)
     }
+
+    // Attempt to play with error handling (Firefox requires explicit play() call)
+    video.play().catch(error => {
+      console.warn('Video autoplay failed:', error)
+      // Video will not autoplay, but site still works fine
+    })
   }, [route.slug])
 
   if (location.pathname === '/umami' || location.pathname === '/statistikk') {
