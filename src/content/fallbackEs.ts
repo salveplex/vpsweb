@@ -57,7 +57,7 @@ export const fallbackEs: SiteData = {
     {
       id: 'services-es',
       locale: 'es',
-      slug: 'servicios',
+      slug: 'tenester',
       eyebrow: 'Servicios',
       title: 'Vehículos para cada tipo de viaje.',
       summary: 'Transporte para grupos, equipaje, usuarios de sillas de ruedas, turistas y viajes diarios.',
@@ -75,7 +75,7 @@ export const fallbackEs: SiteData = {
     {
       id: 'gallery-es',
       locale: 'es',
-      slug: 'galeria',
+      slug: 'galleri',
       eyebrow: 'Galería',
       title: 'Voss Taxi en la carretera.',
       summary: 'Una pequeña selección de nuestra flota y del servicio de taxi diario en Voss.',
@@ -84,7 +84,7 @@ export const fallbackEs: SiteData = {
     {
       id: 'contact-es',
       locale: 'es',
-      slug: 'contacto',
+      slug: 'kontakt',
       eyebrow: 'Contacto',
       title: 'Contacte con Voss Taxi.',
       summary: 'Llame a la central, envíe un correo electrónico o encuéntrenos en Uttrågata.',

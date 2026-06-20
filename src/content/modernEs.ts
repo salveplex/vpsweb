@@ -4,7 +4,7 @@ export const modernPagesEs: CmsPage[] = [
   {
     id: 'page-pakker-es',
     locale: 'es',
-    slug: 'paquetes',
+    slug: 'pakker',
     title: 'Paquetes',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -81,7 +81,7 @@ www.vosstaxi.no
   {
     id: 'page-om-oss-es',
     locale: 'es',
-    slug: 'sobre-nosotros',
+    slug: 'om-oss',
     title: 'Sobre nosotros',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -122,7 +122,7 @@ Nuestros coches siguen aparcados en el conocido lugar junto a la cabina de taxi 
   {
     id: 'page-om-meg-es',
     locale: 'es',
-    slug: 'servicios',
+    slug: 'tenester',
     title: 'Nuestros servicios',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -221,7 +221,7 @@ Cubrimos el examen teórico de la Administración Pública de Carreteras (Staten
   {
     id: 'page-kontakt-es',
     locale: 'es',
-    slug: 'contacto',
+    slug: 'kontakt',
     title: 'Contacto',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -261,7 +261,7 @@ Uttrågata 19
   {
     id: 'page-galleri-es',
     locale: 'es',
-    slug: 'galeria',
+    slug: 'galleri',
     title: 'Galería',
     eyebrow: 'Voss Taxi',
     summary: '',

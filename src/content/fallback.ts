@@ -553,7 +553,7 @@ Norway`
       {
         id: 'services-en',
         locale: 'en',
-        slug: 'services',
+        slug: 'tenester',
         eyebrow: 'Services',
         title: 'Vehicles for every kind of trip.',
         summary: 'Transport for groups, luggage, wheelchair users, tourists and everyday travel.',
@@ -562,7 +562,7 @@ Norway`
       {
         id: 'fares-en',
         locale: 'en',
-        slug: 'fares',
+        slug: 'takstar',
         eyebrow: 'Fares',
         title: 'Clear fares and quick estimates.',
         summary: 'Use the calculator or call dispatch for trips that need planning.',
@@ -571,7 +571,7 @@ Norway`
       {
         id: 'gallery-en',
         locale: 'en',
-        slug: 'gallery',
+        slug: 'galleri',
         eyebrow: 'Gallery',
         title: 'Voss Taxi on the road.',
         summary: 'A small selection from the fleet and everyday taxi service in Voss.',
@@ -580,7 +580,7 @@ Norway`
       {
         id: 'contact-en',
         locale: 'en',
-        slug: 'contact',
+        slug: 'kontakt',
         eyebrow: 'Contact',
         title: 'Contact Voss Taxi.',
         summary: 'Call dispatch, send an email or find us in Uttrågata.',
@@ -589,7 +589,7 @@ Norway`
       {
         id: 'page-wheelchair-en',
         locale: 'en',
-        slug: 'wheelchair',
+        slug: 'rullestol',
         title: 'Wheelchair',
         blocks: [
           {
@@ -625,7 +625,7 @@ Norway`
       {
         id: 'generell-informasjon-en',
         locale: 'en',
-        slug: 'general-information',
+        slug: 'ris-ros',
         title: 'General information',
         blocks: [
           {

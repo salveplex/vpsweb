@@ -57,7 +57,7 @@ export const fallbackDe: SiteData = {
     {
       id: 'services-de',
       locale: 'de',
-      slug: 'dienstleistungen',
+      slug: 'tenester',
       eyebrow: 'Dienstleistungen',
       title: 'Fahrzeuge für jede Art von Fahrt.',
       summary: 'Transport für Gruppen, Gepäck, Rollstuhlfahrer, Touristen und Alltagsreisen.',
@@ -66,7 +66,7 @@ export const fallbackDe: SiteData = {
     {
       id: 'fares-de',
       locale: 'de',
-      slug: 'fares',
+      slug: 'takstar',
       eyebrow: 'Preise',
       title: 'Klare Preise und schnelle Schätzungen.',
       summary: 'Nutzen Sie den Kalkulator oder rufen Sie die Zentrale für geplante Fahrten an.',
@@ -75,7 +75,7 @@ export const fallbackDe: SiteData = {
     {
       id: 'gallery-de',
       locale: 'de',
-      slug: 'galerie',
+      slug: 'galleri',
       eyebrow: 'Galerie',
       title: 'Voss Taxi auf der Straße.',
       summary: 'Eine kleine Auswahl unseres Fuhrparks und des täglichen Taxibetriebs in Voss.',

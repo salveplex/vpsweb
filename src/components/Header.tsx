@@ -5,6 +5,7 @@ import type { Locale, SiteData } from '../types'
 import type { ThemeMode } from '../lib/theme'
 import { formatPhone, iconWeight } from '../lib/shared'
 import { ThemeToggle } from './ThemeToggle'
+import { LanguageDropdown } from './LanguageDropdown'
 import logoImg from '../assets/logo.png'
 
 export function Header({
@@ -56,19 +57,7 @@ export function Header({
 
         <div className="hidden items-center gap-2 md:flex">
           <ThemeToggle mode={themeMode} onChange={setThemeMode} />
-          <select
-            value={locale}
-            onChange={(e) => handleLanguageChange(e.target.value)}
-            className="rounded-[10px] border pl-2 pr-1 py-1.5 text-base transition bg-transparent outline-none cursor-pointer"
-            style={{ borderColor: 'rgba(255,255,255,.16)', color: 'rgba(255,255,255,.9)' }}
-            aria-label="Velg språk"
-          >
-            <option value="no" className="bg-[#181511] text-white">🇳🇴</option>
-            <option value="en" className="bg-[#181511] text-white">🇬🇧</option>
-            <option value="de" className="bg-[#181511] text-white">🇩🇪</option>
-            <option value="fr" className="bg-[#181511] text-white">🇫🇷</option>
-            <option value="es" className="bg-[#181511] text-white">🇪🇸</option>
-          </select>
+          <LanguageDropdown locale={locale} onChange={handleLanguageChange} />
           <a
             href={`tel:${data.settings.phone}`}
             className="group inline-flex items-center gap-3 rounded-[12px] bg-taxi py-1.5 pl-4 pr-1.5 text-sm font-bold text-[#181511] transition duration-500 ease-[cubic-bezier(.32,.72,0,1)] hover:bg-taxi-soft active:scale-[0.98]"
@@ -106,22 +95,13 @@ export function Header({
               </Link>
             ))}
             <div className="mt-2 flex items-center justify-between gap-3">
-              <select
-                value={locale}
-                onChange={(e) => {
+              <LanguageDropdown 
+                locale={locale} 
+                onChange={(l) => {
                   setMenuOpen(false);
-                  handleLanguageChange(e.target.value);
-                }}
-                className="rounded-md border px-4 py-3 text-base bg-transparent outline-none cursor-pointer"
-                style={{ borderColor: 'var(--line)', color: 'var(--accent-strong)' }}
-                aria-label="Velg språk"
-              >
-                <option value="no" className="bg-[#181511] text-white">🇳🇴 Norsk</option>
-                <option value="en" className="bg-[#181511] text-white">🇬🇧 English</option>
-                <option value="de" className="bg-[#181511] text-white">🇩🇪 Deutsch</option>
-                <option value="fr" className="bg-[#181511] text-white">🇫🇷 Français</option>
-                <option value="es" className="bg-[#181511] text-white">🇪🇸 Español</option>
-              </select>
+                  handleLanguageChange(l);
+                }} 
+              />
               <ThemeToggle mode={themeMode} onChange={setThemeMode} />
             </div>
           </nav>

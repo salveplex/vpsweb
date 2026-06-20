@@ -4,7 +4,7 @@ export const modernPagesDe: CmsPage[] = [
   {
     id: 'page-pakker-de',
     locale: 'de',
-    slug: 'pakete',
+    slug: 'pakker',
     title: 'Pakete',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -81,7 +81,7 @@ www.vosstaxi.no
   {
     id: 'page-om-oss-de',
     locale: 'de',
-    slug: 'uber-uns',
+    slug: 'om-oss',
     title: 'Über uns',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -122,7 +122,7 @@ Unsere Autos stehen immer noch an dem bekannten Platz bei der roten und weißen 
   {
     id: 'page-om-meg-de',
     locale: 'de',
-    slug: 'dienstleistungen',
+    slug: 'tenester',
     title: 'Unsere Dienstleistungen',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -174,7 +174,7 @@ Alle unsere Autos und Fahrer nehmen Hunde mit.
   {
     id: 'page-nyheter-de',
     locale: 'de',
-    slug: 'fahrer-werden',
+    slug: 'bli-sjafor',
     title: 'Fahrer Werden',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -261,7 +261,7 @@ Uttrågata 19
   {
     id: 'page-galleri-de',
     locale: 'de',
-    slug: 'galerie',
+    slug: 'galleri',
     title: 'Galerie',
     eyebrow: 'Voss Taxi',
     summary: '',

@@ -4,7 +4,7 @@ export const modernPagesFr: CmsPage[] = [
   {
     id: 'page-pakker-fr',
     locale: 'fr',
-    slug: 'forfaits',
+    slug: 'pakker',
     title: 'Forfaits',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -81,7 +81,7 @@ www.vosstaxi.no
   {
     id: 'page-om-oss-fr',
     locale: 'fr',
-    slug: 'a-propos',
+    slug: 'om-oss',
     title: 'À propos de nous',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -122,7 +122,7 @@ Nos voitures sont toujours stationnées à l'endroit bien connu près de la caba
   {
     id: 'page-om-meg-fr',
     locale: 'fr',
-    slug: 'services',
+    slug: 'tenester',
     title: 'Nos Services',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -174,7 +174,7 @@ Toutes nos voitures et chauffeurs acceptent les chiens.
   {
     id: 'page-nyheter-fr',
     locale: 'fr',
-    slug: 'devenir-chauffeur',
+    slug: 'bli-sjafor',
     title: 'Devenir Chauffeur',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -221,7 +221,7 @@ Nous couvrons l'examen théorique de l'administration norvégienne des routes (S
   {
     id: 'page-kontakt-fr',
     locale: 'fr',
-    slug: 'contact',
+    slug: 'kontakt',
     title: 'Contact',
     eyebrow: 'Voss Taxi',
     summary: '',
@@ -261,7 +261,7 @@ Uttrågata 19
   {
     id: 'page-galleri-fr',
     locale: 'fr',
-    slug: 'galerie',
+    slug: 'galleri',
     title: 'Galerie',
     eyebrow: 'Voss Taxi',
     summary: '',

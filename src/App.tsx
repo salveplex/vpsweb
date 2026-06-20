@@ -25,6 +25,7 @@ import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react
 
 import { ContactForm } from './components/ContactForm'
 import { fallbackByLocale } from './content/fallback'
+import { useUI } from './content/ui'
 import heroVideo from './content/hero_bg.mp4'
 import { assetUrl, fetchSiteData } from './lib/directus'
 import { cleanGalleryImageUrl } from './lib/heroImages'
@@ -108,19 +109,15 @@ function useSiteData(locale: Locale) {
 
 
 
-function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; locale: Locale; isHome: boolean }) {
+function Hero({ data, page, locale }: { data: SiteData; page: CmsPage; locale: Locale }) {
+  const isHome = page.slug === '' || page.slug === 'home'
+  const t = useUI(locale)
 
-  const signals = locale === 'en'
-    ? [
-        ['24/7', 'Dispatch'],
-        ['Wheelchairs', 'Electric & manual'],
-        ['Maxi', 'Groups'],
-      ]
-    : [
-        ['24/7', 'Sentral'],
-        ['Rullestolbilar', 'Elektrisk og manuell'],
-        ['Maxi', 'Grupper'],
-      ]
+  const signals = [
+    ['24/7', t.dispatch],
+    [t.wheelchairs, t.electricManual],
+    ['Maxi', t.groups],
+  ]
 
   return (
     <section
@@ -149,11 +146,11 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
             <>
               <div className="hero-command-row mt-9 flex flex-col gap-3 sm:flex-row">
                 <a href={`tel:${data.settings.phone}`} className="hero-command hero-command-primary">
-                  <span>{locale === 'en' ? 'Call now' : 'Ring nå'}</span>
+                  <span>{t.callNow}</span>
                   <span><Phone size={18} weight={iconWeight} /></span>
                 </a>
                 <a href={data.settings.booking_url} className="hero-command">
-                  <span>{locale === 'en' ? 'Book online' : 'Bestill på nett'}</span>
+                  <span>{t.bookOnline}</span>
                   <span><ArrowUpRight size={18} weight={iconWeight} /></span>
                 </a>
               </div>
@@ -172,8 +169,8 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
         {isHome && (
           <aside className="hero-cockpit reveal [--index:1]">
             <div className="cockpit-topline">
-              <span>{locale === 'en' ? 'Live dispatch' : 'Live sentral'}</span>
-              <span>{locale === 'en' ? 'Ready' : 'Klar'}</span>
+              <span>{t.liveDispatch}</span>
+              <span>{t.ready}</span>
             </div>
             <div className="cockpit-map" aria-hidden="true">
               <span className="map-node map-node-a" />
@@ -185,10 +182,10 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
               <div className="flex items-start justify-between gap-5">
                 <div>
                   <div className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.22em]" style={{ color: 'var(--accent-strong)' }}>
-                    {locale === 'en' ? 'Book your trip' : 'Bestill tur'}
+                    {t.bookYourTrip}
                   </div>
                   <h2 className="mt-4 text-3xl font-extrabold leading-none tracking-[-0.035em]">
-                    {locale === 'en' ? 'Taxi on Voss, without waiting.' : 'Taxi på Voss, uten ventestøy.'}
+                    {t.taxiOnVoss}
                   </h2>
                 </div>
                 <span className="booking-orb">
@@ -198,29 +195,29 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
               <div className="mt-7 grid gap-3">
                 <a href={`tel:${data.settings.phone}`} className="booking-action booking-action-primary">
                   <span>
-                    <span className="block text-sm opacity-70">{locale === 'en' ? 'Call dispatch' : 'Ring sentralen'}</span>
+                    <span className="block text-sm opacity-70">{t.callDispatch}</span>
                     <span className="block text-lg font-bold">{formatPhone(data.settings.phone_display)}</span>
                   </span>
                   <span className="booking-action-icon"><Phone size={20} weight={iconWeight} /></span>
                 </a>
                 <a href={data.settings.booking_url} className="booking-action">
                   <span>
-                    <span className="block text-sm opacity-70">{locale === 'en' ? 'Online booking' : 'Bestilling på nett'}</span>
-                    <span className="block font-bold">{locale === 'en' ? 'Start booking' : 'Start bestilling'}</span>
+                    <span className="block text-sm opacity-70">{t.onlineBooking}</span>
+                    <span className="block font-bold">{t.startBooking}</span>
                   </span>
                   <span className="booking-action-icon"><ArrowUpRight size={20} weight={iconWeight} /></span>
                 </a>
                 <a href={data.settings.fare_calculator_url} className="booking-action">
                   <span>
-                    <span className="block text-sm opacity-70">{locale === 'en' ? 'Fare estimate' : 'Priskalkulator'}</span>
-                    <span className="block font-bold">{locale === 'en' ? 'Check price' : 'Sjekk pris'}</span>
+                    <span className="block text-sm opacity-70">{t.fareEstimate}</span>
+                    <span className="block font-bold">{t.checkPrice}</span>
                   </span>
                   <span className="booking-action-icon"><Gauge size={20} weight={iconWeight} /></span>
                 </a>
               </div>
               <div className="booking-assurance mt-5">
                 <ShieldCheck size={18} weight={iconWeight} />
-                <span>{locale === 'en' ? 'Local drivers, known roads and pre-booked trips.' : 'Lokale sjåførar, kjende vegar og førehandstinging.'}</span>
+                <span>{t.localDrivers}</span>
               </div>
               </div>
             </div>
@@ -234,13 +231,14 @@ function Hero({ page, data, locale, isHome }: { page: CmsPage; data: SiteData; l
 
 
 function Services({ data, locale }: { data: SiteData; locale: Locale }) {
+  const t = useUI(locale)
   return (
     <section className="fleet-section mx-auto max-w-[92rem] px-4 py-20 md:px-8 md:py-32">
       <div className="grid gap-12 md:grid-cols-[.72fr_1.28fr]">
         <div>
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{locale === 'en' ? 'Services' : 'Tenester'}</p>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{t.services}</p>
           <h2 className="mt-4 text-balance text-4xl font-extrabold leading-none tracking-tight md:text-5xl">
-            {locale === 'en' ? 'A cleaner overview of the fleet.' : 'Eit ryddigare overblikk over bilparken.'}
+            {t.fleetOverview}
           </h2>
         </div>
         <div className="fleet-list grid gap-3">
@@ -272,12 +270,13 @@ function Services({ data, locale }: { data: SiteData; locale: Locale }) {
 }
 
 function FaresAndLinks({ data, locale }: { data: SiteData; locale: Locale }) {
+  const t = useUI(locale)
   return (
     <section className="border-y" style={{ ...lineColor, ...glassBlurredStyles }}>
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-[.9fr_1.1fr] md:px-6">
         <div>
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{locale === 'en' ? 'Fares' : 'Takstar'}</p>
-          <h2 className="mt-4 text-balance text-4xl font-extrabold tracking-tight">{locale === 'en' ? 'Fast choices before the trip.' : 'Raske valg før turen.'}</h2>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{t.fares}</p>
+          <h2 className="mt-4 text-balance text-4xl font-extrabold tracking-tight">{t.fastChoices}</h2>
           <div className="mt-8 divide-y" style={lineColor}>
             {data.fares.map((fare) => (
               <div key={fare.id} className="grid grid-cols-[1fr_auto] gap-4 py-5">
@@ -377,13 +376,16 @@ function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
                     components={{
                       img: ({ src, alt }) => {
                         const isBadge = src && (src.includes('app-store') || src.includes('google-play'));
+                        const displayAlt = alt && alt !== 'image' ? alt : '';
+                        
                         if (isBadge) {
                            return (
                              <img
                                src={src || ''}
-                               alt={alt}
+                               alt={displayAlt}
                                className="inline-block transition-transform hover:scale-[1.05]"
                                style={{ height: '56px', width: 'auto', margin: '0 16px 16px 0', borderRadius: '8px' }}
+                               onError={(e) => { e.currentTarget.style.display = 'none'; }}
                              />
                            );
                         }
@@ -392,9 +394,15 @@ function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
                           <span className="my-12 block">
                             <img
                               src={optimizedSrc}
-                              alt={alt}
+                              alt={displayAlt}
                               tabIndex={0}
                               role="button"
+                              onError={(e) => {
+                                const target = e.currentTarget;
+                                if (target.parentElement) {
+                                  target.parentElement.style.display = 'none';
+                                }
+                              }}
                               onKeyDown={(e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
                                   e.preventDefault()
@@ -412,7 +420,7 @@ function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
                                 maxWidth: '90%'
                               }}
                             />
-                            {alt ? <span className="mt-4 block text-center text-sm italic opacity-70">{alt}</span> : null}
+                            {displayAlt ? <span className="mt-4 block text-center text-sm italic opacity-70">{displayAlt}</span> : null}
                           </span>
                         );
                       }
@@ -498,6 +506,16 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
     const video = videoRef.current
     if (!video) return
 
+    // Explicitly set muted properties before attempting play
+    video.defaultMuted = true
+    video.muted = true
+
+    // Attempt to play immediately
+    const playPromise = video.play()
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {}) // Ignore autoplay block errors
+    }
+
     const setRandomTime = () => {
       if (video.duration && !video.dataset.randomized) {
         video.dataset.randomized = "true"
@@ -572,7 +590,9 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
       <div className="hero-yellow-blade" aria-hidden="true" />
 
       <main id="main-content">
-        <Hero page={page} data={data} locale={route.locale} isHome={isHome} />
+        {page.slug !== 'bestilling' && (
+          <Hero page={page} data={data} locale={route.locale} />
+        )}
         <div className="relative w-full rounded-t-[2.5rem] md:rounded-t-[4rem]">
           <div className="absolute inset-0 rounded-[inherit] main-content-bg" style={{ zIndex: -20 }} />
           <div className="relative z-10 pt-10">

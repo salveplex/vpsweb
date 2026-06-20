@@ -7,6 +7,9 @@ import { modernPagesFr } from '../content/modernFr'
 import { modernPagesEs } from '../content/modernEs'
 import { extraPagesEn } from '../content/extraEn'
 import { extraPagesNo } from '../content/extraNo'
+import { extraPagesDe } from '../content/extraDe'
+import { extraPagesFr } from '../content/extraFr'
+import { extraPagesEs } from '../content/extraEs'
 
 export function assetUrl(baseUrl: string, media?: string) {
   if (!media) return ''
@@ -19,9 +22,9 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
   let overrides: CmsPage[] = []
   if (locale === 'no') overrides = [...modernPages, ...extraPagesNo]
   else if (locale === 'en') overrides = [...modernPagesEn, ...extraPagesEn]
-  else if (locale === 'de') overrides = [...modernPagesDe]
-  else if (locale === 'fr') overrides = [...modernPagesFr]
-  else if (locale === 'es') overrides = [...modernPagesEs]
+  else if (locale === 'de') overrides = [...modernPagesDe, ...extraPagesDe]
+  else if (locale === 'fr') overrides = [...modernPagesFr, ...extraPagesFr]
+  else if (locale === 'es') overrides = [...modernPagesEs, ...extraPagesEs]
   
   const patchedFallbackPages = [...fallback.pages]
   for (const override of overrides) {
