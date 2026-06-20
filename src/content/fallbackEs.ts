@@ -1,5 +1,5 @@
 import type { SiteData } from '../types'
-import { settings, originalGalleryImages } from './fallback'
+import { settings, originalGalleryImages } from './shared'
 
 const esGallery: SiteData['gallery'] = originalGalleryImages.map(([title, alt, image]: string[], index: number) => ({
   id: `gallery-original-es-${index + 1}`,
