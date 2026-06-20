@@ -14,7 +14,7 @@ import {
   ChatCircleDots,
   type Icon,
 } from '@phosphor-icons/react'
-import { useEffect, useMemo, useState, createContext, useContext, useCallback } from 'react'
+import { useEffect, useMemo, useState, createContext, useContext, useCallback, useRef } from 'react'
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 
 import { fallbackByLocale } from './content/fallback'
@@ -473,6 +473,16 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
     window.scrollTo(0, 0)
   }, [location.pathname])
 
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const handleVideoLoaded = useCallback(() => {
+    if (videoRef.current && videoRef.current.duration) {
+      const duration = videoRef.current.duration
+      const maxStart = Math.max(0, duration - 20)
+      videoRef.current.currentTime = Math.random() * maxStart
+    }
+  }, [])
+
   if (location.pathname === '/umami' || location.pathname === '/statistikk') {
     window.location.replace('https://cloud.umami.is/analytics/eu/websites/b2606af9-4c2a-48f5-ba9d-9aa552c9ab0d')
     return <div className="fixed inset-0 flex items-center justify-center font-mono font-bold" style={{ background: 'var(--bg)' }}>Laster statistikk...</div>
@@ -514,6 +524,8 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
       <div className="fixed inset-0 -z-50 h-full w-full bg-black">
         {isHome ? (
           <video
+            ref={videoRef}
+            onLoadedMetadata={handleVideoLoaded}
             className="absolute inset-0 h-full w-full object-cover"
             autoPlay
             muted
