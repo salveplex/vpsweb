@@ -60,7 +60,7 @@ export function Header({
           <LanguageDropdown locale={locale} onChange={handleLanguageChange} />
           <a
             href={`tel:${data.settings.phone}`}
-            className="group inline-flex items-center gap-3 rounded-[12px] bg-taxi py-1.5 pl-4 pr-1.5 text-sm font-bold text-[#181511] transition duration-500 ease-[cubic-bezier(.32,.72,0,1)] hover:bg-taxi-soft active:scale-[0.98]"
+            className="group inline-flex items-center gap-3 rounded-[12px] bg-taxi py-1.5 pl-4 pr-1.5 text-sm font-bold text-[#181511] transition duration-500 ease-[cubic-bezier(.32,.72,0,1)] hover:bg-taxi-soft active:scale-[0.98] whitespace-nowrap"
           >
             {formatPhone(data.settings.phone_display)}
             <span className="grid size-8 place-items-center rounded-full bg-[#181511]/10 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
