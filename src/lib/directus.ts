@@ -19,12 +19,15 @@ export function assetUrl(baseUrl: string, media?: string) {
 
 export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
   const fallback = fallbackByLocale[locale]
+
+  // For non-English/Norwegian locales, use fallback directly (inline translations)
+  if (locale === 'de' || locale === 'fr' || locale === 'es') {
+    return fallback
+  }
+
   let overrides: CmsPage[] = []
   if (locale === 'no') overrides = [...modernPages, ...extraPagesNo]
   else if (locale === 'en') overrides = [...modernPagesEn, ...extraPagesEn]
-  else if (locale === 'de') overrides = [...modernPagesDe, ...extraPagesDe]
-  else if (locale === 'fr') overrides = [...modernPagesFr, ...extraPagesFr]
-  else if (locale === 'es') overrides = [...modernPagesEs, ...extraPagesEs]
   
   const patchedFallbackPages = [...fallback.pages]
   for (const override of overrides) {
