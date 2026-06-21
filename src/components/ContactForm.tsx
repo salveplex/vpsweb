@@ -31,8 +31,8 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-[#1a1914] p-6 md:p-8 rounded-3xl border border-[#302e26] max-w-2xl w-full mx-auto my-8 shadow-2xl">
-      <h3 className="text-2xl font-semibold mb-6">Send oss ei melding</h3>
+    <div className="p-6 md:p-8 rounded-3xl border max-w-2xl w-full mx-auto my-8 shadow-2xl" style={{ background: 'var(--surface)', borderColor: 'var(--line-strong)' }}>
+      <h3 className="text-2xl font-semibold mb-6" style={{ color: 'var(--text)' }}>Send oss ei melding</h3>
       
       {status === 'success' ? (
         <div className="bg-green-900/30 border border-green-500/50 text-green-200 p-8 rounded-2xl text-center">
@@ -49,7 +49,7 @@ export function ContactForm() {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="space-y-2">
-              <label htmlFor="name" className="text-sm font-medium opacity-80 ml-1">Namn</label>
+              <label htmlFor="name" className="text-sm font-medium opacity-80 ml-1" style={{ color: 'var(--text)' }}>Namn</label>
               <input
                 id="name"
                 name="name"
@@ -57,7 +57,10 @@ export function ContactForm() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full bg-[#0b0b09] border border-[#302e26] rounded-2xl px-5 py-4 focus:outline-none focus:border-[#fcde00] focus:ring-1 focus:ring-[#fcde00] transition-all"
+                className="w-full rounded-2xl px-5 py-4 focus:outline-none focus:ring-1 transition-all border"
+                style={{ background: 'var(--bg-elevated)', borderColor: 'var(--line)', color: 'var(--text)' }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = '#fcde00'; e.currentTarget.style.boxShadow = '0 0 0 1px #fcde00' }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.boxShadow = 'none' }}
                 placeholder="Ditt namn"
               />
             </div>
@@ -70,7 +73,10 @@ export function ContactForm() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full bg-[#0b0b09] border border-[#302e26] rounded-2xl px-5 py-4 focus:outline-none focus:border-[#fcde00] focus:ring-1 focus:ring-[#fcde00] transition-all"
+                className="w-full rounded-2xl px-5 py-4 focus:outline-none focus:ring-1 transition-all border"
+                style={{ background: 'var(--bg-elevated)', borderColor: 'var(--line)', color: 'var(--text)' }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = '#fcde00'; e.currentTarget.style.boxShadow = '0 0 0 1px #fcde00' }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.boxShadow = 'none' }}
                 placeholder="din@epost.no"
               />
             </div>
@@ -85,7 +91,10 @@ export function ContactForm() {
                 required
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full bg-[#0b0b09] border border-[#302e26] rounded-2xl px-5 py-4 focus:outline-none focus:border-[#fcde00] focus:ring-1 focus:ring-[#fcde00] transition-all appearance-none cursor-pointer"
+                className="w-full rounded-2xl px-5 py-4 focus:outline-none focus:ring-1 transition-all appearance-none cursor-pointer border"
+                style={{ background: 'var(--bg-elevated)', borderColor: 'var(--line)', color: 'var(--text)' }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = '#fcde00'; e.currentTarget.style.boxShadow = '0 0 0 1px #fcde00' }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.boxShadow = 'none' }}
               >
                 <option value="" disabled>Vel emne...</option>
                 <option value="Generell henvendelse">Generell henvendelse</option>
@@ -95,7 +104,7 @@ export function ContactForm() {
                 <option value="Klage på utført oppdrag">Klage på utført oppdrag</option>
                 <option value="Ros til Voss Taxi">Ros til Voss Taxi</option>
               </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-5 text-white opacity-50">
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-5 opacity-50" style={{ color: 'var(--text)' }}>
                 <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
               </div>
             </div>
@@ -110,7 +119,10 @@ export function ContactForm() {
               rows={5}
               value={formData.message}
               onChange={handleChange}
-              className="w-full bg-[#0b0b09] border border-[#302e26] rounded-2xl px-5 py-4 focus:outline-none focus:border-[#fcde00] focus:ring-1 focus:ring-[#fcde00] transition-all resize-none"
+              className="w-full rounded-2xl px-5 py-4 focus:outline-none focus:ring-1 transition-all resize-none border"
+              style={{ background: 'var(--bg-elevated)', borderColor: 'var(--line)', color: 'var(--text)' }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = '#fcde00'; e.currentTarget.style.boxShadow = '0 0 0 1px #fcde00' }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.boxShadow = 'none' }}
               placeholder="Skriv meldinga di her..."
             />
           </div>
