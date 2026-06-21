@@ -667,8 +667,8 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
   if (slug === 'kontakt' || slug === 'contact') {
     return (
       <>
-        <ContactPanel data={data} locale={locale} />
         <PageBlocks blocks={page.blocks} />
+        <ContactPanel data={data} locale={locale} />
       </>
     )
   }
