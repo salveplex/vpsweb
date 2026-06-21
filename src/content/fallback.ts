@@ -18,14 +18,160 @@ const englishGallery: SiteData['gallery'] = originalGalleryImages.map(([title, a
   sort: index + 1,
 }))
 
-import { fallbackDe } from './fallbackDe'
-import { fallbackFr } from './fallbackFr'
-import { fallbackEs } from './fallbackEs'
+const germanGallery: SiteData['gallery'] = originalGalleryImages.map(([title, alt, image], index) => ({
+  id: `gallery-original-de-${index + 1}`,
+  locale: 'de',
+  title,
+  alt,
+  image,
+  sort: index + 1,
+}))
+
+const frenchGallery: SiteData['gallery'] = originalGalleryImages.map(([title, alt, image], index) => ({
+  id: `gallery-original-fr-${index + 1}`,
+  locale: 'fr',
+  title,
+  alt,
+  image,
+  sort: index + 1,
+}))
+
+const spanishGallery: SiteData['gallery'] = originalGalleryImages.map(([title, alt, image], index) => ({
+  id: `gallery-original-es-${index + 1}`,
+  locale: 'es',
+  title,
+  alt,
+  image,
+  sort: index + 1,
+}))
 
 export const fallbackByLocale: Record<'no' | 'en' | 'de' | 'fr' | 'es', SiteData> = {
-  de: fallbackDe,
-  fr: fallbackFr,
-  es: fallbackEs,
+  de: {
+    settings,
+    source: 'fallback',
+    navigation: [
+      { id: 'nav-home-de', locale: 'de', label: 'Startseite', href: '/de', sort: 1 },
+      { id: 'nav-om-oss-de', locale: 'de', label: 'Über uns', href: '/de/om-oss', sort: 2 },
+      { id: 'nav-services-de', locale: 'de', label: 'Dienstleistungen', href: '/de/tenester', sort: 3 },
+      { id: 'nav-takstar-de', locale: 'de', label: 'Tarife', href: '/de/takstar', sort: 4 },
+      { id: 'nav-maxi-taxi-de', locale: 'de', label: 'Maxi Taxi', href: '/de/maxi-taxi', sort: 6 },
+      { id: 'nav-gallery-de', locale: 'de', label: 'Galerie', href: '/de/galleri', sort: 8 },
+      { id: 'nav-ris-ros-de', locale: 'de', label: 'Feedback', href: '/de/ris-ros', sort: 9 },
+      { id: 'nav-contact-de', locale: 'de', label: 'Kontakt', href: '/de/kontakt', sort: 10 },
+    ],
+    pages: [
+      { id: 'home-de', locale: 'de', slug: 'home', eyebrow: 'Lokales Taxiunternehmen in Voss', title: 'Fahren Sie sicher mit uns von Voss.', summary: 'Voss Taxi bietet Limousinen, Minivans, Maxi-Taxis, Minibusse und Rollstuhltransporte für Einheimische und Besucher.', hero_image: settings.hero_media, blocks: [{ type: 'rich_text', title: 'Mit Vertrauen buchen', body: 'Wir haben Fahrzeuge für alle Arten von Aufgaben und bringen Sie sicher zu Zügen, Hotels, Hütten, Bergen und Veranstaltungen.' }, { type: 'rich_text', title: 'Per App buchen', body: '### Snappy Taxi\n\n[![](/images/app-store.png)](https://apps.apple.com/no/app/snappy-taxi/id6479620974) [![](/images/google-play.png)](https://play.google.com/store/apps/details?id=no.snappy.snappy.taxi&hl=no)\n\n### Buchen Sie ein Taxi in der VY-App\n\n[![](/images/app-store.png)](https://apps.apple.com/no/app/vy-nsb/id439655098) [![](/images/google-play.png)](https://play.google.com/store/apps/details?id=com.intele.nsbmob.app)' }, { type: 'cta', title: 'Per Telefon oder Rechner buchen', body: 'Rufen Sie die Taxizentrale an oder überprüfen Sie die Preise im Rechner vor Ihrer Fahrt.', href: settings.booking_url, label: 'Taxi buchen' }] },
+      { id: 'services-de', locale: 'de', slug: 'tenester', eyebrow: 'Dienstleistungen', title: 'Fahrzeuge für jede Art von Fahrt.', summary: 'Transport für Gruppen, Gepäck, Rollstuhlfahrer, Touristen und alltägliche Fahrten.', blocks: [] },
+      { id: 'fares-de', locale: 'de', slug: 'takstar', eyebrow: 'Tarife', title: 'Klare Tarife und schnelle Schätzungen.', summary: 'Verwenden Sie den Rechner oder rufen Sie den Fahrdienst an für Fahrten, die Planung benötigen.', blocks: [] },
+      { id: 'gallery-de', locale: 'de', slug: 'galleri', eyebrow: 'Galerie', title: 'Voss Taxi unterwegs.', summary: 'Eine kleine Auswahl aus der Flotte und dem alltäglichen Taxiservice in Voss.', blocks: [{ type: 'rich_text', title: 'Bilder aus unserem Alltag', body: '![](https://cms.vosstaxi.no/uploads/20180820_124458_56fb61303c.jpg)\n\n![](https://cms.vosstaxi.no/uploads/20180716_133738_76af7f0d1e.jpg)\n\n![](https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg)' }, { type: 'contact_form' }] },
+      { id: 'contact-de', locale: 'de', slug: 'kontakt', eyebrow: 'Kontakt', title: 'Kontaktieren Sie Voss Taxi.', summary: 'Rufen Sie den Fahrdienst an, senden Sie eine E-Mail oder finden Sie uns in der Uttrågata.', blocks: [] },
+      { id: 'maxi-taxi-de', locale: 'de', slug: 'maxi-taxi', eyebrow: 'Voss Taxi', title: 'Maxi Taxi', summary: '', blocks: [{ type: 'rich_text', title: 'Maxi Taxi', body: '### Rollstuhltransport und Maxi-Taxi 🚐\n\n**Voss Taxi hat lange Erfahrung mit Patienten- und Rollstuhltransporten.**\n\nWir führen Rollstuhltransporte täglich durch und sind ein zuverlässiger Transportpartner in der gesamten Region.' }] },
+      { id: 'ris-ros-de', locale: 'de', slug: 'ris-ros', eyebrow: 'Feedback', title: 'Feedback', summary: '', blocks: [{ type: 'rich_text', title: 'Feedback', body: 'Hier können Sie formelle Beschwerden oder Lob an uns senden.\n\n## Beschwerde einreichen\n\nWenn Sie eine formelle Beschwerde einreichen möchten, muss diese schriftlich eingereicht werden.' }, { type: 'contact_form' }] },
+    ],
+    services: [
+      { id: 'service-de-1', locale: 'de', title: 'FLUGHAFEN', description: 'Wir bringen Sie zum und vom Flesland-Flughafen.', capacity: '1-16 Passagiere', sort: 1 },
+      { id: 'service-de-2', locale: 'de', title: 'ROLLSTUHL', description: 'Voss Taxi verfügt über Fahrzeuge mit Platz für Rollstühle.', capacity: 'Bis zu 2 Rollstühle', sort: 2 },
+      { id: 'service-de-3', locale: 'de', title: 'FUNDSACHEN', description: 'Haben Sie etwas verloren? Kontaktieren Sie uns.', capacity: '', sort: 3 },
+      { id: 'service-de-4', locale: 'de', title: 'KINDERSITZE', description: 'Wir haben Babyschalen mit IsoFix und Kindersitze.', capacity: '', sort: 4 },
+      { id: 'service-de-5', locale: 'de', title: 'FAHRRAD', description: 'Wir können auch Fahrräder mitnehmen.', capacity: '', sort: 5 },
+      { id: 'service-de-6', locale: 'de', title: 'FÜHRERHUND', description: 'Alle unsere Autos und Fahrer nehmen Hunde mit.', capacity: '', sort: 6 },
+    ],
+    fares: [
+      { id: 'fare-phone-de', locale: 'de', label: 'Zentrale', value: '56 51 13 40', note: 'Anrufen zum Buchen und für Preise', sort: 1 },
+      { id: 'fare-calc-de', locale: 'de', label: 'Rechner', value: 'Online', note: 'Überprüfen Sie den Preis vor der Fahrt', sort: 2 },
+      { id: 'fare-app-de', locale: 'de', label: 'App', value: 'Snappy Taxi', note: 'Buchen Sie über die App', sort: 3 },
+    ],
+    gallery: germanGallery,
+    quickLinks: [
+      { id: 'ql-book-de', locale: 'de', title: 'Taxi buchen', description: 'Gehen Sie direkt zur Buchung.', href: settings.booking_url, label: 'Buchen', sort: 1 },
+      { id: 'ql-calc-de', locale: 'de', title: 'Preisrechner', description: 'Erhalten Sie einen Preis vor der Fahrt.', href: settings.fare_calculator_url, label: 'Rechner öffnen', sort: 2 },
+      { id: 'ql-vy-de', locale: 'de', title: 'Vy Taxi', description: 'Buchen Sie über Vy.', href: 'https://www.vy.no/reis-med-vy/taxi', label: 'Vy Taxi', sort: 3 },
+    ],
+  },
+  fr: {
+    settings,
+    source: 'fallback',
+    navigation: [
+      { id: 'nav-home-fr', locale: 'fr', label: 'Accueil', href: '/fr', sort: 1 },
+      { id: 'nav-om-oss-fr', locale: 'fr', label: 'À propos', href: '/fr/om-oss', sort: 2 },
+      { id: 'nav-services-fr', locale: 'fr', label: 'Services', href: '/fr/tenester', sort: 3 },
+      { id: 'nav-takstar-fr', locale: 'fr', label: 'Tarifs', href: '/fr/takstar', sort: 4 },
+      { id: 'nav-maxi-taxi-fr', locale: 'fr', label: 'Maxi Taxi', href: '/fr/maxi-taxi', sort: 6 },
+      { id: 'nav-gallery-fr', locale: 'fr', label: 'Galerie', href: '/fr/galleri', sort: 8 },
+      { id: 'nav-ris-ros-fr', locale: 'fr', label: 'Avis', href: '/fr/ris-ros', sort: 9 },
+      { id: 'nav-contact-fr', locale: 'fr', label: 'Contact', href: '/fr/kontakt', sort: 10 },
+    ],
+    pages: [
+      { id: 'home-fr', locale: 'fr', slug: 'home', eyebrow: 'Entreprise de taxi locale à Voss', title: 'Roulez en toute sécurité avec nous, depuis Voss.', summary: 'Voss Taxi propose des berlines, monospaces, maxi-taxis, minibus et transport en fauteuil roulant.', hero_image: settings.hero_media, blocks: [{ type: 'rich_text', title: 'Réserver en toute confiance', body: 'Nous disposons de véhicules pour tous les types de trajets et vous aiderons à vous rendre en toute sécurité.' }, { type: 'rich_text', title: 'Réserver par application', body: '### Snappy Taxi\n\n[![](/images/app-store.png)](https://apps.apple.com/no/app/snappy-taxi/id6479620974) [![](/images/google-play.png)](https://play.google.com/store/apps/details?id=no.snappy.snappy.taxi&hl=no)' }, { type: 'cta', title: 'Réserver par téléphone', body: 'Appelez la centrale de taxis ou vérifiez les tarifs.', href: settings.booking_url, label: 'Réserver un taxi' }] },
+      { id: 'services-fr', locale: 'fr', slug: 'tenester', eyebrow: 'Services', title: 'Véhicules pour tous les types de trajets.', summary: 'Transport pour les groupes, les bagages, les utilisateurs de fauteuils roulants, les touristes.', blocks: [] },
+      { id: 'fares-fr', locale: 'fr', slug: 'takstar', eyebrow: 'Tarifs', title: 'Tarifs clairs et estimations rapides.', summary: 'Utilisez la calculatrice ou appelez la centrale.', blocks: [] },
+      { id: 'gallery-fr', locale: 'fr', slug: 'galleri', eyebrow: 'Galerie', title: 'Voss Taxi sur la route.', summary: 'Une petite sélection de la flotte et du service de taxi quotidien à Voss.', blocks: [{ type: 'rich_text', title: 'Photos de notre quotidien', body: '![](https://cms.vosstaxi.no/uploads/20180820_124458_56fb61303c.jpg)\n\n![](https://cms.vosstaxi.no/uploads/20180716_133738_76af7f0d1e.jpg)\n\n![](https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg)' }, { type: 'contact_form' }] },
+      { id: 'contact-fr', locale: 'fr', slug: 'kontakt', eyebrow: 'Contact', title: 'Contactez Voss Taxi.', summary: 'Appelez la centrale, envoyez un e-mail ou trouvez-nous à Uttrågata.', blocks: [] },
+      { id: 'maxi-taxi-fr', locale: 'fr', slug: 'maxi-taxi', eyebrow: 'Voss Taxi', title: 'Maxi Taxi', summary: '', blocks: [{ type: 'rich_text', title: 'Maxi Taxi', body: '### Transport en fauteuil roulant et Maxi-Taxi 🚐\n\n**Voss Taxi a une longue expérience du transport de patients et de fauteuils roulants.**\n\nNous effectuons des transports en fauteuil roulant quotidiennement.' }] },
+      { id: 'ris-ros-fr', locale: 'fr', slug: 'ris-ros', eyebrow: 'Avis', title: 'Avis', summary: '', blocks: [{ type: 'rich_text', title: 'Avis', body: 'Ici, vous pouvez nous envoyer des réclamations formelles ou des éloges.\n\n## Soumettre une réclamation\n\nSi vous souhaitez soumettre une réclamation formelle, celle-ci doit être soumise par écrit.' }, { type: 'contact_form' }] },
+    ],
+    services: [
+      { id: 'service-fr-1', locale: 'fr', title: 'AÉROPORT', description: 'Nous vous amenons à l\'aéroport de Flesland et vous le cherchons là-bas.', capacity: '1-16 Passagers', sort: 1 },
+      { id: 'service-fr-2', locale: 'fr', title: 'FAUTEUIL ROULANT', description: 'Voss Taxi dispose de véhicules avec de la place pour les fauteuils roulants.', capacity: 'Jusqu\'à 2 fauteuils roulants', sort: 2 },
+      { id: 'service-fr-3', locale: 'fr', title: 'OBJETS TROUVÉS', description: 'Vous avez perdu quelque chose? Contactez-nous.', capacity: '', sort: 3 },
+      { id: 'service-fr-4', locale: 'fr', title: 'SIÈGES ENFANTS', description: 'Nous avons des sièges bébé avec IsoFix et sièges enfants.', capacity: '', sort: 4 },
+      { id: 'service-fr-5', locale: 'fr', title: 'VÉLO', description: 'Nous pouvons également transporter des vélos.', capacity: '', sort: 5 },
+      { id: 'service-fr-6', locale: 'fr', title: 'CHIEN GUIDE', description: 'Tous nos taxis et chauffeurs acceptent les chiens.', capacity: '', sort: 6 },
+    ],
+    fares: [
+      { id: 'fare-phone-fr', locale: 'fr', label: 'Centrale', value: '56 51 13 40', note: 'Appelez pour réserver et les tarifs', sort: 1 },
+      { id: 'fare-calc-fr', locale: 'fr', label: 'Calculatrice', value: 'En ligne', note: 'Vérifiez le prix avant le trajet', sort: 2 },
+      { id: 'fare-app-fr', locale: 'fr', label: 'App', value: 'Snappy Taxi', note: 'Réservez via l\'application', sort: 3 },
+    ],
+    gallery: frenchGallery,
+    quickLinks: [
+      { id: 'ql-book-fr', locale: 'fr', title: 'Réserver un taxi', description: 'Allez directement à la réservation.', href: settings.booking_url, label: 'Réserver', sort: 1 },
+      { id: 'ql-calc-fr', locale: 'fr', title: 'Calculatrice tarifaire', description: 'Obtenez une estimation avant le trajet.', href: settings.fare_calculator_url, label: 'Ouvrir calculatrice', sort: 2 },
+      { id: 'ql-vy-fr', locale: 'fr', title: 'Vy Taxi', description: 'Réservez via Vy.', href: 'https://www.vy.no/reis-med-vy/taxi', label: 'Vy Taxi', sort: 3 },
+    ],
+  },
+  es: {
+    settings,
+    source: 'fallback',
+    navigation: [
+      { id: 'nav-home-es', locale: 'es', label: 'Inicio', href: '/es', sort: 1 },
+      { id: 'nav-om-oss-es', locale: 'es', label: 'Sobre nosotros', href: '/es/om-oss', sort: 2 },
+      { id: 'nav-services-es', locale: 'es', label: 'Servicios', href: '/es/tenester', sort: 3 },
+      { id: 'nav-takstar-es', locale: 'es', label: 'Tarifas', href: '/es/takstar', sort: 4 },
+      { id: 'nav-maxi-taxi-es', locale: 'es', label: 'Maxi Taxi', href: '/es/maxi-taxi', sort: 6 },
+      { id: 'nav-gallery-es', locale: 'es', label: 'Galería', href: '/es/galleri', sort: 8 },
+      { id: 'nav-ris-ros-es', locale: 'es', label: 'Comentarios', href: '/es/ris-ros', sort: 9 },
+      { id: 'nav-contact-es', locale: 'es', label: 'Contacto', href: '/es/kontakt', sort: 10 },
+    ],
+    pages: [
+      { id: 'home-es', locale: 'es', slug: 'home', eyebrow: 'Empresa de taxis local en Voss', title: 'Conduce seguro con nosotros, desde Voss.', summary: 'Voss Taxi ofrece sedanes, minivans, maxi-taxis, minibuses y transporte en silla de ruedas.', hero_image: settings.hero_media, blocks: [{ type: 'rich_text', title: 'Reserva con confianza', body: 'Tenemos vehículos para todos los tipos de viajes y te ayudaremos a ir de forma segura.' }, { type: 'rich_text', title: 'Reserva por aplicación', body: '### Snappy Taxi\n\n[![](/images/app-store.png)](https://apps.apple.com/no/app/snappy-taxi/id6479620974) [![](/images/google-play.png)](https://play.google.com/store/apps/details?id=no.snappy.snappy.taxi&hl=no)' }, { type: 'cta', title: 'Reserva por teléfono', body: 'Llama a la central de taxis o verifica los precios.', href: settings.booking_url, label: 'Reserva un taxi' }] },
+      { id: 'services-es', locale: 'es', slug: 'tenester', eyebrow: 'Servicios', title: 'Vehículos para todo tipo de viaje.', summary: 'Transporte para grupos, equipaje, usuarios de sillas de ruedas, turistas.', blocks: [] },
+      { id: 'fares-es', locale: 'es', slug: 'takstar', eyebrow: 'Tarifas', title: 'Tarifas claras y estimaciones rápidas.', summary: 'Usa la calculadora o llama a la central.', blocks: [] },
+      { id: 'gallery-es', locale: 'es', slug: 'galleri', eyebrow: 'Galería', title: 'Voss Taxi en la carretera.', summary: 'Una pequeña selección de la flota y el servicio de taxi diario en Voss.', blocks: [{ type: 'rich_text', title: 'Fotos de nuestro día a día', body: '![](https://cms.vosstaxi.no/uploads/20180820_124458_56fb61303c.jpg)\n\n![](https://cms.vosstaxi.no/uploads/20180716_133738_76af7f0d1e.jpg)\n\n![](https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg)' }, { type: 'contact_form' }] },
+      { id: 'contact-es', locale: 'es', slug: 'kontakt', eyebrow: 'Contacto', title: 'Contacta con Voss Taxi.', summary: 'Llama a la central, envía un correo o encuéntranos en Uttrågata.', blocks: [] },
+      { id: 'maxi-taxi-es', locale: 'es', slug: 'maxi-taxi', eyebrow: 'Voss Taxi', title: 'Maxi Taxi', summary: '', blocks: [{ type: 'rich_text', title: 'Maxi Taxi', body: '### Transporte en silla de ruedas y Maxi-Taxi 🚐\n\n**Voss Taxi tiene una larga experiencia en transporte de pacientes y sillas de ruedas.**\n\nRealizamos transportes en silla de ruedas diariamente.' }] },
+      { id: 'ris-ros-es', locale: 'es', slug: 'ris-ros', eyebrow: 'Comentarios', title: 'Comentarios', summary: '', blocks: [{ type: 'rich_text', title: 'Comentarios', body: 'Aquí puede enviarnos quejas formales o elogios.\n\n## Enviar una queja\n\nSi desea presentar una queja formal, debe presentarse por escrito.' }, { type: 'contact_form' }] },
+    ],
+    services: [
+      { id: 'service-es-1', locale: 'es', title: 'AEROPUERTO', description: 'Te llevamos al aeropuerto de Flesland y te recogemos allá.', capacity: '1-16 Pasajeros', sort: 1 },
+      { id: 'service-es-2', locale: 'es', title: 'SILLA DE RUEDAS', description: 'Voss Taxi tiene vehículos con espacio para sillas de ruedas.', capacity: 'Hasta 2 sillas de ruedas', sort: 2 },
+      { id: 'service-es-3', locale: 'es', title: 'OBJETOS PERDIDOS', description: '¿Perdiste algo? Contáctanos.', capacity: '', sort: 3 },
+      { id: 'service-es-4', locale: 'es', title: 'ASIENTOS INFANTILES', description: 'Tenemos asientos de bebé con IsoFix y asientos infantiles.', capacity: '', sort: 4 },
+      { id: 'service-es-5', locale: 'es', title: 'BICICLETA', description: 'También podemos transportar bicicletas.', capacity: '', sort: 5 },
+      { id: 'service-es-6', locale: 'es', title: 'PERRO GUÍA', description: 'Todos nuestros taxis y conductores aceptan perros.', capacity: '', sort: 6 },
+    ],
+    fares: [
+      { id: 'fare-phone-es', locale: 'es', label: 'Central', value: '56 51 13 40', note: 'Llama para reservar y tarifas', sort: 1 },
+      { id: 'fare-calc-es', locale: 'es', label: 'Calculadora', value: 'En línea', note: 'Verifica el precio antes del viaje', sort: 2 },
+      { id: 'fare-app-es', locale: 'es', label: 'App', value: 'Snappy Taxi', note: 'Reserva via la aplicación', sort: 3 },
+    ],
+    gallery: spanishGallery,
+    quickLinks: [
+      { id: 'ql-book-es', locale: 'es', title: 'Reserva un taxi', description: 'Ve directamente a la reserva.', href: settings.booking_url, label: 'Reservar', sort: 1 },
+      { id: 'ql-calc-es', locale: 'es', title: 'Calculadora de tarifas', description: 'Obtén una estimación antes del viaje.', href: settings.fare_calculator_url, label: 'Abrir calculadora', sort: 2 },
+      { id: 'ql-vy-es', locale: 'es', title: 'Vy Taxi', description: 'Reserva via Vy.', href: 'https://www.vy.no/reis-med-vy/taxi', label: 'Vy Taxi', sort: 3 },
+    ],
+  },
   no: {
     settings,
     source: 'fallback',
