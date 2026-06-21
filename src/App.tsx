@@ -26,7 +26,7 @@ import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react
 import { ContactForm } from './components/ContactForm'
 import { fallbackByLocale } from './content/fallback'
 import { useUI } from './content/ui'
-import heroVideo from './content/hero_bg.mp4'
+import heroVideoMp4 from './content/hero_bg.mp4'
 import { assetUrl, fetchSiteData } from './lib/directus'
 import { cleanGalleryImageUrl } from './lib/heroImages'
 import { getRedirectTarget, parseRoute } from './lib/routes'
@@ -567,9 +567,9 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
           loop
           playsInline
           preload="auto"
-          controls
         >
-          <source src={heroVideo} type={'video/mp4; codecs="avc1.42E01E"'} />
+          <source src={heroVideoMp4.replace(/\.mp4$/, '.webm')} type="video/webm" />
+          <source src={heroVideoMp4} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/40" />
       </div>
