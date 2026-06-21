@@ -259,6 +259,40 @@ Uttrågata 19
     ]
   },
   {
+    id: 'page-maxi-taxi-de',
+    locale: 'de',
+    slug: 'maxi-taxi',
+    title: 'Maxi Taxi',
+    eyebrow: 'Voss Taxi',
+    summary: '',
+    status: 'published',
+    blocks: [
+      {
+        type: 'rich_text',
+        title: 'Maxi Taxi',
+        body: `### Rollstuhltransport und Maxi-Taxi 🚐
+
+**Voss Taxi hat lange Erfahrung mit Patienten- und Rollstuhltransporten. Wir führen Rollstuhltransporte täglich durch und sind ein zuverlässiger Transportpartner in der gesamten Region.**
+
+Alle unsere ortskundigen Fahrer sind geschult und genehmigt, um mit verschiedenen Arten von Rollstuhlfahrern umzugehen. Wir legen immer großen Wert auf die Sicherheit und den Komfort der Passagiere während der gesamten Fahrt.
+
+Wir führen jedes Jahr eine große Anzahl von Transporten für Helse Bergen durch und haben jahrelange Erfahrung mit dem Transport von Passagieren mit besonderem Unterstützungsbedarf. Dies macht uns zu einem natürlichen und professionellen Transportpartner auch für private Pflegeeinrichtungen, Seniorenzentren und andere, die sicheren Transport für ältere Menschen und Mobilitätsbeeinträchtigte benötigen.
+
+> 📞 **Wir sind täglich erreichbar – das ganze Jahr über.**
+> Rufen Sie (+47) 93 24 98 44 an oder senden Sie eine E-Mail an maxi@vosstaxi.no
+
+---
+
+### Unsere Fahrzeugflotte für Rollstuhltransport ♿
+
+Wir verfügen derzeit über:
+- **2 Minibus** speziell ausgestattet, um einen oder zwei Rollstühle zu befördern
+- **3 x 8-Platz-Rollstuhltransporter**, alle mit sicheren und stabilen Rampen für leichten und bequemen Einstieg
+`
+      }
+    ]
+  },
+  {
     id: 'page-galleri-de',
     locale: 'de',
     slug: 'galleri',

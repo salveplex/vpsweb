@@ -259,6 +259,40 @@ Uttrågata 19
     ]
   },
   {
+    id: 'page-maxi-taxi-es',
+    locale: 'es',
+    slug: 'maxi-taxi',
+    title: 'Maxi Taxi',
+    eyebrow: 'Voss Taxi',
+    summary: '',
+    status: 'published',
+    blocks: [
+      {
+        type: 'rich_text',
+        title: 'Maxi Taxi',
+        body: `### Transporte en silla de ruedas y Maxi-Taxi 🚐
+
+**Voss Taxi tiene una larga experiencia en transporte de pacientes y sillas de ruedas. Realizamos transportes en silla de ruedas diariamente y somos un socio de transporte confiable en toda la región.**
+
+Todos nuestros conductores locales están capacitados y autorizados para trabajar con diferentes tipos de usuarios de sillas de ruedas. Siempre otorgamos gran importancia a la seguridad y comodidad de los pasajeros durante todo el viaje.
+
+Realizamos cada año un gran número de transportes para Helse Bergen y tenemos experiencia de muchos años en el transporte de pasajeros con necesidades de asistencia especial. Esto nos hace un socio natural y profesional también para instituciones de cuidado privadas, centros de personas mayores y otros que requieren servicios de transporte seguro para personas mayores y personas con discapacidad de movilidad.
+
+> 📞 **Estamos disponibles todos los días – durante todo el año.**
+> Llamar (+47) 93 24 98 44 o enviar un email a maxi@vosstaxi.no
+
+---
+
+### Nuestra flota de vehículos para transporte en silla de ruedas ♿
+
+Actualmente disponemos de:
+- **2 minibuses** especialmente equipados para transportar una o dos sillas de ruedas
+- **3 transportes de 8 plazas adaptados para sillas de ruedas**, todos con rampas seguras y estables para un acceso fácil y cómodo
+`
+      }
+    ]
+  },
+  {
     id: 'page-galleri-es',
     locale: 'es',
     slug: 'galleri',

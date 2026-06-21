@@ -259,6 +259,40 @@ Uttrågata 19
     ]
   },
   {
+    id: 'page-maxi-taxi-fr',
+    locale: 'fr',
+    slug: 'maxi-taxi',
+    title: 'Maxi Taxi',
+    eyebrow: 'Voss Taxi',
+    summary: '',
+    status: 'published',
+    blocks: [
+      {
+        type: 'rich_text',
+        title: 'Maxi Taxi',
+        body: `### Transport en fauteuil roulant et Maxi-Taxi 🚐
+
+**Voss Taxi a une longue expérience du transport de patients et de fauteuils roulants. Nous effectuons des transports en fauteuil roulant quotidiennement et sommes un partenaire de transport fiable dans toute la région.**
+
+Tous nos conducteurs locaux sont formés et autorisés à travailler avec différents types d'utilisateurs de fauteuils roulants. Nous accordons toujours une grande importance à la sécurité et au confort des passagers pendant tout le trajet.
+
+Nous effectuons chaque année un grand nombre de transports pour Helse Bergen et avons une longue expérience du transport de passagers ayant des besoins d'assistance particuliers. Cela nous rend partenaire naturel et professionnel pour les établissements de soins privés, les centres pour personnes âgées et autres qui ont besoin de services de transport sûrs pour les personnes âgées et les personnes à mobilité réduite.
+
+> 📞 **Nous sommes disponibles tous les jours – toute l'année.**
+> Appelez (+47) 93 24 98 44 ou envoyez un email à maxi@vosstaxi.no
+
+---
+
+### Notre flotte de véhicules pour le transport en fauteuil roulant ♿
+
+Nous disposons actuellement de:
+- **2 minibus** spécialement équipés pour transporter un ou deux fauteuils roulants
+- **3 transports à 8 places adaptés aux fauteuils roulants**, tous avec des rampes sûres et stables pour un accès facile et confortable
+`
+      }
+    ]
+  },
+  {
     id: 'page-galleri-fr',
     locale: 'fr',
     slug: 'galleri',
