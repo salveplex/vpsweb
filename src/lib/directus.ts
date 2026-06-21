@@ -63,15 +63,15 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
 
       })
 
-      const finalPages = [...strapiPages]
+      // Start with overrides (modern files) as primary, then add Strapi pages for missing slugs
+      const finalPages = [...overrides]
 
-      for (const override of overrides) {
-        const idx = finalPages.findIndex(p => p.slug === override.slug)
+      for (const strapiPage of strapiPages) {
+        const idx = finalPages.findIndex(p => p.slug === strapiPage.slug)
         if (idx === -1) {
-          finalPages.push(override)
-        } else {
-          finalPages[idx] = override
+          finalPages.push(strapiPage)
         }
+        // If modern file has the same slug, keep the modern file version (override wins)
       }
 
       for (const fp of fallback.pages) {
