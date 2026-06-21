@@ -79,7 +79,21 @@ export const fallbackDe: SiteData = {
       eyebrow: 'Galerie',
       title: 'Voss Taxi unterwegs.',
       summary: 'Eine kleine Auswahl aus der Flotte und dem alltäglichen Taxiservice in Voss.',
-      blocks: [],
+      blocks: [
+        {
+          type: 'rich_text',
+          title: 'Bilder aus unserem Alltag',
+          body: `![](https://cms.vosstaxi.no/uploads/20180820_124458_56fb61303c.jpg)
+
+![](https://cms.vosstaxi.no/uploads/20180716_133738_76af7f0d1e.jpg)
+
+![](https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg)
+`
+        },
+        {
+          type: 'contact_form'
+        }
+      ]
     },
     {
       id: 'contact-de',

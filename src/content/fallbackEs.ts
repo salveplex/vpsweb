@@ -79,7 +79,21 @@ export const fallbackEs: SiteData = {
       eyebrow: 'Galería',
       title: 'Voss Taxi en la carretera.',
       summary: 'Una pequeña selección de la flota y el servicio de taxi diario en Voss.',
-      blocks: [],
+      blocks: [
+        {
+          type: 'rich_text',
+          title: 'Fotos de nuestro día a día',
+          body: `![](https://cms.vosstaxi.no/uploads/20180820_124458_56fb61303c.jpg)
+
+![](https://cms.vosstaxi.no/uploads/20180716_133738_76af7f0d1e.jpg)
+
+![](https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg)
+`
+        },
+        {
+          type: 'contact_form'
+        }
+      ]
     },
     {
       id: 'contact-es',

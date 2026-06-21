@@ -79,7 +79,21 @@ export const fallbackFr: SiteData = {
       eyebrow: 'Galerie',
       title: 'Voss Taxi sur la route.',
       summary: 'Une petite sélection de la flotte et du service de taxi quotidien à Voss.',
-      blocks: [],
+      blocks: [
+        {
+          type: 'rich_text',
+          title: 'Photos de notre quotidien',
+          body: `![](https://cms.vosstaxi.no/uploads/20180820_124458_56fb61303c.jpg)
+
+![](https://cms.vosstaxi.no/uploads/20180716_133738_76af7f0d1e.jpg)
+
+![](https://cms.vosstaxi.no/uploads/20200531_042738_da124eacd3.jpg)
+`
+        },
+        {
+          type: 'contact_form'
+        }
+      ]
     },
     {
       id: 'contact-fr',
