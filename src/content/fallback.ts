@@ -442,6 +442,58 @@ Uttrågata 19
 Norway`
           }
         ]
+      },
+      {
+        id: 'page-generell-informasjon-no',
+        locale: 'no',
+        slug: 'generell-informasjon',
+        title: 'Taxi/drosje',
+        eyebrow: 'Reglar og rettar',
+        blocks: [
+          {
+            type: 'rich_text',
+            body: `# Taxi/drosje
+
+Klag først til taxien, hvis den er forsinket eller kjører feil. Blir dere ikke enige, kan du bringe saken inn til Forbrukertilsynet.
+
+## På denne siden
+
+- Kan du velge den drosjen du ønsker?
+- Hva kan du kreve hvis taxien kjører feil?
+- Hva kan du kreve hvis taxien er forsinket eller ikke kommer?
+- Hvordan går du frem for å klage?
+
+## Kan du velge den drosjen du ønsker?
+
+Det er fritt valg av taxi i Norge. Du kan velge den bilen eller det selskapet du ønsker – også i drosjekøen.
+
+## Hva kan du kreve hvis taxien kjører feil?
+
+Dersom drosjesjåføren kjører feil kan du be ham om å stoppe taksameteret, og dersom det viser seg at sjåføren ikke har valgt den raskeste veien, vil du kunne kreve prisavslag. Dette bør du aller helst gjøre på stedet. Dersom du ikke når fram, bør du så snart som mulig ta dette opp skriftlig med taxisentralen.
+
+## Hva kan du kreve hvis taxien er forsinket eller ikke kommer?
+
+Du har krav på erstatning for økonomiske tap som oppstår hvis taxien er forsinket eller ikke kommer. Husk at du er ansvarlig for å begrense eventuelle økonomiske tap, ved å for eksempel bestille en ny taxi eller velge et annet transportmiddel.
+
+I praksis betyr dette at dersom du har beregnet rimelig tid, men ikke rekker flyet fordi taxien ikke dukket opp, vil du kunne kreve erstatning for ekstrakostnadene.
+
+OBS! Kravet på erstatning faller bort hvis forsinkelsen skyldes forhold utenfor selskapets kontroll, slik som trafikkulykker eller ekstreme værforhold.
+
+Noen selskaper har også ordninger som går utover dine lovpålagte rettigheter, så det kan være lurt å sjekke transportvilkårene, hvis taxien ikke kommer som avtalt.
+
+## Hvordan går du frem for å klage?
+
+### Klag til taxien/taxisentralen
+
+Om du har vært uheldig, bør det klages skriftlig til taxisentralen så snart som mulig. Det er viktig å få med opplysninger om den bestilte turen, og å dokumentere ekstrakostnader du har hatt.
+
+### Ta saken til mekling
+
+Hvis du ikke kommer til enighet med taxisentralen, kan du ta saken til Forbrukertilsynet.
+
+### Ta saken inn til Forbrukertilsynet for mekling`
+          }
+        ]
       }
     ],
     services: [
@@ -617,7 +669,7 @@ Norway`
             type: 'cta',
             title: 'General information',
             body: 'Rules, rights, and general information about taxis.',
-            href: '/general-information',
+            href: '/en/generell-informasjon',
             label: 'Read more'
           }
         ]
@@ -625,7 +677,7 @@ Norway`
       {
         id: 'generell-informasjon-en',
         locale: 'en',
-        slug: 'ris-ros',
+        slug: 'generell-informasjon',
         title: 'General information',
         blocks: [
           {
