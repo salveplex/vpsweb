@@ -687,6 +687,159 @@ Dersom du ikkje kjem til samstund med taxisentralen, kan du ta saken til Forbruk
           }
         ]
       },
+      {
+        id: 'generell-informasjon-de',
+        locale: 'de',
+        slug: 'generell-informasjon',
+        title: 'Allgemeine Informationen',
+        blocks: [
+          {
+            type: 'rich_text',
+            body: `# Taxi/Droschke
+
+Beschweren Sie sich zuerst beim Taxi, wenn es verspätet ist oder falsch fährt. Wenn Sie sich nicht einigen können, können Sie den Fall der Verbraucherbehörde (Forbrukertilsynet) melden.
+
+## Auf dieser Seite
+
+- Können Sie das Taxi wählen, das Sie möchten?
+- Was können Sie verlangen, wenn das Taxi falsch fährt?
+- Was können Sie verlangen, wenn das Taxi verspätet ist oder nicht ankommt?
+- Wie gehen Sie vor, um sich zu beschweren?
+
+## Können Sie das Taxi wählen, das Sie möchten?
+
+In Norwegen besteht die freie Taxiwahl. Sie können das Auto oder das Unternehmen wählen, das Sie möchten – auch in der Taxiwarteschlange.
+
+## Was können Sie verlangen, wenn das Taxi falsch fährt?
+
+Wenn der Taxifahrer falsch fährt, können Sie ihn bitten, das Taxameter anzuhalten. Wenn sich herausstellt, dass der Fahrer nicht die schnellste Route gewählt hat, können Sie einen Preisnachlass verlangen. Dies sollten Sie idealerweise vor Ort tun. Wenn Sie nicht erfolgreich sind, sollten Sie dies so bald wie möglich schriftlich mit der Taxizentrale besprechen.
+
+## Was können Sie verlangen, wenn das Taxi verspätet ist oder nicht ankommt?
+
+Sie haben Anspruch auf Schadensersatz für finanzielle Verluste, die entstehen, wenn das Taxi verspätet ist oder nicht ankommt. Denken Sie daran, dass Sie dafür verantwortlich sind, etwaige finanzielle Verluste zu begrenzen, beispielsweise durch die Bestellung eines neuen Taxis oder die Wahl eines anderen Verkehrsmittels.
+
+In der Praxis bedeutet dies, dass Sie Schadensersatz für die Zusatzkosten fordern können, wenn Sie angemessen geplant haben, aber Ihren Flug verpassen, weil das Taxi nicht auftauchte.
+
+ACHTUNG! Der Schadensersatzanspruch entfällt, wenn die Verspätung auf Umstände zurückzuführen ist, die außerhalb der Kontrolle des Unternehmens liegen, wie z. B. Verkehrsunfälle oder extreme Wetterbedingungen.
+
+Einige Unternehmen bieten auch Regelungen an, die über Ihre gesetzlichen Rechte hinausgehen. Es kann daher sinnvoll sein, die Transportbedingungen zu überprüfen, wenn das Taxi nicht wie vereinbart ankommt.
+
+## Wie gehen Sie vor, um sich zu beschweren?
+
+### Beschwerde beim Taxi/Taxizentrale
+
+Wenn Sie Pech hatten, sollten Sie sich so bald wie möglich schriftlich an die Taxizentrale beschweren. Es ist wichtig, Informationen über die gebuchte Fahrt beizufügen und etwaige Zusatzkosten zu dokumentieren.
+
+### Den Fall zur Vermittlung bringen
+
+Wenn Sie sich mit der Taxizentrale nicht einigen können, können Sie den Fall der Verbraucherbehörde vorlegen.
+
+### Den Fall bei der Verbraucherbehörde zur Vermittlung einreichen`
+          }
+        ]
+      },
+      {
+        id: 'generell-informasjon-fr',
+        locale: 'fr',
+        slug: 'generell-informasjon',
+        title: 'Informations générales',
+        blocks: [
+          {
+            type: 'rich_text',
+            body: `# Taxi
+
+Plaignez-vous d'abord auprès du taxi s'il est en retard ou s'il prend une mauvaise route. Si vous ne pouvez pas vous mettre d'accord, vous pouvez porter l'affaire à l'autorité de protection des consommateurs (Forbrukertilsynet).
+
+## Sur cette page
+
+- Pouvez-vous choisir le taxi que vous voulez ?
+- Que pouvez-vous exiger si le taxi prend une mauvaise route ?
+- Que pouvez-vous exiger si le taxi est en retard ou n'arrive pas ?
+- Comment procédez-vous pour vous plaindre ?
+
+## Pouvez-vous choisir le taxi que vous voulez ?
+
+Il existe un libre choix des taxis en Norvège. Vous pouvez choisir la voiture ou la compagnie que vous voulez – même dans la file d'attente des taxis.
+
+## Que pouvez-vous exiger si le taxi prend une mauvaise route ?
+
+Si le chauffeur de taxi prend une mauvaise route, vous pouvez lui demander d'arrêter le taximètre. S'il s'avère que le chauffeur n'a pas choisi le trajet le plus rapide, vous pouvez exiger une réduction de prix. Vous devriez idéalement le faire sur place. Si vous n'avez pas de succès, vous devriez soulever cette question par écrit auprès de la centrale de taxis dès que possible.
+
+## Que pouvez-vous exiger si le taxi est en retard ou n'arrive pas ?
+
+Vous avez le droit à une indemnisation pour les pertes financières qui surviennent si le taxi est en retard ou n'arrive pas. N'oubliez pas que vous êtes responsable de limiter les pertes financières éventuelles, par exemple en commandant un nouveau taxi ou en choisissant un autre moyen de transport.
+
+En pratique, cela signifie que si vous avez prévu un délai raisonnable mais que vous manquez votre vol parce que le taxi ne s'est pas présenté, vous pouvez demander une indemnisation pour les frais supplémentaires.
+
+ATTENTION ! Le droit à indemnisation disparaît si le retard est dû à des circonstances échappant au contrôle de l'entreprise, telles que les accidents de circulation ou les conditions météorologiques extrêmes.
+
+Certaines entreprises proposent également des arrangements qui dépassent vos droits légaux. Il peut donc être judicieux de vérifier les conditions de transport si le taxi n'arrive pas comme convenu.
+
+## Comment procédez-vous pour vous plaindre ?
+
+### Plainte auprès du taxi/centrale de taxis
+
+Si vous avez eu de la malchance, vous devez vous plaindre par écrit à la centrale de taxis dès que possible. Il est important d'inclure des informations sur le trajet réservé et de documenter les frais supplémentaires que vous avez engagés.
+
+### Porter l'affaire à la médiation
+
+Si vous ne pouvez pas vous mettre d'accord avec la centrale de taxis, vous pouvez porter l'affaire à l'autorité de protection des consommateurs.
+
+### Porter l'affaire à l'autorité de protection des consommateurs pour la médiation`
+          }
+        ]
+      },
+      {
+        id: 'generell-informasjon-es',
+        locale: 'es',
+        slug: 'generell-informasjon',
+        title: 'Información general',
+        blocks: [
+          {
+            type: 'rich_text',
+            body: `# Taxi
+
+Primero, quéjese al taxi si está retrasado o conduce de forma incorrecta. Si no pueden llegar a un acuerdo, puede llevar el caso a la autoridad de protección del consumidor (Forbrukertilsynet).
+
+## En esta página
+
+- ¿Puede elegir el taxi que desea?
+- ¿Qué puede exigir si el taxi conduce de forma incorrecta?
+- ¿Qué puede exigir si el taxi está retrasado o no llega?
+- ¿Cómo procede para presentar una queja?
+
+## ¿Puede elegir el taxi que desea?
+
+Existe libre elección de taxis en Noruega. Puede elegir el coche o la empresa que desea – incluso en la fila de espera de taxis.
+
+## ¿Qué puede exigir si el taxi conduce de forma incorrecta?
+
+Si el taxista conduce de forma incorrecta, puede pedirle que detenga el taxímetro. Si resulta que el conductor no eligió la ruta más rápida, puede exigir una reducción de precio. Lo ideal es hacerlo en el acto. Si no tiene éxito, debe plantear esto por escrito con la central de taxis lo antes posible.
+
+## ¿Qué puede exigir si el taxi está retrasado o no llega?
+
+Tiene derecho a una indemnización por las pérdidas financieras que se produzcan si el taxi está retrasado o no llega. Recuerde que usted es responsable de limitar cualquier pérdida financiera, por ejemplo, pidiendo un nuevo taxi o eligiendo otro medio de transporte.
+
+En la práctica, esto significa que si ha calculado un tiempo razonable pero pierde su vuelo porque el taxi no llegó, puede exigir una indemnización por los gastos adicionales.
+
+¡ATENCIÓN! El derecho a indemnización caduca si el retraso se debe a circunstancias fuera del control de la empresa, como accidentes de tráfico o condiciones meteorológicas extremas.
+
+Algunas empresas también ofrecen acuerdos que van más allá de sus derechos legales, por lo que puede ser prudente verificar las condiciones de transporte si el taxi no llega como se acordó.
+
+## ¿Cómo procede para presentar una queja?
+
+### Queja al taxi/central de taxis
+
+Si ha tenido mala suerte, debe presentar una queja por escrito a la central de taxis lo antes posible. Es importante incluir información sobre el viaje reservado y documentar los gastos adicionales que ha incurrido.
+
+### Llevar el caso a la mediación
+
+Si no puede llegar a un acuerdo con la central de taxis, puede llevar el caso a la autoridad de protección del consumidor.
+
+### Llevar el caso a la autoridad de protección del consumidor para la mediación`
+          }
+        ]
+      },
 
       {
         id: 'historia-var-en',
