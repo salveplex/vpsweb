@@ -2,14 +2,8 @@ import type { Locale, SiteData, StrapiResponse, StrapiPage, CmsPage } from '../t
 import { fallbackByLocale } from '../content/fallback'
 import { modernPages } from '../content/modern'
 import { modernPagesEn } from '../content/modernEn'
-import { modernPagesDe } from '../content/modernDe'
-import { modernPagesFr } from '../content/modernFr'
-import { modernPagesEs } from '../content/modernEs'
 import { extraPagesEn } from '../content/extraEn'
 import { extraPagesNo } from '../content/extraNo'
-import { extraPagesDe } from '../content/extraDe'
-import { extraPagesFr } from '../content/extraFr'
-import { extraPagesEs } from '../content/extraEs'
 
 export function assetUrl(baseUrl: string, media?: string) {
   if (!media) return ''
