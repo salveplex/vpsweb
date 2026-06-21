@@ -79,10 +79,40 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
           finalPages.push(fp)
         }
       }
+      let finalGallery = [...fallback.gallery]
+
+      const galleryPage = json.data.find((item: any) => item.slug === 'galleri' || item.slug === 'gallery')
+      if (galleryPage && galleryPage.content) {
+        const regex = /!\[(.*?)\]\((.*?)\)/g
+        let match
+        const extractedImages = []
+        let sortIdx = 1
+        while ((match = regex.exec(galleryPage.content)) !== null) {
+          const alt = match[1] || `Gallery Image ${sortIdx}`
+          let url = match[2]
+          if (url.startsWith('/uploads')) {
+            url = `${apiUrl}${url}`
+          }
+          extractedImages.push({
+            id: `strapi-gallery-${sortIdx}`,
+            locale: localeParam,
+            title: alt,
+            alt: alt,
+            image: url,
+            sort: sortIdx,
+          })
+          sortIdx++
+        }
+        
+        if (extractedImages.length > 0) {
+          finalGallery = extractedImages
+        }
+      }
 
       return {
         ...fallback,
         pages: finalPages,
+        gallery: finalGallery,
         source: 'directus',
       }
     }
