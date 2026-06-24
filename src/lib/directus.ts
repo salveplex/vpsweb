@@ -14,10 +14,7 @@ export function assetUrl(baseUrl: string, media?: string) {
 export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
   const fallback = fallbackByLocale[locale]
 
-  // For non-English/Norwegian locales, return fallback directly (they have inline translations)
-  if (locale === 'de' || locale === 'fr' || locale === 'es') {
-    return { ...fallback, source: 'fallback' }
-  }
+  // All locales should fetch from Strapi to get automatic translations
 
   let overrides: CmsPage[] = []
   if (locale === 'no') overrides = [...modernPages, ...extraPagesNo]
@@ -43,9 +40,14 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
         .map((item) => {
         // Clean up legacy Markdown image query parameters that break the parser
         let cleanContent = item.content || ''
-        cleanContent = cleanContent.replace(/\?etag=[^\)]+/g, '')
-        cleanContent = cleanContent.replace(/&sourceContentType=[^\)]+/g, '')
+        cleanContent = cleanContent.replace(/\?etag=[^)]+/g, '')
+        cleanContent = cleanContent.replace(/&sourceContentType=[^)]+/g, '')
         cleanContent = cleanContent.replace(/&ignoreAspectRatio/g, '')
+        const blocks: CmsPage['blocks'] = [{ type: 'rich_text' as const, body: cleanContent }];
+        
+        if (item.slug === 'personvern' || item.slug === 'kontakt' || item.slug === 'contact') {
+          blocks.push({ type: 'contact_form' });
+        }
 
         return {
           id: item.id.toString(),
@@ -55,7 +57,7 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
           eyebrow: item.eyebrow || 'Voss Taxi',
           summary: item.summary || '',
           status: 'published',
-          blocks: [{ type: 'rich_text' as const, body: cleanContent }],
+          blocks,
         }
 
       })
@@ -66,8 +68,6 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
         const idx = finalPages.findIndex(p => p.slug === override.slug)
         if (idx === -1) {
           finalPages.push(override)
-        } else {
-          finalPages[idx] = override
         }
       }
 
@@ -78,7 +78,7 @@ export async function fetchSiteData(locale: Locale = 'no'): Promise<SiteData> {
       }
       let finalGallery = [...fallback.gallery]
 
-      const galleryPage = json.data.find((item: any) => item.slug === 'galleri' || item.slug === 'gallery')
+      const galleryPage = json.data.find((item: StrapiPage) => item.slug === 'galleri' || item.slug === 'gallery')
       if (galleryPage && galleryPage.content) {
         const regex = /!\[(.*?)\]\((.*?)\)/g
         let match

@@ -102,12 +102,14 @@ createServer(async (req, res) => {
         try {
           const data = JSON.parse(body);
           
+          const targetEmail = data.target === 'personvern' ? 'personvern@vosstaxi.no' : 'post@vosstaxi.no';
+          
           await transporter.sendMail({
             from: '"Voss Taxi Nettside" <post@vosstaxi.no>',
-            to: 'post@vosstaxi.no',
+            to: targetEmail,
             replyTo: data.email,
             subject: `Ny melding fra nettsiden: ${data.subject || 'Generell henvendelse'}`,
-            text: `Navn: ${data.name}\nE-post: ${data.email}\nEmne: ${data.subject}\n\nMelding:\n${data.message}`,
+            text: `Navn: ${data.name}\nTelefon: ${data.phone || 'Ikke oppgitt'}\nE-post: ${data.email}\nEmne: ${data.subject}\n\nMelding:\n${data.message}`,
           });
 
           res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -121,7 +123,21 @@ createServer(async (req, res) => {
       return;
     }
 
-    if (req.url.startsWith('/portal') || req.url.startsWith('/mrs') || req.url.startsWith('/fliser')) {
+    if (req.url === '/fliser' || req.url.startsWith('/fliser/')) {
+      const newPath = req.url.replace(/^\/fliser\/?/, '');
+      res.writeHead(308, { Location: `https://fliser.vosstaxi.no/${newPath}` });
+      res.end();
+      return;
+    }
+
+    if (req.url === '/portal' || req.url.startsWith('/portal/')) {
+      const newPath = req.url.replace(/^\/portal\/?/, '');
+      res.writeHead(308, { Location: `https://portal.vosstaxi.no/${newPath}` });
+      res.end();
+      return;
+    }
+
+    if (req.url.startsWith('/mrs')) {
       proxyRequest(req, res);
       return;
     }

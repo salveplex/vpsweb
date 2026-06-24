@@ -1,0 +1,1 @@
+const fs = require('fs'); const files = ['src/content/modernEn.ts', 'src/lib/directus.ts', 'src/main.tsx']; files.forEach(f => { let content = fs.readFileSync(f, 'utf8'); content = content.replace(/Voss Taxi SAs/g, 'Voss Taxis').replace(/Voss Taxi SA\'s/g, 'Voss Taxi\'s').replace(/Voss Taxi SA/g, 'Voss Taxi'); fs.writeFileSync(f, content); }); console.log('Done');

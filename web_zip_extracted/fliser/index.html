@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skiftkoe</title>
+  <link rel="stylesheet" href="./styles.css?v=20260311h">
+</head>
+<body>
+  <main class="layout">
+    <section class="panel queue-panel">
+      <div class="panel-header">
+        <button id="refreshButton" class="panel-pill panel-pill-button" type="button" aria-label="Oppdater siden">
+          <span class="panel-pill-label">INNE</span>
+        </button>
+      </div>
+
+      <div id="queueList" class="queue-list" aria-label="Valgt rekkefolge"></div>
+      <p id="queueEmpty" class="empty-state"></p>
+    </section>
+
+    <section class="panel source-panel">
+      <div class="panel-header">
+        <button id="adminEntryButton" class="panel-pill panel-pill-button" type="button" aria-label="Hold inne for aa aapne admin">
+          <span id="adminEntryProgress" class="panel-pill-progress" aria-hidden="true"></span>
+          <span class="panel-pill-label">UTE</span>
+        </button>
+      </div>
+
+      <div class="source-groups">
+        <section class="group-card">
+          <div id="group1List" class="source-list" aria-label="Skift 1"></div>
+        </section>
+
+        <section class="group-card">
+          <div id="group2List" class="source-list" aria-label="Skift 2"></div>
+        </section>
+      </div>
+
+      <div class="source-logo-wrap" aria-hidden="true">
+        <img src="./logo-transparent.png" alt="" class="source-logo">
+      </div>
+
+      <div class="corner-controls" aria-label="Kontroller">
+        <button id="resetButton" class="corner-button reset-button" type="button" aria-label="Hold inne for aa nullstille listen">
+          <span class="corner-button-label">R</span>
+          <span id="resetProgress" class="hold-progress" aria-hidden="true"></span>
+        </button>
+        <button id="sleepButton" class="corner-button sleep-button" type="button" aria-label="Slaa av skjermvisning">
+          <span class="corner-button-label">Sove</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div id="sleepOverlay" class="sleep-overlay" hidden></div>
+
+  <script src="./app.runtime.js?v=20260315l"></script>
+  <script src="./app.js?v=20260315l"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

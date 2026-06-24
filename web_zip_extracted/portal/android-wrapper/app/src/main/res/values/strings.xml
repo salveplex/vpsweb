@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Taxiportalen Board</string>
+    <string name="loading">Laster boardet...</string>
+    <string name="reload">Last inn pa nytt</string>
+    <string name="retry">Prøv igjen</string>
+    <string name="error_title">Kunne ikke laste boardet</string>
+    <string name="error_unknown">Ukjent feil</string>
+    <string name="error_missing_url">Sett riktig URL i BuildConfig.BOARD_URL før du bygger appen.</string>
+</resources>

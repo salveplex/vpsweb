@@ -1,11 +1,13 @@
 export const glassCardStyles = {
   borderColor: 'var(--line)',
-  background: 'var(--glass)',
+  background: 'color-mix(in srgb, var(--surface) 50%, transparent)',
+  backdropFilter: 'blur(12px)',
 } as const
 
 export const glassCardStrongStyles = {
   borderColor: 'var(--line)',
-  background: 'var(--glass-strong)',
+  background: 'color-mix(in srgb, var(--surface) 70%, transparent)',
+  backdropFilter: 'blur(16px)',
 } as const
 
 export const glassBlurredStyles = {

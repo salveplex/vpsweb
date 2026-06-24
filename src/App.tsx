@@ -310,7 +310,7 @@ function FaresAndLinks({ data, locale }: { data: SiteData; locale: Locale }) {
   )
 }
 
-function Gallery({ data, locale }: { data: SiteData; locale: Locale }) {
+function Gallery({ data, page }: { data: SiteData; page: CmsPage }) {
   const [failedImages, setFailedImages] = useState<Set<string>>(() => new Set())
   const visibleGallery = data.gallery.filter((item) => !failedImages.has(item.id) && !item.image.includes('2.3___serialized1.png'))
   const openLightbox = useContext(LightboxContext)
@@ -322,14 +322,12 @@ function Gallery({ data, locale }: { data: SiteData; locale: Locale }) {
   return (
     <section className="mx-auto max-w-7xl px-4 py-18 md:px-6 md:py-24">
       <div className="mb-8 max-w-2xl">
-        <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{locale === 'en' ? 'Gallery' : 'Galleri'}</p>
+        <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{page.eyebrow}</p>
         <h2 className="mt-4 text-balance text-4xl font-extrabold tracking-tight">
-          {locale === 'en' ? 'Voss Taxi everyday life.' : 'Voss Taxi i kvardagen.'}
+          {page.title}
         </h2>
         <p className="muted mt-4 max-w-xl text-lg">
-          {locale === 'en'
-            ? 'A small selection of our cars, assignments, and the transport environment in Voss.'
-            : 'Eit lite utval frå bilar, oppdrag og transportmiljøet på Voss.'}
+          {page.summary}
         </p>
       </div>
       <div className="gallery-grid grid gap-4 md:grid-cols-4">
@@ -359,7 +357,7 @@ function Gallery({ data, locale }: { data: SiteData; locale: Locale }) {
   )
 }
 
-function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
+function PageBlocks({ blocks, locale = 'no' }: { blocks: PageBlock[]; locale?: Locale }) {
   const openLightbox = useContext(LightboxContext)
   if (!blocks.length) return null
 
@@ -445,7 +443,7 @@ function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
           }
 
           if (block.type === 'contact_form') {
-            return <ContactForm key={`${block.type}-${index}`} />
+            return <ContactForm key={`${block.type}-${index}`} locale={locale} />
           }
 
           return null
@@ -455,13 +453,15 @@ function PageBlocks({ blocks }: { blocks: PageBlock[] }) {
   )
 }
 
-function ContactPanel({ data, locale }: { data: SiteData; locale: Locale }) {
+function ContactPanel({ data, locale, page }: { data: SiteData; locale: Locale; page?: CmsPage }) {
+  const contactPageData = page && (page.slug === 'kontakt' || page.slug === 'contact') ? page : undefined
+
   return (
     <section className="border-t" style={{ ...lineColor, ...glassBlurredStyles }}>
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 md:grid-cols-[.8fr_1.2fr] md:px-6">
         <div>
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{locale === 'en' ? 'Contact' : 'Kontakt'}</p>
-          <h2 className="mt-4 text-balance text-4xl font-extrabold tracking-tight">{locale === 'en' ? 'Ready when you are.' : 'Klar når du er.'}</h2>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em]" style={accentColor}>{contactPageData?.eyebrow || (locale === 'en' ? 'Contact' : 'Kontakt')}</p>
+          <h2 className="mt-4 text-balance text-4xl font-extrabold tracking-tight">{contactPageData?.title || (locale === 'en' ? 'Ready when you are.' : 'Klar når du er.')}</h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
           <ContactCard href={`tel:${data.settings.phone}`} icon={Phone} label={locale === 'en' ? 'Phone' : 'Telefon'} value={formatPhone(data.settings.phone_display)} />
@@ -621,7 +621,7 @@ function Page({ themeMode, setThemeMode }: { themeMode: ThemeMode; setThemeMode:
                     </div>
                   </article>
                 </section>
-                <PageBlocks blocks={page.blocks} />
+                <PageBlocks blocks={page.blocks} locale={route.locale} />
                 <Marquee />
               </>
             ) : (
@@ -640,7 +640,7 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
     return (
       <>
         <Services data={data} locale={locale} />
-        <ContactPanel data={data} locale={locale} />
+        <ContactPanel data={data} locale={locale} page={page} />
       </>
     )
   }
@@ -649,8 +649,8 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
     return (
       <>
         <FaresAndLinks data={data} locale={locale} />
-        <PageBlocks blocks={page.blocks} />
-        <ContactPanel data={data} locale={locale} />
+        <PageBlocks blocks={page.blocks} locale={locale} />
+        <ContactPanel data={data} locale={locale} page={page} />
       </>
     )
   }
@@ -658,8 +658,8 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
   if (slug === 'galleri' || slug === 'gallery') {
     return (
       <>
-        <Gallery data={data} locale={locale} />
-        <ContactPanel data={data} locale={locale} />
+        <Gallery data={data} page={page} />
+        <ContactPanel data={data} locale={locale} page={page} />
       </>
     )
   }
@@ -667,8 +667,8 @@ function SubPage({ slug, page, data, locale }: { slug: string; page: CmsPage; da
   if (slug === 'kontakt' || slug === 'contact') {
     return (
       <>
-        <PageBlocks blocks={page.blocks} />
-        <ContactPanel data={data} locale={locale} />
+        <PageBlocks blocks={page.blocks} locale={locale} />
+        <ContactPanel data={data} locale={locale} page={page} />
       </>
     )
   }

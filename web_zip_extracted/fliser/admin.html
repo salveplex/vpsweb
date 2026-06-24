@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link rel="stylesheet" href="./styles.css?v=20260311h">
+</head>
+<body class="admin-body">
+  <main class="admin-layout">
+    <section class="panel admin-panel">
+      <div class="panel-header admin-header">
+        <h1 class="panel-pill">ADMIN</h1>
+        <a id="adminBackLink" class="admin-back" href="./">Tilbake</a>
+      </div>
+
+      <div class="admin-workspace">
+        <section class="admin-lists" aria-label="Skiftlister">
+          <div class="admin-shift-card">
+            <div class="admin-shift-title">Skift 1</div>
+            <div id="adminGroup1List" class="admin-shift-list" aria-label="Skift 1"></div>
+          </div>
+
+          <div class="admin-shift-card">
+            <div class="admin-shift-title">Skift 2</div>
+            <div id="adminGroup2List" class="admin-shift-list" aria-label="Skift 2"></div>
+          </div>
+        </section>
+
+        <aside class="admin-editor" aria-label="Redigering">
+          <div class="admin-editor-block">
+            <div class="admin-editor-label">Valgt l&oslash;yve</div>
+            <button id="labelField" class="admin-text-field" type="button">Velg eller opprett et l&oslash;yve</button>
+            <div class="admin-helper-badge">For "callsign" bruk parentes rundt tallet som skal v&aelig;re utheva:</div>
+          </div>
+
+          <div class="admin-editor-block">
+            <div class="admin-editor-label">Skift</div>
+            <div id="groupPicker" class="admin-chip-row">
+              <button class="admin-chip" type="button" data-group="GROUP1">Skift 1</button>
+              <button class="admin-chip" type="button" data-group="GROUP2">Skift 2</button>
+            </div>
+          </div>
+
+          <div class="admin-editor-block">
+            <div class="admin-editor-label">Egenskaper</div>
+            <div id="suffixPicker" class="admin-chip-grid"></div>
+          </div>
+
+          <div class="admin-property-actions">
+            <button id="newPropertyButton" class="admin-action admin-action-primary" type="button">Ny egenskap</button>
+            <button id="deletePropertyButton" class="admin-action admin-action-danger" type="button">Slett egenskap</button>
+          </div>
+
+          <div class="admin-editor-block">
+            <div class="admin-editor-label">Valgt egenskap</div>
+            <button id="propertyField" class="admin-text-field admin-text-field-secondary" type="button">Velg eller opprett en egenskap</button>
+          </div>
+
+          <div id="adminStatus" class="admin-status" aria-live="polite"></div>
+
+          <div class="admin-editor-actions">
+            <button id="newItemButton" class="admin-action admin-action-primary" type="button">Nytt l&oslash;yve</button>
+            <button id="deleteItemButton" class="admin-action admin-action-danger" type="button">Slett</button>
+            <button id="saveAdminButton" class="admin-action admin-action-save" type="button">Lagre</button>
+          </div>
+        </aside>
+      </div>
+
+      <section class="admin-keyboard" aria-label="Skjermtastatur">
+        <div class="admin-keyboard-row">
+          <button class="key" type="button" data-key="1">1</button>
+          <button class="key" type="button" data-key="2">2</button>
+          <button class="key" type="button" data-key="3">3</button>
+          <button class="key" type="button" data-key="4">4</button>
+          <button class="key" type="button" data-key="5">5</button>
+          <button class="key" type="button" data-key="6">6</button>
+          <button class="key" type="button" data-key="7">7</button>
+          <button class="key" type="button" data-key="8">8</button>
+          <button class="key" type="button" data-key="9">9</button>
+          <button class="key" type="button" data-key="0">0</button>
+        </div>
+        <div class="admin-keyboard-row">
+          <button class="key" type="button" data-key="Q">Q</button>
+          <button class="key" type="button" data-key="W">W</button>
+          <button class="key" type="button" data-key="E">E</button>
+          <button class="key" type="button" data-key="R">R</button>
+          <button class="key" type="button" data-key="T">T</button>
+          <button class="key" type="button" data-key="Y">Y</button>
+          <button class="key" type="button" data-key="U">U</button>
+          <button class="key" type="button" data-key="I">I</button>
+          <button class="key" type="button" data-key="O">O</button>
+          <button class="key" type="button" data-key="P">P</button>
+        </div>
+        <div class="admin-keyboard-row">
+          <button class="key" type="button" data-key="A">A</button>
+          <button class="key" type="button" data-key="S">S</button>
+          <button class="key" type="button" data-key="D">D</button>
+          <button class="key" type="button" data-key="F">F</button>
+          <button class="key" type="button" data-key="G">G</button>
+          <button class="key" type="button" data-key="H">H</button>
+          <button class="key" type="button" data-key="J">J</button>
+          <button class="key" type="button" data-key="K">K</button>
+          <button class="key" type="button" data-key="L">L</button>
+          <button class="key" type="button" data-key="(">(</button>
+          <button class="key" type="button" data-key=")">)</button>
+        </div>
+        <div class="admin-keyboard-row">
+          <button class="key" type="button" data-key="Z">Z</button>
+          <button class="key" type="button" data-key="X">X</button>
+          <button class="key" type="button" data-key="C">C</button>
+          <button class="key" type="button" data-key="V">V</button>
+          <button class="key" type="button" data-key="B">B</button>
+          <button class="key" type="button" data-key="N">N</button>
+          <button class="key" type="button" data-key="M">M</button>
+          <button class="key" type="button" data-key="-">-</button>
+          <button class="key key-wide key-icon" type="button" data-action="backspace" aria-label="Slett tegn">&#9003;</button>
+        </div>
+        <div class="admin-keyboard-row">
+          <button class="key key-wide" type="button" data-action="space">Mellomrom</button>
+          <button class="key key-wide" type="button" data-action="clear">Tomm felt</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="./admin.js?v=20260315d"></script>
+</body>
+</html>
+
